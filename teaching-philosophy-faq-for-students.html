@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Philosophy FAQ for Students &mdash; Tomi Francis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <a class="active" href="teaching.html">Teaching</a>
+      <a href="cv.html">CV</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Philosophy FAQ for Students</h1>
+    <h3>Philosophy FAQ</h3>
+    <p>I&#39;ve written a few explainers here for issues in philosophy which students often ask me about. I&#39;ve tried to be fairly impartial and to tell the truth. I probably haven&#39;t succeeded. It&#39;s surely not the whole truth, and it&#39;s probably not even nothing but the truth. See any mistakes, oversights or oversimplifications here? Let me know at tomi dot francis at nus dot edu dot sg.</p>
+    <p>This is very much a work in progress (the first material appeared in September 2024), but I hope this will eventually become a more useful resource for students as I incrementally add to it.</p>
+    <h3>I hope the material here is helpful, but it&#39;s not a substitute for doing your assigned readings!</h3>
+    <p>I think it&#39;s helpful to keep two things in mind. There&#39;s:</p>
+    <p>The unofficial definition. This is easy to understand, but officially not correct (when we&#39;re using the Logic Manual). But ninety nine times out of a hundred, it&#39;s fine to just have this one in mind. Understanding this &quot;unofficial&quot; definition is the key to getting a &quot;feel&quot; for what logical validity means, and that&#39;s what&#39;s really important.</p>
+    <p>The official definition. This is harder to understand, and actually you won&#39;t even get an actual, proper definition until chapter 2 of the Logic Manual.)</p>
+    <p>I&#39;ll give you both definitions.</p>
+    <h3>When a sentence φ (the conclusion) logically follows from a set of sentences Γ (the premises), we write Γ |= φ. And this means:</h3>
+    <h3>[Unofficial] It is not possible for all of the sentences in Γ to be true, but for φ to be false.</h3>
+    <p>Example: Suppose our premises are that (i) Bob is young, and that (ii) if Bob is young, then Bob was born after 1970. And suppose our conclusion is that (iii) Bob was born after 1970. Is this a valid argument? Yes. Either (i) or (ii) might be false. (Imagine Bob is 80 years old). But if it&#39;s true that Bob is young, and if it&#39;s true that being young requires being born after 1970, then it&#39;s not possible for Bob to have been born before 1970.*</p>
+    <h3>[Official] There is no way of reinterpreting the terms in our language uniformly in a way that makes all of the reinterpreted sentences in Γ true, but also makes the reinterpreted sentence φ false.</h3>
+    <p>Example: Suppose our premises are (i) &quot;the earth is big&quot; and (ii) &quot;the earth is round&quot;, and our conclusion is that (iii) &quot;the earth is big and round&quot;. No matter how we reinterpret &quot;earth&quot;, &quot;big&quot; and &quot;round&quot;, if the reinterpretation makes (i) and (ii) true, then it will also make (iii) true. This is because we&#39;ll be left with statements of the form (i) X is P, (ii) X is Q, and (iii) X is P and Q. It doesn&#39;t matter how you fill it in: if (i) and (ii) are true, then (iii) will also be true. [We leave the &quot;logical form&quot; of the sentence alone. This is closely related to, but not exactly the same thing as, the grammatical structure of the sentence.]</p>
+    <p>*I&#39;m cheating here a bit. But if you don&#39;t see why, don&#39;t worry about it.</p>
+    <p>In philosophy, we sometimes want to talk about possible and necessary truths. Here are some examples.</p>
+    <p>Hillary Clinton isn&#39;t the 45th president of the United States. But it&#39;s not impossible that she could have been. Put another way, it&#39;s possible that Hillary Clinton became the 45th president of the United States - it&#39;s just that things happened to work out otherwise.</p>
+    <p>2 + 2 equals 4. Moreover, 2 + 2 had to equal 4: things couldn&#39;t have been otherwise. We express this by saying that, necessarily, 2 + 2 = 4.</p>
+    <p>In philosophy, we have adopted the following standard notation for talking about possibility and necessity:</p>
+    <p>When we want to express that P is a possible truth, we write ◇P.</p>
+    <p>When we want to express that P is a necessary truth, we write □P.</p>
+    <p>Possibility and necessity are interdefinable:</p>
+    <p>□P just in case ¬◇¬P (P is necessarily true if and only if it&#39;s not possible for P to be false)</p>
+    <p>◇P just in case ¬□¬P (P is possibly true if and only if P is not necessarily false)</p>
+    <p>This interdefinability is one of the key conditions which make it appropriate to use the box and diamond notation, and the associated logical toolbox we have developed for it, to talk about a given concept. It is not that these claims hold of possibility and necessity because modal logic applies. Rather, it is appropriate to apply modal logic to these concepts (in part) because these interdefinability claims do seem to hold of possibility and necessity.</p>
+    <p>When we talk about necessity, we can mean different things. Three relatively common types of necessity are:</p>
+    <p>Logical necessity</p>
+    <p>Metaphysical necessity</p>
+    <p>Nomological necessity</p>
+    <p>The logically necessary truths are the ones that are guaranteed by logic, traditionally by the logical form of the statements in question. It is a logical truth that P → P ∨ Q, whatever P and Q a stand for. Some people think (but others disagree) that it is a logical truth that P ∨ ¬P, whatever P stands for.</p>
+    <p>If you think back to your introductory logic classes, you might remember that the logical truths are precisely the statements/sentences/propositions that are logical consequences of the empty set. Logical possibilities are those statements/sentences/propositions that are logically consistent with the empty set.</p>
+    <p>The metaphysically necessary truths are the ones that are guaranteed by ways the world has to be: the world could not possibly have been otherwise. (You might have noticed that this sort of definition isn&#39;t very helpful!) Exactly which things count as metaphysical but not logical necessities -- and indeed, whether there even are any -- is highly controversial. Here are some examples of alleged metaphysical necessities:</p>
+    <p>(i) If two physical objects have precisely the same parts, they are identical.</p>
+    <p>(ii) If two objects satisfy precisely the same properties, they are identical.</p>
+    <p>(iii) If two physical objects are distinct, then there exists a third object (their fusion) for which: 1) anything that is a part of either of the first two objects is a part of the third object, and 2) anything that is a part of the third object is a part of at least one of the first two objects.</p>
+    <p>(iv) No physical object has any parts, other than itself.</p>
+    <p>Notice that (iii) and (iv) can&#39;t both be true!</p>
+    <p>The nomologically necessary truths are the ones that are guaranteed by the laws of nature. Perhaps the laws of nature could have been otherwise; in that case, nomological necessity is more specific than metaphysical or logical necessity. Examples of alleged nomologically necessary truths include [warning: I am not a physicist]:</p>
+    <p>(i) Information cannot be transmitted faster than light.</p>
+    <p>(ii) In a closed system, energy and total momentum are conserved over time.</p>
+    <p>(iii) The force exerted by two charged particles at rest on each other is proportional to the charge of each particle and inversely proportional to the square of the distance between them.</p>
+    <p>These three notions of necessity are related in the following way:</p>
+    <p>(i) Logical necessity implies metaphysical necessity.</p>
+    <p>(ii) Metaphysical necessity implies nomological necessity.</p>
+    <p>It&#39;s controversial whether any of these implications hold the other way around. Many people believe that metaphysical necessity and logical necessity coincide: metaphysics does not go beyond logic. Relatively few people, but some, believe that nomological necessity and metaphysical necessity coincide: the laws of nature could not have been otherwise. A few people even believe that nomological or even metaphysical necessity collapse into what is actually true: things could not have been other than they actually are.</p>
+    <p>Write down the dual versions of implications (i) and (ii) above in terms of the possibility (◇) operator.</p>
+    <p>Philosophers sometimes use boxes and diamonds to talk about concepts which do not seem to be species of necessity. For example, in temporal modal logic, we use the box operator to denote truth at every time, and the diamond operate to denote truth at some time. In epistemic modal logic, we use the box to denote truths that are known or knowable, and we use the diamond to denote propositions that are left open by the agent&#39;s knowledge and/or evidence. In deontic modal logic, we use the box to denote propositions that ought to be the case, and we use the diamond to denote propositions that are permissible.</p>
+    <p>In the three domains just mentioned, the box and diamond symbols denote, respectively, (i) truth at every time and truth at some time, (ii) propositions which are settled (as true) by the agent&#39;s knowledge or evidence and propositions which are merely not settled as false by the agent&#39;s knowledge or evidence, and (iii) moral obligations and moral permissions. State the relevant relations of implication which make it appropriate to use the box and diamond notation to denote these concepts in each of cases (i), (ii) and (iii).</p>
+  </main>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
