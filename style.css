@@ -108,6 +108,17 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.4rem 0; }
 }
 .hero .intro p:first-child { margin-top: 0; }
 
+/* current-course banner at the top of the home page (temporary — added Aug 2026
+   while PE3101P is running; remove this rule and the <p> in index.html together) */
+.course-banner {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--nav-active);
+  background: #fafafa;
+  padding: 0.7rem 1rem;
+  margin: 0 0 1.6rem;
+  font-size: 1rem;
+}
+
 /* big teal section link (the "Teaching" link on home) */
 .section-link {
   display: inline-block;
