@@ -315,6 +315,18 @@ a:hover { color: var(--teal-dark); }
    body, so `.peekopen` deliberately has no layout effect. (It used to shrink
    .shell's max-width, which moved the text every time you clicked a reference.) */
 
+/* List of Exercises: the proposition to be proved is set apart from the
+   instruction, so an entry can be read at a glance. Italic matches how
+   propositions are set in the body. */
+.exstmt, .exhint {
+  display: block;
+  margin: .3rem 0 .1rem;
+  padding-left: 1.6rem;
+  border-left: 2px solid var(--rule-soft);
+}
+.exstmt { font-style: italic; }
+.exhint { font-size: .92rem; color: var(--ink-soft); }
+
 /* A quiet note about the web version's clicking, on the landing page only. */
 .usenote {
   margin: 1.8rem 0 0;
