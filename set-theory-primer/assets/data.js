@@ -49,22 +49,12 @@ window.PRIMER_REFS = {
   "proof": "",
   "figure": ""
  },
- "sec:whatsetsexist": {
-  "id": "sec:whatsetsexist",
+ "sec:roster": {
+  "id": "sec:roster",
   "kind": "Section",
   "number": 5,
-  "page": "05-what-sets-are-there.html",
-  "title": "What sets are there?",
-  "statement": "",
-  "proof": "",
-  "figure": ""
- },
- "sec:setbuilder": {
-  "id": "sec:setbuilder",
-  "kind": "Section",
-  "number": 6,
-  "page": "06-set-builder-notation.html",
-  "title": "Set builder notation",
+  "page": "05-roster-notation.html",
+  "title": "Roster notation",
   "statement": "",
   "proof": "",
   "figure": ""
@@ -72,9 +62,19 @@ window.PRIMER_REFS = {
  "sec:inclusioncriteria": {
   "id": "sec:inclusioncriteria",
   "kind": "Section",
-  "number": 7,
-  "page": "07-inclusion-criterion-notation.html",
+  "number": 6,
+  "page": "06-inclusion-criterion-notation.html",
   "title": "Inclusion criterion notation",
+  "statement": "",
+  "proof": "",
+  "figure": ""
+ },
+ "sec:whatsetsexist": {
+  "id": "sec:whatsetsexist",
+  "kind": "Section",
+  "number": 7,
+  "page": "07-what-sets-are-there.html",
+  "title": "What sets are there?",
   "statement": "",
   "proof": "",
   "figure": ""
@@ -229,21 +229,11 @@ window.PRIMER_REFS = {
   "proof": "",
   "figure": ""
  },
- "ax:comprehension": {
-  "id": "ax:comprehension",
-  "kind": "Axiom",
-  "number": 2,
-  "page": "05-what-sets-are-there.html",
-  "title": "Naive comprehension",
-  "statement": "For any criterion of membership whatsoever, there is a set whose elements are precisely the objects satisfying that criterion.",
-  "proof": "",
-  "figure": ""
- },
- "def:setbuilder": {
-  "id": "def:setbuilder",
+ "def:roster": {
+  "id": "def:roster",
   "kind": "Definition",
   "number": 1,
-  "page": "06-set-builder-notation.html",
+  "page": "05-roster-notation.html",
   "title": "Roster notation",
   "statement": "<span class='m'>{<i>a</i><sub>1</sub>, …, <i>a</i><sub><i>n</i></sub>}</span> denotes the set whose elements are exactly <span class='m'><i>a</i><sub>1</sub>, …, <i>a</i><sub><i>n</i></sub></span>.",
   "proof": "",
@@ -253,9 +243,19 @@ window.PRIMER_REFS = {
   "id": "def:inclusioncriterion",
   "kind": "Definition",
   "number": 2,
-  "page": "07-inclusion-criterion-notation.html",
+  "page": "06-inclusion-criterion-notation.html",
   "title": "Inclusion criterion",
   "statement": "Where <span class='m'><i>C</i></span> is a condition, <span class='m'>{<i>x</i> : <i>C</i>}</span> denotes the set whose elements are exactly the objects satisfying <span class='m'><i>C</i></span>, and <span class='m'><i>C</i></span> is the <em>inclusion criterion</em> for that set.",
+  "proof": "",
+  "figure": ""
+ },
+ "ax:comprehension": {
+  "id": "ax:comprehension",
+  "kind": "Axiom",
+  "number": 2,
+  "page": "07-what-sets-are-there.html",
+  "title": "Naive comprehension",
+  "statement": "For any inclusion criterion whatsoever, there is a set whose elements are precisely the objects satisfying it.",
   "proof": "",
   "figure": ""
  },

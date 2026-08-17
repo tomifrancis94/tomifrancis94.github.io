@@ -1,20 +1,18 @@
 /* Set theory primer — interaction layer.
 
    - click a reference   -> peek at it in the sidebar
-   - double-click        -> go there: right page, element at the top, proof expanded
-   - click a label       -> collapse/expand ("Proposition 3.", "Figure 7.", "Proof",
-                            "Definition — union", or the figure itself)
+   - press "Go to"       -> go there: right page, element at the top, proof expanded
+   - click a figure      -> collapse/expand it (proofs have their own Proof button)
 */
 (function () {
   "use strict";
 
   var REFS = window.PRIMER_REFS || {};
-  var CLICK_DELAY = 220;      // long enough to catch a double-click, short enough to feel instant
-  var pendingClick = null;
 
-  // On a phone there is no reliable double-tap: browsers claim it for zoom, and
-  // waiting 220ms to find out makes every tap feel sluggish. So on touch devices a
-  // tap peeks immediately and the sidebar's "Go to it" link is how you jump.
+  // There is no double-click handling (dropped 18 Aug 2026: "Go to" is better and
+  // it's enough of a feature). With nothing to wait for, a click opens the sidebar
+  // immediately — the old 220ms delay existed only to see whether a second click
+  // was coming, and it made every click feel slightly sluggish.
   var TOUCH = window.matchMedia("(pointer: coarse)").matches;
 
   /* ------------------------------------------------------------ collapsing */
@@ -32,7 +30,7 @@
     if (btn) btn.setAttribute("aria-expanded", String(!open));
   }
 
-  // Landing on a proposition should reveal its proof, per the double-click rule.
+  // Arriving at a proposition via "Go to" should reveal its proof.
   function open(el) {
     var target = el.classList.contains("prop") || el.classList.contains("exercise")
       ? el.querySelector(".proof")
@@ -102,9 +100,7 @@
               "<span class='caret'></span>Proof</button>" +
               "<div class='proofbody'>" + rec.proof + "</div></section>";
     }
-    html += "<p class='peekhint'>" + (TOUCH
-      ? "Tap &ldquo;Go to it&rdquo; above to open this where it lives."
-      : "Double-click a reference to jump to it. Press Esc to close.") + "</p>";
+    if (!TOUCH) html += "<p class='peekhint'>Press Esc to close.</p>";
     peekBody.innerHTML = html;
     peekBody.scrollTop = 0;
     peek.hidden = false;
@@ -116,36 +112,25 @@
     var a = e.target.closest("a.xref");
     if (!a) return;
     e.preventDefault();
-    if (pendingClick) { clearTimeout(pendingClick); pendingClick = null; }
     var id = a.getAttribute("data-ref");
-    var href = a.getAttribute("href");
-    var act = function () {
-      pendingClick = null;
-      if (REFS[id]) renderPeek(id);
-      else window.location.href = href;      // no record: just follow the link
-    };
-    if (TOUCH) act();
-    else pendingClick = setTimeout(act, CLICK_DELAY);
+    if (REFS[id]) renderPeek(id);
+    else window.location.href = a.getAttribute("href");   // no record: follow the link
   });
 
-  document.addEventListener("dblclick", function (e) {
-    var a = e.target.closest("a.xref");
-    if (!a) return;
-    e.preventDefault();
-    if (pendingClick) { clearTimeout(pendingClick); pendingClick = null; }
-    goTo(a.getAttribute("href"), a.getAttribute("data-ref"));
-  });
-
-  function goTo(href, id) {
-    var here = location.pathname.split("/").pop() || "index.html";
+  // "Go to" is the only way to jump. Within the same page, do it without a reload
+  // and close the sidebar, since it would otherwise duplicate what you just landed on.
+  peekGo.addEventListener("click", function (e) {
+    var href = peekGo.getAttribute("href") || "";
     var page = href.split("#")[0];
-    if (page === here) {
-      focusTarget(id);
+    var id = href.split("#")[1];
+    var here = location.pathname.split("/").pop() || "index.html";
+    if (page === here && id) {
+      e.preventDefault();
+      closePeek();
+      focusTarget(decodeURIComponent(id));
       history.replaceState(null, "", "#" + id);
-    } else {
-      location.href = href;
     }
-  }
+  });
 
   /* ------------------------------------------------------------ arriving */
   function focusTarget(id) {
