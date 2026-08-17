@@ -511,7 +511,7 @@ window.PRIMER_REFS = {
   "page": "12-intersections.html",
   "title": "intersecting with the empty set",
   "statement": "For any set <span class='m'><i>X</i></span>, <span class='m'><i>X</i> ∩ ∅ = ∅</span>.",
-  "proof": "<p>If <span class='m'><i>x</i> ∈ <i>X</i> ∩ ∅</span> then <span class='m'><i>x</i> ∈ <i>X</i></span> and <span class='m'><i>x</i> ∈ ∅</span>.\n\tBut that is impossible, because <span class='m'>∅</span> contains no elements.\n\tTherefore there is no element of <span class='m'><i>X</i> ∩ ∅</span>, and so <span class='m'><i>X</i> ∩ ∅</span> is equal to <span class='m'>∅</span> by Extensionality.</p>",
+  "proof": "<p>If <span class='m'><i>x</i> ∈ <i>X</i> ∩ ∅</span> then <span class='m'><i>x</i> ∈ <i>X</i></span> and <span class='m'><i>x</i> ∈ ∅</span>.\n\tBut that is impossible, because <span class='m'>∅</span> contains no elements.\n\tTherefore there is no element of <span class='m'><i>X</i> ∩ ∅</span>, and so <span class='m'><i>X</i> ∩ ∅</span> is equal to <span class='m'>∅</span> by <a class='xref' data-ref='prop:emptysetunique' href='10-the-empty-set.html#prop:emptysetunique' title='Proposition 5 (the empty set is unique)'>Proposition&nbsp;5&nbsp;(the empty set is unique)</a>.</p>",
   "figure": ""
  },
  "fig:subsetiffintersection": {
