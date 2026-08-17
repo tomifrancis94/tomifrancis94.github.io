@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The empty set — Sets and Mathematical Proofs: A Primer</title>
+<link rel="stylesheet" href="assets/primer.css?v=0270a482">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="home" href="index.html">Sets and Mathematical Proofs: A Primer</a>
+  <button type="button" id="tocbtn" class="tocbtn" aria-expanded="false">Contents</button>
+</header>
+<div class="shell">
+  <nav id="toc" class="toc"><ol><li><a href='index.html'>Sets and Mathematical Proofs: A Primer</a></li><li><a href='01-introduction.html'>1. Introduction</a></li><li><a href='02-what-is-a-set.html'>2. What is a set?</a></li><li><a href='03-the-axiom-of-extensionality.html'>3. The axiom of extensionality</a></li><li><a href='04-sets-within-sets.html'>4. Sets within sets</a></li><li><a href='05-what-sets-are-there.html'>5. What sets are there?</a></li><li><a href='06-set-builder-notation.html'>6. Set builder notation</a></li><li><a href='07-inclusion-criterion-notation.html'>7. Inclusion criterion notation</a></li><li><a href='08-subsets.html'>8. Subsets</a></li><li><a href='09-more-about-subsets.html'>9. More about subsets</a></li><li class=here><a href='10-the-empty-set.html'>10. The empty set</a></li><li><a href='11-equivalent-inclusion-criteria.html'>11. Equivalent inclusion criteria</a></li><li><a href='12-intersections.html'>12. Intersections</a></li><li><a href='13-unions.html'>13. Unions</a></li><li><a href='14-interactions-between-unions-and-intersections.html'>14. Interactions between Unions and Intersections</a></li><li><a href='15-relative-complements.html'>15. Relative complements</a></li><li><a href='16-complements.html'>16. Complements</a></li><li><a href='17-disjointness.html'>17. Disjointness</a></li><li><a href='18-collections-of-sets.html'>18. Collections of sets</a></li><li><a href='19-partitions.html'>19. Partitions</a></li><li><a href='20-summary-of-results.html'>20. Summary of results</a></li><li><a href='21-list-of-exercises.html'>21. List of Exercises</a></li></ol></nav>
+  <main id="main">
+    <h1 id='sec:emptyset'><span class='secno'>10</span>The empty set</h1>
+    <p>There is a set with no elements whatsoever.
+We call it the <em><a class='xref term' data-ref='def:emptyset' href='10-the-empty-set.html#def:emptyset'>empty set</a></em>, and we denote it by <span class='m'>∅</span>.
+Using the list notation from above, we could equally write it <span class='m'>{}</span>:</p>
+<article class='block defn' id='def:emptyset' data-ref='def:emptyset'><p class='blockhead'><span class='lbl'>Definition 6 (Empty set).</span> <span class='stmt'><span class='m'>∅</span> is the set with no elements at all.</span></p></article>
+<p>The first thing to prove about such a set usually takes a moment to accept.</p>
+<article class='block prop' id='prop:emptysubset' data-ref='prop:emptysubset'><p class='blockhead'><span class='lbl'>Proposition 4 (an <a class='xref term' data-ref='def:emptyset' href='10-the-empty-set.html#def:emptyset'>empty set</a> is a <a class='xref term' data-ref='def:subset' href='08-subsets.html#def:subset'>subset</a> of anything).</span> <span class='stmt'>For any sets <span class='m'><i>X</i></span> and <span class='m'><i>Y</i></span>, if <span class='m'><i>X</i></span> contains no elements, then <span class='m'><i>X</i> ⊂ <i>Y</i></span>.</span></p><section class='proof' data-open='0'><button type='button' class='prooftog' data-toggle><span class='caret'></span>Proof</button><div class='proofbody'><p>If <span class='m'><i>X</i></span> contains no elements, then every element of <span class='m'><i>X</i></span> is an element of <span class='m'><i>Y</i></span>, because all of the zero elements which belong to <span class='m'><i>X</i></span> satisfy this property.</p></div></section></article>
+<p>More generally, a claim of the form “every <span class='m'><i>A</i></span> is a <span class='m'><i>B</i></span>”, where there are no <span class='m'><i>A</i></span>s at all, is always counted as true.
+Mathematicians say that such a claim is <strong>vacuously</strong> true.</p>
+<p>Sometimes a statement is very easy to prove once we already have some other statement in hand.
+When that happens, we call the easy statement a <strong>corollary</strong> of the one we are leaning on.
+The next proposition is a corollary of <a class='xref' data-ref='prop:doubleinclusion' href='08-subsets.html#prop:doubleinclusion' title='Proposition 1 (double inclusion)'>Propositions 1&nbsp;(double inclusion)</a> and <a class='xref' data-ref='prop:emptysubset' href='10-the-empty-set.html#prop:emptysubset' title='Proposition 4 (an empty set is a subset of anything)'>4&nbsp;(an empty set is a subset of anything)</a>.</p>
+<article class='block prop' id='prop:emptysetunique' data-ref='prop:emptysetunique'><p class='blockhead'><span class='lbl'>Proposition 5 (the <a class='xref term' data-ref='def:emptyset' href='10-the-empty-set.html#def:emptyset'>empty set</a> is unique).</span> <span class='stmt'>Any two sets with no elements are identical.</span></p></article>
+<article class='block exercise' id='ex:emptysetunique' data-ref='ex:emptysetunique'><p class='blockhead'><span class='lbl'>Exercise 2.</span> <span class='stmt'>Prove <a class='xref' data-ref='prop:emptysetunique' href='10-the-empty-set.html#prop:emptysetunique' title='Proposition 5 (the empty set is unique)'>Proposition&nbsp;5&nbsp;(the empty set is unique)</a>, as a corollary of <a class='xref' data-ref='prop:doubleinclusion' href='08-subsets.html#prop:doubleinclusion' title='Proposition 1 (double inclusion)'>Propositions 1&nbsp;(double inclusion)</a> and <a class='xref' data-ref='prop:emptysubset' href='10-the-empty-set.html#prop:emptysubset' title='Proposition 4 (an empty set is a subset of anything)'>4&nbsp;(an empty set is a subset of anything)</a>.</span></p></article>
+<p>This is what justifies us in speaking of <em>the</em> <a class='xref term' data-ref='def:emptyset' href='10-the-empty-set.html#def:emptyset'>empty set</a> rather than <em>an</em> <a class='xref term' data-ref='def:emptyset' href='10-the-empty-set.html#def:emptyset'>empty set</a>.</p>
+<p>The <a class='xref term' data-ref='def:emptyset' href='10-the-empty-set.html#def:emptyset'>empty set</a> has nothing inside it, so there is nothing for a <a class='xref term' data-ref='def:subset' href='08-subsets.html#def:subset'>subset</a> of it to contain either.</p>
+<article class='block prop' id='prop:subsetofempty' data-ref='prop:subsetofempty'><p class='blockhead'><span class='lbl'>Proposition 6 (the only <a class='xref term' data-ref='def:subset' href='08-subsets.html#def:subset'>subset</a> of <span class='m'>∅</span>).</span> <span class='stmt'>For any set <span class='m'><i>X</i></span>, if <span class='m'><i>X</i> ⊂ ∅</span>, then <span class='m'><i>X</i> = ∅</span>.</span></p><section class='proof' data-open='0'><button type='button' class='prooftog' data-toggle><span class='caret'></span>Proof</button><div class='proofbody'><p>Suppose for contradiction that there is some <span class='m'><i>x</i> ∈ <i>X</i></span>.
+	Then since <span class='m'><i>X</i> ⊂ ∅</span>, we have <span class='m'><i>x</i> ∈ ∅</span>, contradicting the definition of <span class='m'>∅</span>.
+	Hence there is no <span class='m'><i>x</i> ∈ <i>X</i></span> and by <a class='xref' data-ref='prop:emptysetunique' href='10-the-empty-set.html#prop:emptysetunique' title='Proposition 5 (the empty set is unique)'>Proposition&nbsp;5&nbsp;(the empty set is unique)</a> it follows that <span class='m'><i>X</i> = ∅</span>.</p></div></section></article>
+<p>One warning while we are here.
+Do not confuse <span class='m'>∅</span> with <span class='m'>{∅}</span>.
+The first has no elements at all.
+The second is a set which contains exactly one element, namely the <a class='xref term' data-ref='def:emptyset' href='10-the-empty-set.html#def:emptyset'>empty set</a>.
+So, by the <a class='xref term' data-ref='ax:extensionality' href='03-the-axiom-of-extensionality.html#ax:extensionality'>Axiom of Extensionality</a>, they are not the same set.</p>
+    
+    <nav class='pager'><a class='prev' href='09-more-about-subsets.html'>&larr; More about subsets</a><a class='next' href='11-equivalent-inclusion-criteria.html'>Equivalent inclusion criteria &rarr;</a></nav>
+  </main>
+</div>
+<aside id="peek" class="peek" hidden aria-live="polite">
+  <div class="peekbar">
+    <span class="peektitle"></span>
+    <a class="peekgo" href="#" title="Go to this in the document">Go to it &rarr;</a>
+    <button type="button" class="peekclose" title="Close">&times;</button>
+  </div>
+  <div class="peekbody"></div>
+</aside>
+<script src="assets/data.js?v=5bbffefd"></script>
+<script src="assets/primer.js?v=48b2344f"></script>
+</body>
+</html>

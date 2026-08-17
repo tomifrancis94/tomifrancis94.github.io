@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equivalent inclusion criteria — Sets and Mathematical Proofs: A Primer</title>
+<link rel="stylesheet" href="assets/primer.css?v=0270a482">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="home" href="index.html">Sets and Mathematical Proofs: A Primer</a>
+  <button type="button" id="tocbtn" class="tocbtn" aria-expanded="false">Contents</button>
+</header>
+<div class="shell">
+  <nav id="toc" class="toc"><ol><li><a href='index.html'>Sets and Mathematical Proofs: A Primer</a></li><li><a href='01-introduction.html'>1. Introduction</a></li><li><a href='02-what-is-a-set.html'>2. What is a set?</a></li><li><a href='03-the-axiom-of-extensionality.html'>3. The axiom of extensionality</a></li><li><a href='04-sets-within-sets.html'>4. Sets within sets</a></li><li><a href='05-what-sets-are-there.html'>5. What sets are there?</a></li><li><a href='06-set-builder-notation.html'>6. Set builder notation</a></li><li><a href='07-inclusion-criterion-notation.html'>7. Inclusion criterion notation</a></li><li><a href='08-subsets.html'>8. Subsets</a></li><li><a href='09-more-about-subsets.html'>9. More about subsets</a></li><li><a href='10-the-empty-set.html'>10. The empty set</a></li><li class=here><a href='11-equivalent-inclusion-criteria.html'>11. Equivalent inclusion criteria</a></li><li><a href='12-intersections.html'>12. Intersections</a></li><li><a href='13-unions.html'>13. Unions</a></li><li><a href='14-interactions-between-unions-and-intersections.html'>14. Interactions between Unions and Intersections</a></li><li><a href='15-relative-complements.html'>15. Relative complements</a></li><li><a href='16-complements.html'>16. Complements</a></li><li><a href='17-disjointness.html'>17. Disjointness</a></li><li><a href='18-collections-of-sets.html'>18. Collections of sets</a></li><li><a href='19-partitions.html'>19. Partitions</a></li><li><a href='20-summary-of-results.html'>20. Summary of results</a></li><li><a href='21-list-of-exercises.html'>21. List of Exercises</a></li></ol></nav>
+  <main id="main">
+    <h1 id='sec:equivcriteria'><span class='secno'>11</span>Equivalent inclusion criteria</h1>
+    <p>Before we go on to the operations on sets, here is a second general method for showing that two sets are identical.
+Call two conditions <em>equivalent</em> when every object satisfying one of them also satisfies the other:</p>
+<article class='block defn' id='def:equivalent' data-ref='def:equivalent'><p class='blockhead'><span class='lbl'>Definition 7 (Equivalent conditions).</span> <span class='stmt'>Two conditions are <em>equivalent</em> when every object satisfying either one of them also satisfies the other.</span></p></article>
+<article class='block prop' id='prop:equivcriteria' data-ref='prop:equivcriteria'><p class='blockhead'><span class='lbl'>Proposition 7 (equivalent criteria give the same set).</span> <span class='stmt'>If two sets have equivalent <a class='xref term' data-ref='def:inclusioncriterion' href='07-inclusion-criterion-notation.html#def:inclusioncriterion'>inclusion criteria</a>, then they are identical.</span></p><section class='proof' data-open='0'><button type='button' class='prooftog' data-toggle><span class='caret'></span>Proof</button><div class='proofbody'><p>Let <span class='m'><i>X</i></span> and <span class='m'><i>Y</i></span> be sets whose <a class='xref term' data-ref='def:inclusioncriterion' href='07-inclusion-criterion-notation.html#def:inclusioncriterion'>inclusion criteria</a> are equivalent, and let <span class='m'><i>x</i></span> be any object.
+	Then <span class='m'><i>x</i> ∈ <i>X</i></span> if and only if <span class='m'><i>x</i></span> satisfies the <a class='xref term' data-ref='def:inclusioncriterion' href='07-inclusion-criterion-notation.html#def:inclusioncriterion'>inclusion criterion</a> for <span class='m'><i>X</i></span>, and likewise <span class='m'><i>x</i> ∈ <i>Y</i></span> if and only if <span class='m'><i>x</i></span> satisfies the <a class='xref term' data-ref='def:inclusioncriterion' href='07-inclusion-criterion-notation.html#def:inclusioncriterion'>inclusion criterion</a> for <span class='m'><i>Y</i></span>.
+	Since the two criteria are equivalent, <span class='m'><i>x</i></span> satisfies the one if and only if it satisfies the other.
+	So <span class='m'><i>x</i> ∈ <i>X</i></span> if and only if <span class='m'><i>x</i> ∈ <i>Y</i></span>.
+	As this holds for any object <span class='m'><i>x</i></span>, the two sets have exactly the same elements, and so they are identical by the <a class='xref term' data-ref='ax:extensionality' href='03-the-axiom-of-extensionality.html#ax:extensionality'>Axiom of Extensionality</a>.</p></div></section></article>
+<p>The method this gives us is as follows: to show that two sets are identical, write down the <a class='xref term' data-ref='def:inclusioncriterion' href='07-inclusion-criterion-notation.html#def:inclusioncriterion'>inclusion criteria</a> for each of them, and show that the two criteria are equivalent.
+We will not cite <a class='xref' data-ref='prop:equivcriteria' href='11-equivalent-inclusion-criteria.html#prop:equivcriteria' title='Proposition 7 (equivalent criteria give the same set)'>Proposition&nbsp;7&nbsp;(equivalent criteria give the same set)</a> when we use the method, but it is what justifies it.</p>
+    
+    <nav class='pager'><a class='prev' href='10-the-empty-set.html'>&larr; The empty set</a><a class='next' href='12-intersections.html'>Intersections &rarr;</a></nav>
+  </main>
+</div>
+<aside id="peek" class="peek" hidden aria-live="polite">
+  <div class="peekbar">
+    <span class="peektitle"></span>
+    <a class="peekgo" href="#" title="Go to this in the document">Go to it &rarr;</a>
+    <button type="button" class="peekclose" title="Close">&times;</button>
+  </div>
+  <div class="peekbody"></div>
+</aside>
+<script src="assets/data.js?v=5bbffefd"></script>
+<script src="assets/primer.js?v=48b2344f"></script>
+</body>
+</html>
