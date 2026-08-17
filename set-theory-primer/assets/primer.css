@@ -412,7 +412,11 @@ a:hover { color: var(--teal-dark); }
   .peekbody { padding: 1rem .9rem 3rem; }
   /* Stop the page scrolling underneath the sheet or the drawer. */
   body.peekopen, body.tocopen { overflow: hidden; }
-  .pager { flex-direction: column; gap: .5rem; }
+  /* Stacked, so `justify-content: space-between` now works on the VERTICAL axis
+     and does nothing horizontally — both links stretched full width and read as
+     left-aligned. The next link is pushed right explicitly. */
+  .pager { flex-direction: column; gap: .5rem; align-items: stretch; }
+  .pager .next { align-self: flex-end; text-align: right; }
   main { padding-bottom: 3rem; }
 
   /* On a phone the sidebar is a sheet, so its two actions need to look and behave
