@@ -204,7 +204,7 @@ window.NOTES_DATA = {
     {
      "id": "3.5",
      "title": "Bayes' theorem",
-     "blocks": 6
+     "blocks": 5
     },
     {
      "id": "3.6",
