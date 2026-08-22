@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -119.00 178.40 122.50' width='100%' style='max-width:510px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='independence-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='independence-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='0.00' y='-36.00' width='60.00' height='36.00' fill='url(#independence-hatch)' stroke='none'/>
+<rect x='0.00' y='-90.00' width='150.00' height='90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<rect x='0.00' y='-90.00' width='60.00' height='90.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='0.00' y='-36.00' width='150.00' height='36.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<text x='30.00' y='-98.77' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>A</tspan></text>
+<text x='163.50' y='-16.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>B</tspan></text>
+<rect x='102.58' y='-68.28' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='105.00' y='-62.77' text-anchor='middle' class='figlbl' font-size='5.25'><tspan>Ω</tspan></text>
+</svg>

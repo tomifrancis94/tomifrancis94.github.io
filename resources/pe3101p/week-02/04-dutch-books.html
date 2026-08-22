@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4. Dutch book arguments — PE3101P Week 2</title>
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<link rel="stylesheet" href="assets/notes.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="layout">
+<nav class='toc'><div class='toctitle'><a href='index.html'>Week 2 &mdash; Probability</a></div><ol><li><a href='01-probability-basics.html'><span class='tocnum'>1</span>Probabilities: the basics</a></li><li><a href='02-probabilism.html'><span class='tocnum'>2</span>Probabilism</a></li><li><a href='03-conditional-probability.html'><span class='tocnum'>3</span>Conditional probabilities and Conditionalisation</a></li><li class='here'><a href='04-dutch-books.html'><span class='tocnum'>4</span>Dutch book arguments</a><ul><li><a href='#s4.1'>What a Dutch book argument is</a></li><li><a href='#s4.2'>The betting interpretation of credences</a></li><li><a href='#s4.3'>The Dutch book theorem</a></li><li><a href='#s4.4'>Finite Additivity Dutch Book for Myopic Choice</a></li><li><a href='#s4.5'>Sophisticated choice</a></li><li><a href='#s4.6'>Can the book be repaired?</a></li><li><a href='#s4.7'>From the theorem to an argument for probabilism</a></li><li><a href='#s4.8'>It’s not about the money</a></li></ul></li></ol></nav>
+<main id="main">
+<article><h1 class='blk' id='h4'><span class='secnum'>4</span> Dutch book arguments</h1><section class='sub' data-sub='4.1'><details class='subdet' open><summary class='subhead blk' id='h4.1'><span class='secnum'>4.1</span> What a Dutch book argument is<a class='anchor' href='#s4.1' title='Link to this subsection'>#</a><span class='headtarget' id='s4.1'></span></summary><div class='subbody'><p class='blk' id='b4.1.1'>We shall now consider some of the best-known arguments for probabilism: that is,
+for the three <a class='xref term' data-def='axioms' href='02-probabilism.html#b2.3.4'>Kolmogorov axioms</a> we saw in section 2.
+These are known as <span class='defsite' data-def='dutchbook'><em>Dutch book arguments</em></span>.</p><p class='blk' id='b4.1.2'>The point of them is to show that agents whose credences do not satisfy these
+axioms are systematically exploitable: they can end up taking actions which
+together amount to choosing to give up money, or something else they value, for
+no gain whatsoever.
+And, so the argument goes, since agents who are systematically exploitable are
+irrational, rationality requires that they do not have the sorts of
+non-probabilistic credences which got them into trouble.</p><p class='blk' id='b4.1.3'>There is also a <a class='xref term' data-def='dutchbook' href='04-dutch-books.html#b4.1.1'>Dutch book argument</a> for the principle of <a class='xref term' data-def='conditionalisation' href='03-conditional-probability.html#b3.2.1'>conditionalisation</a>,
+though we will not cover that this week.
+(We may, time permitting, come back to it in week 5.)</p></div></details></section><section class='sub' data-sub='4.2'><details class='subdet' open><summary class='subhead blk' id='h4.2'><span class='secnum'>4.2</span> The betting interpretation of credences<a class='anchor' href='#s4.2' title='Link to this subsection'>#</a><span class='headtarget' id='s4.2'></span></summary><div class='subbody'><p class='blk' id='b4.2.1'>In order for any <a class='xref term' data-def='dutchbook' href='04-dutch-books.html#b4.1.1'>Dutch Book argument</a> to work, we need some link between what an agent believes and what she does.
+This is because credences on their own are inert: without some principle linking them to an agent’s behaviour, we cannot conclude anything about what an agent will do merely from their credences (degrees of belief).</p><p class='blk' id='b4.2.2'>The standard assumption made in these arguments about the link between credences and an agent’s behaviour is that credences match up with the agent’s betting behaviour.</p><p class='blk' id='b4.2.3'>Write an <span class='defsite' data-def='bet'><em>$S bet on <span class='math' data-tex="A"><span class='math-fallback'>A</span></span></em></span> for a deal that pays $S if <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> is true and
+nothing otherwise.</p><div class='blk box box-principle' id='b4.2.4'><div class='boxhead'>Principle <span class='boxname'>(The betting interpretation of credences)</span></div><div class='boxbody'><span class='defsite' data-def='betting'></span>
+An agent whose credence in <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> is <span class='math' data-tex="p"><span class='math-fallback'>p</span></span> will buy an $S bet on <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> for any price
+below $<span class='math' data-tex="pS"><span class='math-fallback'>pS</span></span>, and will sell one for any price above $<span class='math' data-tex="pS"><span class='math-fallback'>pS</span></span>.</div></div><p class='blk' id='b4.2.5'>So her credence fixes a price, and she is willing to take either side of it.
+We will assume this for the time being. 
+It is a substantial assumption, and it is probably false.</p></div></details></section><section class='sub' data-sub='4.3'><details class='subdet' open><summary class='subhead blk' id='h4.3'><span class='secnum'>4.3</span> The Dutch book theorem<a class='anchor' href='#s4.3' title='Link to this subsection'>#</a><span class='headtarget' id='s4.3'></span></summary><div class='subbody'><p class='blk' id='b4.3.1'>Two of <a class='xref term' data-def='axioms' href='02-probabilism.html#b2.3.4'>the axioms</a> can be argued for with a <em>single</em> bet. These are the
+easy cases, because nothing in them depends on how a sequence of offers is handled.</p><p class='blk' id='b4.3.2'>
+<strong><a class='xref term' data-def='nonnegativity' href='02-probabilism.html#b2.3.4'>Non-negativity</a>.</strong> Suppose <span class='math' data-tex="\Cr(A) = -0.5"><span class='math-fallback'>\Cr(A) = -0.5</span></span>. By the betting
+interpretation she will sell a $100 bet on <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> for any price above
+<span class='math' data-tex="-\$50"><span class='math-fallback'>-\$50</span></span> — and a negative price means she pays. So she will happily pay someone
+$49 to take the bet on, and then owes them another $100 if <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> turns out true.</p><div class='blk tablewrap' id='b4.3.3'><table class='tbl'><tr><th class='align-right'></th><th class='align-center rule'><span class='math' data-tex="A"><span class='math-fallback'>A</span></span></th><th class='align-center'><span class='math' data-tex="\neg A"><span class='math-fallback'>\neg A</span></span></th></tr><tr><td class='align-right'>Her net gain</td><td class='align-center rule'><span class='math' data-tex="-\$149"><span class='math-fallback'>-\$149</span></span></td><td class='align-center'><span class='math' data-tex="-\$49"><span class='math-fallback'>-\$49</span></span></td></tr></table></div><p class='blk' id='b4.3.4'> She loses $49 whatever happens, from one transaction.</p><p class='blk' id='b4.3.5'>
+<strong><a class='xref term' data-def='normalisation' href='02-probabilism.html#b2.3.4'>Normalisation</a>.</strong> Suppose <span class='math' data-tex="\Cr(\Omega) = 0.9"><span class='math-fallback'>\Cr(\Omega) = 0.9</span></span>. She will sell a
+$100 bet on <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span> for $91. But <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span> is guaranteed, so she collects $91
+and pays out $100.</p><div class='blk tablewrap' id='b4.3.6'><table class='tbl'><tr><th class='align-right'></th><th class='align-center rule'><span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span> (certain)</th></tr><tr><td class='align-right'>Her net gain</td><td class='align-center rule'><span class='math' data-tex="-\$9"><span class='math-fallback'>-\$9</span></span></td></tr></table></div><p class='blk' id='b4.3.7'> And if instead <span class='math' data-tex="\Cr(\Omega) = 1.1"><span class='math-fallback'>\Cr(\Omega) = 1.1</span></span>, she buys the same bet for $109
+and collects $100, losing $9 again.</p><p class='blk' id='b4.3.8'></p><p class='blk' id='b4.3.9'>These cases are easy, because they can be done in a single bet.
+<a class='xref term' data-def='additivity' href='02-probabilism.html#b2.3.4'>Finite additivity</a> is not so easy, because it depends on how credences relate to other credences, and so multiple bets need to be taken.</p></div></details></section><section class='sub' data-sub='4.4'><details class='subdet' open><summary class='subhead blk' id='h4.4'><span class='secnum'>4.4</span> Finite Additivity Dutch Book for Myopic Choice<a class='anchor' href='#s4.4' title='Link to this subsection'>#</a><span class='headtarget' id='s4.4'></span></summary><div class='subbody'><p class='blk' id='b4.4.1'>Suppose <span class='math' data-tex="P"><span class='math-fallback'>P</span></span> and <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span> are <a class='xref term' data-def='disjoint' href='01-probability-basics.html#b1.5.1'>mutually exclusive</a>, and that, as an example of a <a class='xref term' data-def='additivity' href='02-probabilism.html#b2.3.4'>finite additivity</a> violation, our agent has credence <span class='math' data-tex="0.2"><span class='math-fallback'>0.2</span></span> in <span class='math' data-tex="P"><span class='math-fallback'>P</span></span>, credence <span class='math' data-tex="0.2"><span class='math-fallback'>0.2</span></span> in <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span>, but credence <span class='math' data-tex="0.8"><span class='math-fallback'>0.8</span></span> in <span class='math' data-tex="P \cup Q"><span class='math-fallback'>P \cup Q</span></span>.
+Since <span class='math' data-tex="P"><span class='math-fallback'>P</span></span> and <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span> are <a class='xref term' data-def='disjoint' href='01-probability-basics.html#b1.5.1'>disjoint</a>, <a class='xref term' data-def='additivity' href='02-probabilism.html#b2.3.4'>finite additivity</a> requires <span class='math' data-tex="\Cr(P \cup Q) = 0.2 + 0.2 = 0.4"><span class='math-fallback'>\Cr(P \cup Q) = 0.2 + 0.2 = 0.4</span></span>.</p><p class='blk' id='b4.4.2'>She is offered three bets in turn, each for a moment and then withdrawn.</p><ul class='blk customlist' id='b4.4.3'><li><span class='itemlabel'><strong>Bet 1</strong></span> She sells a $100 bet on <span class='math' data-tex="P"><span class='math-fallback'>P</span></span> for $21. Her price for that bet is $20, so selling above it is a gain.</li><li><span class='itemlabel'><strong>Bet 2</strong></span> She sells a $100 bet on <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span> for $21. Likewise.</li><li><span class='itemlabel'><strong>Bet 3</strong></span> She buys a $100 bet on <span class='math' data-tex="P \cup Q"><span class='math-fallback'>P \cup Q</span></span> for $79. Her price for that bet is $80, so buying below it is a gain.</li></ul><p class='blk' id='b4.4.4'>Each bet, taken on its own, is one she wants. So it looks as though she should
+take all three. But if she does, she is down $37 however things turn out.</p><p class='blk' id='b4.4.5'>It is worth seeing that happen. Each frame below plots her net position in the
+three states — <span class='math' data-tex="P"><span class='math-fallback'>P</span></span>, <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span>, and neither — first for each bet taken on its own,
+and then for the bets accumulated one after another.</p><div class='blk figseq' id='b4.4.6' data-frames='7'><div class='seqframes'><div class='seqframe'><figure class='blk figure' id='b4.4.6-f1' data-fig='bars0'><a id='fig-bars0'></a><details class='figdet' open><summary><span class='fignum'>Figure 19.</span> No bets taken: her net position is zero in every state.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -100.90 241.80 244.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='bars0-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='bars0-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<text x='90.00' y='-75.55' text-anchor='middle' class='figlbl' font-size='7.41'><tspan font-weight='700'>No bets</tspan></text>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<path d='M15.90,-0.00 L53.10,-0.00' fill='none' stroke='currentColor' stroke-width='0.78'/>
+<text x='34.50' y='-7.07' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>0</tspan></text>
+<text x='34.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>P</tspan></text>
+<path d='M71.40,-0.00 L108.60,-0.00' fill='none' stroke='currentColor' stroke-width='0.78'/>
+<text x='90.00' y='-7.07' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>0</tspan></text>
+<text x='90.00' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>Q</tspan></text>
+<path d='M126.90,-0.00 L164.10,-0.00' fill='none' stroke='currentColor' stroke-width='0.78'/>
+<text x='145.50' y='-7.07' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>0</tspan></text>
+<text x='145.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>neither</tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b4.4.6-f2' data-fig='bars1'><a id='fig-bars1'></a><details class='figdet' open><summary><span class='fignum'>Figure 20.</span> Bet 1 on its own. She has sold a $100 bet on <span class='math' data-tex="P"><span class='math-fallback'>P</span></span> for $21.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -100.90 241.80 244.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='bars1-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='bars1-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<text x='90.00' y='-75.55' text-anchor='middle' class='figlbl' font-size='7.41'><tspan font-weight='700'>Bet 1</tspan></text>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='15.90' y='-0.00' width='37.20' height='94.80' fill='url(#bars1-hatch)' stroke='none'/>
+<rect x='15.90' y='-0.00' width='37.20' height='94.80' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='34.50' y='106.93' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>-79</tspan></text>
+<text x='34.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>P</tspan></text>
+<rect x='71.40' y='-25.20' width='37.20' height='25.20' fill='url(#bars1-hatch)' stroke='none'/>
+<rect x='71.40' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='90.00' y='-32.27' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>+21</tspan></text>
+<text x='90.00' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>Q</tspan></text>
+<rect x='126.90' y='-25.20' width='37.20' height='25.20' fill='url(#bars1-hatch)' stroke='none'/>
+<rect x='126.90' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='145.50' y='-32.27' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>+21</tspan></text>
+<text x='145.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>neither</tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b4.4.6-f3' data-fig='bars2'><a id='fig-bars2'></a><details class='figdet' open><summary><span class='fignum'>Figure 21.</span> Bet 2 on its own. She has sold a $100 bet on <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span> for $21.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -100.90 241.80 244.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='bars2-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='bars2-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<text x='90.00' y='-75.55' text-anchor='middle' class='figlbl' font-size='7.41'><tspan font-weight='700'>Bet 2</tspan></text>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='15.90' y='-25.20' width='37.20' height='25.20' fill='url(#bars2-hatch)' stroke='none'/>
+<rect x='15.90' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='34.50' y='-32.27' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>+21</tspan></text>
+<text x='34.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>P</tspan></text>
+<rect x='71.40' y='-0.00' width='37.20' height='94.80' fill='url(#bars2-hatch)' stroke='none'/>
+<rect x='71.40' y='-0.00' width='37.20' height='94.80' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='90.00' y='106.93' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>-79</tspan></text>
+<text x='90.00' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>Q</tspan></text>
+<rect x='126.90' y='-25.20' width='37.20' height='25.20' fill='url(#bars2-hatch)' stroke='none'/>
+<rect x='126.90' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='145.50' y='-32.27' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>+21</tspan></text>
+<text x='145.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>neither</tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b4.4.6-f4' data-fig='bars3'><a id='fig-bars3'></a><details class='figdet' open><summary><span class='fignum'>Figure 22.</span> Bet 3 on its own. She has bought a $100 bet on <span class='math' data-tex="P \cup Q"><span class='math-fallback'>P \cup Q</span></span> for $79.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -100.90 241.80 244.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='bars3-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='bars3-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<text x='90.00' y='-75.55' text-anchor='middle' class='figlbl' font-size='7.41'><tspan font-weight='700'>Bet 3</tspan></text>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='15.90' y='-25.20' width='37.20' height='25.20' fill='url(#bars3-hatch)' stroke='none'/>
+<rect x='15.90' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='34.50' y='-32.27' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>+21</tspan></text>
+<text x='34.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>P</tspan></text>
+<rect x='71.40' y='-25.20' width='37.20' height='25.20' fill='url(#bars3-hatch)' stroke='none'/>
+<rect x='71.40' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='90.00' y='-32.27' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>+21</tspan></text>
+<text x='90.00' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>Q</tspan></text>
+<rect x='126.90' y='-0.00' width='37.20' height='94.80' fill='url(#bars3-hatch)' stroke='none'/>
+<rect x='126.90' y='-0.00' width='37.20' height='94.80' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='145.50' y='106.93' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>-79</tspan></text>
+<text x='145.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>neither</tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b4.4.6-f5' data-fig='barsc1'><a id='fig-barsc1'></a><details class='figdet' open><summary><span class='fignum'>Figure 23.</span> Now the same three bets accumulated. After Bet 1 she is exposed only if <span class='math' data-tex="P"><span class='math-fallback'>P</span></span> happens.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -100.90 241.80 244.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='barsc1-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='barsc1-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<text x='90.00' y='-75.55' text-anchor='middle' class='figlbl' font-size='7.41'><tspan font-weight='700'>Bet 1</tspan></text>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='15.90' y='-0.00' width='37.20' height='94.80' fill='url(#barsc1-hatch)' stroke='none'/>
+<rect x='15.90' y='-0.00' width='37.20' height='94.80' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='34.50' y='106.93' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>-79</tspan></text>
+<text x='34.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>P</tspan></text>
+<rect x='71.40' y='-25.20' width='37.20' height='25.20' fill='url(#barsc1-hatch)' stroke='none'/>
+<rect x='71.40' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='90.00' y='-32.27' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>+21</tspan></text>
+<text x='90.00' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>Q</tspan></text>
+<rect x='126.90' y='-25.20' width='37.20' height='25.20' fill='url(#barsc1-hatch)' stroke='none'/>
+<rect x='126.90' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='145.50' y='-32.27' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>+21</tspan></text>
+<text x='145.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>neither</tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b4.4.6-f6' data-fig='barsc2'><a id='fig-barsc2'></a><details class='figdet' open><summary><span class='fignum'>Figure 24.</span> After Bets 1 and 2 she is down in both <span class='math' data-tex="P"><span class='math-fallback'>P</span></span> and <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span>, but still ahead if neither happens.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -100.90 241.80 244.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='barsc2-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='barsc2-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<text x='90.00' y='-75.55' text-anchor='middle' class='figlbl' font-size='7.41'><tspan font-weight='700'>Bet 1 + Bet 2</tspan></text>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='15.90' y='-0.00' width='37.20' height='69.60' fill='url(#barsc2-hatch)' stroke='none'/>
+<rect x='15.90' y='-0.00' width='37.20' height='69.60' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='34.50' y='81.73' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>-58</tspan></text>
+<text x='34.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>P</tspan></text>
+<rect x='71.40' y='-0.00' width='37.20' height='69.60' fill='url(#barsc2-hatch)' stroke='none'/>
+<rect x='71.40' y='-0.00' width='37.20' height='69.60' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='90.00' y='81.73' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>-58</tspan></text>
+<text x='90.00' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>Q</tspan></text>
+<rect x='126.90' y='-50.40' width='37.20' height='50.40' fill='url(#barsc2-hatch)' stroke='none'/>
+<rect x='126.90' y='-50.40' width='37.20' height='50.40' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='145.50' y='-57.47' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>+42</tspan></text>
+<text x='145.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>neither</tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b4.4.6-f7' data-fig='barsc3'><a id='fig-barsc3'></a><details class='figdet' open><summary><span class='fignum'>Figure 25.</span> After all three she is down $37 whatever happens. That is the Dutch book.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -100.90 241.80 244.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='barsc3-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='barsc3-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<text x='90.00' y='-75.55' text-anchor='middle' class='figlbl' font-size='7.41'><tspan font-weight='700'>Bet 1 + Bet 2 + Bet 3</tspan></text>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='15.90' y='-0.00' width='37.20' height='44.40' fill='url(#barsc3-hatch)' stroke='none'/>
+<rect x='15.90' y='-0.00' width='37.20' height='44.40' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='34.50' y='56.53' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>-37</tspan></text>
+<text x='34.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>P</tspan></text>
+<rect x='71.40' y='-0.00' width='37.20' height='44.40' fill='url(#barsc3-hatch)' stroke='none'/>
+<rect x='71.40' y='-0.00' width='37.20' height='44.40' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='90.00' y='56.53' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>-37</tspan></text>
+<text x='90.00' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan font-style='italic'>Q</tspan></text>
+<rect x='126.90' y='-0.00' width='37.20' height='44.40' fill='url(#barsc3-hatch)' stroke='none'/>
+<rect x='126.90' y='-0.00' width='37.20' height='44.40' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text x='145.50' y='56.53' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>-37</tspan></text>
+<text x='145.50' y='126.43' text-anchor='middle' class='figlbl' font-size='5.85'><tspan>neither</tspan></text>
+</svg></div></details></figure></div></div><div class='seqbar'><button type='button' class='seqbtn seqprev' aria-label='Previous frame' disabled>&#9664;</button><span class='seqcount'><span class='seqnow'>1</span>&thinsp;/&thinsp;7</span><button type='button' class='seqbtn seqnext' aria-label='Next frame'>&#9654;</button></div></div></div></details></section><section class='sub' data-sub='4.5'><details class='subdet' open><summary class='subhead blk' id='h4.5'><span class='secnum'>4.5</span> Sophisticated choice<a class='anchor' href='#s4.5' title='Link to this subsection'>#</a><span class='headtarget' id='s4.5'></span></summary><div class='subbody'><p class='blk' id='b4.5.1'></p><p class='blk' id='b4.5.2'>So far we have quietly assumed that she treats each offer as if it were the only
+decision she will ever face. That is called <em>myopic</em> choice. An agent who
+instead looks ahead, and takes into account what she will do later, is called
+<em>sophisticated</em>. (Much more on this in week 5.)</p><p class='blk' id='b4.5.3'>The temporal structure implied by the argument for <a class='xref term' data-def='additivity' href='02-probabilism.html#b2.3.4'>additivity</a> above is given by
+the following decision tree.</p><figure class='blk figure' id='b4.5.4' data-fig='dutchbooktree'><a id='fig-dutchbooktree'></a><details class='figdet' open><summary><span class='fignum'>Figure 26.</span> The Dutch book for finite additivity.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-221.68 -100.32 639.59 281.63' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='dutchbooktree-hatch' patternUnits='userSpaceOnUse' width='7.22' height='7.22' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='7.22' stroke='currentColor' stroke-width='0.93' opacity='0.55'/></pattern>
+<marker id='dutchbooktree-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='9.28' markerHeight='9.28' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M0.00,-0.00 L102.00,-51.00' fill='none' stroke='currentColor' stroke-width='1.13'/>
+<g transform='rotate(-26.57 51.00 -25.50)'><text x='51.00' y='-30.92' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>walk away</tspan></text></g>
+<path d='M0.00,-0.00 L102.00,51.00' fill='none' stroke='currentColor' stroke-width='1.13'/>
+<g transform='rotate(26.57 51.00 25.50)'><text x='51.00' y='40.20' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>take</tspan></text></g>
+<path d='M102.00,51.00 L204.00,-0.00' fill='none' stroke='currentColor' stroke-width='1.13'/>
+<g transform='rotate(-26.57 153.00 25.50)'><text x='153.00' y='20.08' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>walk away</tspan></text></g>
+<path d='M102.00,51.00 L204.00,102.00' fill='none' stroke='currentColor' stroke-width='1.13'/>
+<g transform='rotate(26.57 153.00 76.50)'><text x='153.00' y='91.20' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>take</tspan></text></g>
+<path d='M204.00,102.00 L306.00,51.00' fill='none' stroke='currentColor' stroke-width='1.13'/>
+<g transform='rotate(-26.57 255.00 76.50)'><text x='255.00' y='71.08' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>walk away</tspan></text></g>
+<path d='M204.00,102.00 L306.00,153.00' fill='none' stroke='currentColor' stroke-width='1.13'/>
+<g transform='rotate(26.57 255.00 127.50)'><text x='255.00' y='142.20' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>take</tspan></text></g>
+<text x='108.19' y='-46.91' text-anchor='start' class='figkey' font-size='12.38'><tspan>(0, 0, 0)</tspan></text>
+<text x='210.19' y='4.09' text-anchor='start' class='figkey' font-size='12.38'><tspan>(-79, 21, 21)</tspan></text>
+<text x='312.19' y='55.09' text-anchor='start' class='figkey' font-size='12.38'><tspan>(-58, -58, 42)</tspan></text>
+<text x='312.19' y='157.09' text-anchor='start' class='figkey' font-size='12.38'><tspan>(-37, -37, -37)</tspan></text>
+<text x='-42.00' y='-73.91' text-anchor='middle' class='figkey' font-size='12.38'><tspan>Net gains in dollars, listed as (</tspan><tspan font-style='italic'>P</tspan><tspan>, </tspan><tspan font-style='italic'>Q</tspan><tspan>, (</tspan><tspan font-style='italic'>P</tspan><tspan> ∪ </tspan><tspan font-style='italic'>Q</tspan><tspan>)</tspan><tspan baseline-shift='super' font-size='0.72em'>c</tspan><tspan>).</tspan></text>
+<text x='-42.00' y='133.09' text-anchor='middle' class='figkey' font-size='12.38'><tspan>Node 1 offers </tspan><tspan font-weight='700'>Bet 1</tspan><tspan>: sell a $100 bet on </tspan><tspan font-style='italic'>P</tspan><tspan> for $21.</tspan></text>
+<text x='-42.00' y='148.09' text-anchor='middle' class='figkey' font-size='12.38'><tspan>Node 2 offers </tspan><tspan font-weight='700'>Bet 2</tspan><tspan>: sell a $100 bet on </tspan><tspan font-style='italic'>Q</tspan><tspan> for $21.</tspan></text>
+<text x='-42.00' y='163.09' text-anchor='middle' class='figkey' font-size='12.38'><tspan>Node 3 offers </tspan><tspan font-weight='700'>Bet 3</tspan><tspan>: buy a $100 bet on </tspan><tspan font-style='italic'>P</tspan><tspan> ∪ </tspan><tspan font-style='italic'>Q</tspan><tspan> for $79.</tspan></text>
+<rect x='-9.28' y='-9.28' width='18.57' height='18.57' fill='var(--fig-bg)' stroke='currentColor' stroke-width='1.13'/>
+<text x='0.00' y='5.11' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>1</tspan></text>
+<rect x='92.72' y='41.72' width='18.57' height='18.57' fill='var(--fig-bg)' stroke='currentColor' stroke-width='1.13'/>
+<text x='102.00' y='56.11' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>2</tspan></text>
+<rect x='194.72' y='92.72' width='18.57' height='18.57' fill='var(--fig-bg)' stroke='currentColor' stroke-width='1.13'/>
+<text x='204.00' y='107.11' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>3</tspan></text>
+</svg></div></details></figure><p class='blk' id='b4.5.5'>The squares are decision nodes — choice points for the agent — and the edges
+leaving them represent the particular choices open to her. She begins at decision
+node 1 and may, depending on what she chooses, reach decision node 3 and a final
+choice. The payoffs are written as three-place vectors: the first place is her
+gain or loss in dollars if <span class='math' data-tex="P"><span class='math-fallback'>P</span></span> occurs, the second her gain or loss if <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span> occurs,
+and the third her gain or loss if neither of them does.</p><p class='blk' id='b4.5.6'>A sophisticated agent will obviously not take all three bets. For suppose she
+did. Then she would go on taking bets at node 2 as well, and so at node 1 her
+choice would really be between
+<div class='mathblock' data-tex="(0,\ 0,\ 0)
+\qquad\text{and}\qquad
+(-37,\ -37,\ -37),"><span class='math-fallback'>(0,\ 0,\ 0)
+\qquad\text{and}\qquad
+(-37,\ -37,\ -37),</span></div>
+and she would obviously take the first. So she declines at node 1.</p><p class='blk' id='b4.5.7'>It turns out that a sophisticated agent here makes one trade and then walks
+away, though we will not show this now.</p></div></details></section><section class='sub' data-sub='4.6'><details class='subdet' open><summary class='subhead blk' id='h4.6'><span class='secnum'>4.6</span> Can the book be repaired?<a class='anchor' href='#s4.6' title='Link to this subsection'>#</a><span class='headtarget' id='s4.6'></span></summary><div class='subbody'><p class='blk' id='b4.6.1'>It can. The <a class='xref term' data-def='dutchbook' href='04-dutch-books.html#b4.1.1'>Dutch book</a> for <a class='xref term' data-def='additivity' href='02-probabilism.html#b2.3.4'>finite additivity</a> can be reconstructed so that it
+works even against an agent who uses sophisticated choice — which is what she
+ought to be using. If there is time, we will see how in week 5.</p></div></details></section><section class='sub' data-sub='4.7'><details class='subdet' open><summary class='subhead blk' id='h4.7'><span class='secnum'>4.7</span> From the theorem to an argument for probabilism<a class='anchor' href='#s4.7' title='Link to this subsection'>#</a><span class='headtarget' id='s4.7'></span></summary><div class='subbody'><p class='blk' id='b4.7.1'>The <a class='xref term' data-def='dutchbook' href='04-dutch-books.html#b4.1.1'>Dutch book</a> theorem is a piece of mathematics. To get an argument for
+probabilism out of it we need some further premises, and the obvious way of
+supplying them is not very good.</p><p class='blk' id='b4.7.2'>The flat-footed version runs: if your credences are non-probabilistic, a cunning
+Dutchman might come along and take your money; if they are probabilistic, he
+cannot; so you had better have probabilistic credences.</p><p class='blk' id='b4.7.3'>On this version of the argument, the reason why we should not have
+non-probabilistic credences is that avoiding them protects us from actually being
+exploited in a <a class='xref term' data-def='dutchbook' href='04-dutch-books.html#b4.1.1'>Dutch book</a> situation.
+However, suppose that for some reason an agent knew for certain that no <a class='xref term' data-def='dutchbook' href='04-dutch-books.html#b4.1.1'>Dutch book</a>
+situation would arise.
+In that case they would know that having non-probabilistic credences will not hurt
+them, and the reason to adopt probabilistic credences would vanish.
+But presumably a proponent of probabilism would not want to say that an agent like
+this is rational: although they will not be exploited, it is their pattern of
+credences itself which is supposed to be irrational.</p><p class='blk' id='b4.7.4'>Here is a better version:</p><ul class='blk customlist' id='b4.7.5'><li>If an agent does not bet in line with <a class='xref term' data-def='betting' href='04-dutch-books.html#b4.2.4'>the betting interpretation</a> for the credences they have, then they are irrational.</li><li>If an agent has non-probabilistic credences and bets in line with <a class='xref term' data-def='betting' href='04-dutch-books.html#b4.2.4'>the betting interpretation</a>, then they are vulnerable to exploitation by a <a class='xref term' data-def='dutchbook' href='04-dutch-books.html#b4.1.1'>Dutch book</a>.</li><li>If an agent is vulnerable to exploitation by a <a class='xref term' data-def='dutchbook' href='04-dutch-books.html#b4.1.1'>Dutch book</a>, then they are irrational.</li><li><span class='itemlabel'><span class='math' data-tex="\therefore"><span class='math-fallback'>\therefore</span></span></span> If an agent has non-probabilistic credences, then they are irrational.</li></ul><p class='blk' id='b4.7.6'>Suppose the agent has non-probabilistic credences.
+Either she bets in line with <a class='xref term' data-def='betting' href='04-dutch-books.html#b4.2.4'>the betting interpretation</a> or she does not.
+If she does not, then by (1) she is irrational.
+And if she does, then by (2) she is vulnerable to a <a class='xref term' data-def='dutchbook' href='04-dutch-books.html#b4.1.1'>Dutch book</a>, and so by (3) she
+is irrational.
+Either way, she is irrational.</p></div></details></section><section class='sub' data-sub='4.8'><details class='subdet' open><summary class='subhead blk' id='h4.8'><span class='secnum'>4.8</span> It’s not about the money<a class='anchor' href='#s4.8' title='Link to this subsection'>#</a><span class='headtarget' id='s4.8'></span></summary><div class='subbody'><p class='blk' id='b4.8.1'>One might object to <a class='xref term' data-def='dutchbook' href='04-dutch-books.html#b4.1.1'>Dutch Book arguments</a> in general on the ground that it is not necessarily irrational to lose money.
+After all, it does not seem that we are rationally required to value money in particular, and if we do not value it, losing it cannot be a sign of irrationality.</p><p class='blk' id='b4.8.2'><a class='xref term' data-def='dutchbook' href='04-dutch-books.html#b4.1.1'>Dutch Book arguments</a>, however, do not need to be about money.
+Anything quantitative that can, in principle, be a prize in a bet, will do the job just fine. (The bets do not need to be practical or realistic, just possible in principle.)
+So long as there is any quantity the agent cares about like that, and they have non-probabilistic credences, and there is a suitable link to their betting behaviour (whether that comes via <a class='xref term' data-def='betting' href='04-dutch-books.html#b4.2.4'>the betting interpretation</a> or some weaker principle), the agent seems to be vulnerable to a Dutch Book, and thus open to the charge of irrationality.</p></div></details></section><nav class='pagenav'><a class='prev' href='03-conditional-probability.html'>&larr; 3. Conditional probabilities and Conditionalisation</a></nav></article>
+</main>
+</div>
+<aside id="peek" class="peek" hidden aria-live="polite">
+  <div class="peekbar">
+    <span class="peektitle"></span>
+    <a class="peekgo" href="#" title="Go to this in the notes">Go to &rarr;</a>
+    <button type="button" class="peekclose" title="Close">&times;</button>
+  </div>
+  <div class="peekbody"></div>
+</aside>
+<script src="assets/katex/katex.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/notes.js"></script>
+</body>
+</html>

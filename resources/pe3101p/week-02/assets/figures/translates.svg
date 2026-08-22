@@ -1,0 +1,30 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-102.50 -32.54 206.50 92.14' width='100%' style='max-width:590px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='translates-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='translates-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<ellipse cx='-70.50' cy='-0.00' rx='28.50' ry='28.50' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='-43.38' cy='-8.82' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='-62.64' cy='-27.39' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='-91.35' cy='-19.44' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='-96.33' cy='12.03' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='-74.46' cy='28.23' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='-45.57' cy='13.83' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<text x='-70.50' y='42.83' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>V</tspan></text>
+<ellipse cx='0.00' cy='-0.00' rx='28.50' ry='28.50' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='12.48' cy='-25.62' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='-14.25' cy='-24.69' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='-28.47' cy='1.50' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='-9.27' cy='26.94' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='17.55' cy='22.47' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='27.24' cy='-8.34' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<text x='0.00' y='42.83' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>V</tspan><tspan> + </tspan><tspan font-style='italic'>q</tspan><tspan baseline-shift='sub' font-size='0.72em'>1</tspan></text>
+<ellipse cx='70.50' cy='-0.00' rx='28.50' ry='28.50' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='60.75' cy='-26.79' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='42.84' cy='-6.90' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='51.81' cy='21.51' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='83.43' cy='25.38' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='98.85' cy='2.97' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<ellipse cx='83.43' cy='-25.38' rx='1.65' ry='1.65' fill='currentColor' stroke='none'/>
+<text x='70.50' y='42.83' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>V</tspan><tspan> + </tspan><tspan font-style='italic'>q</tspan><tspan baseline-shift='sub' font-size='0.72em'>2</tspan></text>
+</svg>

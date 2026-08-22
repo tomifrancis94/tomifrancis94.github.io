@@ -1,0 +1,16 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -96.50 157.00 100.00' width='100%' style='max-width:449px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='partitionomega-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='partitionomega-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='0.00' y='-90.00' width='150.00' height='90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M48.00,-0.00 L48.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M93.00,-0.00 L93.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M93.00,-45.00 L150.00,-45.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text x='24.00' y='-43.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>X</tspan><tspan baseline-shift='sub' font-size='0.72em'>1</tspan></text>
+<text x='70.50' y='-43.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>X</tspan><tspan baseline-shift='sub' font-size='0.72em'>2</tspan></text>
+<text x='121.50' y='-65.77' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>X</tspan><tspan baseline-shift='sub' font-size='0.72em'>3</tspan></text>
+<text x='121.50' y='-20.77' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>X</tspan><tspan baseline-shift='sub' font-size='0.72em'>4</tspan></text>
+<rect x='9.59' y='-81.78' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='12.00' y='-76.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan>Ω</tspan></text>
+</svg>

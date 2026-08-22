@@ -1,0 +1,18 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -96.50 157.00 100.00' width='100%' style='max-width:449px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='disjoint-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='disjoint-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<clipPath id='disjoint-clip1'><rect x='0.00' y='-90.00' width='150.00' height='90.00' /></clipPath>
+</defs>
+<ellipse cx='40.50' cy='-45.00' rx='28.50' ry='28.50' clip-path='url(#disjoint-clip1)' fill='url(#disjoint-hatch)' stroke='none'/>
+<ellipse cx='109.50' cy='-45.00' rx='28.50' ry='28.50' clip-path='url(#disjoint-clip1)' fill='url(#disjoint-hatch)' stroke='none'/>
+<rect x='0.00' y='-90.00' width='150.00' height='90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='40.50' cy='-45.00' rx='28.50' ry='28.50' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='109.50' cy='-45.00' rx='28.50' ry='28.50' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<rect x='38.09' y='-48.78' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='40.50' y='-43.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>X</tspan></text>
+<rect x='107.08' y='-48.78' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='109.50' y='-43.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>Y</tspan></text>
+<rect x='9.59' y='-81.78' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='12.00' y='-76.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan>Ω</tspan></text>
+</svg>

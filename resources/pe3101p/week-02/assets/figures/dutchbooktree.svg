@@ -1,0 +1,32 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-221.68 -100.32 639.59 281.63' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='dutchbooktree-hatch' patternUnits='userSpaceOnUse' width='7.22' height='7.22' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='7.22' stroke='currentColor' stroke-width='0.93' opacity='0.55'/></pattern>
+<marker id='dutchbooktree-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='9.28' markerHeight='9.28' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M0.00,-0.00 L102.00,-51.00' fill='none' stroke='currentColor' stroke-width='1.13'/>
+<g transform='rotate(-26.57 51.00 -25.50)'><text x='51.00' y='-30.92' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>walk away</tspan></text></g>
+<path d='M0.00,-0.00 L102.00,51.00' fill='none' stroke='currentColor' stroke-width='1.13'/>
+<g transform='rotate(26.57 51.00 25.50)'><text x='51.00' y='40.20' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>take</tspan></text></g>
+<path d='M102.00,51.00 L204.00,-0.00' fill='none' stroke='currentColor' stroke-width='1.13'/>
+<g transform='rotate(-26.57 153.00 25.50)'><text x='153.00' y='20.08' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>walk away</tspan></text></g>
+<path d='M102.00,51.00 L204.00,102.00' fill='none' stroke='currentColor' stroke-width='1.13'/>
+<g transform='rotate(26.57 153.00 76.50)'><text x='153.00' y='91.20' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>take</tspan></text></g>
+<path d='M204.00,102.00 L306.00,51.00' fill='none' stroke='currentColor' stroke-width='1.13'/>
+<g transform='rotate(-26.57 255.00 76.50)'><text x='255.00' y='71.08' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>walk away</tspan></text></g>
+<path d='M204.00,102.00 L306.00,153.00' fill='none' stroke='currentColor' stroke-width='1.13'/>
+<g transform='rotate(26.57 255.00 127.50)'><text x='255.00' y='142.20' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>take</tspan></text></g>
+<text x='108.19' y='-46.91' text-anchor='start' class='figkey' font-size='12.38'><tspan>(0, 0, 0)</tspan></text>
+<text x='210.19' y='4.09' text-anchor='start' class='figkey' font-size='12.38'><tspan>(-79, 21, 21)</tspan></text>
+<text x='312.19' y='55.09' text-anchor='start' class='figkey' font-size='12.38'><tspan>(-58, -58, 42)</tspan></text>
+<text x='312.19' y='157.09' text-anchor='start' class='figkey' font-size='12.38'><tspan>(-37, -37, -37)</tspan></text>
+<text x='-42.00' y='-73.91' text-anchor='middle' class='figkey' font-size='12.38'><tspan>Net gains in dollars, listed as (</tspan><tspan font-style='italic'>P</tspan><tspan>, </tspan><tspan font-style='italic'>Q</tspan><tspan>, (</tspan><tspan font-style='italic'>P</tspan><tspan> ∪ </tspan><tspan font-style='italic'>Q</tspan><tspan>)</tspan><tspan baseline-shift='super' font-size='0.72em'>c</tspan><tspan>).</tspan></text>
+<text x='-42.00' y='133.09' text-anchor='middle' class='figkey' font-size='12.38'><tspan>Node 1 offers </tspan><tspan font-weight='700'>Bet 1</tspan><tspan>: sell a $100 bet on </tspan><tspan font-style='italic'>P</tspan><tspan> for $21.</tspan></text>
+<text x='-42.00' y='148.09' text-anchor='middle' class='figkey' font-size='12.38'><tspan>Node 2 offers </tspan><tspan font-weight='700'>Bet 2</tspan><tspan>: sell a $100 bet on </tspan><tspan font-style='italic'>Q</tspan><tspan> for $21.</tspan></text>
+<text x='-42.00' y='163.09' text-anchor='middle' class='figkey' font-size='12.38'><tspan>Node 3 offers </tspan><tspan font-weight='700'>Bet 3</tspan><tspan>: buy a $100 bet on </tspan><tspan font-style='italic'>P</tspan><tspan> ∪ </tspan><tspan font-style='italic'>Q</tspan><tspan> for $79.</tspan></text>
+<rect x='-9.28' y='-9.28' width='18.57' height='18.57' fill='var(--fig-bg)' stroke='currentColor' stroke-width='1.13'/>
+<text x='0.00' y='5.11' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>1</tspan></text>
+<rect x='92.72' y='41.72' width='18.57' height='18.57' fill='var(--fig-bg)' stroke='currentColor' stroke-width='1.13'/>
+<text x='102.00' y='56.11' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>2</tspan></text>
+<rect x='194.72' y='92.72' width='18.57' height='18.57' fill='var(--fig-bg)' stroke='currentColor' stroke-width='1.13'/>
+<text x='204.00' y='107.11' text-anchor='middle' class='figlbl' font-size='15.47'><tspan>3</tspan></text>
+</svg>

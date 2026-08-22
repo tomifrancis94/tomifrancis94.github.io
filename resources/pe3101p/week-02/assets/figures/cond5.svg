@@ -1,0 +1,13 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -123.50 199.00 127.00' width='100%' style='max-width:569px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='cond5-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='cond5-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='0.00' y='-120.00' width='192.00' height='120.00' fill='url(#cond5-hatch)' stroke='none'/>
+<rect x='0.00' y='-120.00' width='192.00' height='120.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='38.40' y='-76.80' width='76.80' height='48.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='74.39' y='-56.58' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='76.80' y='-51.07' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>A</tspan></text>
+<rect x='165.59' y='-108.18' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='168.00' y='-102.67' text-anchor='middle' class='figlbl' font-size='5.25'><tspan>Ω</tspan></text>
+</svg>

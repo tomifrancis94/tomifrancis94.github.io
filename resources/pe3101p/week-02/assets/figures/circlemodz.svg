@@ -1,0 +1,16 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-205.55 -94.71 441.05 165.61' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='circlemodz-hatch' patternUnits='userSpaceOnUse' width='4.98' height='4.98' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='4.98' stroke='currentColor' stroke-width='0.64' opacity='0.55'/></pattern>
+<marker id='circlemodz-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='6.40' markerHeight='6.40' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<ellipse cx='0.00' cy='-0.00' rx='60.00' ry='60.00' fill='none' stroke='currentColor' stroke-width='0.78'/>
+<path d='M0.00,-55.20 L0.00,-64.80' fill='none' stroke='currentColor' stroke-width='0.78'/>
+<text x='0.00' y='-69.08' text-anchor='middle' class='figlbl' font-size='10.67'><tspan>0</tspan></text>
+<path d='M56.40,-0.00 L63.60,-0.00' fill='none' stroke='var(--fig-faint)' stroke-width='0.78'/>
+<path d='M0.00,56.40 L0.00,63.60' fill='none' stroke='var(--fig-faint)' stroke-width='0.78'/>
+<path d='M-56.40,-0.00 L-63.60,-0.00' fill='none' stroke='var(--fig-faint)' stroke-width='0.78'/>
+<ellipse cx='42.42' cy='42.42' rx='3.00' ry='3.00' fill='currentColor' stroke='none'/>
+<text x='53.05' y='52.30' text-anchor='start' class='figlbl' font-size='10.67'><tspan>0.375 = -0.625 = 1.375</tspan></text>
+<ellipse cx='-57.06' cy='18.54' rx='3.00' ry='3.00' fill='var(--fig-faint)' stroke='none'/>
+<text x='-69.91' y='24.85' text-anchor='end' class='figlbl faint' font-size='10.67'><tspan>0.7 = -0.3 = 1.7</tspan></text>
+</svg>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. Conditional probabilities and Conditionalisation — PE3101P Week 2</title>
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<link rel="stylesheet" href="assets/notes.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="layout">
+<nav class='toc'><div class='toctitle'><a href='index.html'>Week 2 &mdash; Probability</a></div><ol><li><a href='01-probability-basics.html'><span class='tocnum'>1</span>Probabilities: the basics</a></li><li><a href='02-probabilism.html'><span class='tocnum'>2</span>Probabilism</a></li><li class='here'><a href='03-conditional-probability.html'><span class='tocnum'>3</span>Conditional probabilities and Conditionalisation</a><ul><li><a href='#s3.1'>Defining conditional probabilities</a></li><li><a href='#s3.2'>Conditionalisation</a></li><li><a href='#s3.3'>A visual explanation of conditionalisation</a></li><li><a href='#s3.4'>The multiplication rule and total probability</a></li><li><a href='#s3.5'>Bayes’ theorem</a></li><li><a href='#s3.6'>Bayes factors</a></li></ul></li><li><a href='04-dutch-books.html'><span class='tocnum'>4</span>Dutch book arguments</a></li></ol></nav>
+<main id="main">
+<article><h1 class='blk' id='h3'><span class='secnum'>3</span> Conditional probabilities and Conditionalisation</h1><section class='sub' data-sub='3.1'><details class='subdet' open><summary class='subhead blk' id='h3.1'><span class='secnum'>3.1</span> Defining conditional probabilities<a class='anchor' href='#s3.1' title='Link to this subsection'>#</a><span class='headtarget' id='s3.1'></span></summary><div class='subbody'><div class='blk box box-definition' id='b3.1.1'><div class='boxhead'>Definition <span class='boxname'>(Conditional probability)</span></div><div class='boxbody'><span class='defsite' data-def='condprob'></span>
+<div class='mathblock' data-tex="\Cr(A \mid B) = \frac{\Cr(A \cap B)}{\Cr(B)} \qquad \text{provided } \Cr(B) &gt; 0."><span class='math-fallback'>\Cr(A \mid B) = \frac{\Cr(A \cap B)}{\Cr(B)} \qquad \text{provided } \Cr(B) &gt; 0.</span></div></div></div><p class='blk' id='b3.1.2'>In these diagrams areas represent probabilities, and in general probabilities
+behave very much like areas.
+When we suppose <span class='math' data-tex="B"><span class='math-fallback'>B</span></span>, the new area lying in <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> is <span class='math' data-tex="A \cap B"><span class='math-fallback'>A \cap B</span></span>; but the total area
+over which we are calculating is now the area of <span class='math' data-tex="B"><span class='math-fallback'>B</span></span>, not the area of <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span>,
+which was <span class='math' data-tex="1"><span class='math-fallback'>1</span></span>.
+That is why, to find how likely <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> is on the condition that <span class='math' data-tex="B"><span class='math-fallback'>B</span></span>, we take its new
+area, <span class='math' data-tex="A \cap B"><span class='math-fallback'>A \cap B</span></span>, and divide it by the new total area, <span class='math' data-tex="B"><span class='math-fallback'>B</span></span>.</p><div class='blk figseq' id='b3.1.3' data-frames='2'><div class='seqframes'><div class='seqframe'><figure class='blk figure' id='b3.1.3-f1' data-fig='rescalingbefore'><a id='fig-rescalingbefore'></a><details class='figdet' open><summary><span class='fignum'>Figure 11.</span> Before conditioning: <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span> is everything, and the shaded region
+<span class='math' data-tex="A \cap B"><span class='math-fallback'>A \cap B</span></span> is measured against all of it.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -96.50 157.00 100.00' width='100%' style='max-width:449px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='rescalingbefore-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='rescalingbefore-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<clipPath id='rescalingbefore-clip1'><ellipse cx='55.50' cy='-45.00' rx='33.00' ry='33.00' /></clipPath>
+</defs>
+<ellipse cx='94.50' cy='-45.00' rx='33.00' ry='33.00' clip-path='url(#rescalingbefore-clip1)' fill='url(#rescalingbefore-hatch)' stroke='none'/>
+<rect x='0.00' y='-90.00' width='150.00' height='90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='55.50' cy='-45.00' rx='33.00' ry='33.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='94.50' cy='-45.00' rx='33.00' ry='33.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<rect x='35.09' y='-48.78' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='37.50' y='-43.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>A</tspan></text>
+<rect x='110.08' y='-48.78' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='112.50' y='-43.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>B</tspan></text>
+<rect x='9.59' y='-81.78' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='12.00' y='-76.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan>Ω</tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b3.1.3-f2' data-fig='rescalingafter'><a id='fig-rescalingafter'></a><details class='figdet' open><summary><span class='fignum'>Figure 12.</span> After conditioning on <span class='math' data-tex="B"><span class='math-fallback'>B</span></span>: everything outside <span class='math' data-tex="B"><span class='math-fallback'>B</span></span> is discarded, and the
+same shaded region is now measured against <span class='math' data-tex="B"><span class='math-fallback'>B</span></span> alone.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -93.50 157.00 97.00' width='100%' style='max-width:449px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='rescalingafter-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='rescalingafter-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<clipPath id='rescalingafter-clip1'><ellipse cx='94.50' cy='-45.00' rx='33.00' ry='33.00' /></clipPath>
+</defs>
+<ellipse cx='55.50' cy='-45.00' rx='33.00' ry='33.00' clip-path='url(#rescalingafter-clip1)' fill='url(#rescalingafter-hatch)' stroke='none'/>
+<rect x='0.00' y='-90.00' width='150.00' height='90.00' fill='none' stroke='var(--fig-faint)' stroke-width='0.39' stroke-dasharray='1.40 1.05'/>
+<ellipse cx='55.50' cy='-45.00' rx='33.00' ry='33.00' fill='none' stroke='var(--fig-faint)' stroke-width='0.39' stroke-dasharray='1.40 1.05'/>
+<ellipse cx='94.50' cy='-45.00' rx='33.00' ry='33.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<text x='37.50' y='-43.27' text-anchor='middle' class='figlbl faint' font-size='5.25'><tspan font-style='italic'>A</tspan></text>
+<rect x='110.08' y='-48.78' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='112.50' y='-43.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>B</tspan></text>
+</svg></div></details></figure></div></div><div class='seqbar'><button type='button' class='seqbtn seqprev' aria-label='Previous frame' disabled>&#9664;</button><span class='seqcount'><span class='seqnow'>1</span>&thinsp;/&thinsp;2</span><button type='button' class='seqbtn seqnext' aria-label='Next frame'>&#9654;</button></div><p class='seqcap'>Step through the two frames: the shaded region is the same in
+both. What changes is what it is being measured against.</p></div><p class='blk' id='b3.1.4'>So the formula does exactly that: <span class='math' data-tex="\Cr(A \cap B)"><span class='math-fallback'>\Cr(A \cap B)</span></span> measures the overlap, and dividing by <span class='math' data-tex="\Cr(B)"><span class='math-fallback'>\Cr(B)</span></span> rescales it so that <span class='math' data-tex="B"><span class='math-fallback'>B</span></span>, rather than <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span>, counts as the whole.
+It is also why we require <span class='math' data-tex="\Cr(B) &gt; 0"><span class='math-fallback'>\Cr(B) &gt; 0</span></span>: if <span class='math' data-tex="B"><span class='math-fallback'>B</span></span> has no probability, there is nothing to rescale against.</p><p class='blk' id='b3.1.5'>This also gives us a second, equivalent way of saying that two <a class='xref term' data-def='event' href='01-probability-basics.html#b1.1.4'>events</a> are
+<em><a class='xref term' data-def='independence' href='01-probability-basics.html#b1.6.1'>probabilistically independent</a></em>, which we met back in section 1.
+Where <span class='math' data-tex="\Cr(B) &gt; 0"><span class='math-fallback'>\Cr(B) &gt; 0</span></span>,
+<div class='mathblock' data-tex="\Cr(A \cap B) = \Cr(A) \cdot \Cr(B)
+\qquad \text{is the same as} \qquad
+\Cr(A \mid B) = \Cr(A)."><span class='math-fallback'>\Cr(A \cap B) = \Cr(A) \cdot \Cr(B)
+\qquad \text{is the same as} \qquad
+\Cr(A \mid B) = \Cr(A).</span></div>
+The second form is arguably the more intuitive one, since it says directly that
+learning whether <span class='math' data-tex="B"><span class='math-fallback'>B</span></span> happened makes no difference at all to how likely <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> is.</p></div></details></section><section class='sub' data-sub='3.2'><details class='subdet' open><summary class='subhead blk' id='h3.2'><span class='secnum'>3.2</span> Conditionalisation<a class='anchor' href='#s3.2' title='Link to this subsection'>#</a><span class='headtarget' id='s3.2'></span></summary><div class='subbody'><div class='blk box box-principle' id='b3.2.1'><div class='boxhead'>Principle <span class='boxname'>(Conditionalisation)</span></div><div class='boxbody'><span class='defsite' data-def='conditionalisation'></span>
+Suppose your credences are given by <span class='math' data-tex="\Cr"><span class='math-fallback'>\Cr</span></span>, and then you learn <span class='math' data-tex="E"><span class='math-fallback'>E</span></span> and nothing
+more. Your new credence in any <a class='xref term' data-def='event' href='01-probability-basics.html#b1.1.4'>event</a> <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> should be your old credence in <span class='math' data-tex="A"><span class='math-fallback'>A</span></span>
+conditional on <span class='math' data-tex="E"><span class='math-fallback'>E</span></span>:
+<div class='mathblock' data-tex="\Cr_{\text{new}}(A) = \Cr(A \mid E)."><span class='math-fallback'>\Cr_{\text{new}}(A) = \Cr(A \mid E).</span></div></div></div></div></details></section><section class='sub' data-sub='3.3'><details class='subdet' open><summary class='subhead blk' id='h3.3'><span class='secnum'>3.3</span> A visual explanation of conditionalisation<a class='anchor' href='#s3.3' title='Link to this subsection'>#</a><span class='headtarget' id='s3.3'></span></summary><div class='subbody'><div class='blk figseq' id='b3.3.1' data-frames='5'><div class='seqframes'><div class='seqframe'><figure class='blk figure' id='b3.3.1-f1' data-fig='cond1'><a id='fig-cond1'></a><details class='figdet' open><summary><span class='fignum'>Figure 13.</span> Stage 1. The sample space <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span>, with areas representing
+probabilities. <span class='math' data-tex="B"><span class='math-fallback'>B</span></span> is the event we are going to condition on, and <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> lies
+wholly inside it.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -130.10 199.00 133.60' width='100%' style='max-width:569px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='cond1-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='cond1-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='0.00' y='-120.00' width='192.00' height='120.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<rect x='124.80' y='-91.20' width='52.80' height='67.20' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text x='151.20' y='-55.87' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>C</tspan></text>
+<rect x='24.00' y='-110.40' width='57.60' height='16.80' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text x='52.80' y='-100.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>D</tspan></text>
+<rect x='14.40' y='-79.20' width='96.00' height='60.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='33.60' y='-57.60' width='38.40' height='24.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='50.39' y='-49.38' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='52.80' y='-43.87' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>A</tspan></text>
+<rect x='91.19' y='-68.58' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='93.60' y='-63.07' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>B</tspan></text>
+<rect x='5.99' y='-115.38' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='8.40' y='-109.87' text-anchor='middle' class='figlbl' font-size='5.25'><tspan>Ω</tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b3.3.1-f2' data-fig='cond2'><a id='fig-cond2'></a><details class='figdet' open><summary><span class='fignum'>Figure 14.</span> Stage 2. The conditioning event <span class='math' data-tex="B"><span class='math-fallback'>B</span></span> shaded.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -130.10 199.00 133.60' width='100%' style='max-width:569px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='cond2-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='cond2-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='14.40' y='-79.20' width='96.00' height='60.00' fill='url(#cond2-hatch)' stroke='none'/>
+<rect x='0.00' y='-120.00' width='192.00' height='120.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<rect x='124.80' y='-91.20' width='52.80' height='67.20' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text x='151.20' y='-55.87' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>C</tspan></text>
+<rect x='24.00' y='-110.40' width='57.60' height='16.80' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text x='52.80' y='-100.27' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>D</tspan></text>
+<rect x='14.40' y='-79.20' width='96.00' height='60.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='33.60' y='-57.60' width='38.40' height='24.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='50.39' y='-49.38' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='52.80' y='-43.87' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>A</tspan></text>
+<rect x='91.19' y='-68.58' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='93.60' y='-63.07' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>B</tspan></text>
+<rect x='5.99' y='-115.38' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='8.40' y='-109.87' text-anchor='middle' class='figlbl' font-size='5.25'><tspan>Ω</tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b3.3.1-f3' data-fig='cond3'><a id='fig-cond3'></a><details class='figdet' open><summary><span class='fignum'>Figure 15.</span> Stage 3. Everything outside <span class='math' data-tex="B"><span class='math-fallback'>B</span></span> is discarded. Nothing has moved and
+nothing has changed size yet.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -123.50 199.00 127.00' width='100%' style='max-width:569px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='cond3-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='cond3-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='14.40' y='-79.20' width='96.00' height='60.00' fill='url(#cond3-hatch)' stroke='none'/>
+<rect x='0.00' y='-120.00' width='192.00' height='120.00' fill='none' stroke='var(--fig-faint)' stroke-width='0.39' stroke-dasharray='1.40 1.05'/>
+<rect x='14.40' y='-79.20' width='96.00' height='60.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='33.60' y='-57.60' width='38.40' height='24.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='50.39' y='-49.38' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='52.80' y='-43.87' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>A</tspan></text>
+<rect x='91.19' y='-68.58' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='93.60' y='-63.07' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>B</tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b3.3.1-f4' data-fig='cond4'><a id='fig-cond4'></a><details class='figdet' open><summary><span class='fignum'>Figure 16.</span> Stage 4. <span class='math' data-tex="B"><span class='math-fallback'>B</span></span> blown up until it fills the space <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span> used to. The
+scaling is uniform, so every ratio of areas inside <span class='math' data-tex="B"><span class='math-fallback'>B</span></span> is unchanged.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -123.50 199.00 127.00' width='100%' style='max-width:569px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='cond4-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='cond4-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='0.00' y='-120.00' width='192.00' height='120.00' fill='url(#cond4-hatch)' stroke='none'/>
+<rect x='0.00' y='-120.00' width='192.00' height='120.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='38.40' y='-76.80' width='76.80' height='48.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='74.39' y='-56.58' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='76.80' y='-51.07' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>A</tspan></text>
+<rect x='165.59' y='-108.18' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='168.00' y='-102.67' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>B</tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b3.3.1-f5' data-fig='cond5'><a id='fig-cond5'></a><details class='figdet' open><summary><span class='fignum'>Figure 17.</span> Stage 5. Relabel: <span class='math' data-tex="B"><span class='math-fallback'>B</span></span> is the new sample space. The credence in <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> after
+conditioning on <span class='math' data-tex="B"><span class='math-fallback'>B</span></span> is the fraction of this picture that <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> occupies.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -123.50 199.00 127.00' width='100%' style='max-width:569px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='cond5-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='cond5-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='0.00' y='-120.00' width='192.00' height='120.00' fill='url(#cond5-hatch)' stroke='none'/>
+<rect x='0.00' y='-120.00' width='192.00' height='120.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='38.40' y='-76.80' width='76.80' height='48.00' fill='none' stroke='currentColor' stroke-width='0.70'/>
+<rect x='74.39' y='-56.58' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='76.80' y='-51.07' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>A</tspan></text>
+<rect x='165.59' y='-108.18' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='168.00' y='-102.67' text-anchor='middle' class='figlbl' font-size='5.25'><tspan>Ω</tspan></text>
+</svg></div></details></figure></div></div><div class='seqbar'><button type='button' class='seqbtn seqprev' aria-label='Previous frame' disabled>&#9664;</button><span class='seqcount'><span class='seqnow'>1</span>&thinsp;/&thinsp;5</span><button type='button' class='seqbtn seqnext' aria-label='Next frame'>&#9654;</button></div></div></div></details></section><section class='sub' data-sub='3.4'><details class='subdet' open><summary class='subhead blk' id='h3.4'><span class='secnum'>3.4</span> The multiplication rule and total probability<a class='anchor' href='#s3.4' title='Link to this subsection'>#</a><span class='headtarget' id='s3.4'></span></summary><div class='subbody'><p class='blk' id='b3.4.1'>Sometimes it is useful to use <a class='xref term' data-def='condprob' href='03-conditional-probability.html#b3.1.1'>conditional probabilities</a> to calculate the
+unconditional probability of an <a class='xref term' data-def='event' href='01-probability-basics.html#b1.1.4'>event</a>.
+Suppose that the <a class='xref term' data-def='samplespace' href='01-probability-basics.html#b1.1.1'>sample space</a> <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span> can be partitioned into
+<span class='math' data-tex="B_1, B_2, \dots, B_n"><span class='math-fallback'>B_1, B_2, \dots, B_n</span></span>.
+Then the <span class='defsite' data-def='totalprob'><em>law of total probability</em></span> states that
+<div class='mathblock' data-tex="\Cr(A) = \Cr(B_1)\Cr(A \mid B_1) + \Cr(B_2)\Cr(A \mid B_2) + \dots
+         + \Cr(B_n)\Cr(A \mid B_n)."><span class='math-fallback'>\Cr(A) = \Cr(B_1)\Cr(A \mid B_1) + \Cr(B_2)\Cr(A \mid B_2) + \dots
+         + \Cr(B_n)\Cr(A \mid B_n).</span></div></p><p class='blk' id='b3.4.2'>Why is this true?
+Note that, since the <span class='math' data-tex="B_i"><span class='math-fallback'>B_i</span></span> <a class='xref term' data-def='partition' href='01-probability-basics.html#b1.5.4'>partition</a> <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span>,
+<div class='mathblock' data-tex="\Cr(A) = \Cr(A \cap B_1) + \Cr(A \cap B_2) + \dots + \Cr(A \cap B_n)."><span class='math-fallback'>\Cr(A) = \Cr(A \cap B_1) + \Cr(A \cap B_2) + \dots + \Cr(A \cap B_n).</span></div>
+Then try substituting the definition of <a class='xref term' data-def='condprob' href='03-conditional-probability.html#b3.1.1'>conditional probability</a> into the total
+probability formula.</p><div class='blk box box-exercise' id='b3.4.3'><div class='boxhead'>Exercise</div><div class='boxbody'>Prove the <a class='xref term' data-def='totalprob' href='03-conditional-probability.html#b3.4.1'>law of total probability</a>.</div></div><figure class='blk figure' id='b3.4.4' data-fig='totalprob'><a id='fig-totalprob'></a><details class='figdet' open><summary><span class='fignum'>Figure 18.</span> The law of total probability. The <span class='math' data-tex="B_i"><span class='math-fallback'>B_i</span></span> partition <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span>, so <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> is
+cut into the disjoint pieces <span class='math' data-tex="A \cap B_i"><span class='math-fallback'>A \cap B_i</span></span>, and their probabilities sum to
+<span class='math' data-tex="\Cr(A)"><span class='math-fallback'>\Cr(A)</span></span>.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -82.46 154.60 91.12' width='100%' style='max-width:442px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='totalprob-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='totalprob-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<clipPath id='totalprob-clip1'><rect x='0.00' y='-73.80' width='147.60' height='73.80' /></clipPath>
+</defs>
+<ellipse cx='73.80' cy='-36.90' rx='56.58' ry='23.37' clip-path='url(#totalprob-clip1)' fill='url(#totalprob-hatch)' stroke='none'/>
+<rect x='0.00' y='-73.80' width='147.60' height='73.80' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M36.90,-0.00 L36.90,-73.80' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M73.80,-0.00 L73.80,-73.80' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M110.70,-0.00 L110.70,-73.80' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='73.80' cy='-36.90' rx='56.58' ry='23.37' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text x='18.45' y='-8.11' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>B</tspan><tspan baseline-shift='sub' font-size='0.72em'>1</tspan></text>
+<text x='55.35' y='-8.11' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>B</tspan><tspan baseline-shift='sub' font-size='0.72em'>2</tspan></text>
+<text x='92.25' y='-8.11' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>B</tspan><tspan baseline-shift='sub' font-size='0.72em'>3</tspan></text>
+<text x='129.15' y='-8.11' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>B</tspan><tspan baseline-shift='sub' font-size='0.72em'>4</tspan></text>
+<rect x='52.93' y='-40.68' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='55.35' y='-35.17' text-anchor='middle' class='figlbl' font-size='5.25'><tspan font-style='italic'>A</tspan></text>
+<rect x='7.42' y='-67.74' width='4.83' height='7.61' fill='var(--fig-bg)' stroke='none'/>
+<text x='9.84' y='-62.23' text-anchor='middle' class='figlbl' font-size='5.25'><tspan>Ω</tspan></text>
+</svg></div></details></figure></div></details></section><section class='sub' data-sub='3.5'><details class='subdet' open><summary class='subhead blk' id='h3.5'><span class='secnum'>3.5</span> Bayes’ theorem<a class='anchor' href='#s3.5' title='Link to this subsection'>#</a><span class='headtarget' id='s3.5'></span></summary><div class='subbody'><p class='blk' id='b3.5.1'>What we have, straight from the definition, is a pair of equations:
+<div class='mathblock' data-tex="\Cr(A \mid B) = \frac{\Cr(A \cap B)}{\Cr(B)}
+\qquad\text{and}\qquad
+\Cr(B \mid A) = \frac{\Cr(A \cap B)}{\Cr(A)}."><span class='math-fallback'>\Cr(A \mid B) = \frac{\Cr(A \cap B)}{\Cr(B)}
+\qquad\text{and}\qquad
+\Cr(B \mid A) = \frac{\Cr(A \cap B)}{\Cr(A)}.</span></div></p><p class='blk' id='b3.5.2'>What we want is a way of getting from one <a class='xref term' data-def='condprob' href='03-conditional-probability.html#b3.1.1'>conditional probability</a> to the other:</p><div class='blk box box-principle' id='b3.5.3'><div class='boxhead'>Principle <span class='boxname'>(Bayes’ theorem)</span></div><div class='boxbody'><span class='defsite' data-def='bayes'></span>
+<div class='mathblock' data-tex="\Cr(A \mid B) = \frac{\Cr(B \mid A)\,\Cr(A)}{\Cr(B)}
+\qquad \text{provided } \Cr(A), \Cr(B) &gt; 0."><span class='math-fallback'>\Cr(A \mid B) = \frac{\Cr(B \mid A)\,\Cr(A)}{\Cr(B)}
+\qquad \text{provided } \Cr(A), \Cr(B) &gt; 0.</span></div></div></div><p class='blk' id='b3.5.4'>Sometimes you know one of these <a class='xref term' data-def='condprob' href='03-conditional-probability.html#b3.1.1'>conditional probabilities</a> and want the other,
+and <a class='xref term' data-def='bayes' href='03-conditional-probability.html#b3.5.3'>Bayes’ theorem</a> is what gets you across.</p><div class='blk box box-example' id='b3.5.5'><div class='boxhead'>Example</div><div class='boxbody'>A test for a disease comes back positive for <span class='math' data-tex="99\%"><span class='math-fallback'>99\%</span></span> of the people who have it.
+If your own test is positive, the number you want is not that one but the other:
+the probability that you have the disease <em>given</em> the positive result.
+<a class='xref term' data-def='bayes' href='03-conditional-probability.html#b3.5.3'>Bayes’ theorem</a> is what takes you from the first to the second — and it shows
+that you cannot answer without also knowing <span class='math' data-tex="\Cr(\text{disease})"><span class='math-fallback'>\Cr(\text{disease})</span></span>, that is, how
+common the disease is in the first place.</div></div><div class='blk box box-exercise' id='b3.5.6'><div class='boxhead'>Exercise</div><div class='boxbody'>Prove <a class='xref term' data-def='bayes' href='03-conditional-probability.html#b3.5.3'>Bayes’ theorem</a>.</div></div></div></details></section><section class='sub' data-sub='3.6'><details class='subdet' open><summary class='subhead blk' id='h3.6'><span class='secnum'>3.6</span> Bayes factors<a class='anchor' href='#s3.6' title='Link to this subsection'>#</a><span class='headtarget' id='s3.6'></span></summary><div class='subbody'><p class='blk' id='b3.6.1'>Suppose you are weighing two hypotheses, <span class='math' data-tex="H_1"><span class='math-fallback'>H_1</span></span> and <span class='math' data-tex="H_2"><span class='math-fallback'>H_2</span></span>, and some
+evidence <span class='math' data-tex="E"><span class='math-fallback'>E</span></span> arrives. The <em>Bayes factor</em> is
+<div class='mathblock' data-tex="\frac{\Cr(E \mid H_1)}{\Cr(E \mid H_2)}."><span class='math-fallback'>\frac{\Cr(E \mid H_1)}{\Cr(E \mid H_2)}.</span></div></p><p class='blk' id='b3.6.2'>It measures how much better <span class='math' data-tex="E"><span class='math-fallback'>E</span></span> is explained by <span class='math' data-tex="H_1"><span class='math-fallback'>H_1</span></span> than by <span class='math' data-tex="H_2"><span class='math-fallback'>H_2</span></span>, and it is
+the whole of what the evidence contributes. That is easiest to see in odds form:
+<div class='mathblock' data-tex="\underbrace{\frac{\Cr(H_1 \mid E)}{\Cr(H_2 \mid E)}}_{\text{posterior odds}}
+=
+\underbrace{\frac{\Cr(E \mid H_1)}{\Cr(E \mid H_2)}}_{\text{Bayes factor}}
+\times
+\underbrace{\frac{\Cr(H_1)}{\Cr(H_2)}}_{\text{prior odds}}"><span class='math-fallback'>\underbrace{\frac{\Cr(H_1 \mid E)}{\Cr(H_2 \mid E)}}_{\text{posterior odds}}
+=
+\underbrace{\frac{\Cr(E \mid H_1)}{\Cr(E \mid H_2)}}_{\text{Bayes factor}}
+\times
+\underbrace{\frac{\Cr(H_1)}{\Cr(H_2)}}_{\text{prior odds}}</span></div></p><p class='blk' id='b3.6.3'>So the Bayes factor is exactly the multiplier: it says how far the evidence
+moves you, and your prior says where you started from. A Bayes factor of <span class='math' data-tex="1"><span class='math-fallback'>1</span></span>
+means the evidence is equally expected either way, and moves you not at all.</p><div class='blk box box-example' id='b3.6.4'><div class='boxhead'>Example</div><div class='boxbody'>Suppose you consider it equally likely that a coin is biased so that it always
+lands heads (<span class='math' data-tex="H_1"><span class='math-fallback'>H_1</span></span>) or is fair (<span class='math' data-tex="H_2"><span class='math-fallback'>H_2</span></span>), and you flip it and get heads (<span class='math' data-tex="E"><span class='math-fallback'>E</span></span>).
+The probability of its landing heads given that it was biased is <span class='math' data-tex="1"><span class='math-fallback'>1</span></span>, and given
+that it was fair is <span class='math' data-tex="\nicefrac{1}{2}"><span class='math-fallback'>\nicefrac{1}{2}</span></span>, so the Bayes factor is
+<span class='math' data-tex="1 / 0.5 = 2"><span class='math-fallback'>1 / 0.5 = 2</span></span>. The odds between biased and fair therefore move from <span class='math' data-tex="1:1"><span class='math-fallback'>1:1</span></span> to
+<span class='math' data-tex="2:1"><span class='math-fallback'>2:1</span></span> — in other words, a <span class='math' data-tex="\nicefrac{2}{3}"><span class='math-fallback'>\nicefrac{2}{3}</span></span> chance that the coin is biased and
+a <span class='math' data-tex="\nicefrac{1}{3}"><span class='math-fallback'>\nicefrac{1}{3}</span></span> chance that it is fair.</div></div></div></details></section><nav class='pagenav'><a class='prev' href='02-probabilism.html'>&larr; 2. Probabilism</a><a class='next' href='04-dutch-books.html'>4. Dutch book arguments &rarr;</a></nav></article>
+</main>
+</div>
+<aside id="peek" class="peek" hidden aria-live="polite">
+  <div class="peekbar">
+    <span class="peektitle"></span>
+    <a class="peekgo" href="#" title="Go to this in the notes">Go to &rarr;</a>
+    <button type="button" class="peekclose" title="Close">&times;</button>
+  </div>
+  <div class="peekbody"></div>
+</aside>
+<script src="assets/katex/katex.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/notes.js"></script>
+</body>
+</html>
