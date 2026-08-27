@@ -396,7 +396,7 @@ window.NOTES_DATA = {
    "page": "01-probability-basics.html",
    "block": "b1.1.1",
    "sub": "1.1",
-   "html": "<p class='blk' id='b1.1.1'>We begin with a <span class='defsite' data-def='samplespace'><em>sample space</em></span> <span class='math' data-tex=\"\\Omega\"><span class='math-fallback'>\\Omega</span></span>, which is just a collection of all of the possible outcomes or states of nature over which we are uncertain in the given situation.</p>"
+   "html": "<p class='blk' id='b1.1.1'>We begin with a <span class='defsite' data-def='samplespace'><em>sample space</em></span> <span class='math' data-tex=\"\\Omega\"><span class='math-fallback'>\\Omega</span></span>, which is just a collection of all of the possible outcomes over which we are uncertain in the given situation.</p>"
   },
   "event": {
    "term": "event",
