@@ -1,0 +1,205 @@
+/* PE3101P week 4 -- markup UI (comments + scriptable edits). After notes.css. */
+
+.blk { position: relative; }
+
+/* ------------------------------------------------------------- block tools */
+.blk-tools {
+  position: absolute;
+  top: -.9rem;
+  right: 0;
+  display: flex;
+  gap: .15rem;
+  opacity: 0;
+  transition: opacity .12s;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  padding: .1rem;
+  z-index: 5;
+  user-select: none;              /* never let a glyph land in a quoted selection */
+  -webkit-user-select: none;
+}
+.blk:hover > .blk-tools,
+.blk-tools:hover,
+.blk-tools:focus-within { opacity: 1; }
+
+.blk-tools .tool {
+  width: 1.5rem; height: 1.5rem; padding: 0;
+  border: 0; border-radius: 4px; background: transparent;
+  color: var(--ink-soft); cursor: pointer;
+  font-size: .88rem; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+}
+.blk-tools .tool:hover { background: var(--teal-soft); color: var(--teal); }
+.blk-tools .tool-delete:hover { background: #fdecec; color: #a33; }
+
+.blk.has-cmt { box-shadow: -3px 0 0 var(--accent); padding-left: .6rem; }
+
+/* ---------------------------------------------------------------- composer */
+.cmt-composer {
+  border: 1px solid var(--teal); border-radius: 6px;
+  background: var(--teal-soft);
+  padding: .7rem .8rem; margin: .6rem 0 1rem;
+}
+.cmt-composer.kind-edit { border-color: #4a7d5a; background: #eef7f0; }
+.cmt-composer.kind-insert { border-color: #6a6ab0; background: #f0f0fa; }
+.cmt-composer textarea {
+  width: 100%; font: inherit; font-size: .93rem;
+  border: 1px solid var(--rule); border-radius: 4px; padding: .45rem .55rem;
+  resize: vertical; background: #fff; color: var(--ink);
+}
+.cmt-composer textarea.mono {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: .84rem; line-height: 1.5;
+}
+.cmt-meta {
+  font-size: .8rem; color: var(--ink-soft); margin-bottom: .4rem;
+  display: flex; flex-wrap: wrap; gap: .5rem; align-items: baseline;
+}
+.cmt-loc { font-weight: 700; color: var(--teal); font-variant-numeric: tabular-nums; }
+.cmt-kind { font-weight: 700; }
+.cmt-warn { color: #a33; font-size: .84rem; margin: .2rem 0 .4rem; }
+.cmt-quote {
+  font-style: italic; color: var(--ink-soft); font-size: .87rem;
+  border-left: 2px solid var(--rule); padding-left: .5rem; margin: .3rem 0;
+}
+.cmt-actions { margin-top: .5rem; display: flex; align-items: center; gap: .5rem; }
+.cmt-actions button, #cmt-panel footer button {
+  font: inherit; font-size: .86rem; padding: .28rem .8rem;
+  border-radius: 4px; border: 1px solid var(--teal); cursor: pointer;
+  background: #fff; color: var(--teal);
+}
+.cmt-save { background: var(--teal) !important; color: #fff !important; }
+.cmt-hint { font-size: .78rem; color: var(--ink-soft); margin-left: auto; }
+
+/* ------------------------------------------------------------ saved markup */
+.cmt-list { margin: .5rem 0 1.1rem; }
+.cmt {
+  border-left: 3px solid var(--accent); background: #fdfaf3;
+  padding: .5rem .75rem; margin: .35rem 0; border-radius: 0 4px 4px 0;
+  font-size: .92rem;
+}
+.cmt.kind-edit { border-left-color: #4a7d5a; background: #f2f8f4; }
+.cmt.kind-insert { border-left-color: #6a6ab0; background: #f2f2fb; }
+.cmt.kind-delete { border-left-color: #a33; background: #fdf2f2; }
+.cmt.done { opacity: .5; }
+.cmt-tag {
+  font-size: .72rem; font-weight: 700; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--ink-soft); margin-bottom: .25rem;
+}
+.cmt pre {
+  margin: .2rem 0; padding: .4rem .55rem; background: #fff;
+  border: 1px solid var(--rule); border-radius: 3px;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: .8rem; line-height: 1.45; white-space: pre-wrap; word-break: break-word;
+}
+.cmt-diff .dl {
+  font-size: .7rem; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--ink-soft); font-weight: 700;
+}
+.cmt-diff .was pre { background: #fdf4f4; }
+.cmt-diff .now pre { background: #f3faf5; }
+.cmt-del-src { text-decoration: line-through; opacity: .75; }
+.cmt-foot {
+  display: flex; gap: .8rem; align-items: center;
+  font-size: .76rem; color: var(--ink-soft); margin-top: .3rem;
+}
+.cmt-foot button {
+  background: none; border: 0; color: var(--ink-soft); cursor: pointer;
+  font: inherit; font-size: .76rem; text-decoration: underline; padding: 0;
+}
+.cmt-foot button:hover { color: var(--teal); }
+.cmt-del:hover { color: #a33 !important; }
+
+/* --------------------------------------------------------- selection bubble */
+.cmt-bubble {
+  position: absolute; z-index: 60;
+  background: var(--teal); color: #fff; border: 0; border-radius: 4px;
+  font: inherit; font-size: .82rem; padding: .35rem .7rem; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+}
+
+/* ------------------------------------------------------------------- panel */
+#cmt-badge {
+  position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 55;
+  background: var(--accent); color: #fff; border: 0; border-radius: 20px;
+  font: inherit; font-size: .84rem; font-weight: 700;
+  padding: .5rem 1rem; cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+#cmt-badge.empty { background: var(--ink-soft); font-weight: 400; }
+
+#cmt-panel {
+  position: fixed; right: 1.1rem; bottom: 3.6rem; z-index: 56;
+  width: min(30rem, calc(100vw - 2.2rem));
+  max-height: 72vh; overflow: auto;
+  background: #fff; border: 1px solid var(--rule); border-radius: 8px;
+  box-shadow: 0 6px 26px rgba(0, 0, 0, .16);
+  font-size: .9rem;
+}
+#cmt-panel header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .7rem .9rem; border-bottom: 1px solid var(--rule);
+  position: sticky; top: 0; background: #fff;
+}
+.cmt-close {
+  background: none; border: 0; font-size: 1.3rem; line-height: 1;
+  cursor: pointer; color: var(--ink-soft);
+}
+.cmt-status { padding: .45rem .9rem; font-size: .8rem; }
+.cmt-status.on { background: #eefaf0; color: #216b33; }
+.cmt-status.off { background: #fdf3e6; color: #8a5a08; }
+.cmt-status.script { background: #eef2fd; color: #34509a; }
+.cmt-status code { font-size: .95em; }
+.cmt-body { padding: .5rem .9rem; }
+.cmt-group h4 {
+  margin: .7rem 0 .3rem; font-size: .82rem; color: var(--teal);
+  text-transform: uppercase; letter-spacing: .04em;
+}
+.cmt-row {
+  padding: .4rem 0; border-bottom: 1px solid var(--rule); line-height: 1.45;
+}
+.cmt-row a {
+  font-weight: 700; text-decoration: none; font-variant-numeric: tabular-nums;
+  margin-right: .3rem;
+}
+.pill {
+  display: inline-block; font-size: .68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .04em;
+  padding: .05rem .35rem; border-radius: 3px; margin-right: .25rem;
+  background: var(--accent); color: #fff; vertical-align: 1px;
+}
+.pill-edit { background: #4a7d5a; }
+.pill-insert { background: #6a6ab0; }
+.pill-delete { background: #a33; }
+.cmt-empty { color: var(--ink-soft); padding: .6rem 0; }
+/* Five controls off a server (download, copy JSON, import, copy markdown, leave)
+   against two with one, so it MUST wrap -- unwrapped they run off a 30rem panel
+   and the last one cannot be clicked. */
+#cmt-panel footer {
+  display: flex; flex-wrap: wrap; gap: .5rem .5rem; align-items: center;
+  padding: .7rem .9rem;
+  border-top: 1px solid var(--rule); position: sticky; bottom: 0; background: #fff;
+}
+#cmt-panel footer .cmt-leave {
+  border-color: var(--ink-soft); color: var(--ink-soft); margin-left: auto;
+}
+#cmt-panel footer .cmt-leave:hover { border-color: #a33; color: #a33; }
+/* the confirmation line for a copy, a download or an import: on a static host
+   those are the only way markup gets out, so saying nothing is not an option */
+.cmt-note {
+  flex: 1 0 100%; font-size: .78rem; color: var(--teal); min-height: 1em;
+}
+
+/* On a narrow screen there is no margin to hang the toolbar in, and on a touch
+   screen there is no hover to reveal it. Leave it faintly visible. */
+@media (max-width: 940px), (hover: none) {
+  .blk-tools { opacity: .5; top: -.75rem; }
+  .blk:hover > .blk-tools { opacity: 1; }
+  #cmt-panel { right: .6rem; left: .6rem; width: auto; }
+}
+
+@media print {
+  .blk-tools, .cmt-bubble, #cmt-badge, #cmt-panel, .cmt-composer,
+  .cmt-list { display: none; }
+}

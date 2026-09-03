@@ -92,32 +92,28 @@ window.NOTES_DATA = {
    "n": 23,
    "name": "casethree"
   },
-  "fig:peel": {
-   "n": 24,
-   "name": "peel"
-  },
   "fig:roaddone": {
-   "n": 25,
+   "n": 24,
    "name": "roaddone"
   },
   "fig:concaveA": {
-   "n": 26,
+   "n": 25,
    "name": "concaveA"
   },
   "fig:concaveB": {
-   "n": 27,
+   "n": 26,
    "name": "concaveB"
   },
   "fig:concave": {
-   "n": 28,
+   "n": 27,
    "name": "concave"
   },
   "fig:allaisone": {
-   "n": 29,
+   "n": 28,
    "name": "allaisone"
   },
   "fig:allaistwo": {
-   "n": 30,
+   "n": 29,
    "name": "allaistwo"
   }
  },
@@ -198,7 +194,7 @@ window.NOTES_DATA = {
     {
      "id": "2.1",
      "title": "What utility is",
-     "blocks": 1
+     "blocks": 6
     },
     {
      "id": "2.2",
@@ -208,7 +204,7 @@ window.NOTES_DATA = {
     {
      "id": "2.3",
      "title": "Some more about rationality: what do we mean?",
-     "blocks": 1
+     "blocks": 3
     },
     {
      "id": "2.4",
@@ -230,7 +226,7 @@ window.NOTES_DATA = {
     {
      "id": "3.2",
      "title": "Preference and choice",
-     "blocks": 1
+     "blocks": 2
     },
     {
      "id": "3.3",
@@ -252,7 +248,7 @@ window.NOTES_DATA = {
     {
      "id": "4.0",
      "title": null,
-     "blocks": 5
+     "blocks": 6
     }
    ]
   },
@@ -269,7 +265,7 @@ window.NOTES_DATA = {
     {
      "id": "5.2",
      "title": "From gambles to prospects",
-     "blocks": 3
+     "blocks": 4
     },
     {
      "id": "5.3",
@@ -279,7 +275,7 @@ window.NOTES_DATA = {
     {
      "id": "5.4",
      "title": "Four facts about mixing",
-     "blocks": 1
+     "blocks": 2
     },
     {
      "id": "5.5",
@@ -333,12 +329,12 @@ window.NOTES_DATA = {
     {
      "id": "7.1",
      "title": "The idea of the proof",
-     "blocks": 3
+     "blocks": 4
     },
     {
      "id": "7.2",
      "title": "Beginning the proof",
-     "blocks": 1
+     "blocks": 2
     },
     {
      "id": "7.3",
@@ -383,7 +379,7 @@ window.NOTES_DATA = {
     {
      "id": "7.11",
      "title": "Step 7: $u$ is expected utility",
-     "blocks": 5
+     "blocks": 1
     },
     {
      "id": "7.12",
@@ -393,7 +389,7 @@ window.NOTES_DATA = {
     {
      "id": "7.13",
      "title": "Step 9: the other direction",
-     "blocks": 5
+     "blocks": 7
     }
    ]
   },
@@ -405,7 +401,7 @@ window.NOTES_DATA = {
     {
      "id": "8.0",
      "title": null,
-     "blocks": 1
+     "blocks": 3
     },
     {
      "id": "8.1",
@@ -670,7 +666,7 @@ window.NOTES_DATA = {
    "page": "01-probability.html",
    "block": "b1.2.1",
    "sub": "1.2",
-   "html": "<ul class='blk ' id='b1.2.1'><li>A <span class='defsite' data-def='randomvariable'><em>random variable</em></span> <span class='math' data-tex=\"X\"><span class='math-fallback'>X</span></span>: a quantity whose value is settled by which outcome occurs. It takes one of the values <span class='math' data-tex=\"x_1, \\dots, x_n\"><span class='math-fallback'>x_1, \\dots, x_n</span></span>.</li><li>Write <span class='math' data-tex=\"X = x_j\"><span class='math-fallback'>X = x_j</span></span> for the event that it takes the value <span class='math' data-tex=\"x_j\"><span class='math-fallback'>x_j</span></span>.</li></ul>"
+   "html": "<p class='blk' id='b1.2.1'>A <span class='defsite' data-def='randomvariable'><em>random variable</em></span> <span class='math' data-tex=\"X\"><span class='math-fallback'>X</span></span> is a quantity whose value is settled by which outcome occurs. It takes one of the values <span class='math' data-tex=\"x_1, \\dots, x_n\"><span class='math-fallback'>x_1, \\dots, x_n</span></span>. Write <span class='math' data-tex=\"X = x_j\"><span class='math-fallback'>X = x_j</span></span> for the event that it takes the value <span class='math' data-tex=\"x_j\"><span class='math-fallback'>x_j</span></span>.</p>"
   },
   "expectation": {
    "term": "expectation",
@@ -702,7 +698,7 @@ window.NOTES_DATA = {
    "page": "03-preferences.html",
    "block": "b3.1.1",
    "sub": "3.1",
-   "html": "<ul class='blk ' id='b3.1.1'><li><span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> \u2014 the agent <span class='defsite' data-def='weakpref'><em>weakly prefers</em></span> <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> to <span class='math' data-tex=\"B\"><span class='math-fallback'>B</span></span>: <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> is at least as good as <span class='math' data-tex=\"B\"><span class='math-fallback'>B</span></span>, by her lights.</li><li><span class='math' data-tex=\"A \\succ B\"><span class='math-fallback'>A \\succ B</span></span> \u2014 <span class='defsite' data-def='strictpref'><em>strict preference</em></span>: <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> and not <span class='math' data-tex=\"B \\succsim A\"><span class='math-fallback'>B \\succsim A</span></span>.</li><li><span class='math' data-tex=\"A \\sim B\"><span class='math-fallback'>A \\sim B</span></span> \u2014 <span class='defsite' data-def='indifference'><em>indifference</em></span>: <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> and <span class='math' data-tex=\"B \\succsim A\"><span class='math-fallback'>B \\succsim A</span></span>.</li><li><span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> is the basic notion; the other two are defined from it.</li></ul>"
+   "html": "<p class='blk' id='b3.1.1'>We write <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> when the agent <span class='defsite' data-def='weakpref'><em>weakly prefers</em></span> <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> to <span class='math' data-tex=\"B\"><span class='math-fallback'>B</span></span>: <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> is at least as good as <span class='math' data-tex=\"B\"><span class='math-fallback'>B</span></span>, by her lights. <span class='math' data-tex=\"A \\succ B\"><span class='math-fallback'>A \\succ B</span></span> is <span class='defsite' data-def='strictpref'><em>strict preference</em></span>: <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> and not <span class='math' data-tex=\"B \\succsim A\"><span class='math-fallback'>B \\succsim A</span></span>. <span class='math' data-tex=\"A \\sim B\"><span class='math-fallback'>A \\sim B</span></span> is <span class='defsite' data-def='indifference'><em>indifference</em></span>: <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> and <span class='math' data-tex=\"B \\succsim A\"><span class='math-fallback'>B \\succsim A</span></span>. So <span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> is the basic notion; the other two are defined from it.</p>"
   },
   "strictpref": {
    "term": "strict preference",
@@ -710,7 +706,7 @@ window.NOTES_DATA = {
    "page": "03-preferences.html",
    "block": "b3.1.1",
    "sub": "3.1",
-   "html": "<ul class='blk ' id='b3.1.1'><li><span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> \u2014 the agent <span class='defsite' data-def='weakpref'><em>weakly prefers</em></span> <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> to <span class='math' data-tex=\"B\"><span class='math-fallback'>B</span></span>: <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> is at least as good as <span class='math' data-tex=\"B\"><span class='math-fallback'>B</span></span>, by her lights.</li><li><span class='math' data-tex=\"A \\succ B\"><span class='math-fallback'>A \\succ B</span></span> \u2014 <span class='defsite' data-def='strictpref'><em>strict preference</em></span>: <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> and not <span class='math' data-tex=\"B \\succsim A\"><span class='math-fallback'>B \\succsim A</span></span>.</li><li><span class='math' data-tex=\"A \\sim B\"><span class='math-fallback'>A \\sim B</span></span> \u2014 <span class='defsite' data-def='indifference'><em>indifference</em></span>: <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> and <span class='math' data-tex=\"B \\succsim A\"><span class='math-fallback'>B \\succsim A</span></span>.</li><li><span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> is the basic notion; the other two are defined from it.</li></ul>"
+   "html": "<p class='blk' id='b3.1.1'>We write <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> when the agent <span class='defsite' data-def='weakpref'><em>weakly prefers</em></span> <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> to <span class='math' data-tex=\"B\"><span class='math-fallback'>B</span></span>: <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> is at least as good as <span class='math' data-tex=\"B\"><span class='math-fallback'>B</span></span>, by her lights. <span class='math' data-tex=\"A \\succ B\"><span class='math-fallback'>A \\succ B</span></span> is <span class='defsite' data-def='strictpref'><em>strict preference</em></span>: <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> and not <span class='math' data-tex=\"B \\succsim A\"><span class='math-fallback'>B \\succsim A</span></span>. <span class='math' data-tex=\"A \\sim B\"><span class='math-fallback'>A \\sim B</span></span> is <span class='defsite' data-def='indifference'><em>indifference</em></span>: <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> and <span class='math' data-tex=\"B \\succsim A\"><span class='math-fallback'>B \\succsim A</span></span>. So <span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> is the basic notion; the other two are defined from it.</p>"
   },
   "indifference": {
    "term": "indifference",
@@ -718,7 +714,7 @@ window.NOTES_DATA = {
    "page": "03-preferences.html",
    "block": "b3.1.1",
    "sub": "3.1",
-   "html": "<ul class='blk ' id='b3.1.1'><li><span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> \u2014 the agent <span class='defsite' data-def='weakpref'><em>weakly prefers</em></span> <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> to <span class='math' data-tex=\"B\"><span class='math-fallback'>B</span></span>: <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> is at least as good as <span class='math' data-tex=\"B\"><span class='math-fallback'>B</span></span>, by her lights.</li><li><span class='math' data-tex=\"A \\succ B\"><span class='math-fallback'>A \\succ B</span></span> \u2014 <span class='defsite' data-def='strictpref'><em>strict preference</em></span>: <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> and not <span class='math' data-tex=\"B \\succsim A\"><span class='math-fallback'>B \\succsim A</span></span>.</li><li><span class='math' data-tex=\"A \\sim B\"><span class='math-fallback'>A \\sim B</span></span> \u2014 <span class='defsite' data-def='indifference'><em>indifference</em></span>: <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> and <span class='math' data-tex=\"B \\succsim A\"><span class='math-fallback'>B \\succsim A</span></span>.</li><li><span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> is the basic notion; the other two are defined from it.</li></ul>"
+   "html": "<p class='blk' id='b3.1.1'>We write <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> when the agent <span class='defsite' data-def='weakpref'><em>weakly prefers</em></span> <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> to <span class='math' data-tex=\"B\"><span class='math-fallback'>B</span></span>: <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> is at least as good as <span class='math' data-tex=\"B\"><span class='math-fallback'>B</span></span>, by her lights. <span class='math' data-tex=\"A \\succ B\"><span class='math-fallback'>A \\succ B</span></span> is <span class='defsite' data-def='strictpref'><em>strict preference</em></span>: <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> and not <span class='math' data-tex=\"B \\succsim A\"><span class='math-fallback'>B \\succsim A</span></span>. <span class='math' data-tex=\"A \\sim B\"><span class='math-fallback'>A \\sim B</span></span> is <span class='defsite' data-def='indifference'><em>indifference</em></span>: <span class='math' data-tex=\"A \\succsim B\"><span class='math-fallback'>A \\succsim B</span></span> and <span class='math' data-tex=\"B \\succsim A\"><span class='math-fallback'>B \\succsim A</span></span>. So <span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> is the basic notion; the other two are defined from it.</p>"
   },
   "gamble": {
    "term": "gamble",
@@ -726,7 +722,7 @@ window.NOTES_DATA = {
    "page": "03-preferences.html",
    "block": "b3.3.2",
    "sub": "3.3",
-   "html": "<ul class='blk ' id='b3.3.2'><li>A <span class='defsite' data-def='gamble'><em>gamble</em></span>: an act whose outcome depends on the state. Each row of a decision table is one.</li><li><span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> ranges over all gambles, including ones nobody has offered.</li></ul>"
+   "html": "<p class='blk' id='b3.3.2'>A <span class='defsite' data-def='gamble'><em>gamble</em></span> is an act whose outcome depends on the state. Each row of a decision table is one. <span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> ranges over all gambles, including ones nobody has offered.</p>"
   },
   "reflexivity": {
    "term": "reflexivity",
@@ -758,7 +754,7 @@ window.NOTES_DATA = {
    "page": "05-prospects.html",
    "block": "b5.1.1",
    "sub": "5.1",
-   "html": "<ul class='blk ' id='b5.1.1'><li>Fix the set of final outcomes. There may be infinitely many.</li><li>A <span class='defsite' data-def='prospect'><em>prospect</em></span> <span class='math' data-tex=\"P\"><span class='math-fallback'>P</span></span> assigns a probability <span class='math' data-tex=\"P(x)\"><span class='math-fallback'>P(x)</span></span> to each outcome <span class='math' data-tex=\"x\"><span class='math-fallback'>x</span></span>, positive for only finitely many of them; they sum to <span class='math' data-tex=\"1\"><span class='math-fallback'>1</span></span>.</li><li>Finitely many, because a decision problem has finitely many outcomes in play. The preferences themselves range over infinitely many prospects.</li></ul>"
+   "html": "<p class='blk' id='b5.1.1'>Fix the set of final outcomes. There may be infinitely many. A <span class='defsite' data-def='prospect'><em>prospect</em></span> <span class='math' data-tex=\"P\"><span class='math-fallback'>P</span></span> assigns a probability <span class='math' data-tex=\"P(x)\"><span class='math-fallback'>P(x)</span></span> to each outcome <span class='math' data-tex=\"x\"><span class='math-fallback'>x</span></span>, positive for only finitely many of them; they sum to <span class='math' data-tex=\"1\"><span class='math-fallback'>1</span></span>. Finitely many, because a decision problem has finitely many outcomes in play. The preferences themselves range over infinitely many prospects.</p>"
   },
   "prospectof": {
    "term": "the prospect of a gamble",
@@ -798,7 +794,7 @@ window.NOTES_DATA = {
    "page": "05-prospects.html",
    "block": "b5.5.1",
    "sub": "5.5",
-   "html": "<ul class='blk ' id='b5.5.1'><li>The set of all prospects over the outcomes, together with the mixing operation, is a <span class='defsite' data-def='mixturespace'><em>mixture space</em></span>.</li><li>From here on, <span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> is a relation over prospects. This is justified by the Stochastic Equivalence assumption.</li><li>Single outcomes can be identified with prospects too: <span class='math' data-tex=\"x\"><span class='math-fallback'>x</span></span> with the prospect that gives <span class='math' data-tex=\"x\"><span class='math-fallback'>x</span></span> for certain.</li></ul>"
+   "html": "<p class='blk' id='b5.5.1'>The set of all prospects over the outcomes, together with the mixing operation, is a <span class='defsite' data-def='mixturespace'><em>mixture space</em></span>. From here on, <span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> is a relation over prospects. This is justified by the Stochastic Equivalence assumption. Single outcomes can be identified with prospects too: <span class='math' data-tex=\"x\"><span class='math-fallback'>x</span></span> with the prospect that gives <span class='math' data-tex=\"x\"><span class='math-fallback'>x</span></span> for certain.</p>"
   },
   "represented": {
    "term": "represented by expected utility",
@@ -806,7 +802,7 @@ window.NOTES_DATA = {
    "page": "05-prospects.html",
    "block": "b5.6.2",
    "sub": "5.6",
-   "html": "<ul class='blk ' id='b5.6.2'><li>The first leg is done: <span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> now ranges over prospects.</li><li>The theorem: <span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> satisfies the axioms <em>if and only if</em> it is <em>represented</em> by expected utility, for some <span class='math' data-tex=\"u\"><span class='math-fallback'>u</span></span> on outcomes.</li><li><span class='defsite' data-def='represented'><em>Represented</em></span>: <span class='math' data-tex=\"P \\succsim Q\"><span class='math-fallback'>P \\succsim Q</span></span> iff <span class='math' data-tex=\"\\EU(P) \\geq \\EU(Q)\"><span class='math-fallback'>\\EU(P) \\geq \\EU(Q)</span></span>, for every pair of prospects. The ranking by <span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> and the ranking by expected utility are the same ranking.</li><li>Two axioms so far: reflexivity and transitivity. Three to come.</li></ul>"
+   "html": "<p class='blk' id='b5.6.2'>The first leg is done: <span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> now ranges over prospects. The theorem says that <span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> satisfies the axioms <em>if and only if</em> it is <em>represented</em> by expected utility, for some <span class='math' data-tex=\"u\"><span class='math-fallback'>u</span></span> on outcomes. <span class='defsite' data-def='represented'><em>Represented</em></span> means: <span class='math' data-tex=\"P \\succsim Q\"><span class='math-fallback'>P \\succsim Q</span></span> iff <span class='math' data-tex=\"\\EU(P) \\geq \\EU(Q)\"><span class='math-fallback'>\\EU(P) \\geq \\EU(Q)</span></span>, for every pair of prospects. The ranking by <span class='math' data-tex=\"\\succsim\"><span class='math-fallback'>\\succsim</span></span> and the ranking by expected utility are the same ranking. Two axioms so far: reflexivity and transitivity. Three to come.</p>"
   },
   "completeness": {
    "term": "completeness",
