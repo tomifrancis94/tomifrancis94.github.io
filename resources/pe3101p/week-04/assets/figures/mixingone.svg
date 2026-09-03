@@ -1,0 +1,15 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='4.57 -89.10 88.16 70.21' width='100%' style='max-width:252px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='mixingone-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='mixingone-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='mixingone-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.52' markerHeight='2.52' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M13.67,-55.11 L81.00,-81.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='47.34' y='-70.12'><tspan font-size='3.78' font-style='italic'>p</tspan></tspan></text>
+<path d='M13.67,-52.89 L81.00,-27.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='47.34' y='-35.31'><tspan font-size='3.78'>1-</tspan><tspan font-size='3.78' font-style='italic'>p</tspan></tspan></text>
+<circle cx='10.80' cy='-54.00' r='2.73' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='10.80' y='-52.22'><tspan font-size='5.25'>1</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='86.47' y='-79.22'><tspan font-size='5.25' font-style='italic'>A</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='86.47' y='-25.21'><tspan font-size='5.25' font-style='italic'>B</tspan></tspan></text>
+</svg>

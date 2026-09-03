@@ -1,0 +1,18 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-5.13 -19.74 318.06 61.19' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='lemma1-hatch' patternUnits='userSpaceOnUse' width='3.59' height='3.59' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='3.59' stroke='currentColor' stroke-width='0.46' opacity='0.55'/></pattern>
+<marker id='lemma1-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='4.62' markerHeight='4.62' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='lemma1-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.69' markerHeight='3.69' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M0.00,-0.00 L307.80,-0.00' fill='none' stroke='currentColor' stroke-width='0.56' marker-end='url(#lemma1-arrow)'/>
+<path d='M113.40,27.00 L205.20,27.00' fill='none' stroke='var(--fig-faint)' stroke-width='0.56' marker-end='url(#lemma1-arrowsm)'/>
+<text text-anchor='middle' class='figlbl faint' font-size='5.54'><tspan x='159.30' y='33.80'><tspan font-size='5.54'>more weight on </tspan><tspan font-size='5.54' font-style='italic'>A</tspan></tspan></text>
+<circle cx='27.00' cy='-0.00' r='1.64' fill='currentColor'/>
+<text text-anchor='middle' class='figlbl' font-size='7.70'><tspan x='27.00' y='11.41'><tspan font-size='7.70' font-style='italic'>B</tspan></tspan></text>
+<circle cx='280.80' cy='-0.00' r='1.64' fill='currentColor'/>
+<text text-anchor='middle' class='figlbl' font-size='7.70'><tspan x='280.80' y='11.41'><tspan font-size='7.70' font-style='italic'>A</tspan></tspan></text>
+<circle cx='113.40' cy='-0.00' r='1.64' fill='currentColor'/>
+<text text-anchor='middle' class='figlbl' font-size='6.93'><tspan x='113.40' y='-5.97'><tspan font-size='6.93' font-style='italic'>A</tspan><tspan font-size='6.93'> </tspan><tspan font-size='6.93' font-style='italic'>q</tspan><tspan font-size='6.93'> </tspan><tspan font-size='6.93' font-style='italic'>B</tspan></tspan></text>
+<circle cx='205.20' cy='-0.00' r='1.64' fill='currentColor'/>
+<text text-anchor='middle' class='figlbl' font-size='6.93'><tspan x='205.20' y='-5.97'><tspan font-size='6.93' font-style='italic'>A</tspan><tspan font-size='6.93'> </tspan><tspan font-size='6.93' font-style='italic'>p</tspan><tspan font-size='6.93'> </tspan><tspan font-size='6.93' font-style='italic'>B</tspan></tspan></text>
+</svg>

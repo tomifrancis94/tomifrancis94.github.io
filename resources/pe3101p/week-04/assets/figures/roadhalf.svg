@@ -1,0 +1,20 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-43.07 -75.81 326.45 99.30' width='100%' style='max-width:619px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='roadhalf-hatch' patternUnits='userSpaceOnUse' width='3.69' height='3.69' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='3.69' stroke='currentColor' stroke-width='0.47' opacity='0.55'/></pattern>
+<marker id='roadhalf-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='4.75' markerHeight='4.75' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='roadhalf-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.80' markerHeight='3.80' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M48.60,-54.00 L102.60,-54.00' fill='none' stroke='currentColor' stroke-width='1.00' marker-end='url(#roadhalf-arrow)'/>
+<text text-anchor='middle' class='figlbl' font-size='5.70'><tspan x='75.60' y='-64.07'><tspan font-size='5.70'>stochastic</tspan></tspan><tspan x='75.60' y='-57.12'><tspan font-size='5.70'>equivalence</tspan></tspan></text>
+<path d='M105.30,5.40 L186.30,5.40' fill='none' stroke='currentColor' stroke-width='1.00' marker-end='url(#roadhalf-arrow)' marker-start='url(#roadhalf-arrow)'/>
+<text text-anchor='middle' class='figlbl' font-size='5.70'><tspan x='145.80' y='2.28'><tspan font-size='5.70'>the theorem</tspan></tspan></text>
+<path d='M145.80,-41.17 L145.80,-13.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.58'/>
+<rect x='-37.80' y='-66.83' width='86.40' height='25.65' rx='1.58' fill='var(--fig-tint, #e9eef0)' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='7.91'><tspan x='5.40' y='-51.31'><tspan font-size='7.91'> ≿  over gambles</tspan></tspan></text>
+<rect x='102.60' y='-66.83' width='86.40' height='25.65' rx='1.58' fill='var(--fig-tint, #e9eef0)' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='7.91'><tspan x='145.80' y='-51.31'><tspan font-size='7.91'> ≿  over prospects</tspan></tspan></text>
+<rect x='13.50' y='-7.43' width='91.80' height='25.65' rx='1.58' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='7.91'><tspan x='59.40' y='3.26'><tspan font-size='7.91'>satisfies the</tspan></tspan><tspan x='59.40' y='12.91'><tspan font-size='7.91'>four axioms</tspan></tspan></text>
+<rect x='186.30' y='-7.43' width='91.80' height='25.65' rx='1.58' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='7.91'><tspan x='232.20' y='3.26'><tspan font-size='7.91'>is represented by</tspan></tspan><tspan x='232.20' y='12.91'><tspan font-size='7.91'>expected utility</tspan></tspan></text>
+</svg>

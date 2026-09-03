@@ -1,0 +1,625 @@
+/* PE3101P week 4 -- web edition.
+   Follows tomifrancis.com: Lato, teal #006580, white.
+   Generated pages read this; nothing here is page-specific. */
+
+:root {
+  --ink: #12222b;
+  --ink-soft: #46606c;
+  --teal: #006580;
+  --teal-soft: #e6f2f5;
+  --rule: #dde6ea;
+  --bg: #ffffff;
+  --paper: #fafcfd;
+  --accent: #b8860b;
+  --fig-bg: #ffffff;
+  --fig-faint: #8ba5ae;
+  /* a filled box in a tikz figure (fill=gray!30) */
+  --fig-tint: #e9eef0;
+  --maxw: 43rem;
+  --peek-w: 20.25rem;
+  --paper-peek: #f7fafb;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  /* ! THE DEFINITION PANEL'S COLUMN IS RESERVED PERMANENTLY, open or not.
+     Tomi's rule from the primer, 17 August 2026: "if you click on a definition,
+     the main text doesn't move at all. (Currently it resizes, which is not
+     great GUI)." When nothing is open the gutter is simply blank.
+     !! .peekopen must therefore have NO layout effect whatsoever. */
+  padding-right: var(--peek-w);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Lato, "Segoe UI", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+.skip {
+  position: absolute; left: -9999px;
+}
+.skip:focus {
+  left: 1rem; top: 1rem; z-index: 100; background: var(--teal);
+  color: #fff; padding: .5rem .9rem; border-radius: 4px;
+}
+
+/* ---------------------------------------------------------------- layout */
+.layout {
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  gap: 2.5rem;
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+main {
+  min-width: 0;
+  padding: 2.6rem 0 6rem;
+  max-width: var(--maxw);
+}
+
+/* ---------------------------------------------------------------- toc */
+.toc {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 2.6rem .5rem 3rem 0;
+  font-size: 14.5px;
+  border-right: 1px solid var(--rule);
+}
+.toctitle {
+  font-weight: 700; letter-spacing: .01em;
+  margin-bottom: .9rem; font-size: 15px;
+}
+/* The title is the way back to the contents page. */
+.toctitle a {
+  color: var(--teal); text-decoration: none; display: block;
+  padding: .15rem .4rem; margin-left: -.4rem; border-radius: 4px;
+}
+.toctitle a:hover { background: var(--teal-soft); }
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc > ol > li { margin: .2rem 0; }
+.tocnum {
+  color: var(--ink-soft); margin-right: .45rem; font-variant-numeric: tabular-nums;
+}
+.tocnum::after { content: "."; }
+.toc li.here > a .tocnum { color: var(--teal); }
+.toc a {
+  color: var(--ink); text-decoration: none; display: block;
+  padding: .22rem .5rem .22rem .4rem; border-radius: 4px; line-height: 1.35;
+}
+.toc a:hover { background: var(--teal-soft); color: var(--teal); }
+.toc li.here > a { color: var(--teal); font-weight: 700; }
+.toc ul {
+  list-style: none; margin: .25rem 0 .6rem; padding-left: 1.1rem;
+  border-left: 2px solid var(--teal-soft);
+}
+.toc ul a { font-size: 13.6px; color: var(--ink-soft); padding: .15rem .4rem; }
+/* The subsection you are currently on. Set by spy() in notes.js; see the note
+   there for Tomi's rule about which subsection counts as current. The marker
+   sits in the padding so the text does not shift as the highlight moves. */
+.toc ul a.active {
+  color: var(--teal); font-weight: 700; background: var(--teal-soft);
+  border-radius: 3px; position: relative;
+}
+.toc ul a.active::before {
+  content: ""; position: absolute; left: -1.1rem; top: 0; bottom: 0;
+  width: 2px; background: var(--teal);
+}
+
+/* ---------------------------------------------------------------- headings */
+h1 {
+  font-size: 1.85rem; line-height: 1.2; margin: 0 0 1.6rem;
+  font-weight: 700; letter-spacing: -.01em;
+}
+h1 .secnum, .contents .secnum {
+  color: var(--teal); margin-right: .55rem; font-variant-numeric: tabular-nums;
+}
+.subhead {
+  font-size: 1.16rem; margin: 2.4rem 0 .7rem; font-weight: 700;
+  line-height: 1.3; scroll-margin-top: 1.5rem;
+}
+.subhead .secnum {
+  color: var(--teal); font-size: .82em; margin-right: .5rem;
+  font-variant-numeric: tabular-nums; font-weight: 700;
+}
+.anchor {
+  opacity: 0; margin-left: .45rem; color: var(--teal); text-decoration: none;
+  font-weight: 400;
+}
+.subhead:hover .anchor { opacity: .55; }
+.anchor:hover { opacity: 1 !important; }
+
+p { margin: 0 0 .95rem; }
+
+/* ---------------------------------------------------------------- lists */
+ul, ol { margin: 0 0 1rem; padding-left: 1.4rem; }
+li { margin: .3rem 0; }
+ul.customlist, ol.customlist { list-style: none; padding-left: .5rem; }
+.customlist .itemlabel {
+  color: var(--teal); font-weight: 700; margin-right: .35rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------- boxes */
+.box {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--teal);
+  border-radius: 5px;
+  background: var(--paper);
+  padding: .85rem 1.1rem .5rem;
+  margin: 1.3rem 0;
+}
+.boxhead {
+  font-weight: 700; color: var(--teal); font-size: .93rem;
+  letter-spacing: .02em; margin-bottom: .35rem;
+}
+.boxname { font-weight: 400; color: var(--ink-soft); }
+.box-exercise { border-left-color: var(--accent); background: #fdfaf3; }
+.box-exercise .boxhead { color: #8a6508; }
+.box-example { border-left-color: #5a7d8c; }
+.box-example .boxhead { color: #4a6b78; }
+.box p:last-child { margin-bottom: .5rem; }
+
+/* Results. A proposition, lemma and theorem are the same kind of object as a
+   definition, so they take the same box; the theorem gets a slightly heavier
+   rule because it is the one thing the whole document is heading towards.
+   No new colours -- the palette is the site's. */
+.box-proposition, .box-lemma { border-left-color: var(--teal); }
+.box-theorem { border-left-width: 5px; background: var(--teal-soft); }
+.box .boxbody > p:first-child { margin-top: 0; }
+.box .boxbody ul, .box .boxbody ol { margin-bottom: .55rem; }
+.box .boxbody .mathblock:last-child { margin-bottom: .35rem; }
+
+/* ------------------------------------------------------------------ proofs */
+/* * PROOFS START COLLAPSED -- the primer's rule, 18 August 2026: "let's stop
+   making definitions and propositions collapsible. Only the proofs, that's
+   fine". A reader should meet the result first and open the argument when they
+   want it. The toggle follows the qbox/aside pattern: a caret, no new colour. */
+.blk.proof { margin: .55rem 0 .2rem; }
+details.proofdet > summary {
+  cursor: pointer; list-style: none;
+  font-size: .88rem; font-weight: 700; color: var(--ink-soft);
+  letter-spacing: .02em; display: inline-flex; align-items: baseline;
+  gap: .3rem; padding: .12rem 0;
+}
+details.proofdet > summary::-webkit-details-marker { display: none; }
+details.proofdet > summary::before {
+  content: "\25b8";                      /* right-pointing triangle */
+  color: var(--teal); font-size: .9em;
+  display: inline-block; transition: transform .12s;
+}
+details.proofdet[open] > summary::before { transform: rotate(90deg); }
+details.proofdet > summary:hover { color: var(--teal); }
+.proofbody {
+  border-left: 2px solid var(--rule);
+  padding: .35rem 0 .1rem .9rem; margin: .35rem 0 .3rem;
+  font-size: .96rem;
+}
+.proofbody > p:last-of-type { margin-bottom: .3rem; }
+/* The tombstone. In print \qedhere tucks it into the last line of the final
+   equation; here the last thing in a proof is as often a displayed align* as a
+   sentence, so it gets a line of its own, right-aligned, which reads the same
+   way in both cases. */
+.qed {
+  display: block; text-align: right; color: var(--ink-soft);
+  font-size: .8em; margin-top: -.2rem;
+}
+/* Inside a result's box the proof is that result's proof, so it sits under the
+   statement rather than floating as a block of its own. */
+.box > .blk.proof { margin-top: .3rem; }
+
+/* ------------------------------------------------------------------ quotes */
+blockquote.blk {
+  margin: 1.2rem 0; padding: .1rem 0 .1rem 1rem;
+  border-left: 3px solid var(--rule); color: var(--ink-soft);
+}
+blockquote.blk p:last-child { margin-bottom: 0; }
+
+/* ---------------------------------------------------------------- figures */
+figure.figure {
+  margin: 1.6rem 0; text-align: center;
+  border: 1px solid var(--rule); border-radius: 6px;
+  padding: 1.1rem .8rem .8rem; background: var(--paper);
+}
+svg.fig { max-width: 100%; height: auto; color: var(--ink); }
+figcaption {
+  font-size: .88rem; color: var(--ink-soft); margin-top: .7rem;
+  text-align: left; line-height: 1.5;
+}
+.fignum { font-weight: 700; color: var(--teal); }
+text.figlbl { font-family: Georgia, "Times New Roman", serif; fill: currentColor; }
+text.figkey { font-family: Georgia, "Times New Roman", serif; fill: currentColor; }
+text.faint { fill: var(--fig-faint); }
+
+/* ---------------------------------------------------------------- tables */
+.tablewrap { overflow-x: auto; margin: 1.3rem 0; }
+table.tbl {
+  border-collapse: collapse; margin: 0 auto; font-size: .95rem;
+}
+table.tbl th, table.tbl td { padding: .4rem .85rem; }
+table.tbl th {
+  border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink);
+  font-weight: 700;
+}
+table.tbl tr:last-child td { border-bottom: 2px solid var(--ink); }
+table.tbl .align-left { text-align: left; }
+table.tbl .align-center { text-align: center; }
+table.tbl .align-right { text-align: right; }
+table.tbl .rule { border-left: 1px solid var(--rule); }
+/* booktabs \midrule inside the body: the Allais and Ellsberg tables are two
+   pairs of options each, and the rule is what says where one pair ends. */
+table.tbl tr.midrule td, table.tbl tr.midrule th {
+  border-top: 1px solid var(--rule);
+}
+
+/* Two tables side by side (the sure-thing principle's pair), with the line that
+   states the conclusion under them. ! It WRAPS rather than shrinking: on a
+   phone two decision tables side by side would force the page to scroll
+   sideways, which is the one thing the mobile rules are there to prevent. */
+.tablepair { margin: 1.3rem 0; }
+.tablerow {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 1rem 2rem;
+}
+.tablecell { overflow-x: auto; }
+.centerline { text-align: center; margin: .8rem 0 0; }
+.centered { text-align: center; margin: 1.1rem 0; }
+
+/* ---------------------------------------------------------------- maths */
+.mathblock { margin: 1.1rem 0; overflow-x: auto; overflow-y: hidden; padding: .2rem 0; }
+.katex { font-size: 1.04em; }
+.katex-display { margin: 0; }
+.math-fallback {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: .9em; color: var(--ink-soft);
+}
+.math-error { color: #a33; border-bottom: 1px dotted #a33; }
+
+/* ---------------------------------------------------------------- misc */
+a { color: var(--teal); }
+a.url { word-break: break-word; }
+.xref { text-decoration: none; border-bottom: 1px solid var(--teal-soft); }
+.xref:hover { border-bottom-color: var(--teal); }
+.xref.broken { color: #a33; border-bottom: 1px dotted #a33; }
+code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .92em; }
+.sc { font-variant: small-caps; }
+
+.footnotes {
+  margin-top: 3rem; padding-top: .8rem; border-top: 1px solid var(--rule);
+  font-size: .88rem; color: var(--ink-soft);
+}
+.fnref a { text-decoration: none; }
+.fnback { text-decoration: none; margin-left: .3rem; }
+
+.pagenav {
+  display: flex; justify-content: space-between; gap: 1rem;
+  margin-top: 3.5rem; padding-top: 1.1rem; border-top: 1px solid var(--rule);
+  font-size: .93rem;
+}
+.pagenav a { text-decoration: none; max-width: 48%; }
+.pagenav a:hover { text-decoration: underline; }
+.pagenav .next { margin-left: auto; text-align: right; }
+
+/* ---------------------------------------------------------------- landing */
+.landing .lede { color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 1.6rem; }
+.usenote {
+  background: var(--teal-soft); border-radius: 6px; padding: .9rem 1.2rem;
+  font-size: .93rem; margin-bottom: 2rem;
+}
+.usenote p { margin: .35rem 0; }
+ol.contents { list-style: none; padding: 0; counter-reset: c; }
+ol.contents li {
+  counter-increment: c; padding: .7rem 0; border-bottom: 1px solid var(--rule);
+}
+ol.contents a { text-decoration: none; font-weight: 700; font-size: 1.06rem; }
+ol.contents a:hover { text-decoration: underline; }
+.subsList { color: var(--ink-soft); font-size: .87rem; margin-top: .2rem; }
+
+/* ---------------------------------------------------------------- responsive */
+/* !!! THE RESERVED GUTTER MUST BE RELEASED ON A NARROW SCREEN, and until 3
+   September 2026 it was not. `body { padding-right: 20.25rem }` is
+   unconditional -- correct on a desktop, where it is what stops the page moving
+   when the panel opens -- but at 375px it left the text column FIFTEEN PIXELS
+   wide. The page still reported no sideways scroll and every structural check
+   passed, because nothing was overflowing: there was simply nowhere to put the
+   text. Measured, not eyeballed: main.getBoundingClientRect().width was 15.8.
+   Below 62rem the panel becomes an OVERLAY instead, which is what the set
+   theory primer does and for the same reason. */
+@media (max-width: 62rem) {
+  body { padding-right: 0; }
+}
+/* ! The panel's own width is overridden at the BOTTOM of this file, not here.
+   `.peek { width: var(--peek-w) }` is declared further down, and two rules of
+   equal specificity are decided by source order -- so an override written up
+   here quietly loses. */
+
+@media (max-width: 940px) {
+  .layout { grid-template-columns: 1fr; gap: 0; padding: 0 1.1rem; }
+  .toc {
+    position: static; max-height: none; border-right: 0;
+    border-bottom: 1px solid var(--rule); padding: 1.2rem 0;
+  }
+  main { padding-top: 1.6rem; }
+  body { font-size: 16.5px; }
+}
+
+/* Phones. The two side-by-side decision tables wrap to one column here rather
+   than shrinking, and the boxes and the proof rule give back some of their
+   padding, so a 375px screen still gets a readable measure. */
+@media (max-width: 34rem) {
+  .layout { padding: 0 .9rem; }
+  body { font-size: 16px; }
+  h1 { font-size: 1.5rem; }
+  .subhead { font-size: 1.08rem; }
+  main { padding-bottom: 4rem; }
+  .box { padding: .7rem .8rem .4rem; }
+  .proofbody { padding-left: .65rem; }
+  .asidebody { padding: .7rem .8rem .2rem; }
+  ol.qlist { padding-left: 1.8rem; }
+  table.tbl { font-size: .88rem; }
+  table.tbl th, table.tbl td { padding: .35rem .5rem; }
+  .tablerow { gap: .9rem; }
+  figure.figure { padding: .8rem .5rem .6rem; }
+}
+
+/* --------------------------------------------------- collapsible structure */
+/* Tomi, 21 Aug 2026: "Expandability/collapsibility should be nested. It should
+   be possible to expand or collapse a subsection (in general). Subsections
+   should normally be expanded by default, but it should be possible to flag any
+   collapsible object as collapsed by default."  The flag is COLLAPSED_BY_DEFAULT
+   in build/build_site.py; it takes subsection ids ("3.2") and figure names. */
+
+details.subdet, details.figdet { display: block; }
+
+summary.subhead {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: .1rem;
+}
+summary.subhead::-webkit-details-marker { display: none; }
+summary.subhead::before {
+  content: "\25be";                     /* filled down-triangle */
+  color: var(--teal);
+  font-size: .8em;
+  width: .9em;
+  flex: 0 0 auto;
+  transition: transform .12s;
+}
+details.subdet:not([open]) > summary.subhead::before { transform: rotate(-90deg); }
+details.subdet:not([open]) > summary.subhead { color: var(--ink-soft); }
+details.subdet:not([open]) > summary.subhead::after {
+  content: "collapsed";
+  font-size: .68rem; font-weight: 400; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--ink-soft);
+  border: 1px solid var(--rule); border-radius: 3px;
+  padding: 0 .3rem; margin-left: .5rem; align-self: center;
+}
+.subbody { padding-top: .1rem; }
+
+/* figures: the caption is the summary, so a collapsed figure still says what it
+   is rather than leaving an unexplained gap */
+details.figdet > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: .88rem; color: var(--ink-soft); line-height: 1.5;
+  text-align: left;
+}
+details.figdet > summary::-webkit-details-marker { display: none; }
+details.figdet > summary::before {
+  content: "\25be";
+  color: var(--teal); font-size: .85em; margin-right: .35rem;
+  display: inline-block; transition: transform .12s;
+}
+details.figdet:not([open]) > summary::before { transform: rotate(-90deg); }
+details.figdet[open] > summary { order: 2; margin-top: .7rem; }
+details.figdet[open] { display: flex; flex-direction: column; }
+.figbody { order: 1; }
+
+.usenote.archived { background: #fdf3e6; }
+
+/* ------------------------------------------- check-your-understanding boxes */
+/* Tomi, 21 Aug 2026: questions to the student, with the answer hidden behind a
+   coloured toggle. The whole box is collapsed by default so it never gets in
+   the way of a first read. */
+.qbox { margin: 1.4rem 0; }
+details.qdet {
+  border: 1px solid var(--rule); border-left: 3px solid var(--teal);
+  border-radius: 5px; background: var(--paper); padding: .1rem 0;
+}
+details.qdet > summary {
+  cursor: pointer; list-style: none;
+  padding: .6rem .9rem; font-weight: 700; color: var(--teal);
+  display: flex; align-items: center; gap: .55rem;
+}
+details.qdet > summary::-webkit-details-marker { display: none; }
+.qmark {
+  flex: 0 0 auto; width: 1.35rem; height: 1.35rem; border-radius: 50%;
+  background: var(--teal); color: #fff; font-size: .82rem;
+  display: flex; align-items: center; justify-content: center;
+}
+details.qdet[open] > summary { border-bottom: 1px solid var(--rule); }
+ol.qlist { margin: .7rem 0 .9rem; padding-left: 2.4rem; }
+li.qitem { margin: .55rem 0; }
+.qtext { margin-bottom: .25rem; }
+
+details.qans { display: inline-block; }
+details.qans > summary {
+  cursor: pointer; list-style: none;
+  color: var(--accent); font-weight: 700; font-size: .88rem;
+  border-bottom: 1px dotted var(--accent); display: inline-block;
+}
+details.qans > summary::-webkit-details-marker { display: none; }
+details.qans[open] > summary { color: var(--ink-soft); border-bottom-color: transparent; }
+details.qans[open] > summary::after { content: "\00a0\2014\00a0hide"; font-weight: 400; }
+.qbody {
+  margin-top: .3rem; padding: .45rem .7rem;
+  background: #fff; border-left: 2px solid var(--accent); border-radius: 0 4px 4px 0;
+}
+.qbody p:last-child { margin-bottom: 0; }
+
+/* ---------------------------------------------- optional / non-examinable */
+.aside { margin: 1.6rem 0; }
+details.asidedet {
+  border: 1px dashed var(--rule); border-radius: 6px; background: #fcfcfd;
+}
+details.asidedet > summary {
+  cursor: pointer; list-style: none;
+  padding: .6rem .9rem; font-weight: 700; color: var(--ink-soft);
+  display: flex; align-items: center; gap: .6rem;
+}
+details.asidedet > summary::-webkit-details-marker { display: none; }
+.optmark {
+  flex: 0 0 auto; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--ink-soft); color: #fff; border-radius: 3px; padding: .1rem .4rem;
+}
+details.asidedet[open] > summary { border-bottom: 1px solid var(--rule); }
+.asidebody { padding: .8rem 1.1rem .2rem; font-size: .95rem; }
+.asidebody .mathblock { font-size: .95em; }
+
+/* --------------------------------------------- stepped figure sequences */
+.figseq { margin: 1.6rem 0; }
+.figseq .seqframes { position: relative; }
+.figseq figure.figure { margin: 0; }
+.seqbar {
+  display: flex; align-items: center; justify-content: center; gap: .9rem;
+  margin-top: .5rem;
+}
+.seqbtn {
+  font: inherit; font-size: 1rem; line-height: 1; cursor: pointer;
+  background: var(--paper); color: var(--teal);
+  border: 1px solid var(--rule); border-radius: 5px;
+  padding: .3rem .75rem;
+}
+.seqbtn:hover:not(:disabled) { background: var(--teal-soft); border-color: var(--teal); }
+.seqbtn:disabled { color: var(--rule); cursor: default; }
+.seqcount {
+  font-size: .85rem; color: var(--ink-soft); font-variant-numeric: tabular-nums;
+  min-width: 3.2rem; text-align: center;
+}
+.seqcap {
+  font-size: .88rem; color: var(--ink-soft); text-align: center;
+  margin: .4rem auto 0; max-width: 34rem;
+}
+.figseq:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
+
+/* -------------------------------------------------- interactive figures */
+.widget-rot svg { display: block; max-width: 340px; margin: 0 auto; }
+.widget-ctl {
+  display: flex; align-items: center; justify-content: center;
+  gap: .8rem; flex-wrap: wrap; margin-top: .5rem; font-size: .88rem;
+}
+.widget-ctl label { display: flex; align-items: center; gap: .45rem; color: var(--ink-soft); }
+.widget-ctl input[type="range"] { width: 12rem; accent-color: var(--teal); }
+.widget-ctl output {
+  font-variant-numeric: tabular-nums; color: var(--teal); font-weight: 700;
+  min-width: 6.2rem;
+}
+
+/* ------------------------------------------- defined terms + the panel */
+/* Restrained on purpose: with "event", "union" and "intersection" all live,
+   colouring every one would turn the page blue. A dotted rule that only picks
+   up colour on hover, as in the primer. */
+a.xref.term {
+  color: inherit; text-decoration: none; cursor: pointer;
+  border-bottom: 1px dotted rgba(0, 101, 128, .55);
+}
+a.xref.term:hover { color: var(--teal); background: var(--teal-soft); }
+
+/* A result cited by name -- "Lemma 1 (more of the better thing is better)".
+   * It is one link, name included, because the name is the point: Tomi, 18
+   August 2026, "'Proposition 17' means nothing to anybody, not even me." The
+   citation is often a whole clause, so it must not break awkwardly. */
+a.xref.namedref {
+  color: var(--teal); text-decoration: none;
+  border-bottom: 1px dotted rgba(0, 101, 128, .55);
+}
+a.xref.namedref:hover { background: var(--teal-soft); }
+/* the same citation inside a figure caption, where it is not a link */
+.namedref .katex { font-size: 1em; }
+figcaption .namedref, summary .namedref { color: var(--ink-soft); }
+
+.peek {
+  position: fixed; top: 0; right: 0; z-index: 40;
+  width: var(--peek-w); height: 100vh;
+  background: var(--paper-peek);
+  border-left: 1px solid var(--rule);
+  box-shadow: -8px 0 28px rgba(0, 0, 0, .07);
+  display: flex; flex-direction: column;
+  animation: peekin .16s ease;
+}
+@keyframes peekin { from { transform: translateX(12px); opacity: 0; } }
+.peek[hidden] { display: none; }
+/* Grid, not a flex row: "mutually exclusive / disjoint" wraps, and the close
+   button must stay pinned top-right while the jump link sits underneath. */
+.peekbar {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: .2rem .6rem; align-items: start;
+  padding: .7rem .9rem; border-bottom: 1px solid var(--rule); background: #fff;
+}
+.peektitle {
+  grid-column: 1; grid-row: 1;
+  font-weight: 700; font-size: .78rem; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--teal); line-height: 1.35;
+}
+.peekbar .peekclose { grid-column: 2; grid-row: 1; }
+.peekbar .peekgo { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
+.peekgo {
+  font-size: .8rem; color: var(--teal); text-decoration: none; white-space: nowrap;
+}
+.peekgo:hover { text-decoration: underline; }
+.peekclose {
+  font: inherit; font-size: 1.4rem; line-height: 1; cursor: pointer;
+  background: none; border: 0; color: var(--ink-soft); padding: 0 .2rem;
+}
+.peekclose:hover { color: var(--ink); }
+.peekbody {
+  flex: 1 1 auto; overflow-y: auto; padding: .9rem;
+  font-size: .95rem;
+  /* !! Never a sideways scrollbar here (Tomi, 22 Aug 2026). notes.js scales the
+     inner block down if it would overrun; this is the belt to that's braces. */
+  overflow-x: hidden;
+}
+/* notes.js shrinks this until nothing inside it overflows. !! Do not give it a
+   transform: a visual scale leaves the .mathblock overflowing and scrolling. */
+.peekfit { font-size: 100%; }
+.peekbody .blk { margin-top: 0; }
+.peekbody .box { margin: 0; }
+/* The panel is a quotation of the page, not a second interactive copy. */
+.peekbody .anchor, .peekbody .cmt-tools, .peekbody .cmt-badge { display: none; }
+
+/* Where "Go to" lands. */
+.flash { animation: flash 1.2s ease; }
+@keyframes flash {
+  from { background: #fdf3d3; } to { background: transparent; }
+}
+
+/* the heading is a commentable block; keep the toolbar off the text */
+summary.subhead.blk { padding-right: 7rem; }
+.headtarget { display: block; height: 0; scroll-margin-top: 1.5rem; }
+/* Where a \lemref lands. A box already carries its block id, so the label id
+   goes on an element of its own -- two id attributes on one tag are not two
+   ids, the second is thrown away. */
+.boxanchor { display: block; height: 0; scroll-margin-top: 1.5rem; }
+
+/* ---------------------------------------------- the panel on a narrow screen */
+/* Last in the file on purpose: it overrides `.peek { width: var(--peek-w) }`
+   above, and equal specificity is settled by source order. With the gutter
+   released (see the 62rem block) the panel is an overlay, so it takes most of
+   the screen and casts a heavier shadow to sit clearly above the text. */
+@media (max-width: 62rem) {
+  .peek {
+    width: min(23rem, 92vw);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, .22);
+  }
+}
+h1.blk { padding-right: 7rem; }

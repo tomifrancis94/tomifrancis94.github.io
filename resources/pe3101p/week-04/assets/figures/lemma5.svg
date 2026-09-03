@@ -1,0 +1,36 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='1.64 -109.11 308.68 110.22' width='100%' style='max-width:600px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='lemma5-hatch' patternUnits='userSpaceOnUse' width='3.60' height='3.60' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='3.60' stroke='currentColor' stroke-width='0.46' opacity='0.55'/></pattern>
+<marker id='lemma5-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='4.63' markerHeight='4.63' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='lemma5-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.70' markerHeight='3.70' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M14.92,-55.87 L66.08,-79.13' fill='none' stroke='currentColor' stroke-width='0.57'/>
+<text text-anchor='middle' class='figlbl' font-size='5.56'><tspan x='40.50' y='-70.54'><tspan font-size='5.56' font-style='italic'>p</tspan></tspan></text>
+<path d='M14.92,-52.13 L66.08,-28.87' fill='none' stroke='currentColor' stroke-width='0.57'/>
+<text text-anchor='middle' class='figlbl' font-size='5.56'><tspan x='40.50' y='-33.68'><tspan font-size='5.56'>1-</tspan><tspan font-size='5.56' font-style='italic'>p</tspan></tspan></text>
+<path d='M74.57,-82.19 L129.60,-97.20' fill='none' stroke='currentColor' stroke-width='0.57'/>
+<text text-anchor='middle' class='figlbl' font-size='5.56'><tspan x='102.08' y='-92.74'><tspan font-size='5.56' font-style='italic'>q</tspan></tspan></text>
+<path d='M74.57,-79.81 L129.60,-64.80' fill='none' stroke='currentColor' stroke-width='0.57'/>
+<text text-anchor='middle' class='figlbl' font-size='5.56'><tspan x='102.08' y='-65.48'><tspan font-size='5.56'>1-</tspan><tspan font-size='5.56' font-style='italic'>q</tspan></tspan></text>
+<path d='M74.57,-28.19 L129.60,-43.20' fill='none' stroke='currentColor' stroke-width='0.57'/>
+<text text-anchor='middle' class='figlbl' font-size='5.56'><tspan x='102.08' y='-38.74'><tspan font-size='5.56' font-style='italic'>r</tspan></tspan></text>
+<path d='M74.57,-25.81 L129.60,-10.80' fill='none' stroke='currentColor' stroke-width='0.57'/>
+<text text-anchor='middle' class='figlbl' font-size='5.56'><tspan x='102.08' y='-11.48'><tspan font-size='5.56'>1-</tspan><tspan font-size='5.56' font-style='italic'>r</tspan></tspan></text>
+<path d='M203.64,-56.40 L243.00,-81.00' fill='none' stroke='currentColor' stroke-width='0.57'/>
+<path d='M203.64,-51.60 L243.00,-27.00' fill='none' stroke='currentColor' stroke-width='0.57'/>
+<circle cx='10.80' cy='-54.00' r='4.01' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.57'/>
+<text text-anchor='middle' class='figlbl' font-size='7.72'><tspan x='10.80' y='-51.38'><tspan font-size='7.72'>1</tspan></tspan></text>
+<circle cx='70.20' cy='-81.00' r='4.01' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.57'/>
+<text text-anchor='middle' class='figlbl' font-size='7.72'><tspan x='70.20' y='-78.38'><tspan font-size='7.72'>2</tspan></tspan></text>
+<circle cx='70.20' cy='-27.00' r='4.01' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.57'/>
+<text text-anchor='middle' class='figlbl' font-size='7.72'><tspan x='70.20' y='-24.38'><tspan font-size='7.72'>3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.72'><tspan x='136.36' y='-94.58'><tspan font-size='7.72' font-style='italic'>A</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.72'><tspan x='136.36' y='-62.18'><tspan font-size='7.72' font-style='italic'>B</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.72'><tspan x='136.36' y='-40.58'><tspan font-size='7.72' font-style='italic'>A</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.72'><tspan x='136.36' y='-8.18'><tspan font-size='7.72' font-style='italic'>B</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='9.10'><tspan x='178.20' y='-50.90'><tspan font-size='9.10'>=</tspan></tspan></text>
+<circle cx='199.80' cy='-54.00' r='4.01' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.57'/>
+<text text-anchor='middle' class='figlbl' font-size='7.72'><tspan x='199.80' y='-51.38'><tspan font-size='7.72'>4</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.72'><tspan x='269.66' y='-78.38'><tspan font-size='7.72' font-style='italic'>A</tspan><tspan font-size='7.72'>  </tspan><tspan font-size='5.56' fill='var(--fig-faint)' font-style='italic'>pq</tspan><tspan font-size='5.56' fill='var(--fig-faint)'> + (1-</tspan><tspan font-size='5.56' fill='var(--fig-faint)' font-style='italic'>p</tspan><tspan font-size='5.56' fill='var(--fig-faint)'>)</tspan><tspan font-size='5.56' fill='var(--fig-faint)' font-style='italic'>r</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.72'><tspan x='275.44' y='-24.38'><tspan font-size='7.72' font-style='italic'>B</tspan><tspan font-size='7.72'>  </tspan><tspan font-size='5.56' fill='var(--fig-faint)'>1 - </tspan><tspan font-size='5.56' fill='var(--fig-faint)' font-style='italic'>pq</tspan><tspan font-size='5.56' fill='var(--fig-faint)'> - (1-</tspan><tspan font-size='5.56' fill='var(--fig-faint)' font-style='italic'>p</tspan><tspan font-size='5.56' fill='var(--fig-faint)'>)</tspan><tspan font-size='5.56' fill='var(--fig-faint)' font-style='italic'>r</tspan></tspan></text>
+</svg>

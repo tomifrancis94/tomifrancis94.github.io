@@ -1,0 +1,30 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='2.70 -104.62 281.75 77.36' width='100%' style='max-width:619px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='twogamblessim-hatch' patternUnits='userSpaceOnUse' width='3.19' height='3.19' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='3.19' stroke='currentColor' stroke-width='0.41' opacity='0.55'/></pattern>
+<marker id='twogamblessim-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='4.10' markerHeight='4.10' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='twogamblessim-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.28' markerHeight='3.28' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M14.63,-60.58 L81.00,-81.00' fill='none' stroke='currentColor' stroke-width='0.50'/>
+<text text-anchor='middle' class='figlbl' font-size='4.92'><tspan x='41.18' y='-71.44'><tspan font-size='4.92'>Heads</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='4.92'><tspan x='71.04' y='-80.63'><tspan font-size='4.92'>½</tspan></tspan></text>
+<path d='M14.63,-58.22 L81.00,-37.80' fill='none' stroke='currentColor' stroke-width='0.50'/>
+<text text-anchor='middle' class='figlbl' font-size='4.92'><tspan x='41.18' y='-44.02'><tspan font-size='4.92'>Tails</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='4.92'><tspan x='71.04' y='-34.83'><tspan font-size='4.92'>½</tspan></tspan></text>
+<path d='M203.63,-60.58 L270.00,-81.00' fill='none' stroke='currentColor' stroke-width='0.50'/>
+<text text-anchor='middle' class='figlbl' font-size='4.92'><tspan x='230.18' y='-71.44'><tspan font-size='4.92'>Heads</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='4.92'><tspan x='260.04' y='-80.63'><tspan font-size='4.92'>½</tspan></tspan></text>
+<path d='M203.63,-58.22 L270.00,-37.80' fill='none' stroke='currentColor' stroke-width='0.50'/>
+<text text-anchor='middle' class='figlbl' font-size='4.92'><tspan x='230.18' y='-44.02'><tspan font-size='4.92'>Tails</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='4.92'><tspan x='260.04' y='-34.83'><tspan font-size='4.92'>½</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='6.15'><tspan x='54.00' y='-92.41'><tspan font-size='6.15' font-style='italic'>G</tspan></tspan></text>
+<circle cx='10.80' cy='-59.40' r='3.55' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.50'/>
+<text text-anchor='middle' class='figlbl' font-size='6.83'><tspan x='10.80' y='-57.08'><tspan font-size='6.83'>1</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='6.83'><tspan x='87.30' y='-78.68'><tspan font-size='6.83' font-style='italic'>a</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='6.83'><tspan x='87.30' y='-35.48'><tspan font-size='6.83' font-style='italic'>b</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='6.15'><tspan x='243.00' y='-92.41'><tspan font-size='6.15' font-style='italic'>G</tspan><tspan font-size='6.15'>'</tspan></tspan></text>
+<circle cx='199.80' cy='-59.40' r='3.55' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.50'/>
+<text text-anchor='middle' class='figlbl' font-size='6.83'><tspan x='199.80' y='-57.08'><tspan font-size='6.83'>2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='6.83'><tspan x='276.30' y='-78.68'><tspan font-size='6.83' font-style='italic'>b</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='6.83'><tspan x='276.30' y='-35.48'><tspan font-size='6.83' font-style='italic'>a</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='8.06'><tspan x='145.80' y='-56.66'><tspan font-size='8.06'> ∼ </tspan></tspan></text>
+</svg>

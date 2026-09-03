@@ -1,0 +1,33 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4.52 -116.51 311.68 128.50' width='100%' style='max-width:618px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='completeness-hatch' patternUnits='userSpaceOnUse' width='3.53' height='3.53' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='3.53' stroke='currentColor' stroke-width='0.45' opacity='0.55'/></pattern>
+<marker id='completeness-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='4.54' markerHeight='4.54' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='completeness-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.63' markerHeight='3.63' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M14.53,-44.44 L39.47,-74.36' fill='none' stroke='currentColor' stroke-width='0.96' marker-end='url(#completeness-arrow)'/>
+<path d='M66.47,-44.44 L41.53,-74.36' fill='none' stroke='currentColor' stroke-width='0.96' marker-end='url(#completeness-arrow)'/>
+<path d='M39.47,-12.04 L14.53,-41.96' fill='none' stroke='currentColor' stroke-width='0.96' marker-end='url(#completeness-arrow)'/>
+<path d='M41.53,-12.04 L66.47,-41.96' fill='none' stroke='currentColor' stroke-width='0.96' marker-end='url(#completeness-arrow)'/>
+<path d='M15.11,-43.20 L65.89,-43.20' fill='none' stroke='var(--fig-faint)' stroke-width='0.55' stroke-dasharray='2.27 1.77'/>
+<text text-anchor='middle' class='figlbl faint' font-size='5.45'><tspan x='40.50' y='-46.18'><tspan font-size='5.45'>?</tspan></tspan></text>
+<path d='M162.00,-10.80 L280.80,-10.80' fill='none' stroke='currentColor' stroke-width='0.96' marker-end='url(#completeness-arrow)'/>
+<text text-anchor='middle' class='figlbl' font-size='6.81'><tspan x='40.50' y='-102.99'><tspan font-size='6.81'>Without it</tspan></tspan></text>
+<circle cx='40.50' cy='-75.60' r='1.61' fill='currentColor'/>
+<circle cx='13.50' cy='-43.20' r='1.61' fill='currentColor'/>
+<circle cx='67.50' cy='-43.20' r='1.61' fill='currentColor'/>
+<circle cx='40.50' cy='-10.80' r='1.61' fill='currentColor'/>
+<text text-anchor='middle' class='figlbl' font-size='6.81'><tspan x='4.31' y='-40.89'><tspan font-size='6.81' font-style='italic'>B</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='6.81'><tspan x='76.69' y='-40.89'><tspan font-size='6.81' font-style='italic'>C</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='6.81'><tspan x='49.69' y='-75.99'><tspan font-size='6.81' font-style='italic'>A</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='6.81'><tspan x='40.50' y='3.09'><tspan font-size='6.81' font-style='italic'>D</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='6.81'><tspan x='216.00' y='-102.99'><tspan font-size='6.81'>With it</tspan></tspan></text>
+<circle cx='175.50' cy='-10.80' r='1.61' fill='currentColor'/>
+<text text-anchor='middle' class='figlbl' font-size='6.81'><tspan x='175.50' y='-16.00'><tspan font-size='6.81' font-style='italic'>D</tspan></tspan></text>
+<circle cx='205.20' cy='-10.80' r='1.61' fill='currentColor'/>
+<text text-anchor='middle' class='figlbl' font-size='6.81'><tspan x='205.20' y='-16.00'><tspan font-size='6.81' font-style='italic'>C</tspan></tspan></text>
+<circle cx='226.80' cy='-10.80' r='1.61' fill='currentColor'/>
+<text text-anchor='middle' class='figlbl' font-size='6.81'><tspan x='226.80' y='-16.00'><tspan font-size='6.81' font-style='italic'>B</tspan></tspan></text>
+<circle cx='264.60' cy='-10.80' r='1.61' fill='currentColor'/>
+<text text-anchor='middle' class='figlbl' font-size='6.81'><tspan x='264.60' y='-16.00'><tspan font-size='6.81' font-style='italic'>A</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl faint' font-size='5.45'><tspan x='291.60' y='-8.95'><tspan font-size='5.45'>better</tspan></tspan></text>
+</svg>

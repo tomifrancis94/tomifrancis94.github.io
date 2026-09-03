@@ -1,0 +1,25 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='1.94 -106.03 302.37 95.96' width='100%' style='max-width:607px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='allaisone-hatch' patternUnits='userSpaceOnUse' width='3.49' height='3.49' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='3.49' stroke='currentColor' stroke-width='0.45' opacity='0.55'/></pattern>
+<marker id='allaisone-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='4.48' markerHeight='4.48' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='allaisone-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.59' markerHeight='3.59' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M15.18,-54.00 L81.00,-54.00' fill='none' stroke='currentColor' stroke-width='0.55'/>
+<text text-anchor='middle' class='figlbl' font-size='5.38'><tspan x='48.09' y='-56.95'><tspan font-size='5.38'>1</tspan></tspan></text>
+<path d='M187.58,-55.84 L253.80,-86.40' fill='none' stroke='currentColor' stroke-width='0.55'/>
+<text text-anchor='middle' class='figlbl' font-size='5.38'><tspan x='220.69' y='-74.06'><tspan font-size='5.38'>0.10</tspan></tspan></text>
+<path d='M187.98,-54.00 L253.80,-54.00' fill='none' stroke='currentColor' stroke-width='0.55'/>
+<text text-anchor='middle' class='figlbl' font-size='5.38'><tspan x='220.89' y='-56.95'><tspan font-size='5.38'>0.89</tspan></tspan></text>
+<path d='M187.58,-52.16 L253.80,-21.60' fill='none' stroke='currentColor' stroke-width='0.55'/>
+<text text-anchor='middle' class='figlbl' font-size='5.38'><tspan x='220.69' y='-30.28'><tspan font-size='5.38'>0.01</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.47'><tspan x='43.20' y='-91.96'><tspan font-size='7.47'>Option 1</tspan></tspan></text>
+<circle cx='10.80' cy='-54.00' r='3.88' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.55'/>
+<text text-anchor='middle' class='figlbl' font-size='7.47'><tspan x='10.80' y='-51.46'><tspan font-size='7.47'>1</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.47'><tspan x='105.11' y='-51.46'><tspan font-size='7.47'>$1,000,000</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.47'><tspan x='216.00' y='-91.96'><tspan font-size='7.47'>Option 2</tspan></tspan></text>
+<circle cx='183.60' cy='-54.00' r='3.88' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.55'/>
+<text text-anchor='middle' class='figlbl' font-size='7.47'><tspan x='183.60' y='-51.46'><tspan font-size='7.47'>2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.47'><tspan x='277.91' y='-83.86'><tspan font-size='7.47'>$5,000,000</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.47'><tspan x='277.91' y='-51.46'><tspan font-size='7.47'>$1,000,000</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.47'><tspan x='262.38' y='-19.06'><tspan font-size='7.47'>$0</tspan></tspan></text>
+</svg>

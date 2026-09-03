@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1. Three things about probability — PE3101P Week 4</title>
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<link rel="stylesheet" href="assets/notes.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="layout">
+<nav class='toc'><div class='toctitle'><a href='index.html'>Week 4 &mdash; Expected utility theory</a></div><ol><li class='here'><a href='01-probability.html'><span class='tocnum'>1</span>Three things about probability</a><ul><li><a href='#s1.1'>Conditional credences are credences</a></li><li><a href='#s1.2'>Expectation</a></li><li><a href='#s1.3'>The law of total expectation</a></li></ul></li><li><a href='02-utility.html'><span class='tocnum'>2</span>Preference and utility</a></li><li><a href='03-preferences.html'><span class='tocnum'>3</span>Preferences</a></li><li><a href='04-stochastic-equivalence.html'><span class='tocnum'>4</span>Stochastic equivalence</a></li><li><a href='05-prospects.html'><span class='tocnum'>5</span>Prospects</a></li><li><a href='06-axioms.html'><span class='tocnum'>6</span>The remaining axioms</a></li><li><a href='07-theorem.html'><span class='tocnum'>7</span>The Expected Utility Theorem</a></li><li><a href='08-meaning.html'><span class='tocnum'>8</span>What the theorem means</a></li><li><a href='09-objections.html'><span class='tocnum'>9</span>Are the axioms requirements of rationality?</a></li></ol></nav>
+<main id="main">
+<article><h1 class='blk' id='h1'><span class='secnum'>1</span> Three things about probability</h1><section class='sub' data-sub='1.1'><details class='subdet' open><summary class='subhead blk' id='h1.1'><span class='secnum'>1.1</span> Conditional credences are credences<a class='anchor' href='#s1.1' title='Link to this subsection'>#</a><span class='headtarget' id='s1.1'></span></summary><div class='subbody'><div class='blk box box-proposition' id='b1.1.1'><span class='boxanchor' id='prop-condcred'></span><div class='boxhead'>Proposition 1 <span class='boxname'>(conditional credences are credences)</span></div><div class='boxbody'><p>
+Suppose <span class='math' data-tex="\Cr"><span class='math-fallback'>\Cr</span></span> satisfies the probability axioms and <span class='math' data-tex="\Cr(B) &gt; 0"><span class='math-fallback'>\Cr(B) &gt; 0</span></span>. Define <span class='math' data-tex="\Cr_B(A) = \Cr(A \mid B)"><span class='math-fallback'>\Cr_B(A) = \Cr(A \mid B)</span></span>. Then <span class='math' data-tex="\Cr_B"><span class='math-fallback'>\Cr_B</span></span> satisfies the probability axioms.</p></div></div><ul class='blk ' id='b1.1.2'><li>So everything we know about credences carries over after conditioning.</li><li>Three axioms, three checks.</li></ul><div class='blk proof' id='b1.1.3'><details class='proofdet'><summary>Proof of <span class='namedref'>Proposition&nbsp;1 (conditional credences are credences)</span></summary><div class='proofbody'><p class='blk' id='b1.1.3.1'><em>Non-negativity.</em> <span class='math' data-tex="\Cr(A \mid B) = \Cr(A \cap B) / \Cr(B)"><span class='math-fallback'>\Cr(A \mid B) = \Cr(A \cap B) / \Cr(B)</span></span>: a non-negative number divided by a positive one.</p><p class='blk' id='b1.1.3.2'><em>Normalisation.</em> <span class='math' data-tex="\Cr(\Omega \mid B) = \Cr(\Omega \cap B)/\Cr(B) = \Cr(B)/\Cr(B) = 1"><span class='math-fallback'>\Cr(\Omega \mid B) = \Cr(\Omega \cap B)/\Cr(B) = \Cr(B)/\Cr(B) = 1</span></span>.</p><p class='blk' id='b1.1.3.3'><em>Finite additivity.</em> Take <span class='math' data-tex="X \cap Y = \varnothing"><span class='math-fallback'>X \cap Y = \varnothing</span></span>. We want <span class='math' data-tex="\Cr(X \cup Y \mid B) = \Cr(X \mid B) + \Cr(Y \mid B)"><span class='math-fallback'>\Cr(X \cup Y \mid B) = \Cr(X \mid B) + \Cr(Y \mid B)</span></span>. Starting from the left,</p><div class='blk mathblock' id='b1.1.3.4' data-tex="\begin{aligned}
+\Cr(X \cup Y \mid B)
+&amp;= \frac{\Cr((X \cup Y) \cap B)}{\Cr(B)} &amp;&amp; \text{definition} \\
+&amp;= \frac{\Cr((X \cap B) \cup (Y \cap B))}{\Cr(B)} &amp;&amp; \text{intersection distributes over union} \\
+&amp;= \frac{\Cr(X \cap B) + \Cr(Y \cap B)}{\Cr(B)} &amp;&amp; \text{finite additivity: the two pieces are disjoint} \\
+&amp;= \Cr(X \mid B) + \Cr(Y \mid B). &amp;&amp; \text{definition, twice}
+\end{aligned}"><span class='math-fallback'>\begin{aligned}
+\Cr(X \cup Y \mid B)
+&amp;= \frac{\Cr((X \cup Y) \cap B)}{\Cr(B)} &amp;&amp; \text{definition} \\
+&amp;= \frac{\Cr((X \cap B) \cup (Y \cap B))}{\Cr(B)} &amp;&amp; \text{intersection distributes over union} \\
+&amp;= \frac{\Cr(X \cap B) + \Cr(Y \cap B)}{\Cr(B)} &amp;&amp; \text{finite additivity: the two pieces are disjoint} \\
+&amp;= \Cr(X \mid B) + \Cr(Y \mid B). &amp;&amp; \text{definition, twice}
+\end{aligned}</span></div><span class='qed' aria-hidden='true'>∎</span></div></details></div></div></details></section><section class='sub' data-sub='1.2'><details class='subdet' open><summary class='subhead blk' id='h1.2'><span class='secnum'>1.2</span> Expectation<a class='anchor' href='#s1.2' title='Link to this subsection'>#</a><span class='headtarget' id='s1.2'></span></summary><div class='subbody'><ul class='blk ' id='b1.2.1'><li>A <span class='defsite' data-def='randomvariable'><em>random variable</em></span> <span class='math' data-tex="X"><span class='math-fallback'>X</span></span>: a quantity whose value is settled by which outcome occurs. It takes one of the values <span class='math' data-tex="x_1, \dots, x_n"><span class='math-fallback'>x_1, \dots, x_n</span></span>.</li><li>Write <span class='math' data-tex="X = x_j"><span class='math-fallback'>X = x_j</span></span> for the event that it takes the value <span class='math' data-tex="x_j"><span class='math-fallback'>x_j</span></span>.</li></ul><div class='blk box box-definition' id='b1.2.2'><div class='boxhead'>Definition <span class='boxname'>(Expectation)</span></div><div class='boxbody'><p><span class='defsite' data-def='expectation'></span>
+Where <span class='math' data-tex="x_1, \dots, x_n"><span class='math-fallback'>x_1, \dots, x_n</span></span> are the possible values of <span class='math' data-tex="X"><span class='math-fallback'>X</span></span>,
+<div class='mathblock' data-tex="\E[X] = \sum_{j=1}^{n} x_j \cdot \Cr(X = x_j)."><span class='math-fallback'>\E[X] = \sum_{j=1}^{n} x_j \cdot \Cr(X = x_j).</span></div></p></div></div><ul class='blk ' id='b1.2.3'><li>A die: <span class='math' data-tex="\E[X] = 1 \cdot \nicefrac{1}{6} + \dots + 6 \cdot \nicefrac{1}{6} = 3.5"><span class='math-fallback'>\E[X] = 1 \cdot \nicefrac{1}{6} + \dots + 6 \cdot \nicefrac{1}{6} = 3.5</span></span>.</li><li>Expected utility is the <a class='xref term' data-def='expectation' href='01-probability.html#b1.2.2'>expectation</a> of the <a class='xref term' data-def='randomvariable' href='01-probability.html#b1.2.1'>random variable</a> “utility of the outcome”.</li></ul><div class='blk box box-definition' id='b1.2.4'><div class='boxhead'>Definition <span class='boxname'>(Conditional expectation)</span></div><div class='boxbody'><p><span class='defsite' data-def='condexpectation'></span>
+Where <span class='math' data-tex="x_1, \dots, x_n"><span class='math-fallback'>x_1, \dots, x_n</span></span> are the possible values of <span class='math' data-tex="X"><span class='math-fallback'>X</span></span> and <span class='math' data-tex="\Cr(B) &gt; 0"><span class='math-fallback'>\Cr(B) &gt; 0</span></span>,
+<div class='mathblock' data-tex="\E[X \mid B] = \sum_{j=1}^{n} x_j \cdot \Cr(X = x_j \mid B)."><span class='math-fallback'>\E[X \mid B] = \sum_{j=1}^{n} x_j \cdot \Cr(X = x_j \mid B).</span></div></p></div></div><ul class='blk ' id='b1.2.5'><li>The same formula, run with the conditioned credences.</li><li>Those are credences, by <a class='xref namedref' data-peek='prop:condcred' href='01-probability.html#prop-condcred'>Proposition&nbsp;1 (conditional credences are credences)</a>. So this is a genuine <a class='xref term' data-def='expectation' href='01-probability.html#b1.2.2'>expectation</a>: the <a class='xref term' data-def='expectation' href='01-probability.html#b1.2.2'>expectation</a> of <span class='math' data-tex="X"><span class='math-fallback'>X</span></span> under <span class='math' data-tex="\Cr_B"><span class='math-fallback'>\Cr_B</span></span>.</li></ul></div></details></section><section class='sub' data-sub='1.3'><details class='subdet' open><summary class='subhead blk' id='h1.3'><span class='secnum'>1.3</span> The law of total expectation<a class='anchor' href='#s1.3' title='Link to this subsection'>#</a><span class='headtarget' id='s1.3'></span></summary><div class='subbody'><div class='blk box box-proposition' id='b1.3.1'><span class='boxanchor' id='prop-totalexp'></span><div class='boxhead'>Proposition 2 <span class='boxname'>(law of total expectation)</span></div><div class='boxbody'><p>
+Where <span class='math' data-tex="B_1, \dots, B_m"><span class='math-fallback'>B_1, \dots, B_m</span></span> partition <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span>, each with <span class='math' data-tex="\Cr(B_i) &gt; 0"><span class='math-fallback'>\Cr(B_i) &gt; 0</span></span>,
+<div class='mathblock' data-tex="\E[X] = \sum_{i=1}^{m} \Cr(B_i)\,\E[X \mid B_i]."><span class='math-fallback'>\E[X] = \sum_{i=1}^{m} \Cr(B_i)\,\E[X \mid B_i].</span></div></p></div></div><ul class='blk ' id='b1.3.2'><li>The credence-weighted average of the conditional <a class='xref term' data-def='expectation' href='01-probability.html#b1.2.2'>expectations</a>.</li><li>Compare total probability: <span class='math' data-tex="\Cr(A) = \sum_i \Cr(B_i)\,\Cr(A \mid B_i)"><span class='math-fallback'>\Cr(A) = \sum_i \Cr(B_i)\,\Cr(A \mid B_i)</span></span>.</li></ul><ul class='blk ' id='b1.3.3'><li>Roll a die; <span class='math' data-tex="X"><span class='math-fallback'>X</span></span> is the number shown. Split <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span> into <em>odd</em> and <em>even</em>.</li><li><span class='math' data-tex="\E[X \mid \text{odd}] = \nicefrac{1}{3}(1 + 3 + 5) = 3"><span class='math-fallback'>\E[X \mid \text{odd}] = \nicefrac{1}{3}(1 + 3 + 5) = 3</span></span>, and <span class='math' data-tex="\E[X \mid \text{even}] = \nicefrac{1}{3}(2 + 4 + 6) = 4"><span class='math-fallback'>\E[X \mid \text{even}] = \nicefrac{1}{3}(2 + 4 + 6) = 4</span></span>.</li><li>So <span class='math' data-tex="\E[X] = \Cr(\text{odd}) \cdot 3 + \Cr(\text{even}) \cdot 4 = \nicefrac{1}{2} \cdot 3 + \nicefrac{1}{2} \cdot 4 = 3.5"><span class='math-fallback'>\E[X] = \Cr(\text{odd}) \cdot 3 + \Cr(\text{even}) \cdot 4 = \nicefrac{1}{2} \cdot 3 + \nicefrac{1}{2} \cdot 4 = 3.5</span></span>.</li></ul><div class='blk proof' id='b1.3.4'><details class='proofdet'><summary>Proof of <span class='namedref'>Proposition&nbsp;2 (law of total expectation)</span></summary><div class='proofbody'><p class='blk' id='b1.3.4.1'>Start from the right-hand side.</p><div class='blk mathblock' id='b1.3.4.2' data-tex="\begin{aligned}
+\sum_{i} \Cr(B_i)\,\E[X \mid B_i]
+&amp;= \sum_{i} \Cr(B_i) \sum_{j} x_j\,\Cr(X = x_j \mid B_i) &amp;&amp; \text{definition of } \E[X \mid B_i] \\
+&amp;= \sum_{i} \sum_{j} x_j\,\Cr(B_i)\,\Cr(X = x_j \mid B_i) &amp;&amp; \text{move } \Cr(B_i) \text{ inside} \\
+&amp;= \sum_{i} \sum_{j} x_j\,\Cr(\{X = x_j\} \cap B_i) &amp;&amp; \text{definition of conditional probability} \\
+&amp;= \sum_{j} x_j \sum_{i} \Cr(\{X = x_j\} \cap B_i) &amp;&amp; \text{swap the sums} \\
+&amp;= \sum_{j} x_j\,\Cr(X = x_j) &amp;&amp; \text{total probability over the partition} \\
+&amp;= \E[X]. &amp;&amp; \text{definition}
+\end{aligned}"><span class='math-fallback'>\begin{aligned}
+\sum_{i} \Cr(B_i)\,\E[X \mid B_i]
+&amp;= \sum_{i} \Cr(B_i) \sum_{j} x_j\,\Cr(X = x_j \mid B_i) &amp;&amp; \text{definition of } \E[X \mid B_i] \\
+&amp;= \sum_{i} \sum_{j} x_j\,\Cr(B_i)\,\Cr(X = x_j \mid B_i) &amp;&amp; \text{move } \Cr(B_i) \text{ inside} \\
+&amp;= \sum_{i} \sum_{j} x_j\,\Cr(\{X = x_j\} \cap B_i) &amp;&amp; \text{definition of conditional probability} \\
+&amp;= \sum_{j} x_j \sum_{i} \Cr(\{X = x_j\} \cap B_i) &amp;&amp; \text{swap the sums} \\
+&amp;= \sum_{j} x_j\,\Cr(X = x_j) &amp;&amp; \text{total probability over the partition} \\
+&amp;= \E[X]. &amp;&amp; \text{definition}
+\end{aligned}</span></div><span class='qed' aria-hidden='true'>∎</span></div></details></div></div></details></section><nav class='pagenav'><a class='next' href='02-utility.html'>2. Preference and utility &rarr;</a></nav></article>
+</main>
+</div>
+<aside id="peek" class="peek" hidden aria-live="polite">
+  <div class="peekbar">
+    <span class="peektitle"></span>
+    <a class="peekgo" href="#" title="Go to this in the notes">Go to &rarr;</a>
+    <button type="button" class="peekclose" title="Close">&times;</button>
+  </div>
+  <div class="peekbody"></div>
+</aside>
+<script src="assets/katex/katex.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/notes.js"></script>
+</body>
+</html>

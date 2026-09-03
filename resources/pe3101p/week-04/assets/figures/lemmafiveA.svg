@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='4.57 -105.30 136.76 102.61' width='100%' style='max-width:391px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='lemmafiveA-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='lemmafiveA-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='lemmafiveA-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.52' markerHeight='2.52' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M13.60,-55.27 L67.40,-79.73' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='40.50' y='-69.57'><tspan font-size='3.78' font-style='italic'>p</tspan></tspan></text>
+<path d='M13.60,-52.73 L67.40,-28.27' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='40.50' y='-35.86'><tspan font-size='3.78'>1-</tspan><tspan font-size='3.78' font-style='italic'>p</tspan></tspan></text>
+<path d='M73.17,-81.81 L129.60,-97.20' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='101.39' y='-91.58'><tspan font-size='3.78' font-style='italic'>q</tspan></tspan></text>
+<path d='M73.17,-80.19 L129.60,-64.80' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='101.39' y='-67.85'><tspan font-size='3.78'>1-</tspan><tspan font-size='3.78' font-style='italic'>q</tspan></tspan></text>
+<path d='M73.17,-27.81 L129.60,-43.20' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='101.39' y='-37.58'><tspan font-size='3.78' font-style='italic'>r</tspan></tspan></text>
+<path d='M73.17,-26.19 L129.60,-10.80' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='101.39' y='-13.85'><tspan font-size='3.78'>1-</tspan><tspan font-size='3.78' font-style='italic'>r</tspan></tspan></text>
+<circle cx='10.80' cy='-54.00' r='2.73' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='10.80' y='-52.22'><tspan font-size='5.25'>1</tspan></tspan></text>
+<circle cx='70.20' cy='-81.00' r='2.73' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='70.20' y='-79.22'><tspan font-size='5.25'>2</tspan></tspan></text>
+<circle cx='70.20' cy='-27.00' r='2.73' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='70.20' y='-25.21'><tspan font-size='5.25'>3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='135.06' y='-95.42'><tspan font-size='5.25' font-style='italic'>A</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='135.06' y='-63.02'><tspan font-size='5.25' font-style='italic'>B</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='135.06' y='-41.42'><tspan font-size='5.25' font-style='italic'>A</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='135.06' y='-9.02'><tspan font-size='5.25' font-style='italic'>B</tspan></tspan></text>
+</svg>

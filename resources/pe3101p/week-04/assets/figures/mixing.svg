@@ -1,0 +1,40 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='1.49 -109.31 315.09 110.62' width='100%' style='max-width:602px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='mixing-hatch' patternUnits='userSpaceOnUse' width='3.66' height='3.66' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='3.66' stroke='currentColor' stroke-width='0.47' opacity='0.55'/></pattern>
+<marker id='mixing-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='4.71' markerHeight='4.71' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='mixing-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.77' markerHeight='3.77' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M15.10,-55.65 L76.70,-79.35' fill='none' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='5.65'><tspan x='45.90' y='-70.59'><tspan font-size='5.65' font-style='italic'>p</tspan></tspan></text>
+<path d='M15.10,-52.35 L76.70,-28.65' fill='none' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='5.65'><tspan x='45.90' y='-33.56'><tspan font-size='5.65'>1-</tspan><tspan font-size='5.65' font-style='italic'>p</tspan></tspan></text>
+<path d='M85.47,-82.12 L145.80,-97.20' fill='none' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='5.65'><tspan x='115.63' y='-92.75'><tspan font-size='5.65'>½</tspan></tspan></text>
+<path d='M85.47,-79.88 L145.80,-64.80' fill='none' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='5.65'><tspan x='115.63' y='-65.41'><tspan font-size='5.65'>½</tspan></tspan></text>
+<path d='M85.47,-28.12 L145.80,-43.20' fill='none' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='5.65'><tspan x='115.63' y='-38.75'><tspan font-size='5.65'>⅓</tspan></tspan></text>
+<path d='M85.47,-25.88 L145.80,-10.80' fill='none' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='5.65'><tspan x='115.63' y='-11.41'><tspan font-size='5.65'>⅔</tspan></tspan></text>
+<path d='M211.47,-56.90 L251.10,-89.10' fill='none' stroke='currentColor' stroke-width='0.58'/>
+<path d='M212.50,-54.00 L251.10,-54.00' fill='none' stroke='currentColor' stroke-width='0.58'/>
+<path d='M211.47,-51.10 L251.10,-18.90' fill='none' stroke='currentColor' stroke-width='0.58'/>
+<circle cx='10.80' cy='-54.00' r='4.08' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='7.85'><tspan x='10.80' y='-51.33'><tspan font-size='7.85'>1</tspan></tspan></text>
+<circle cx='81.00' cy='-81.00' r='4.08' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='7.85'><tspan x='81.00' y='-78.33'><tspan font-size='7.85'>2</tspan></tspan></text>
+<circle cx='81.00' cy='-27.00' r='4.08' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='7.85'><tspan x='81.00' y='-24.33'><tspan font-size='7.85'>3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.85'><tspan x='154.10' y='-94.53'><tspan font-size='7.85' font-style='italic'>x</tspan><tspan font-size='5.65' dy='1.80'>1</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.85'><tspan x='154.10' y='-62.13'><tspan font-size='7.85' font-style='italic'>x</tspan><tspan font-size='5.65' dy='1.80'>2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.85'><tspan x='154.10' y='-40.53'><tspan font-size='7.85' font-style='italic'>x</tspan><tspan font-size='5.65' dy='1.80'>2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.85'><tspan x='154.10' y='-8.13'><tspan font-size='7.85' font-style='italic'>x</tspan><tspan font-size='5.65' dy='1.80'>3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl faint' font-size='5.65'><tspan x='81.00' y='-92.58'><tspan font-size='5.65' font-style='italic'>A</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl faint' font-size='5.65'><tspan x='81.00' y='-11.58'><tspan font-size='5.65' font-style='italic'>B</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='9.26'><tspan x='189.00' y='-50.85'><tspan font-size='9.26'>=</tspan></tspan></text>
+<circle cx='207.90' cy='-54.00' r='4.08' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.58'/>
+<text text-anchor='middle' class='figlbl' font-size='7.85'><tspan x='207.90' y='-51.33'><tspan font-size='7.85'>4</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.85'><tspan x='267.89' y='-86.43'><tspan font-size='7.85' font-style='italic'>x</tspan><tspan font-size='5.65' dy='1.80'>1</tspan><tspan font-size='7.85' dy='-1.80'>  </tspan><tspan font-size='5.65' fill='var(--fig-faint)' font-style='italic'>p</tspan><tspan font-size='5.65' fill='var(--fig-faint)'>/2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.85'><tspan x='282.58' y='-51.33'><tspan font-size='7.85' font-style='italic'>x</tspan><tspan font-size='5.65' dy='1.80'>2</tspan><tspan font-size='7.85' dy='-1.80'>  </tspan><tspan font-size='5.65' fill='var(--fig-faint)' font-style='italic'>p</tspan><tspan font-size='5.65' fill='var(--fig-faint)'>/2 + (1-</tspan><tspan font-size='5.65' fill='var(--fig-faint)' font-style='italic'>p</tspan><tspan font-size='5.65' fill='var(--fig-faint)'>)/3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='7.85'><tspan x='275.23' y='-16.23'><tspan font-size='7.85' font-style='italic'>x</tspan><tspan font-size='5.65' dy='1.80'>3</tspan><tspan font-size='7.85' dy='-1.80'>  </tspan><tspan font-size='5.65' fill='var(--fig-faint)'>2(1-</tspan><tspan font-size='5.65' fill='var(--fig-faint)' font-style='italic'>p</tspan><tspan font-size='5.65' fill='var(--fig-faint)'>)/3</tspan></tspan></text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='4.57 -105.30 154.93 102.61' width='100%' style='max-width:443px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='mixingtwo-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='mixingtwo-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='mixingtwo-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.52' markerHeight='2.52' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M13.67,-55.11 L78.13,-79.89' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='45.90' y='-69.57'><tspan font-size='3.78' font-style='italic'>p</tspan></tspan></text>
+<path d='M13.67,-52.89 L78.13,-28.11' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='45.90' y='-35.86'><tspan font-size='3.78'>1-</tspan><tspan font-size='3.78' font-style='italic'>p</tspan></tspan></text>
+<path d='M83.99,-81.75 L145.80,-97.20' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='114.89' y='-91.54'><tspan font-size='3.78'>½</tspan></tspan></text>
+<path d='M83.99,-80.25 L145.80,-64.80' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='114.89' y='-67.89'><tspan font-size='3.78'>½</tspan></tspan></text>
+<path d='M83.99,-27.75 L145.80,-43.20' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='114.89' y='-37.54'><tspan font-size='3.78'>⅓</tspan></tspan></text>
+<path d='M83.99,-26.25 L145.80,-10.80' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='3.78'><tspan x='114.89' y='-13.89'><tspan font-size='3.78'>⅔</tspan></tspan></text>
+<circle cx='10.80' cy='-54.00' r='2.73' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='10.80' y='-52.22'><tspan font-size='5.25'>1</tspan></tspan></text>
+<circle cx='81.00' cy='-81.00' r='2.73' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='81.00' y='-79.22'><tspan font-size='5.25'>2</tspan></tspan></text>
+<circle cx='81.00' cy='-27.00' r='2.73' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='81.00' y='-25.21'><tspan font-size='5.25'>3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='152.25' y='-95.42'><tspan font-size='5.25' font-style='italic'>x</tspan><tspan font-size='3.78' dy='1.21'>1</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='152.25' y='-63.02'><tspan font-size='5.25' font-style='italic'>x</tspan><tspan font-size='3.78' dy='1.21'>2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='152.25' y='-41.42'><tspan font-size='5.25' font-style='italic'>x</tspan><tspan font-size='3.78' dy='1.21'>2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='152.25' y='-9.02'><tspan font-size='5.25' font-style='italic'>x</tspan><tspan font-size='3.78' dy='1.21'>3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl faint' font-size='3.78'><tspan x='81.00' y='-93.21'><tspan font-size='3.78' font-style='italic'>A</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl faint' font-size='3.78'><tspan x='81.00' y='-12.21'><tspan font-size='3.78' font-style='italic'>B</tspan></tspan></text>
+</svg>

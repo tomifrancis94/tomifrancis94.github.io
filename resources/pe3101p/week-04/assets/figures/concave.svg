@@ -1,0 +1,27 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-8.80 -139.49 276.53 155.73' width='100%' style='max-width:616px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='concave-hatch' patternUnits='userSpaceOnUse' width='3.14' height='3.14' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='3.14' stroke='currentColor' stroke-width='0.40' opacity='0.55'/></pattern>
+<marker id='concave-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='4.04' markerHeight='4.04' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='concave-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.23' markerHeight='3.23' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M0.00,-0.00 L247.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.49' marker-end='url(#concave-arrow)'/>
+<text text-anchor='middle' class='figlbl' font-size='4.85'><tspan x='255.15' y='1.65'><tspan font-size='4.85'>money</tspan></tspan></text>
+<path d='M0.00,-0.00 L0.00,-135.00' fill='none' stroke='currentColor' stroke-width='0.49' marker-end='url(#concave-arrow)'/>
+<text text-anchor='middle' class='figlbl' font-size='4.85'><tspan x='2.61' y='-129.05'><tspan font-size='4.85' font-style='italic'>u</tspan></tspan></text>
+<path d='M0.00,-0.00 L5.77,-19.46 L11.54,-27.51 L17.31,-33.70 L23.08,-38.91 L28.85,-43.50 L34.62,-47.66 L40.38,-51.47 L46.15,-55.03 L51.92,-58.37 L57.69,-61.52 L63.46,-64.53 L69.23,-67.40 L75.00,-70.15 L80.77,-72.80 L86.54,-75.35 L92.31,-77.82 L98.08,-80.22 L103.85,-82.54 L109.62,-84.80 L115.38,-87.01 L121.15,-89.16 L126.92,-91.25 L132.69,-93.31 L138.46,-95.31 L144.23,-97.28 L150.00,-99.20 L155.77,-101.09 L161.54,-102.95 L167.31,-104.77 L173.08,-106.56 L178.85,-108.32 L184.62,-110.06 L190.38,-111.76 L196.15,-113.44 L201.92,-115.10 L207.69,-116.73 L213.46,-118.34 L219.23,-119.93 L225.00,-121.50' fill='none' stroke='currentColor' stroke-width='0.85' stroke-linejoin='round'/>
+<path d='M225.00,-0.00 L225.00,-121.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.49' stroke-dasharray='2.02 1.57'/>
+<path d='M0.00,-0.00 L225.00,-121.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.49'/>
+<path d='M112.50,-0.00 L112.50,-60.75' fill='none' stroke='var(--fig-faint)' stroke-width='0.49' stroke-dasharray='2.02 1.57'/>
+<path d='M112.50,-60.75 L112.50,-85.91' fill='none' stroke='currentColor' stroke-width='0.49' stroke-dasharray='2.02 1.57'/>
+<text text-anchor='middle' class='figlbl' font-size='4.85'><tspan x='194.94' y='-117.18'><tspan font-size='4.85' font-style='italic'>u</tspan></tspan></text>
+<circle cx='0.00' cy='-0.00' r='1.44' fill='currentColor'/>
+<text text-anchor='middle' class='figlbl' font-size='4.85'><tspan x='0.00' y='8.65'><tspan font-size='4.85'>$0</tspan></tspan></text>
+<circle cx='225.00' cy='-121.50' r='1.44' fill='currentColor'/>
+<text text-anchor='middle' class='figlbl' font-size='4.85'><tspan x='225.00' y='8.65'><tspan font-size='4.85'>$100</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl faint' font-size='4.85'><tspan x='168.84' y='-81.13'><tspan font-size='4.85'>line</tspan></tspan></text>
+<circle cx='112.50' cy='-60.75' r='1.44' fill='var(--fig-faint)'/>
+<text text-anchor='middle' class='figlbl faint' font-size='4.85'><tspan x='137.97' y='-54.60'><tspan font-size='4.85'>½</tspan><tspan font-size='4.85' font-style='italic'>u</tspan><tspan font-size='4.85'>($0) + ½</tspan><tspan font-size='4.85' font-style='italic'>u</tspan><tspan font-size='4.85'>($100)</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='4.85'><tspan x='112.50' y='8.65'><tspan font-size='4.85'>$50</tspan></tspan></text>
+<circle cx='112.50' cy='-85.91' r='1.44' fill='currentColor'/>
+<text text-anchor='middle' class='figlbl' font-size='4.85'><tspan x='100.89' y='-88.35'><tspan font-size='4.85' font-style='italic'>u</tspan><tspan font-size='4.85'>($50)</tspan></tspan></text>
+</svg>
