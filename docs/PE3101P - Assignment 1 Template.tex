@@ -1,0 +1,441 @@
+%==============================================================================
+%  PE3101P: Decision Theory and Social Choice
+%  Take-Home Assignment 1 --- SUBMISSION TEMPLATE
+%
+%  HOW TO USE THIS FILE
+%   1. Put your name and student number in the two lines just below
+%      (between the braces).
+%   2. Type each answer where it says "YOUR ANSWER".
+%   3. Build with pdflatex (twice, so that cross-references settle), and
+%      submit the PDF it produces.
+%
+%  You do not have to use this template. It is here to save you setting up a
+%  document from scratch. You may delete anything you do not need.
+%
+%  If you have not used LaTeX before, you can open this file at overleaf.com
+%  in a browser with nothing to install.
+%==============================================================================
+\documentclass[11pt]{article}
+
+% ---- Fill these in ----------------------------------------------------------
+\newcommand{\studentname}{YOUR NAME}
+\newcommand{\studentnumber}{YOUR STUDENT NUMBER (A0\dots)}
+% -----------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{parskip}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{nicefrac}
+\usepackage{booktabs}
+\usepackage{array}
+
+\usepackage{enumitem}
+\setlist{align=left}
+\setlist[1]{labelindent=0em, itemsep=0em}
+\setlist[itemize]{label=\textendash}
+\setlist[enumerate,1]{label=\arabic*., itemsep=0.9em}
+\setlist[enumerate,2]{label=(\alph*), itemsep=0.6em}
+\setlist[enumerate,3]{label=(\roman*)}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem*{definition*}{Definition}
+\DeclareMathOperator{\Cr}{Cr}
+
+\usepackage[hidelinks, colorlinks=true]{hyperref}
+\hypersetup{linkcolor=black, citecolor=black, urlcolor=black}
+
+% \begin{answer} ... \end{answer} marks where an answer goes. Write whatever
+% suits the question: prose, displayed equations, a list of steps, a table.
+\newenvironment{answer}
+  {\par\medskip\noindent\textbf{Answer.}\par\nobreak\smallskip\ignorespaces}
+  {\par\medskip}
+
+\title{PE3101P: Decision Theory and Social Choice\\[0.3em]
+       \large Take-Home Assignment 1\\[0.2em]
+       \large Submission Template}
+\author{\studentname \\ \studentnumber}
+\date{Due Tuesday 8 September 2026, 23:59}
+
+\begin{document}
+\maketitle
+
+\section*{Instructions}
+
+Answer \textbf{all} questions. \textbf{The paper is marked out of 100.} The
+marks available are shown against each question, in the right-hand margin.
+
+You may use results proved in the lecture slides, in the lecture notes, or in
+the primer \emph{Sets and Mathematical Proofs}, and you may use the probability
+axioms freely, unless a question says otherwise. Where a question asks you to
+prove something, set the proof out in steps and say what justifies each one.
+
+This assignment is worth \textbf{20\%} of your final grade for the module.
+
+%==============================================================================
+\section*{Question 1 \hfill \normalsize [\,15 marks\,]}
+%==============================================================================
+
+Recall that, for any two acts $A$ and $B$ over the same set of states of nature:
+
+\begin{itemize}
+	\item[--] $A$ \textbf{strongly statewise dominates} $B$ if $A$ results in a
+	better outcome than $B$ in \emph{every} state of nature.
+	\item[--] $A$ \textbf{weakly statewise dominates} $B$ if $A$ results in an
+	outcome at least as good as $B$'s in \emph{every} state of nature, and a
+	better outcome in \emph{at least one} state of nature.
+\end{itemize}
+
+\begin{enumerate}[label=(\alph*)]
+
+\item Show that if $A$ strongly statewise dominates $B$, and $B$ strongly
+statewise dominates $C$, then $A$ strongly statewise dominates $C$.
+
+\begin{answer}
+% YOUR ANSWER to 1(a).
+\end{answer}
+
+\item Show that the same holds for weak statewise dominance: if $A$ weakly
+statewise dominates $B$, and $B$ weakly statewise dominates $C$, then $A$ weakly
+statewise dominates $C$.
+
+\begin{answer}
+% YOUR ANSWER to 1(b).
+\end{answer}
+
+\item Now suppose only one of the two links is strong. Show that if $A$ strongly
+statewise dominates $B$ and $B$ weakly statewise dominates $C$, then $A$
+\textbf{strongly} statewise dominates $C$; and that the same conclusion follows
+if instead $A$ weakly statewise dominates $B$ and $B$ strongly statewise
+dominates $C$.
+
+\begin{answer}
+% YOUR ANSWER to 1(c).
+\end{answer}
+
+\end{enumerate}
+
+%==============================================================================
+\section*{Question 2 \hfill \normalsize [\,10 marks\,]}
+%==============================================================================
+
+In each of the following, exactly one of the four options denotes the same event
+as the expression at the top, whatever the events $A$, $B$ and $C$ happen to be.
+Say which.
+
+Throughout, $X^c$ is the complement of $X$, and $X \setminus Y$ is the set of
+outcomes that are in $X$ but not in $Y$.
+
+\begin{enumerate}[label=(\alph*)]
+
+\item $(A \cup B)^c$
+\begin{enumerate}[label=(\roman*), itemsep=0.1em, topsep=0.25em, parsep=0pt]
+	\item $A^c \cup B^c$
+	\item $A^c \cap B^c$
+	\item $A^c \cup B$
+	\item $(A \cap B)^c$
+\end{enumerate}
+\begin{answer}
+% YOUR ANSWER to 2(a): write (i), (ii), (iii) or (iv).
+\end{answer}
+
+\item $A \cap (B \cup C)$
+\begin{enumerate}[label=(\roman*), itemsep=0.1em, topsep=0.25em, parsep=0pt]
+	\item $(A \cup B) \cap (A \cup C)$
+	\item $(A \cap B) \cup C$
+	\item $(A \cap B) \cup (A \cap C)$
+	\item $A \cap B \cap C$
+\end{enumerate}
+\begin{answer}
+% YOUR ANSWER to 2(b).
+\end{answer}
+
+\item $A \setminus (B \cup C)$
+\begin{enumerate}[label=(\roman*), itemsep=0.1em, topsep=0.25em, parsep=0pt]
+	\item $(A \setminus B) \cup (A \setminus C)$
+	\item $(A \cup B) \setminus C$
+	\item $A \setminus (B \cap C)$
+	\item $(A \setminus B) \cap (A \setminus C)$
+\end{enumerate}
+\begin{answer}
+% YOUR ANSWER to 2(c).
+\end{answer}
+
+\item $(A \cap B) \cup (A \cap B^c)$
+\begin{enumerate}[label=(\roman*), itemsep=0.1em, topsep=0.25em, parsep=0pt]
+	\item $B$
+	\item $A$
+	\item $A \cap B$
+	\item $A \cup B$
+\end{enumerate}
+\begin{answer}
+% YOUR ANSWER to 2(d).
+\end{answer}
+
+\item $(A \cup B) \cap (A \cup B^c)$
+\begin{enumerate}[label=(\roman*), itemsep=0.1em, topsep=0.25em, parsep=0pt]
+	\item $A \cup B$
+	\item $\varnothing$
+	\item $B$
+	\item $A$
+\end{enumerate}
+\begin{answer}
+% YOUR ANSWER to 2(e).
+\end{answer}
+
+\end{enumerate}
+
+%==============================================================================
+\section*{Question 3 \hfill \normalsize [\,15 marks\,]}
+%==============================================================================
+
+Recall the probability axioms. For any events $A$ and $B$:
+
+\begin{itemize}
+	\item[--] \textbf{Non-negativity:} $\Cr(A) \geq 0$.
+	\item[--] \textbf{Normalisation:} $\Cr(\Omega) = 1$, where $\Omega$ is the
+	sample space.
+	\item[--] \textbf{Additivity:} if $A$ and $B$ are disjoint, then
+	$\Cr(A \cup B) = \Cr(A) + \Cr(B)$.
+\end{itemize}
+
+In each of the following, an agent's credences are given. Say whether they can
+all be held together without violating the axioms. If they cannot, say which
+axiom or axioms are violated, and explain why. If one of two or more axioms must
+be violated, but it is not settled which one, indicate this clearly.
+
+\begin{enumerate}[label=(\alph*)]
+
+\item A commuter is uncertain whether the 8:15 bus will arrive on time.
+\[
+	\Cr(\text{the bus is on time}) = 0.7,
+	\qquad
+	\Cr(\text{the bus is not on time}) = 0.4.
+\]
+\begin{answer}
+% YOUR ANSWER to 3(a).
+\end{answer}
+
+\item A ball is to be drawn from a bag containing balls of several colours, some
+of which are plastic.
+\[
+	\Cr(\text{the ball is red}) = 0.2,
+	\qquad
+	\Cr(\text{the ball is red and plastic}) = 0.35.
+\]
+\begin{answer}
+% YOUR ANSWER to 3(b).
+\end{answer}
+
+\item A fair spinner is divided into eight equal sectors, numbered $1$ to $8$.
+\[
+	\Cr(\text{even}) = \nicefrac{1}{2},
+	\quad
+	\Cr(\text{lands on } 3) = \nicefrac{1}{8},
+	\quad
+	\Cr(\text{even, or lands on } 3) = \nicefrac{5}{8}.
+\]
+\begin{answer}
+% YOUR ANSWER to 3(c).
+\end{answer}
+
+\item A football match is to be played. It can end in a home win, an away win,
+or a draw.
+\[
+	\Cr(\text{a home win}) = 0.5,
+	\quad
+	\Cr(\text{a draw}) = 0.2,
+	\quad
+	\Cr(\text{a home win, or a draw}) = 0.8.
+\]
+\begin{answer}
+% YOUR ANSWER to 3(d).
+\end{answer}
+
+\item A student is taking two modules this semester.
+\[
+	\Cr(\text{passes the first}) = 0.8,
+	\quad
+	\Cr(\text{passes the second}) = 0.7,
+	\quad
+	\Cr(\text{passes at least one}) = 0.9.
+\]
+\begin{answer}
+% YOUR ANSWER to 3(e).
+\end{answer}
+
+\end{enumerate}
+
+%==============================================================================
+\section*{Question 4 \hfill \normalsize [\,15 marks\,]}
+%==============================================================================
+
+Let $\Cr$ be a credence function satisfying the probability axioms. Suppose the
+sample space $\Omega$ can be partitioned into $B_1, B_2, \dots, B_n$ --- that is,
+the $B_i$ are mutually exclusive and jointly exhaustive. Let $A$ be any event.
+
+\begin{enumerate}[label=(\alph*)]
+
+\item Show that
+\[
+	\Cr(A) = \Cr(A \cap B_1) + \Cr(A \cap B_2) + \dots + \Cr(A \cap B_n).
+\]
+
+\emph{You may assume the following, which you are not required to prove: if $B$
+and $C$ are disjoint, then $A \cap B$ and $A \cap C$ are disjoint. You may also
+assume that $A = (A \cap B_1) \cup (A \cap B_2) \cup \dots \cup (A \cap B_n)$.}
+
+\begin{answer}
+% YOUR ANSWER to 4(a).
+\end{answer}
+
+\item Hence prove the \textbf{law of total probability}: where $\Cr(B_i) > 0$
+for every $i$,
+\[
+	\Cr(A) = \Cr(B_1)\Cr(A \mid B_1) + \Cr(B_2)\Cr(A \mid B_2)
+	         + \dots + \Cr(B_n)\Cr(A \mid B_n).
+\]
+
+\begin{answer}
+% YOUR ANSWER to 4(b).
+\end{answer}
+
+\end{enumerate}
+
+%==============================================================================
+\section*{Question 5 \hfill \normalsize [\,15 marks\,]}
+%==============================================================================
+
+Recall the definition of conditional probability: for any events $X$ and $Y$,
+\[
+	\Cr(X \mid Y) = \frac{\Cr(X \cap Y)}{\Cr(Y)}.
+\]
+Assume throughout this question that every event mentioned has positive credence.
+
+\begin{enumerate}[label=(\alph*)]
+
+\item Using only this definition, prove \textbf{Bayes' theorem}:
+\[
+	\Cr(A \mid B) = \frac{\Cr(B \mid A) \cdot \Cr(A)}{\Cr(B)}.
+\]
+
+\begin{answer}
+% YOUR ANSWER to 5(a).
+\end{answer}
+
+\item Using your answer to part (a), show that
+\[
+	\underbrace{\frac{\Cr(H_1 \mid E)}{\Cr(H_2 \mid E)}}_{\text{posterior odds}}
+	\;=\;
+	\underbrace{\frac{\Cr(E \mid H_1)}{\Cr(E \mid H_2)}}_{\text{Bayes factor}}
+	\;\times\;
+	\underbrace{\frac{\Cr(H_1)}{\Cr(H_2)}}_{\text{prior odds}}.
+\]
+
+\begin{answer}
+% YOUR ANSWER to 5(b).
+\end{answer}
+
+\end{enumerate}
+
+%==============================================================================
+\section*{Question 6 \hfill \normalsize [\,15 marks\,]}
+%==============================================================================
+
+A bag contains three six-sided dice, which look and feel identical. One of them
+is loaded,
+and lands six with probability $\nicefrac{1}{2}$; the other two are fair. You
+take one die from the bag at random, roll it once, and it lands six.
+
+Let $H_1$ be the hypothesis that you took the loaded die, $H_2$ the hypothesis
+that you took a fair one, and let $E$ be the evidence that the roll landed six.
+
+\begin{enumerate}[label=(\alph*)]
+
+\item Write down the prior odds of $H_1$ over $H_2$, and the Bayes factor.
+
+\begin{answer}
+% YOUR ANSWER to 6(a).
+\end{answer}
+
+\item Using the odds form of Bayes' theorem, as stated in question 5(b),
+calculate the posterior odds, and hence your credence in $H_1$ and in $H_2$ after
+seeing the roll.
+
+\begin{answer}
+% YOUR ANSWER to 6(b).
+\end{answer}
+
+\item Suppose instead that the roll had \emph{not} landed six, and everything
+else had gone as before. What would your credence in $H_1$ have been? Which of
+the prior odds, the Bayes factor and the posterior odds changed, and which did
+not?
+
+\begin{answer}
+% YOUR ANSWER to 6(c).
+\end{answer}
+
+\end{enumerate}
+
+%==============================================================================
+\section*{Question 7 \hfill \normalsize [\,15 marks\,]}
+%==============================================================================
+
+In a decision problem with finitely many acts and finitely many possible outcomes,
+a \textbf{dependency hypothesis} lists, for each act available, which outcome
+would result were that act performed.
+
+It will help to have a compact notation. Where there are two acts, write
+$\langle o, o' \rangle$ for the dependency hypothesis on which the first act would
+produce outcome $o$ and the second would produce outcome $o'$; and similarly, with
+a third entry, where there are three acts. Each outcome below is given a letter to
+use in place of its name.
+
+\emph{For example}, take the acts \emph{revise} and \emph{go out}, with outcomes
+\emph{pass} (p) and \emph{fail} (f). One of the dependency hypotheses is
+$\langle p, f \rangle$: revising would result in passing, and going out would
+result in failing.
+
+\begin{enumerate}[label=(\alph*)]
+
+\item In each of the following, list \textbf{every} possible dependency
+hypothesis.
+
+\begin{enumerate}[label=(\roman*), itemsep=0.1em, topsep=0.25em, parsep=0pt]
+
+\item Acts: \emph{take the umbrella}, \emph{leave the umbrella}.
+Outcomes: \emph{dry} (d), \emph{soaked} (s).
+
+\begin{answer}
+% YOUR ANSWER to 7(a)(i).
+\end{answer}
+
+\item Acts: \emph{water the plant}, \emph{leave the plant}.
+Outcomes: \emph{flowers} (f), \emph{survives} (s), \emph{dies} (d).
+
+\begin{answer}
+% YOUR ANSWER to 7(a)(ii).
+\end{answer}
+
+\item Acts: \emph{brush the cat}, \emph{stroke the cat}, \emph{leave the cat
+alone}. Outcomes: \emph{purrs} (p), \emph{quiet} (q).
+
+\begin{answer}
+% YOUR ANSWER to 7(a)(iii).
+\end{answer}
+
+\end{enumerate}
+
+\item In general, how many dependency hypotheses are there when a decision problem
+has $m$ acts and $n$ possible outcomes? Explain your answer.
+
+\begin{answer}
+% YOUR ANSWER to 7(b).
+\end{answer}
+
+\end{enumerate}
+
+\end{document}
