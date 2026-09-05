@@ -49,12 +49,12 @@ window.NOTES_DATA = {
     {
      "id": "1.2",
      "title": "Bayes' theorem",
-     "blocks": 6
+     "blocks": 2
     },
     {
      "id": "1.3",
      "title": "The odds form",
-     "blocks": 9
+     "blocks": 2
     }
    ]
   },
@@ -138,7 +138,7 @@ window.NOTES_DATA = {
     {
      "id": "3.3",
      "title": "Newcomb, on the evidential theory",
-     "blocks": 3
+     "blocks": 4
     },
     {
      "id": "3.4",
@@ -371,6 +371,14 @@ window.NOTES_DATA = {
    "block": "b1.1.1",
    "sub": "1.1",
    "html": "<div class='blk box box-principle' id='b1.1.1'><div class='boxhead'>Principle <span class='boxname'>(The law of total probability)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='totalprob'></span>\nWhere <span class='math' data-tex=\"B_1, \\dots, B_n\"><span class='math-fallback'>B_1, \\dots, B_n</span></span> partition <span class='math' data-tex=\"\\Omega\"><span class='math-fallback'>\\Omega</span></span>,\n<div class='mathblock' data-tex=\"\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).\"><span class='math-fallback'>\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).</span></div></div></div></div>"
+  },
+  "bayes": {
+   "term": "Bayes\u2019 theorem",
+   "kind": "Principle",
+   "page": "01-probability.html",
+   "block": "b1.2.1",
+   "sub": "1.2",
+   "html": "<div class='blk box box-principle' id='b1.2.1'><div class='boxhead'>Principle <span class='boxname'>(Bayes\u2019 theorem)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='bayes'></span>\n<div class='mathblock' data-tex=\"\\Cr(A \\mid B) = \\frac{\\Cr(B \\mid A)\\,\\Cr(A)}{\\Cr(B)}\n\\qquad \\text{provided } \\Cr(A), \\Cr(B) &gt; 0.\"><span class='math-fallback'>\\Cr(A \\mid B) = \\frac{\\Cr(B \\mid A)\\,\\Cr(A)}{\\Cr(B)}\n\\qquad \\text{provided } \\Cr(A), \\Cr(B) &gt; 0.</span></div></div></div></div>"
   },
   "probindep": {
    "term": "probabilistic independence",
