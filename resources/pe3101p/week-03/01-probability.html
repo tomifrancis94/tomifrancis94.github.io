@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1. More probability — PE3101P Week 3</title>
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<link rel="stylesheet" href="assets/notes.css">
+<link rel="stylesheet" href="assets/comments.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="sitenav" aria-label="Site">
+<div class="sitenav-inner">
+<a href="../../../index.html">Home</a>
+<a class="active" href="../../../pe3101p.html">Decision and Social Choice</a>
+<a href="../../../teaching.html">Teaching</a>
+<a href="../../../cv.html">CV</a>
+<a href="../../../about.html">About</a>
+</div>
+</nav>
+<div class="layout">
+<nav class='toc'><div class='toctitle'><a href='index.html'>Week 3 &mdash; Newcomb&rsquo;s problem</a></div><ol><li class='here'><a href='01-probability.html'><span class='tocnum'>1</span>More probability</a><ul><li><a href='#s1.1'>The law of total probability</a></li><li><a href='#s1.2'>Bayes’ theorem</a></li><li><a href='#s1.3'>Proving Bayes’ theorem</a></li><li><a href='#s1.4'>Bayes factors</a></li><li><a href='#s1.5'>Proving the odds form</a></li><li><a href='#s1.6'>Dutch books</a></li><li><a href='#s1.7'>The finite additivity book</a></li><li><a href='#s1.8'>Dutch books as arguments for probabilism</a></li><li><a href='#s1.9'>Why that isn’t good enough</a></li><li><a href='#s1.10'>A better version</a></li><li><a href='#s1.11'>The betting interpretation</a></li></ul></li><li><a href='02-newcomb.html'><span class='tocnum'>2</span>Newcomb's problem</a></li><li><a href='03-edt-and-cdt.html'><span class='tocnum'>3</span>EDT and CDT</a></li><li><a href='04-edt-vs-cdt.html'><span class='tocnum'>4</span>EDT vs CDT</a></li></ol></nav>
+<main id="main">
+<article><h1 class='blk' id='h1'><span class='secnum'>1</span> More probability</h1><section class='sub' data-sub='1.1'><details class='subdet' open><summary class='subhead blk' id='h1.1'><span class='secnum'>1.1</span> The law of total probability<a class='anchor' href='#s1.1' title='Link to this subsection'>#</a><span class='headtarget' id='s1.1'></span></summary><div class='subbody'><div class='blk box box-principle' id='b1.1.1'><div class='boxhead'>Principle <span class='boxname'>(The law of total probability)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='totalprob'></span>
+Where <span class='math' data-tex="B_1, \dots, B_n"><span class='math-fallback'>B_1, \dots, B_n</span></span> partition <span class='math' data-tex="\Omega"><span class='math-fallback'>\Omega</span></span>,
+<div class='mathblock' data-tex="\Cr(A) = \Cr(B_1)\Cr(A \mid B_1) + \dots + \Cr(B_n)\Cr(A \mid B_n)."><span class='math-fallback'>\Cr(A) = \Cr(B_1)\Cr(A \mid B_1) + \dots + \Cr(B_n)\Cr(A \mid B_n).</span></div></div></div></div><div class='blk figseq' id='b1.1.2' data-frames='5'><div class='seqframes'><div class='seqframe'><figure class='blk figure' id='b1.1.2-f1' data-fig='tp0'><a id='fig-tp0'></a><details class='figdet' open><summary><span class='fignum'>Figure 1.</span> The <span class='math' data-tex="B_i"><span class='math-fallback'>B_i</span></span> cut <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> into the disjoint pieces <span class='math' data-tex="A \cap B_i"><span class='math-fallback'>A \cap B_i</span></span>.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -93.50 187.00 97.00' width='100%' style='max-width:534px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='tp0-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='tp0-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='tp0-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.52' markerHeight='2.52' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<clipPath id='tp0-clip1'><rect x='0.00' y='-90.00' width='180.00' height='90.00' /></clipPath>
+<clipPath id='tp0-clip2'><ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' /></clipPath>
+</defs>
+<ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' clip-path='url(#tp0-clip1)' fill='url(#tp0-hatch)' stroke='none'/>
+<rect x='0.00' y='-90.00' width='0.00' height='90.00' clip-path='url(#tp0-clip2)' fill='var(--fig-faint)' stroke='none'/>
+<rect x='0.00' y='-90.00' width='180.00' height='90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M45.00,-0.00 L45.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M90.00,-0.00 L90.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M135.00,-0.00 L135.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='22.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>1</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='67.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='112.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='157.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>4</tspan></tspan></text>
+<rect x='64.14' y='-50.20' width='6.73' height='10.40' fill='var(--fig-bg)' stroke='none'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='67.50' y='-43.22'><tspan font-size='5.25' font-style='italic'>A</tspan></tspan></text>
+<rect x='9.30' y='-82.54' width='5.40' height='9.07' fill='var(--fig-bg)' stroke='none'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='12.00' y='-76.22'><tspan font-size='5.25'>Ω</tspan></tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b1.1.2-f2' data-fig='tp1'><a id='fig-tp1'></a><details class='figdet' open><summary><span class='fignum'>Figure 2.</span> <span class='math' data-tex="A \cap B_1"><span class='math-fallback'>A \cap B_1</span></span>.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -93.50 187.00 97.00' width='100%' style='max-width:534px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='tp1-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='tp1-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='tp1-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.52' markerHeight='2.52' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<clipPath id='tp1-clip1'><rect x='0.00' y='-90.00' width='180.00' height='90.00' /></clipPath>
+<clipPath id='tp1-clip2'><ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' /></clipPath>
+</defs>
+<ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' clip-path='url(#tp1-clip1)' fill='url(#tp1-hatch)' stroke='none'/>
+<rect x='0.00' y='-90.00' width='45.00' height='90.00' clip-path='url(#tp1-clip2)' fill='var(--fig-faint)' stroke='none'/>
+<rect x='0.00' y='-90.00' width='180.00' height='90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M45.00,-0.00 L45.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M90.00,-0.00 L90.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M135.00,-0.00 L135.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='22.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>1</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='67.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='112.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='157.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>4</tspan></tspan></text>
+<rect x='64.14' y='-50.20' width='6.73' height='10.40' fill='var(--fig-bg)' stroke='none'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='67.50' y='-43.22'><tspan font-size='5.25' font-style='italic'>A</tspan></tspan></text>
+<rect x='9.30' y='-82.54' width='5.40' height='9.07' fill='var(--fig-bg)' stroke='none'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='12.00' y='-76.22'><tspan font-size='5.25'>Ω</tspan></tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b1.1.2-f3' data-fig='tp2'><a id='fig-tp2'></a><details class='figdet' open><summary><span class='fignum'>Figure 3.</span> <span class='math' data-tex="A \cap B_2"><span class='math-fallback'>A \cap B_2</span></span>.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -93.50 187.00 97.00' width='100%' style='max-width:534px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='tp2-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='tp2-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='tp2-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.52' markerHeight='2.52' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<clipPath id='tp2-clip1'><rect x='0.00' y='-90.00' width='180.00' height='90.00' /></clipPath>
+<clipPath id='tp2-clip2'><ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' /></clipPath>
+</defs>
+<ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' clip-path='url(#tp2-clip1)' fill='url(#tp2-hatch)' stroke='none'/>
+<rect x='45.00' y='-90.00' width='45.00' height='90.00' clip-path='url(#tp2-clip2)' fill='var(--fig-faint)' stroke='none'/>
+<rect x='0.00' y='-90.00' width='180.00' height='90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M45.00,-0.00 L45.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M90.00,-0.00 L90.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M135.00,-0.00 L135.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='22.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>1</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='67.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='112.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='157.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>4</tspan></tspan></text>
+<rect x='64.14' y='-50.20' width='6.73' height='10.40' fill='var(--fig-bg)' stroke='none'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='67.50' y='-43.22'><tspan font-size='5.25' font-style='italic'>A</tspan></tspan></text>
+<rect x='9.30' y='-82.54' width='5.40' height='9.07' fill='var(--fig-bg)' stroke='none'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='12.00' y='-76.22'><tspan font-size='5.25'>Ω</tspan></tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b1.1.2-f4' data-fig='tp3'><a id='fig-tp3'></a><details class='figdet' open><summary><span class='fignum'>Figure 4.</span> <span class='math' data-tex="A \cap B_3"><span class='math-fallback'>A \cap B_3</span></span>.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -93.50 187.00 97.00' width='100%' style='max-width:534px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='tp3-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='tp3-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='tp3-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.52' markerHeight='2.52' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<clipPath id='tp3-clip1'><rect x='0.00' y='-90.00' width='180.00' height='90.00' /></clipPath>
+<clipPath id='tp3-clip2'><ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' /></clipPath>
+</defs>
+<ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' clip-path='url(#tp3-clip1)' fill='url(#tp3-hatch)' stroke='none'/>
+<rect x='90.00' y='-90.00' width='45.00' height='90.00' clip-path='url(#tp3-clip2)' fill='var(--fig-faint)' stroke='none'/>
+<rect x='0.00' y='-90.00' width='180.00' height='90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M45.00,-0.00 L45.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M90.00,-0.00 L90.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M135.00,-0.00 L135.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='22.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>1</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='67.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='112.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='157.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>4</tspan></tspan></text>
+<rect x='64.14' y='-50.20' width='6.73' height='10.40' fill='var(--fig-bg)' stroke='none'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='67.50' y='-43.22'><tspan font-size='5.25' font-style='italic'>A</tspan></tspan></text>
+<rect x='9.30' y='-82.54' width='5.40' height='9.07' fill='var(--fig-bg)' stroke='none'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='12.00' y='-76.22'><tspan font-size='5.25'>Ω</tspan></tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b1.1.2-f5' data-fig='tp4'><a id='fig-tp4'></a><details class='figdet' open><summary><span class='fignum'>Figure 5.</span> <span class='math' data-tex="A \cap B_4"><span class='math-fallback'>A \cap B_4</span></span>.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-3.50 -93.50 187.00 97.00' width='100%' style='max-width:534px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='tp4-hatch' patternUnits='userSpaceOnUse' width='2.45' height='2.45' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.45' stroke='currentColor' stroke-width='0.32' opacity='0.55'/></pattern>
+<marker id='tp4-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.15' markerHeight='3.15' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='tp4-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.52' markerHeight='2.52' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<clipPath id='tp4-clip1'><rect x='0.00' y='-90.00' width='180.00' height='90.00' /></clipPath>
+<clipPath id='tp4-clip2'><ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' /></clipPath>
+</defs>
+<ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' clip-path='url(#tp4-clip1)' fill='url(#tp4-hatch)' stroke='none'/>
+<rect x='135.00' y='-90.00' width='45.00' height='90.00' clip-path='url(#tp4-clip2)' fill='var(--fig-faint)' stroke='none'/>
+<rect x='0.00' y='-90.00' width='180.00' height='90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M45.00,-0.00 L45.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M90.00,-0.00 L90.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<path d='M135.00,-0.00 L135.00,-90.00' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<ellipse cx='90.00' cy='-45.00' rx='69.00' ry='28.50' fill='none' stroke='currentColor' stroke-width='0.39'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='22.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>1</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='67.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='112.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='157.50' y='-10.21'><tspan font-size='5.25' font-style='italic'>B</tspan><tspan font-size='3.78' dy='1.21'>4</tspan></tspan></text>
+<rect x='64.14' y='-50.20' width='6.73' height='10.40' fill='var(--fig-bg)' stroke='none'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='67.50' y='-43.22'><tspan font-size='5.25' font-style='italic'>A</tspan></tspan></text>
+<rect x='9.30' y='-82.54' width='5.40' height='9.07' fill='var(--fig-bg)' stroke='none'/>
+<text text-anchor='middle' class='figlbl' font-size='5.25'><tspan x='12.00' y='-76.22'><tspan font-size='5.25'>Ω</tspan></tspan></text>
+</svg></div></details></figure></div></div><div class='seqbar'><button type='button' class='seqbtn seqprev' aria-label='Previous frame' disabled>&#9664;</button><span class='seqcount'><span class='seqnow'>1</span>&thinsp;/&thinsp;5</span><button type='button' class='seqbtn seqnext' aria-label='Next frame'>&#9654;</button></div></div><p class='blk' id='b1.1.3'>The <span class='math' data-tex="B_i"><span class='math-fallback'>B_i</span></span> cut <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> into the disjoint pieces <span class='math' data-tex="A \cap B_i"><span class='math-fallback'>A \cap B_i</span></span>. So by finite additivity, <span class='math' data-tex="\Cr(A) = \Cr(A \cap B_1) + \dots + \Cr(A \cap B_n)"><span class='math-fallback'>\Cr(A) = \Cr(A \cap B_1) + \dots + \Cr(A \cap B_n)</span></span>. And <span class='math' data-tex="\Cr(A \cap B_i) = \Cr(B_i)\Cr(A \mid B_i)"><span class='math-fallback'>\Cr(A \cap B_i) = \Cr(B_i)\Cr(A \mid B_i)</span></span>, by the definition. Substitute.</p></div></details></section><section class='sub' data-sub='1.2'><details class='subdet' open><summary class='subhead blk' id='h1.2'><span class='secnum'>1.2</span> Bayes’ theorem<a class='anchor' href='#s1.2' title='Link to this subsection'>#</a><span class='headtarget' id='s1.2'></span></summary><div class='subbody'><div class='blk box box-principle' id='b1.2.1'><div class='boxhead'>Principle <span class='boxname'>(Bayes’ theorem)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='bayes'></span>
+<div class='mathblock' data-tex="\Cr(A \mid B) = \frac{\Cr(B \mid A)\,\Cr(A)}{\Cr(B)}
+\qquad \text{provided } \Cr(A), \Cr(B) &gt; 0."><span class='math-fallback'>\Cr(A \mid B) = \frac{\Cr(B \mid A)\,\Cr(A)}{\Cr(B)}
+\qquad \text{provided } \Cr(A), \Cr(B) &gt; 0.</span></div></div></div></div></div></details></section><section class='sub' data-sub='1.3'><details class='subdet' open><summary class='subhead blk' id='h1.3'><span class='secnum'>1.3</span> Proving Bayes’ theorem<a class='anchor' href='#s1.3' title='Link to this subsection'>#</a><span class='headtarget' id='s1.3'></span></summary><div class='subbody'><div class='blk para' id='b1.3.1'>What we want to show:
+<div class='mathblock' data-tex="\Cr(A \mid B) = \frac{\Cr(B \mid A)\,\Cr(A)}{\Cr(B)}."><span class='math-fallback'>\Cr(A \mid B) = \frac{\Cr(B \mid A)\,\Cr(A)}{\Cr(B)}.</span></div></div><div class='blk para' id='b1.3.2'>Substitute the definition of <span class='math' data-tex="\Cr(A \mid B) = \Cr(A \cap B) / \Cr(B)"><span class='math-fallback'>\Cr(A \mid B) = \Cr(A \cap B) / \Cr(B)</span></span> on the left:
+<div class='mathblock' data-tex="\boldsymbol{\frac{\Cr(A \cap B)}{\Cr(B)}} = \frac{\Cr(B \mid A)\,\Cr(A)}{\Cr(B)}."><span class='math-fallback'>\boldsymbol{\frac{\Cr(A \cap B)}{\Cr(B)}} = \frac{\Cr(B \mid A)\,\Cr(A)}{\Cr(B)}.</span></div></div><div class='blk para' id='b1.3.3'>Substitute the definition of <span class='math' data-tex="\Cr(B \mid A) = \Cr(A \cap B) / \Cr(A)"><span class='math-fallback'>\Cr(B \mid A) = \Cr(A \cap B) / \Cr(A)</span></span> on the right:
+<div class='mathblock' data-tex="\frac{\Cr(A \cap B)}{\Cr(B)} = \frac{\boldsymbol{\big(\Cr(A \cap B) / \Cr(A)\big)}\,\Cr(A)}{\Cr(B)}."><span class='math-fallback'>\frac{\Cr(A \cap B)}{\Cr(B)} = \frac{\boldsymbol{\big(\Cr(A \cap B) / \Cr(A)\big)}\,\Cr(A)}{\Cr(B)}.</span></div></div><div class='blk para' id='b1.3.4'><span class='math' data-tex="\Cr(A)"><span class='math-fallback'>\Cr(A)</span></span> was dividing the numerator, so it belongs in the denominator:
+<div class='mathblock' data-tex="\frac{\Cr(A \cap B)}{\Cr(B)} = \frac{\Cr(A \cap B)\,\Cr(A)}{\boldsymbol{\Cr(A)}\,\Cr(B)}."><span class='math-fallback'>\frac{\Cr(A \cap B)}{\Cr(B)} = \frac{\Cr(A \cap B)\,\Cr(A)}{\boldsymbol{\Cr(A)}\,\Cr(B)}.</span></div></div><div class='blk para' id='b1.3.5'><span class='math' data-tex="\Cr(A)"><span class='math-fallback'>\Cr(A)</span></span> appears top and bottom, so it cancels:
+<div class='mathblock' data-tex="\frac{\Cr(A \cap B)}{\Cr(B)} = \frac{\Cr(A \cap B)}{\Cr(B)}."><span class='math-fallback'>\frac{\Cr(A \cap B)}{\Cr(B)} = \frac{\Cr(A \cap B)}{\Cr(B)}.</span></div></div><p class='blk' id='b1.3.6'>The two sides are now identical.</p></div></details></section><section class='sub' data-sub='1.4'><details class='subdet' open><summary class='subhead blk' id='h1.4'><span class='secnum'>1.4</span> Bayes factors<a class='anchor' href='#s1.4' title='Link to this subsection'>#</a><span class='headtarget' id='s1.4'></span></summary><div class='subbody'><p class='blk' id='b1.4.1'>Two hypotheses <span class='math' data-tex="H_1, H_2"><span class='math-fallback'>H_1, H_2</span></span>, and evidence <span class='math' data-tex="E"><span class='math-fallback'>E</span></span> arrives. The <span class='defsite' data-def='bayesfactor'><em>Bayes factor</em></span> is <span class='math' data-tex="\Cr(E \mid H_1) / \Cr(E \mid H_2)"><span class='math-fallback'>\Cr(E \mid H_1) / \Cr(E \mid H_2)</span></span>: how much better <span class='math' data-tex="E"><span class='math-fallback'>E</span></span> is explained by <span class='math' data-tex="H_1"><span class='math-fallback'>H_1</span></span> than by <span class='math' data-tex="H_2"><span class='math-fallback'>H_2</span></span>.</p><div class='blk para' id='b1.4.2'>In odds form,
+<div class='mathblock' data-tex="\underbrace{\frac{\Cr(H_1 \mid E)}{\Cr(H_2 \mid E)}}_{\text{posterior odds}}
+=
+\underbrace{\frac{\Cr(E \mid H_1)}{\Cr(E \mid H_2)}}_{\text{Bayes factor}}
+\times
+\underbrace{\frac{\Cr(H_1)}{\Cr(H_2)}}_{\text{prior odds}}."><span class='math-fallback'>\underbrace{\frac{\Cr(H_1 \mid E)}{\Cr(H_2 \mid E)}}_{\text{posterior odds}}
+=
+\underbrace{\frac{\Cr(E \mid H_1)}{\Cr(E \mid H_2)}}_{\text{Bayes factor}}
+\times
+\underbrace{\frac{\Cr(H_1)}{\Cr(H_2)}}_{\text{prior odds}}.</span></div></div></div></details></section><section class='sub' data-sub='1.5'><details class='subdet' open><summary class='subhead blk' id='h1.5'><span class='secnum'>1.5</span> Proving the odds form<a class='anchor' href='#s1.5' title='Link to this subsection'>#</a><span class='headtarget' id='s1.5'></span></summary><div class='subbody'><div class='blk para' id='b1.5.1'>Start from the posterior odds:
+<div class='mathblock' data-tex="\frac{\Cr(H_1 \mid E)}{\Cr(H_2 \mid E)}."><span class='math-fallback'>\frac{\Cr(H_1 \mid E)}{\Cr(H_2 \mid E)}.</span></div></div><div class='blk para' id='b1.5.2'>Substitute <a class='xref term' data-def='bayes' href='01-probability.html#b1.2.1'>Bayes’ theorem</a> for <span class='math' data-tex="\Cr(H_1 \mid E) = \Cr(E \mid H_1)\,\Cr(H_1) / \Cr(E)"><span class='math-fallback'>\Cr(H_1 \mid E) = \Cr(E \mid H_1)\,\Cr(H_1) / \Cr(E)</span></span>:
+<div class='mathblock' data-tex="\frac{\boldsymbol{\big(\Cr(E \mid H_1)\,\Cr(H_1) / \Cr(E)\big)}}{\Cr(H_2 \mid E)}."><span class='math-fallback'>\frac{\boldsymbol{\big(\Cr(E \mid H_1)\,\Cr(H_1) / \Cr(E)\big)}}{\Cr(H_2 \mid E)}.</span></div></div><div class='blk para' id='b1.5.3'><span class='math' data-tex="\Cr(E)"><span class='math-fallback'>\Cr(E)</span></span> was dividing the numerator, so it belongs in the denominator:
+<div class='mathblock' data-tex="\frac{\Cr(E \mid H_1)\,\Cr(H_1)}{\boldsymbol{\Cr(E)}\,\Cr(H_2 \mid E)}."><span class='math-fallback'>\frac{\Cr(E \mid H_1)\,\Cr(H_1)}{\boldsymbol{\Cr(E)}\,\Cr(H_2 \mid E)}.</span></div></div><div class='blk para' id='b1.5.4'>Substitute <a class='xref term' data-def='bayes' href='01-probability.html#b1.2.1'>Bayes’ theorem</a> for <span class='math' data-tex="\Cr(H_2 \mid E) = \Cr(E \mid H_2)\,\Cr(H_2) / \Cr(E)"><span class='math-fallback'>\Cr(H_2 \mid E) = \Cr(E \mid H_2)\,\Cr(H_2) / \Cr(E)</span></span>:
+<div class='mathblock' data-tex="\frac{\Cr(E \mid H_1)\,\Cr(H_1)}{\Cr(E)\,\boldsymbol{\big(\Cr(E \mid H_2)\,\Cr(H_2) / \Cr(E)\big)}}."><span class='math-fallback'>\frac{\Cr(E \mid H_1)\,\Cr(H_1)}{\Cr(E)\,\boldsymbol{\big(\Cr(E \mid H_2)\,\Cr(H_2) / \Cr(E)\big)}}.</span></div></div><div class='blk para' id='b1.5.5'>That <span class='math' data-tex="\Cr(E)"><span class='math-fallback'>\Cr(E)</span></span> was dividing the denominator, so it belongs in the numerator:
+<div class='mathblock' data-tex="\frac{\Cr(E \mid H_1)\,\Cr(H_1)\,\boldsymbol{\Cr(E)}}{\Cr(E)\,\Cr(E \mid H_2)\,\Cr(H_2)}."><span class='math-fallback'>\frac{\Cr(E \mid H_1)\,\Cr(H_1)\,\boldsymbol{\Cr(E)}}{\Cr(E)\,\Cr(E \mid H_2)\,\Cr(H_2)}.</span></div></div><div class='blk para' id='b1.5.6'><span class='math' data-tex="\Cr(E)"><span class='math-fallback'>\Cr(E)</span></span> now appears top and bottom, so it cancels:
+<div class='mathblock' data-tex="\frac{\Cr(E \mid H_1)\,\Cr(H_1)}{\Cr(E \mid H_2)\,\Cr(H_2)}."><span class='math-fallback'>\frac{\Cr(E \mid H_1)\,\Cr(H_1)}{\Cr(E \mid H_2)\,\Cr(H_2)}.</span></div></div><div class='blk para' id='b1.5.7'>Separate the two conditional credences from the two priors:
+<div class='mathblock' data-tex="\boldsymbol{\frac{\Cr(E \mid H_1)}{\Cr(E \mid H_2)} \times \frac{\Cr(H_1)}{\Cr(H_2)}}."><span class='math-fallback'>\boldsymbol{\frac{\Cr(E \mid H_1)}{\Cr(E \mid H_2)} \times \frac{\Cr(H_1)}{\Cr(H_2)}}.</span></div></div><p class='blk' id='b1.5.8'><a class='xref term' data-def='bayesfactor' href='01-probability.html#b1.4.1'>Bayes factor</a> <span class='math' data-tex="\times"><span class='math-fallback'>\times</span></span> prior odds.</p></div></details></section><section class='sub' data-sub='1.6'><details class='subdet' open><summary class='subhead blk' id='h1.6'><span class='secnum'>1.6</span> Dutch books<a class='anchor' href='#s1.6' title='Link to this subsection'>#</a><span class='headtarget' id='s1.6'></span></summary><div class='subbody'><div class='blk box box-principle' id='b1.6.1'><div class='boxhead'>Principle <span class='boxname'>(The betting interpretation)</span></div><div class='boxbody'><p><span class='defsite' data-def='bettinginterp'></span>
+An agent whose credence in <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> is <span class='math' data-tex="p"><span class='math-fallback'>p</span></span> will buy a $<span class='math' data-tex="S"><span class='math-fallback'>S</span></span> bet on <span class='math' data-tex="A"><span class='math-fallback'>A</span></span> for any price below $<span class='math' data-tex="pS"><span class='math-fallback'>pS</span></span>, and sell one for any price above $<span class='math' data-tex="pS"><span class='math-fallback'>pS</span></span>.</p></div></div><p class='blk' id='b1.6.2'>The agent’s credence fixes a price, and she’ll take either side of it.</p></div></details></section><section class='sub' data-sub='1.7'><details class='subdet' open><summary class='subhead blk' id='h1.7'><span class='secnum'>1.7</span> The finite additivity book<a class='anchor' href='#s1.7' title='Link to this subsection'>#</a><span class='headtarget' id='s1.7'></span></summary><div class='subbody'><p class='blk' id='b1.7.1'>Take <span class='math' data-tex="P"><span class='math-fallback'>P</span></span> and <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span> mutually exclusive, with credence <span class='math' data-tex="0.2"><span class='math-fallback'>0.2</span></span> in each but <span class='math' data-tex="0.8"><span class='math-fallback'>0.8</span></span> in <span class='math' data-tex="P \cup Q"><span class='math-fallback'>P \cup Q</span></span>. Finite additivity requires <span class='math' data-tex="0.4"><span class='math-fallback'>0.4</span></span>.</p><ul class='blk customlist' id='b1.7.2'><li><span class='itemlabel'><strong>1</strong></span> She sells a $100 bet on <span class='math' data-tex="P"><span class='math-fallback'>P</span></span> for <strong>$21</strong>. Her price is $20, so selling above it is a gain.</li><li><span class='itemlabel'><strong>2</strong></span> She sells a $100 bet on <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span> for <strong>$21</strong>. Likewise.</li><li><span class='itemlabel'><strong>3</strong></span> She buys a $100 bet on <span class='math' data-tex="P \cup Q"><span class='math-fallback'>P \cup Q</span></span> for <strong>$79</strong>. Her price is $80, so buying below it is a gain.</li></ul><p class='blk' id='b1.7.3'>Each one, on its own, is one her own credences say she wants.</p><p class='blk' id='b1.7.4'>It is worth seeing what happens. Each frame below plots her net position in the
+three states — <span class='math' data-tex="P"><span class='math-fallback'>P</span></span>, <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span>, and neither — first for each bet taken on its own,
+and then for the bets accumulated one after another.</p><div class='blk figseq' id='b1.7.5' data-frames='7'><div class='seqframes'><div class='seqframe'><figure class='blk figure' id='b1.7.5-f1' data-fig='bars0'><a id='fig-bars0'></a><details class='figdet' open><summary><span class='fignum'>Figure 6.</span> No bets taken: her net position is zero in every state.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -98.40 241.80 240.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='bars0-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='bars0-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='bars0-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.81' markerHeight='2.81' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<path d='M15.90,-0.00 L53.10,-0.00' fill='none' stroke='currentColor' stroke-width='0.74'/>
+<path d='M71.40,-0.00 L108.60,-0.00' fill='none' stroke='currentColor' stroke-width='0.74'/>
+<path d='M126.90,-0.00 L164.10,-0.00' fill='none' stroke='currentColor' stroke-width='0.74'/>
+<text text-anchor='middle' class='figlbl' font-size='7.41'><tspan x='90.00' y='-75.48'><tspan font-size='7.41' font-weight='700'>No bets</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='-7.01'><tspan font-size='5.85'>0</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='126.49'><tspan font-size='5.85' font-style='italic'>P</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='-7.01'><tspan font-size='5.85'>0</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='126.49'><tspan font-size='5.85' font-style='italic'>Q</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='-7.01'><tspan font-size='5.85'>0</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='126.49'><tspan font-size='5.85'>neither</tspan></tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b1.7.5-f2' data-fig='bars1'><a id='fig-bars1'></a><details class='figdet' open><summary><span class='fignum'>Figure 7.</span> Bet 1 on its own. She has sold a $100 bet on <span class='math' data-tex="P"><span class='math-fallback'>P</span></span> for $21.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -98.40 241.80 240.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='bars1-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='bars1-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='bars1-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.81' markerHeight='2.81' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='15.90' y='-0.00' width='37.20' height='94.80' fill='url(#bars1-hatch)' stroke='none'/>
+<rect x='15.90' y='-0.00' width='37.20' height='94.80' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='71.40' y='-25.20' width='37.20' height='25.20' fill='url(#bars1-hatch)' stroke='none'/>
+<rect x='71.40' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='126.90' y='-25.20' width='37.20' height='25.20' fill='url(#bars1-hatch)' stroke='none'/>
+<rect x='126.90' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text text-anchor='middle' class='figlbl' font-size='7.41'><tspan x='90.00' y='-75.48'><tspan font-size='7.41' font-weight='700'>Bet 1</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='106.99'><tspan font-size='5.85'>-79</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='126.49'><tspan font-size='5.85' font-style='italic'>P</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='-32.21'><tspan font-size='5.85'>+21</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='126.49'><tspan font-size='5.85' font-style='italic'>Q</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='-32.21'><tspan font-size='5.85'>+21</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='126.49'><tspan font-size='5.85'>neither</tspan></tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b1.7.5-f3' data-fig='bars2'><a id='fig-bars2'></a><details class='figdet' open><summary><span class='fignum'>Figure 8.</span> Bet 2 on its own. She has sold a $100 bet on <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span> for $21.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -98.40 241.80 240.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='bars2-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='bars2-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='bars2-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.81' markerHeight='2.81' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='15.90' y='-25.20' width='37.20' height='25.20' fill='url(#bars2-hatch)' stroke='none'/>
+<rect x='15.90' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='71.40' y='-0.00' width='37.20' height='94.80' fill='url(#bars2-hatch)' stroke='none'/>
+<rect x='71.40' y='-0.00' width='37.20' height='94.80' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='126.90' y='-25.20' width='37.20' height='25.20' fill='url(#bars2-hatch)' stroke='none'/>
+<rect x='126.90' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text text-anchor='middle' class='figlbl' font-size='7.41'><tspan x='90.00' y='-75.48'><tspan font-size='7.41' font-weight='700'>Bet 2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='-32.21'><tspan font-size='5.85'>+21</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='126.49'><tspan font-size='5.85' font-style='italic'>P</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='106.99'><tspan font-size='5.85'>-79</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='126.49'><tspan font-size='5.85' font-style='italic'>Q</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='-32.21'><tspan font-size='5.85'>+21</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='126.49'><tspan font-size='5.85'>neither</tspan></tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b1.7.5-f4' data-fig='bars3'><a id='fig-bars3'></a><details class='figdet' open><summary><span class='fignum'>Figure 9.</span> Bet 3 on its own. She has bought a $100 bet on <span class='math' data-tex="P \cup Q"><span class='math-fallback'>P \cup Q</span></span> for $79.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -98.40 241.80 240.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='bars3-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='bars3-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='bars3-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.81' markerHeight='2.81' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='15.90' y='-25.20' width='37.20' height='25.20' fill='url(#bars3-hatch)' stroke='none'/>
+<rect x='15.90' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='71.40' y='-25.20' width='37.20' height='25.20' fill='url(#bars3-hatch)' stroke='none'/>
+<rect x='71.40' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='126.90' y='-0.00' width='37.20' height='94.80' fill='url(#bars3-hatch)' stroke='none'/>
+<rect x='126.90' y='-0.00' width='37.20' height='94.80' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text text-anchor='middle' class='figlbl' font-size='7.41'><tspan x='90.00' y='-75.48'><tspan font-size='7.41' font-weight='700'>Bet 3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='-32.21'><tspan font-size='5.85'>+21</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='126.49'><tspan font-size='5.85' font-style='italic'>P</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='-32.21'><tspan font-size='5.85'>+21</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='126.49'><tspan font-size='5.85' font-style='italic'>Q</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='106.99'><tspan font-size='5.85'>-79</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='126.49'><tspan font-size='5.85'>neither</tspan></tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b1.7.5-f5' data-fig='barsc1'><a id='fig-barsc1'></a><details class='figdet' open><summary><span class='fignum'>Figure 10.</span> Now the same three bets accumulated. After Bet 1 she is exposed only if <span class='math' data-tex="P"><span class='math-fallback'>P</span></span> happens.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -98.40 241.80 240.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='barsc1-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='barsc1-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='barsc1-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.81' markerHeight='2.81' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='15.90' y='-0.00' width='37.20' height='94.80' fill='url(#barsc1-hatch)' stroke='none'/>
+<rect x='15.90' y='-0.00' width='37.20' height='94.80' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='71.40' y='-25.20' width='37.20' height='25.20' fill='url(#barsc1-hatch)' stroke='none'/>
+<rect x='71.40' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='126.90' y='-25.20' width='37.20' height='25.20' fill='url(#barsc1-hatch)' stroke='none'/>
+<rect x='126.90' y='-25.20' width='37.20' height='25.20' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text text-anchor='middle' class='figlbl' font-size='7.41'><tspan x='90.00' y='-75.48'><tspan font-size='7.41' font-weight='700'>Bet 1</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='106.99'><tspan font-size='5.85'>-79</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='126.49'><tspan font-size='5.85' font-style='italic'>P</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='-32.21'><tspan font-size='5.85'>+21</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='126.49'><tspan font-size='5.85' font-style='italic'>Q</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='-32.21'><tspan font-size='5.85'>+21</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='126.49'><tspan font-size='5.85'>neither</tspan></tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b1.7.5-f6' data-fig='barsc2'><a id='fig-barsc2'></a><details class='figdet' open><summary><span class='fignum'>Figure 11.</span> After Bets 1 and 2 she is down in both <span class='math' data-tex="P"><span class='math-fallback'>P</span></span> and <span class='math' data-tex="Q"><span class='math-fallback'>Q</span></span>, but still ahead if neither happens.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -98.40 241.80 240.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='barsc2-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='barsc2-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='barsc2-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.81' markerHeight='2.81' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='15.90' y='-0.00' width='37.20' height='69.60' fill='url(#barsc2-hatch)' stroke='none'/>
+<rect x='15.90' y='-0.00' width='37.20' height='69.60' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='71.40' y='-0.00' width='37.20' height='69.60' fill='url(#barsc2-hatch)' stroke='none'/>
+<rect x='71.40' y='-0.00' width='37.20' height='69.60' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='126.90' y='-50.40' width='37.20' height='50.40' fill='url(#barsc2-hatch)' stroke='none'/>
+<rect x='126.90' y='-50.40' width='37.20' height='50.40' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text text-anchor='middle' class='figlbl' font-size='7.41'><tspan x='90.00' y='-75.48'><tspan font-size='7.41' font-weight='700'>Bet 1 + Bet 2</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='81.79'><tspan font-size='5.85'>-58</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='126.49'><tspan font-size='5.85' font-style='italic'>P</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='81.79'><tspan font-size='5.85'>-58</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='126.49'><tspan font-size='5.85' font-style='italic'>Q</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='-57.41'><tspan font-size='5.85'>+42</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='126.49'><tspan font-size='5.85'>neither</tspan></tspan></text>
+</svg></div></details></figure></div><div class='seqframe' hidden><figure class='blk figure' id='b1.7.5-f7' data-fig='barsc3'><a id='fig-barsc3'></a><details class='figdet' open><summary><span class='fignum'>Figure 12.</span> After all three she is down $37 whatever happens.</summary><div class='figbody'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -98.40 241.80 240.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='barsc3-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='barsc3-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='barsc3-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.81' markerHeight='2.81' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='15.90' y='-0.00' width='37.20' height='44.40' fill='url(#barsc3-hatch)' stroke='none'/>
+<rect x='15.90' y='-0.00' width='37.20' height='44.40' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='71.40' y='-0.00' width='37.20' height='44.40' fill='url(#barsc3-hatch)' stroke='none'/>
+<rect x='71.40' y='-0.00' width='37.20' height='44.40' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<rect x='126.90' y='-0.00' width='37.20' height='44.40' fill='url(#barsc3-hatch)' stroke='none'/>
+<rect x='126.90' y='-0.00' width='37.20' height='44.40' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<text text-anchor='middle' class='figlbl' font-size='7.41'><tspan x='90.00' y='-75.48'><tspan font-size='7.41' font-weight='700'>Bet 1 + Bet 2 + Bet 3</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='56.59'><tspan font-size='5.85'>-37</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='126.49'><tspan font-size='5.85' font-style='italic'>P</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='56.59'><tspan font-size='5.85'>-37</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='126.49'><tspan font-size='5.85' font-style='italic'>Q</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='56.59'><tspan font-size='5.85'>-37</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='126.49'><tspan font-size='5.85'>neither</tspan></tspan></text>
+</svg></div></details></figure></div></div><div class='seqbar'><button type='button' class='seqbtn seqprev' aria-label='Previous frame' disabled>&#9664;</button><span class='seqcount'><span class='seqnow'>1</span>&thinsp;/&thinsp;7</span><button type='button' class='seqbtn seqnext' aria-label='Next frame'>&#9654;</button></div></div><p class='blk' id='b1.7.6'>She is down $37 whatever happens.</p></div></details></section><section class='sub' data-sub='1.8'><details class='subdet' open><summary class='subhead blk' id='h1.8'><span class='secnum'>1.8</span> Dutch books as arguments for probabilism<a class='anchor' href='#s1.8' title='Link to this subsection'>#</a><span class='headtarget' id='s1.8'></span></summary><div class='subbody'><p class='blk' id='b1.8.1'>To get an argument for probabilism out of the Dutch Book we need to explain what’s wrong with exploitability. The flat-footed version runs: if your credences are non-probabilistic, a cunning Dutchman might come along and take your money; if they are probabilistic, he cannot; so you had better have probabilistic credences.</p></div></details></section><section class='sub' data-sub='1.9'><details class='subdet' open><summary class='subhead blk' id='h1.9'><span class='secnum'>1.9</span> Why that isn’t good enough<a class='anchor' href='#s1.9' title='Link to this subsection'>#</a><span class='headtarget' id='s1.9'></span></summary><div class='subbody'><p class='blk' id='b1.9.1'>On this version of the argument, the reason why we should not have non-probabilistic credences is that avoiding them protects us from actually being exploited in a Dutch book situation. However, suppose that for some reason an agent knew for certain that no Dutch book situation would arise. In that case they would know that having non-probabilistic credences will not hurt them, and the reason to adopt probabilistic credences would vanish. But presumably a proponent of probabilism would not want to say that an agent like this is rational: although they will not be exploited, it is their pattern of credences itself which is supposed to be irrational.</p></div></details></section><section class='sub' data-sub='1.10'><details class='subdet' open><summary class='subhead blk' id='h1.10'><span class='secnum'>1.10</span> A better version<a class='anchor' href='#s1.10' title='Link to this subsection'>#</a><span class='headtarget' id='s1.10'></span></summary><div class='subbody'><ul class='blk customlist' id='b1.10.1'><li><span class='itemlabel'>(1)</span> An agent is rationally required to bet in line with the <a class='xref term' data-def='bettinginterp' href='01-probability.html#b1.6.1'>betting interpretation</a>, given the credences they have.</li><li><span class='itemlabel'>(2)</span> If an agent has non-probabilistic credences and bets in line with the <a class='xref term' data-def='bettinginterp' href='01-probability.html#b1.6.1'>betting interpretation</a>, then they are vulnerable to a Dutch book.</li><li><span class='itemlabel'>(3)</span> If an agent is vulnerable to a Dutch book, then their credences are irrational.</li><li><span class='itemlabel'><span class='math' data-tex="\therefore"><span class='math-fallback'>\therefore</span></span></span> If an agent has non-probabilistic credences, then their credences are irrational.</li></ul></div></details></section><section class='sub' data-sub='1.11'><details class='subdet' open><summary class='subhead blk' id='h1.11'><span class='secnum'>1.11</span> The betting interpretation<a class='anchor' href='#s1.11' title='Link to this subsection'>#</a><span class='headtarget' id='s1.11'></span></summary><div class='subbody'><p class='blk' id='b1.11.1'>You’re obviously not required to maximise expected <em>money</em>. So you’re not in general required to bet in line with the <a class='xref term' data-def='bettinginterp' href='01-probability.html#b1.6.1'>betting interpretation</a>. There’s an answer: the premise is far more plausible when the stakes are <em>small</em>. And however small they’re made, you can still be made to lose for sure.</p></div></details></section><nav class='pagenav'><a class='next' href='02-newcomb.html'>2. Newcomb's problem &rarr;</a></nav></article>
+</main>
+</div>
+<aside id="peek" class="peek" hidden aria-live="polite">
+  <div class="peekbar">
+    <span class="peektitle"></span>
+    <a class="peekgo" href="#" title="Go to this in the notes">Go to &rarr;</a>
+    <button type="button" class="peekclose" title="Close">&times;</button>
+  </div>
+  <div class="peekbody"></div>
+</aside>
+<script src="assets/katex/katex.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/blocks.js"></script>
+<script src="assets/sitenav.js"></script>
+<script src="assets/notes.js"></script>
+<script src="assets/comments.js"></script>
+</body>
+</html>

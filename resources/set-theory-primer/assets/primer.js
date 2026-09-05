@@ -140,7 +140,11 @@
     open(el);
     if (el.classList.contains("fig")) el.setAttribute("data-open", "1");
     var bar = document.querySelector(".topbar");
-    var offset = (bar ? bar.getBoundingClientRect().height : 0) + 14;
+    var site = document.querySelector(".sitenav");
+    // both sticky bars sit above the landing point: the site banner and the
+    // primer's own topbar
+    var offset = (bar ? bar.getBoundingClientRect().height : 0)
+               + (site ? site.getBoundingClientRect().height : 0) + 14;
     var y = el.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top: y, behavior: "auto" });
     el.classList.add("flash");

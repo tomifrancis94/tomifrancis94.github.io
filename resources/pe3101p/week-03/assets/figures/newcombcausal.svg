@@ -1,0 +1,22 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-44.52 -58.79 338.06 117.58' width='100%' style='max-width:610px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='newcombcausal-hatch' patternUnits='userSpaceOnUse' width='3.88' height='3.88' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='3.88' stroke='currentColor' stroke-width='0.50' opacity='0.55'/></pattern>
+<marker id='newcombcausal-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='4.98' markerHeight='4.98' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='newcombcausal-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.99' markerHeight='3.99' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M38.98,-12.07 L90.00,-27.86' fill='none' stroke='currentColor' stroke-width='1.05' marker-end='url(#newcombcausal-arrow)'/>
+<path d='M38.98,12.07 L90.00,27.86' fill='none' stroke='currentColor' stroke-width='1.05' marker-end='url(#newcombcausal-arrow)'/>
+<path d='M162.00,-39.00 L216.00,-39.00' fill='none' stroke='currentColor' stroke-width='1.05' marker-end='url(#newcombcausal-arrow)'/>
+<path d='M252.00,-24.75 L252.00,24.75' fill='none' stroke='currentColor' stroke-width='1.05' marker-end='url(#newcombcausal-arrow)'/>
+<path d='M162.00,39.00 L216.00,39.00' fill='none' stroke='currentColor' stroke-width='1.05' marker-end='url(#newcombcausal-arrow)'/>
+<rect x='-38.98' y='-14.25' width='77.97' height='28.50' rx='1.66' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.61'/>
+<text text-anchor='middle' class='figlbl' font-size='8.31'><tspan x='0.00' y='-2.24'><tspan font-size='8.31'>your brain state</tspan></tspan><tspan x='0.00' y='7.89'><tspan font-size='8.31'>last night</tspan></tspan></text>
+<rect x='90.00' y='-53.25' width='72.00' height='28.50' rx='1.66' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.61'/>
+<text text-anchor='middle' class='figlbl' font-size='8.31'><tspan x='126.00' y='-41.24'><tspan font-size='8.31'>the demon's</tspan></tspan><tspan x='126.00' y='-31.11'><tspan font-size='8.31'>prediction</tspan></tspan></text>
+<rect x='90.00' y='24.75' width='72.00' height='28.50' rx='1.66' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.61'/>
+<text text-anchor='middle' class='figlbl' font-size='8.31'><tspan x='126.00' y='41.82'><tspan font-size='8.31'>your choice</tspan></tspan></text>
+<rect x='216.00' y='-53.25' width='72.00' height='28.50' rx='1.66' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.61'/>
+<text text-anchor='middle' class='figlbl' font-size='8.31'><tspan x='252.00' y='-41.24'><tspan font-size='8.31'>contents of</tspan></tspan><tspan x='252.00' y='-31.11'><tspan font-size='8.31'>the blue box</tspan></tspan></text>
+<rect x='216.00' y='24.75' width='72.00' height='28.50' rx='1.66' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.61'/>
+<text text-anchor='middle' class='figlbl' font-size='8.31'><tspan x='252.00' y='36.76'><tspan font-size='8.31'>what you</tspan></tspan><tspan x='252.00' y='46.89'><tspan font-size='8.31'>take away</tspan></tspan></text>
+</svg>

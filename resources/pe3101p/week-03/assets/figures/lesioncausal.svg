@@ -1,0 +1,18 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-41.40 -58.65 334.80 117.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='lesioncausal-hatch' patternUnits='userSpaceOnUse' width='3.78' height='3.78' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='3.78' stroke='currentColor' stroke-width='0.49' opacity='0.55'/></pattern>
+<marker id='lesioncausal-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='4.86' markerHeight='4.86' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='lesioncausal-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.89' markerHeight='3.89' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<path d='M36.00,-11.14 L90.00,-27.86' fill='none' stroke='currentColor' stroke-width='1.03' marker-end='url(#lesioncausal-arrow)'/>
+<path d='M36.00,11.14 L90.00,27.86' fill='none' stroke='currentColor' stroke-width='1.03' marker-end='url(#lesioncausal-arrow)'/>
+<path d='M162.00,-39.00 L216.00,-39.00' fill='none' stroke='currentColor' stroke-width='1.03' marker-end='url(#lesioncausal-arrow)'/>
+<rect x='-36.00' y='-14.25' width='72.00' height='28.50' rx='1.62' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.59'/>
+<text text-anchor='middle' class='figlbl' font-size='8.10'><tspan x='0.00' y='2.75'><tspan font-size='8.10'>the gene</tspan></tspan></text>
+<rect x='90.00' y='-53.25' width='72.00' height='28.50' rx='1.62' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.59'/>
+<text text-anchor='middle' class='figlbl' font-size='8.10'><tspan x='126.00' y='-41.19'><tspan font-size='8.10'>a desire</tspan></tspan><tspan x='126.00' y='-31.31'><tspan font-size='8.10'>to smoke</tspan></tspan></text>
+<rect x='90.00' y='24.75' width='72.00' height='28.50' rx='1.62' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.59'/>
+<text text-anchor='middle' class='figlbl' font-size='8.10'><tspan x='126.00' y='41.75'><tspan font-size='8.10'>cancer</tspan></tspan></text>
+<rect x='216.00' y='-53.25' width='72.00' height='28.50' rx='1.62' fill='var(--fig-bg)' stroke='currentColor' stroke-width='0.59'/>
+<text text-anchor='middle' class='figlbl' font-size='8.10'><tspan x='252.00' y='-36.25'><tspan font-size='8.10'>smoking</tspan></tspan></text>
+</svg>

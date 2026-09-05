@@ -198,7 +198,7 @@ window.NOTES_DATA = {
     },
     {
      "id": "3.4",
-     "title": "The multiplication rule and total probability",
+     "title": "The law of total probability",
      "blocks": 4
     },
     {
@@ -334,7 +334,7 @@ window.NOTES_DATA = {
    "sourceSection": "3.3"
   },
   "3.4": {
-   "title": "The multiplication rule and total probability",
+   "title": "The law of total probability",
    "sectionTitle": "Conditional probabilities and Conditionalisation",
    "sourceSection": "3.4"
   },

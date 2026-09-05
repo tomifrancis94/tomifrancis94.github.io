@@ -1,0 +1,19 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='-30.90 -98.40 241.80 240.30' width='100%' style='max-width:620px' preserveAspectRatio='xMidYMid meet' class='fig' role='img'>
+<defs>
+<pattern id='bars0-hatch' patternUnits='userSpaceOnUse' width='2.73' height='2.73' patternTransform='rotate(-45)'><line x1='0' y1='0' x2='0' y2='2.73' stroke='currentColor' stroke-width='0.35' opacity='0.55'/></pattern>
+<marker id='bars0-arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='3.51' markerHeight='3.51' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+<marker id='bars0-arrowsm' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='2.81' markerHeight='2.81' markerUnits='userSpaceOnUse' orient='auto-start-reverse'><path d='M 0 1 L 10 5 L 0 9 z' fill='context-stroke' stroke='none'/></marker>
+</defs>
+<rect x='-27.00' y='-94.50' width='234.00' height='232.50' fill='none' stroke='var(--fig-faint)' stroke-width='0.43'/>
+<path d='M1.50,-0.00 L178.50,-0.00' fill='none' stroke='currentColor' stroke-width='0.43'/>
+<path d='M15.90,-0.00 L53.10,-0.00' fill='none' stroke='currentColor' stroke-width='0.74'/>
+<path d='M71.40,-0.00 L108.60,-0.00' fill='none' stroke='currentColor' stroke-width='0.74'/>
+<path d='M126.90,-0.00 L164.10,-0.00' fill='none' stroke='currentColor' stroke-width='0.74'/>
+<text text-anchor='middle' class='figlbl' font-size='7.41'><tspan x='90.00' y='-75.48'><tspan font-size='7.41' font-weight='700'>No bets</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='-7.01'><tspan font-size='5.85'>0</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='34.50' y='126.49'><tspan font-size='5.85' font-style='italic'>P</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='-7.01'><tspan font-size='5.85'>0</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='90.00' y='126.49'><tspan font-size='5.85' font-style='italic'>Q</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='-7.01'><tspan font-size='5.85'>0</tspan></tspan></text>
+<text text-anchor='middle' class='figlbl' font-size='5.85'><tspan x='145.50' y='126.49'><tspan font-size='5.85'>neither</tspan></tspan></text>
+</svg>

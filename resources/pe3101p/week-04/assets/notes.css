@@ -3,6 +3,9 @@
    Generated pages read this; nothing here is page-specific. */
 
 :root {
+  /* the site banner's height, measured by assets/sitenav.js; the fallback
+     is its one-row height at 17px */
+  --sitenav-h: 3.75rem;
   --ink: #12222b;
   --ink-soft: #46606c;
   --teal: #006580;
@@ -66,9 +69,9 @@ main {
 /* ---------------------------------------------------------------- toc */
 .toc {
   position: sticky;
-  top: 0;
+  top: var(--sitenav-h);
   align-self: start;
-  max-height: 100vh;
+  max-height: calc(100vh - var(--sitenav-h));
   overflow-y: auto;
   padding: 2.6rem .5rem 3rem 0;
   font-size: 14.5px;
@@ -124,7 +127,7 @@ h1 .secnum, .contents .secnum {
 }
 .subhead {
   font-size: 1.16rem; margin: 2.4rem 0 .7rem; font-weight: 700;
-  line-height: 1.3; scroll-margin-top: 1.5rem;
+  line-height: 1.3; scroll-margin-top: calc(1.5rem + var(--sitenav-h));
 }
 .subhead .secnum {
   color: var(--teal); font-size: .82em; margin-right: .5rem;
@@ -549,8 +552,8 @@ a.xref.namedref:hover { background: var(--teal-soft); }
 figcaption .namedref, summary .namedref { color: var(--ink-soft); }
 
 .peek {
-  position: fixed; top: 0; right: 0; z-index: 40;
-  width: var(--peek-w); height: 100vh;
+  position: fixed; top: var(--sitenav-h); right: 0; z-index: 40;
+  width: var(--peek-w); height: calc(100vh - var(--sitenav-h));
   background: var(--paper-peek);
   border-left: 1px solid var(--rule);
   box-shadow: -8px 0 28px rgba(0, 0, 0, .07);
@@ -605,11 +608,11 @@ figcaption .namedref, summary .namedref { color: var(--ink-soft); }
 
 /* the heading is a commentable block; keep the toolbar off the text */
 summary.subhead.blk { padding-right: 7rem; }
-.headtarget { display: block; height: 0; scroll-margin-top: 1.5rem; }
+.headtarget { display: block; height: 0; scroll-margin-top: calc(1.5rem + var(--sitenav-h)); }
 /* Where a \lemref lands. A box already carries its block id, so the label id
    goes on an element of its own -- two id attributes on one tag are not two
    ids, the second is thrown away. */
-.boxanchor { display: block; height: 0; scroll-margin-top: 1.5rem; }
+.boxanchor { display: block; height: 0; scroll-margin-top: calc(1.5rem + var(--sitenav-h)); }
 
 /* ---------------------------------------------- the panel on a narrow screen */
 /* Last in the file on purpose: it overrides `.peek { width: var(--peek-w) }`
@@ -623,3 +626,50 @@ summary.subhead.blk { padding-right: 7rem; }
   }
 }
 h1.blk { padding-right: 7rem; }
+
+/* ------------------------------------------------------- the site banner */
+/* Tomi, 5 September 2026: the banner at the top of tomifrancis.com -- Home,
+   Decision and Social Choice, Teaching, CV, About -- must stay visible on
+   every web edition: "Students need to be able to get back as well." The
+   markup is build_site.SITENAV; the look is site/style.css's .nav, sticky and
+   turning dark once scrolled, exactly as on the site (assets/sitenav.js).
+   ! Its measured height is published as --sitenav-h, and everything that
+   sticks to or is fixed at the top of the viewport -- the contents column,
+   the definition panel, every scroll target -- is offset by it above. */
+.sitenav {
+  position: sticky; top: 0; z-index: 45;
+  background: var(--bg);
+  transition: background-color .2s ease;
+  /* bleed back across the reserved gutter so the bar spans the window,
+     while its links stay inside the text column (the primer's topbar trick) */
+  margin-right: calc(-1 * var(--peek-w));
+  padding-right: var(--peek-w);
+}
+.sitenav-inner {
+  max-width: 76rem; margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex; justify-content: flex-end; gap: 1.7rem;
+}
+.sitenav a {
+  text-decoration: none; color: rgba(0, 0, 0, .64);
+  font-size: 1rem; line-height: 1.55; border-bottom: 0;
+}
+.sitenav a:hover { color: #49aad4; }
+.sitenav a.active { color: var(--ink); }
+.sitenav.scrolled { background: rgba(40, 40, 40, .86); }
+.sitenav.scrolled a { color: rgba(255, 255, 255, .85); }
+.sitenav.scrolled a.active { color: #fff; }
+.sitenav.scrolled a:hover { color: #49aad4; }
+/* comment anchors and figure anchors land below the bar too */
+.blk { scroll-margin-top: calc(1rem + var(--sitenav-h)); }
+a[id^='fig-'] { display: block; height: 0; scroll-margin-top: calc(1rem + var(--sitenav-h)); }
+@media (max-width: 62rem) {
+  .sitenav { margin-right: 0; padding-right: 0; }
+}
+@media (max-width: 720px) {
+  .sitenav-inner { gap: 1.2rem; flex-wrap: wrap; padding: .9rem 1.1rem; }
+}
+@media print {
+  .sitenav { display: none; }
+}
+
