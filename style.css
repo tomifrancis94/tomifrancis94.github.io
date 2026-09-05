@@ -37,8 +37,12 @@ body {
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 1.1rem 1.4rem;
+  /* Centred since 5 September 2026 (Tomi). The bar is the same bar on the
+     lecture-notes web editions under /resources/, where right alignment read
+     oddly against their reserved sidebar gutter -- so it is centred in both
+     places rather than differing between them. */
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 1.7rem;
 }
 .nav a {

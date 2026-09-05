@@ -1,59 +1,11 @@
 window.NOTES_DATA = {
  "figures": {
-  "fig:tp0": {
-   "n": 1,
-   "name": "tp0"
-  },
-  "fig:tp1": {
-   "n": 2,
-   "name": "tp1"
-  },
-  "fig:tp2": {
-   "n": 3,
-   "name": "tp2"
-  },
-  "fig:tp3": {
-   "n": 4,
-   "name": "tp3"
-  },
-  "fig:tp4": {
-   "n": 5,
-   "name": "tp4"
-  },
-  "fig:bars0": {
-   "n": 6,
-   "name": "bars0"
-  },
-  "fig:bars1": {
-   "n": 7,
-   "name": "bars1"
-  },
-  "fig:bars2": {
-   "n": 8,
-   "name": "bars2"
-  },
-  "fig:bars3": {
-   "n": 9,
-   "name": "bars3"
-  },
-  "fig:barsc1": {
-   "n": 10,
-   "name": "barsc1"
-  },
-  "fig:barsc2": {
-   "n": 11,
-   "name": "barsc2"
-  },
-  "fig:barsc3": {
-   "n": 12,
-   "name": "barsc3"
-  },
   "fig:newcombcausal": {
-   "n": 13,
+   "n": 1,
    "name": "newcombcausal"
   },
   "fig:lesioncausal": {
-   "n": 14,
+   "n": 2,
    "name": "lesioncausal"
   }
  },
@@ -66,56 +18,16 @@ window.NOTES_DATA = {
    "subs": [
     {
      "id": "1.1",
-     "title": "The law of total probability",
-     "blocks": 3
-    },
-    {
-     "id": "1.2",
-     "title": "Bayes' theorem",
-     "blocks": 1
-    },
-    {
-     "id": "1.3",
      "title": "Proving Bayes' theorem",
      "blocks": 6
     },
     {
-     "id": "1.4",
-     "title": "Bayes factors",
-     "blocks": 2
-    },
-    {
-     "id": "1.5",
+     "id": "1.2",
      "title": "Proving the odds form",
      "blocks": 8
     },
     {
-     "id": "1.6",
-     "title": "Dutch books",
-     "blocks": 2
-    },
-    {
-     "id": "1.7",
-     "title": "The finite additivity book",
-     "blocks": 6
-    },
-    {
-     "id": "1.8",
-     "title": "Dutch books as arguments for probabilism",
-     "blocks": 1
-    },
-    {
-     "id": "1.9",
-     "title": "Why that isn't good enough",
-     "blocks": 1
-    },
-    {
-     "id": "1.10",
-     "title": "A better version",
-     "blocks": 1
-    },
-    {
-     "id": "1.11",
+     "id": "1.3",
      "title": "The betting interpretation",
      "blocks": 1
     }
@@ -276,59 +188,19 @@ window.NOTES_DATA = {
  "cut": [],
  "subinfo": {
   "1.1": {
-   "title": "The law of total probability",
+   "title": "Proving Bayes' theorem",
    "sectionTitle": "More probability",
    "sourceSection": "1.1"
   },
   "1.2": {
-   "title": "Bayes' theorem",
+   "title": "Proving the odds form",
    "sectionTitle": "More probability",
    "sourceSection": "1.2"
   },
   "1.3": {
-   "title": "Proving Bayes' theorem",
-   "sectionTitle": "More probability",
-   "sourceSection": "1.3"
-  },
-  "1.4": {
-   "title": "Bayes factors",
-   "sectionTitle": "More probability",
-   "sourceSection": "1.4"
-  },
-  "1.5": {
-   "title": "Proving the odds form",
-   "sectionTitle": "More probability",
-   "sourceSection": "1.5"
-  },
-  "1.6": {
-   "title": "Dutch books",
-   "sectionTitle": "More probability",
-   "sourceSection": "1.6"
-  },
-  "1.7": {
-   "title": "The finite additivity book",
-   "sectionTitle": "More probability",
-   "sourceSection": "1.7"
-  },
-  "1.8": {
-   "title": "Dutch books as arguments for probabilism",
-   "sectionTitle": "More probability",
-   "sourceSection": "1.8"
-  },
-  "1.9": {
-   "title": "Why that isn't good enough",
-   "sectionTitle": "More probability",
-   "sourceSection": "1.9"
-  },
-  "1.10": {
-   "title": "A better version",
-   "sectionTitle": "More probability",
-   "sourceSection": "1.10"
-  },
-  "1.11": {
    "title": "The betting interpretation",
    "sectionTitle": "More probability",
-   "sourceSection": "1.11"
+   "sourceSection": "1.3"
   },
   "2.1": {
    "title": "Two boxes",
@@ -462,38 +334,6 @@ window.NOTES_DATA = {
   }
  },
  "defs": {
-  "totalprob": {
-   "term": "the law of total probability",
-   "kind": "Principle",
-   "page": "01-probability.html",
-   "block": "b1.1.1",
-   "sub": "1.1",
-   "html": "<div class='blk box box-principle' id='b1.1.1'><div class='boxhead'>Principle <span class='boxname'>(The law of total probability)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='totalprob'></span>\nWhere <span class='math' data-tex=\"B_1, \\dots, B_n\"><span class='math-fallback'>B_1, \\dots, B_n</span></span> partition <span class='math' data-tex=\"\\Omega\"><span class='math-fallback'>\\Omega</span></span>,\n<div class='mathblock' data-tex=\"\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).\"><span class='math-fallback'>\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).</span></div></div></div></div>"
-  },
-  "bayes": {
-   "term": "Bayes\u2019 theorem",
-   "kind": "Principle",
-   "page": "01-probability.html",
-   "block": "b1.2.1",
-   "sub": "1.2",
-   "html": "<div class='blk box box-principle' id='b1.2.1'><div class='boxhead'>Principle <span class='boxname'>(Bayes\u2019 theorem)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='bayes'></span>\n<div class='mathblock' data-tex=\"\\Cr(A \\mid B) = \\frac{\\Cr(B \\mid A)\\,\\Cr(A)}{\\Cr(B)}\n\\qquad \\text{provided } \\Cr(A), \\Cr(B) &gt; 0.\"><span class='math-fallback'>\\Cr(A \\mid B) = \\frac{\\Cr(B \\mid A)\\,\\Cr(A)}{\\Cr(B)}\n\\qquad \\text{provided } \\Cr(A), \\Cr(B) &gt; 0.</span></div></div></div></div>"
-  },
-  "bayesfactor": {
-   "term": "Bayes factor",
-   "kind": "Definition",
-   "page": "01-probability.html",
-   "block": "b1.4.1",
-   "sub": "1.4",
-   "html": "<p class='blk' id='b1.4.1'>Two hypotheses <span class='math' data-tex=\"H_1, H_2\"><span class='math-fallback'>H_1, H_2</span></span>, and evidence <span class='math' data-tex=\"E\"><span class='math-fallback'>E</span></span> arrives. The <span class='defsite' data-def='bayesfactor'><em>Bayes factor</em></span> is <span class='math' data-tex=\"\\Cr(E \\mid H_1) / \\Cr(E \\mid H_2)\"><span class='math-fallback'>\\Cr(E \\mid H_1) / \\Cr(E \\mid H_2)</span></span>: how much better <span class='math' data-tex=\"E\"><span class='math-fallback'>E</span></span> is explained by <span class='math' data-tex=\"H_1\"><span class='math-fallback'>H_1</span></span> than by <span class='math' data-tex=\"H_2\"><span class='math-fallback'>H_2</span></span>.</p>"
-  },
-  "bettinginterp": {
-   "term": "the betting interpretation",
-   "kind": "Principle",
-   "page": "01-probability.html",
-   "block": "b1.6.1",
-   "sub": "1.6",
-   "html": "<div class='blk box box-principle' id='b1.6.1'><div class='boxhead'>Principle <span class='boxname'>(The betting interpretation)</span></div><div class='boxbody'><p><span class='defsite' data-def='bettinginterp'></span>\nAn agent whose credence in <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> is <span class='math' data-tex=\"p\"><span class='math-fallback'>p</span></span> will buy a $<span class='math' data-tex=\"S\"><span class='math-fallback'>S</span></span> bet on <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span> for any price below $<span class='math' data-tex=\"pS\"><span class='math-fallback'>pS</span></span>, and sell one for any price above $<span class='math' data-tex=\"pS\"><span class='math-fallback'>pS</span></span>.</p></div></div>"
-  },
   "probindep": {
    "term": "probabilistic independence",
    "kind": "Definition",

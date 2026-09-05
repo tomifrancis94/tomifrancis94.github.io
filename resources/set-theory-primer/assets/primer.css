@@ -460,14 +460,15 @@ a, button, .lbl, .figbody, [data-toggle] { touch-action: manipulation; }
   position: sticky; top: 0; z-index: 42;
   background: var(--bg);
   transition: background-color .2s ease;
-  /* bleed back across the reserved gutter, as the topbar does */
+  /* Bleed back across the reserved gutter, as the topbar does -- but with
+     NO matching padding-right, because these links are centred and padding
+     would centre them on the text column rather than on the window. */
   margin-right: calc(-1 * var(--peek-w));
-  padding-right: var(--peek-w);
 }
 .sitenav-inner {
   max-width: 70rem; margin: 0 auto;
   padding: 1.1rem 1.25rem;
-  display: flex; justify-content: flex-end; gap: 1.7rem;
+  display: flex; justify-content: center; gap: 1.7rem;
 }
 .sitenav a {
   text-decoration: none; color: rgba(0, 0, 0, .64);

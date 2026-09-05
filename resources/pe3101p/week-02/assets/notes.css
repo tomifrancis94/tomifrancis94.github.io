@@ -500,15 +500,17 @@ h1.blk { padding-right: 7rem; }
   position: sticky; top: 0; z-index: 45;
   background: var(--bg);
   transition: background-color .2s ease;
-  /* bleed back across the reserved gutter so the bar spans the window,
-     while its links stay inside the text column (the primer's topbar trick) */
+  /* Bleed back across the definition panel's reserved gutter so the bar spans
+     the whole window. ! NO matching padding-right: the links are CENTRED (Tomi,
+     5 September 2026), and padding here would centre them on the text column
+     instead of on the window, half a gutter left of where the same bar sits on
+     the rest of the site. */
   margin-right: calc(-1 * var(--peek-w));
-  padding-right: var(--peek-w);
 }
 .sitenav-inner {
   max-width: 76rem; margin: 0 auto;
   padding: 1.1rem 1.5rem;
-  display: flex; justify-content: flex-end; gap: 1.7rem;
+  display: flex; justify-content: center; gap: 1.7rem;
 }
 .sitenav a {
   text-decoration: none; color: rgba(0, 0, 0, .64);
