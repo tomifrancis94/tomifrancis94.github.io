@@ -1,11 +1,31 @@
 window.NOTES_DATA = {
  "figures": {
-  "fig:newcombcausal": {
+  "fig:tp0": {
    "n": 1,
+   "name": "tp0"
+  },
+  "fig:tp1": {
+   "n": 2,
+   "name": "tp1"
+  },
+  "fig:tp2": {
+   "n": 3,
+   "name": "tp2"
+  },
+  "fig:tp3": {
+   "n": 4,
+   "name": "tp3"
+  },
+  "fig:tp4": {
+   "n": 5,
+   "name": "tp4"
+  },
+  "fig:newcombcausal": {
+   "n": 6,
    "name": "newcombcausal"
   },
   "fig:lesioncausal": {
-   "n": 2,
+   "n": 7,
    "name": "lesioncausal"
   }
  },
@@ -13,23 +33,28 @@ window.NOTES_DATA = {
  "sections": [
   {
    "n": "1",
-   "title": "More probability",
+   "title": "Three proofs from week 2",
    "slug": "01-probability",
    "subs": [
     {
+     "id": "1.0",
+     "title": null,
+     "blocks": 1
+    },
+    {
      "id": "1.1",
-     "title": "Proving Bayes' theorem",
-     "blocks": 6
+     "title": "The law of total probability",
+     "blocks": 3
     },
     {
      "id": "1.2",
-     "title": "Proving the odds form",
-     "blocks": 8
+     "title": "Bayes' theorem",
+     "blocks": 6
     },
     {
      "id": "1.3",
-     "title": "The betting interpretation",
-     "blocks": 1
+     "title": "The odds form",
+     "blocks": 9
     }
    ]
   },
@@ -187,19 +212,24 @@ window.NOTES_DATA = {
  ],
  "cut": [],
  "subinfo": {
+  "1.0": {
+   "title": null,
+   "sectionTitle": "Three proofs from week 2",
+   "sourceSection": "1"
+  },
   "1.1": {
-   "title": "Proving Bayes' theorem",
-   "sectionTitle": "More probability",
+   "title": "The law of total probability",
+   "sectionTitle": "Three proofs from week 2",
    "sourceSection": "1.1"
   },
   "1.2": {
-   "title": "Proving the odds form",
-   "sectionTitle": "More probability",
+   "title": "Bayes' theorem",
+   "sectionTitle": "Three proofs from week 2",
    "sourceSection": "1.2"
   },
   "1.3": {
-   "title": "The betting interpretation",
-   "sectionTitle": "More probability",
+   "title": "The odds form",
+   "sectionTitle": "Three proofs from week 2",
    "sourceSection": "1.3"
   },
   "2.1": {
@@ -334,6 +364,14 @@ window.NOTES_DATA = {
   }
  },
  "defs": {
+  "totalprob": {
+   "term": "the law of total probability",
+   "kind": "Principle",
+   "page": "01-probability.html",
+   "block": "b1.1.1",
+   "sub": "1.1",
+   "html": "<div class='blk box box-principle' id='b1.1.1'><div class='boxhead'>Principle <span class='boxname'>(The law of total probability)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='totalprob'></span>\nWhere <span class='math' data-tex=\"B_1, \\dots, B_n\"><span class='math-fallback'>B_1, \\dots, B_n</span></span> partition <span class='math' data-tex=\"\\Omega\"><span class='math-fallback'>\\Omega</span></span>,\n<div class='mathblock' data-tex=\"\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).\"><span class='math-fallback'>\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).</span></div></div></div></div>"
+  },
   "probindep": {
    "term": "probabilistic independence",
    "kind": "Definition",
