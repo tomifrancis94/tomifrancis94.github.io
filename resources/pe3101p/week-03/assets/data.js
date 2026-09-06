@@ -154,22 +154,22 @@ window.NOTES_DATA = {
     {
      "id": "3.3",
      "title": "Newcomb, on the evidential theory",
-     "blocks": 4
+     "blocks": 3
     },
     {
      "id": "3.4",
      "title": "Causal decision theory",
-     "blocks": 2
+     "blocks": 3
     },
     {
      "id": "3.5",
      "title": "What one actually looks like",
-     "blocks": 5
+     "blocks": 6
     },
     {
      "id": "3.6",
      "title": "Newcomb's dependency hypotheses",
-     "blocks": 4
+     "blocks": 5
     },
     {
      "id": "3.7",
@@ -184,6 +184,11 @@ window.NOTES_DATA = {
    "slug": "04-edt-vs-cdt",
    "subs": [
     {
+     "id": "4.0",
+     "title": null,
+     "blocks": 1
+    },
+    {
      "id": "4.1",
      "title": "Causey and the LAN outlet",
      "blocks": 5
@@ -191,7 +196,7 @@ window.NOTES_DATA = {
     {
      "id": "4.2",
      "title": "Evidentia and the prediction unit",
-     "blocks": 4
+     "blocks": 5
     },
     {
      "id": "4.3",
@@ -201,12 +206,12 @@ window.NOTES_DATA = {
     {
      "id": "4.4",
      "title": "The lesion",
-     "blocks": 5
+     "blocks": 4
     },
     {
      "id": "4.5",
      "title": "Another causal diagram",
-     "blocks": 2
+     "blocks": 3
     },
     {
      "id": "4.6",
@@ -221,7 +226,7 @@ window.NOTES_DATA = {
     {
      "id": "4.8",
      "title": "Unstable",
-     "blocks": 1
+     "blocks": 2
     }
    ]
   }
@@ -332,6 +337,11 @@ window.NOTES_DATA = {
    "title": "Utility",
    "sectionTitle": "EDT and CDT",
    "sourceSection": "3.7"
+  },
+  "4.0": {
+   "title": null,
+   "sectionTitle": "EDT vs CDT",
+   "sourceSection": "4"
   },
   "4.1": {
    "title": "Causey and the LAN outlet",

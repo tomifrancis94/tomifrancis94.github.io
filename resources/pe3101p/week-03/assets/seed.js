@@ -188,7 +188,8 @@ window.NOTES_SEED = {
    "status": "denied",
    "before": "Lewis's example. Three options, and Bruce the cat might purr loudly, softly, or not at all.",
    "after": "Lewis's example. Three options, and Bruce the cat might purr loudly, softly, or not at all. One possible pattern:",
-   "verdict": "no answer; axed on his instruction, 6 Sep 2026"
+   "verdict": "no answer; axed on his instruction, 6 Sep 2026",
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-10",
@@ -223,7 +224,8 @@ window.NOTES_SEED = {
    "status": "applied",
    "before": "Note that the credences are unconditional. Your act might be evidence about which $K$ holds --- just as it was about the prediction. Conditioning the credence in $K$ on act $A$ would let that evidence back in.",
    "edited": "2026-09-06T21:48:12+08:00",
-   "verdict": "TOMI: approved"
+   "verdict": "TOMI: approved",
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-12",
@@ -241,7 +243,8 @@ window.NOTES_SEED = {
    "status": "applied",
    "edited": "2026-09-06T21:47:33+08:00",
    "verdict": "TOMI: include a quick line saying that these are not the only possibly dependency hypotheses, but they are the only ones which an agent should entertain in the given scenario.",
-   "outcome": "done: line added after the two hypotheses"
+   "outcome": "done: line added after the two hypotheses",
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-13",
@@ -278,7 +281,8 @@ window.NOTES_SEED = {
    "status": "applied",
    "edited": "2026-09-06T21:49:03+08:00",
    "verdict": "TOMI: Yes, the same: introduce along with cited quotes from Elga.",
-   "outcome": "done: Evidentia introduced, with three cited quotes"
+   "outcome": "done: Evidentia introduced, with three cited quotes",
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-15",
@@ -315,7 +319,8 @@ window.NOTES_SEED = {
    "status": "applied",
    "before": "So the evidential theory says give up smoking.",
    "edited": "2026-09-06T21:50:23+08:00",
-   "verdict": "TOMI: approved"
+   "verdict": "TOMI: approved",
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-17",
@@ -353,7 +358,8 @@ window.NOTES_SEED = {
    "edited": "2026-09-06T21:51:31+08:00",
    "verdict": "not interested",
    "before": null,
-   "after": null
+   "after": null,
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-19",
