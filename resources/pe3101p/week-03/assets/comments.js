@@ -179,6 +179,19 @@
     return c && (c.status === "applied" || c.status === "denied");
   }
 
+  /* A SETTLED CARD DOES NOT RENDER ON THE PAGE. It has been applied or turned
+   * down, so it is history, and leaving it in place buries whatever is actually
+   * outstanding -- Tomi, 6 September 2026, on finding all twenty still sitting
+   * there after the round was closed: "comments and things still seem to be up".
+   * Greying them out (`.cmt.done`) was not enough.
+   *
+   * They are NOT deleted: the panel still lists them, `comments/COMMENTS.md`
+   * keeps the full record, and the store keeps the item. Only the inline card
+   * goes away. */
+  function liveItems() {
+    return state.items.filter(function (c) { return !settled(c); });
+  }
+
   function seed() {
     var s = window.NOTES_SEED;
     if (!s || !Array.isArray(s.items)) return 0;
@@ -463,7 +476,7 @@
     var host = block.tagName === "SUMMARY" ? block.parentElement : block;
     var next = host.nextElementSibling;
     if (next && next.classList.contains("cmt-list")) next.remove();
-    var mine = forBlock(id);
+    var mine = forBlock(id).filter(function (c) { return !settled(c); });
     if (!mine.length) { block.classList.remove("has-cmt"); return; }
     block.classList.add("has-cmt");
 
@@ -579,10 +592,13 @@
   function renderBadge() {
     var b = document.getElementById("cmt-badge");
     if (!b) return;
-    var here = state.items.filter(function (c) { return c.page === PAGE; }).length;
-    b.textContent = here ? ("Notes " + here + " / " + state.items.length)
-                         : ("Notes " + state.items.length);
-    b.classList.toggle("empty", state.items.length === 0);
+    // Counts the OUTSTANDING items only, so the button answers "is there
+    // anything left?" rather than "how many were there ever?".
+    var live = liveItems();
+    var here = live.filter(function (c) { return c.page === PAGE; }).length;
+    b.textContent = live.length ? ("Notes " + here + " / " + live.length)
+                                : "Notes";
+    b.classList.toggle("empty", live.length === 0);
   }
 
   function panelHTML() {
@@ -592,14 +608,30 @@
         "<strong>¶</strong> add a paragraph, <strong>✕</strong> delete. " +
         "Or select some words and click <strong>Comment on selection</strong>.</p>";
     }
+    // Settled items stay listed here -- this panel is the record -- but the
+    // header says plainly when there is nothing left to do.
+    var done = state.items.length - liveItems().length;
+    var head = liveItems().length
+      ? ""
+      : "<p class='cmt-empty'>Nothing outstanding. All " + state.items.length +
+        " item" + (state.items.length === 1 ? " is" : "s are") + " settled, " +
+        "and settled items no longer appear on the page.</p>";
+    if (!head && done) {
+      head = "<p class='cmt-empty'>" + done + " settled item" +
+             (done === 1 ? "" : "s") + " are listed below but no longer appear " +
+             "on the page.</p>";
+    }
     var byPage = {};
     state.items.forEach(function (c) { (byPage[c.page] = byPage[c.page] || []).push(c); });
-    return Object.keys(byPage).sort().map(function (p) {
+    return head + Object.keys(byPage).sort().map(function (p) {
       return "<div class='cmt-group'><h4>" + esc(p) + "</h4>" +
         byPage[p].map(function (c) {
           var k = kindOf(c);
-          return "<div class='cmt-row'>" +
+          return "<div class='cmt-row" + (settled(c) ? " done" : "") + "'>" +
             "<span class='pill pill-" + k + "'>" + LABEL[k] + "</span> " +
+            (settled(c) ? "<span class='cmt-tag'>" +
+                          (c.status === "applied" ? "applied" : "denied") +
+                          "</span> " : "") +
             "<a href='" + esc(p) + ".html#" + esc(c.block) + "'>" +
               esc(c.section || c.block) + "</a> " +
             "<span class='cmt-text'>" +
@@ -623,8 +655,11 @@
     document.body.appendChild(panel);
 
     function paint() {
+      // A DENIED edit is not pending -- it will never be applied. Counting by
+      // `status !== "applied"` alone told him two edits were waiting to run
+      // when both had been turned down.
       var pending = state.items.filter(function (c) {
-        return c.kind && c.kind !== "comment" && c.status !== "applied";
+        return c.kind && c.kind !== "comment" && !settled(c);
       }).length;
       panel.innerHTML =
         "<header><strong>Markup</strong>" +

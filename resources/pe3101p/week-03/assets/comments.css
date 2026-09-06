@@ -82,7 +82,12 @@
 .cmt.kind-edit { border-left-color: #4a7d5a; background: #f2f8f4; }
 .cmt.kind-insert { border-left-color: #6a6ab0; background: #f2f2fb; }
 .cmt.kind-delete { border-left-color: #a33; background: #fdf2f2; }
+/* A settled item no longer renders as an inline card at all (comments.js), so
+   `.cmt.done` now only ever applies to one caught mid-render. `.cmt-row.done`
+   is the panel's listing of a settled item, which does stay: the panel is the
+   record. */
 .cmt.done { opacity: .5; }
+.cmt-row.done { opacity: .55; }
 .cmt-tag {
   font-size: .72rem; font-weight: 700; letter-spacing: .05em;
   text-transform: uppercase; color: var(--ink-soft); margin-bottom: .25rem;
