@@ -140,13 +140,23 @@
     open(el);
     if (el.classList.contains("fig")) el.setAttribute("data-open", "1");
     var bar = document.querySelector(".topbar");
-    var site = document.querySelector(".sitenav");
-    // both sticky bars sit above the landing point: the site banner and the
-    // primer's own topbar
-    var offset = (bar ? bar.getBoundingClientRect().height : 0)
-               + (site ? site.getBoundingClientRect().height : 0) + 14;
+    // ! ONLY the primer's own topbar is still sticky. Since 7 September 2026 the
+    // site banner scrolls away with the page, so by the time a jump has landed
+    // it is off screen and must not be counted -- reserving its height left
+    // every heading floating a bar's depth below the topbar. Near the very top
+    // of the document the banner is still partly visible, but there the topbar
+    // has risen by exactly as much as the content has, so the gap is the same
+    // and clamping at 0 is right.
+    var offset = (bar ? bar.getBoundingClientRect().height : 0) + 14;
     var y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+    if (y < 0) y = 0;
     window.scrollTo({ top: y, behavior: "auto" });
+    // ! --sitenav-h is published from a scroll listener, and a scroll event is
+    // dispatched AFTER this turn -- so without this the topbar would still be
+    // laid out a banner's height down the page for a frame, sitting on top of
+    // the very thing that was jumped to. Measured: 62px landing under a topbar
+    // whose bottom was still at 108.
+    if (window.SITENAV) window.SITENAV.update();
     el.classList.add("flash");
     setTimeout(function () { el.classList.remove("flash"); }, 1200);
   }

@@ -3,9 +3,12 @@
    Generated pages read this; nothing here is page-specific. */
 
 :root {
-  /* the site banner's height, measured by assets/sitenav.js; the fallback
-     is its one-row height at 17px */
-  --sitenav-h: 3.75rem;
+  /* How much of the site banner is still on screen, published by
+     assets/sitenav.js on every scroll. The banner is NOT sticky (7 September
+     2026), so this counts down to 0 as the page scrolls, and the only thing
+     that reads it without scripting -- the sticky contents column -- is stuck
+     only once the banner has gone. Hence a fallback of 0, not a bar height. */
+  --sitenav-h: 0px;
   --ink: #12222b;
   --ink-soft: #46606c;
   --teal: #006580;
@@ -125,7 +128,7 @@ h1 .secnum, .contents .secnum {
 }
 .subhead {
   font-size: 1.16rem; margin: 2.4rem 0 .7rem; font-weight: 700;
-  line-height: 1.3; scroll-margin-top: calc(1.5rem + var(--sitenav-h));
+  line-height: 1.3; scroll-margin-top: 1.5rem;
 }
 .subhead .secnum {
   color: var(--teal); font-size: .82em; margin-right: .5rem;
@@ -484,22 +487,33 @@ a.xref.term:hover { color: var(--teal); background: var(--teal-soft); }
 
 /* the heading is a commentable block; keep the toolbar off the text */
 summary.subhead.blk { padding-right: 7rem; }
-.headtarget { display: block; height: 0; scroll-margin-top: calc(1.5rem + var(--sitenav-h)); }
+.headtarget { display: block; height: 0; scroll-margin-top: 1.5rem; }
 h1.blk { padding-right: 7rem; }
 
 /* ------------------------------------------------------- the site banner */
 /* Tomi, 5 September 2026: the banner at the top of tomifrancis.com -- Home,
    Decision and Social Choice, Teaching, CV, About -- must stay visible on
    every web edition: "Students need to be able to get back as well." The
-   markup is build_site.SITENAV; the look is site/style.css's .nav, sticky and
-   turning dark once scrolled, exactly as on the site (assets/sitenav.js).
-   ! Its measured height is published as --sitenav-h, and everything that
-   sticks to or is fixed at the top of the viewport -- the contents column,
-   the definition panel, every scroll target -- is offset by it above. */
+   markup is build_site.SITENAV; the look is site/style.css's .nav less the
+   sticky positioning and the dark scrolled bar, which it lost on 7 September
+   2026 -- see the rule below.
+   ! --sitenav-h is how much of the bar is STILL ON SCREEN (assets/sitenav.js),
+   so the contents column and the definition panel sit below it at the top of
+   the page and rise to the top of the viewport as it scrolls away.
+   !! Scroll targets no longer add it: after a jump the bar is gone, so a
+   scroll-margin-top that reserved room for it would leave the heading floating
+   a bar's height below the top of the screen. */
 .sitenav {
-  position: sticky; top: 0; z-index: 45;
+  /* ! NOT sticky, and not fixed. Tomi, 7 September 2026: on the web editions
+     the banner is "only ... visible at the top of the page: when you scroll
+     down, the banner shouldn't come up at the top any more". It heads the
+     document in normal flow and scrolls away with it. There is therefore no
+     .scrolled styling here -- the bar is never on screen once scrolled -- and
+     assets/sitenav.js publishes only how much of it is still visible.
+     !! The same bar on the rest of the site is still sticky and still turns
+     dark on scroll (site/style.css, site/assets/site.js). Do not harmonise. */
+  position: static;
   background: var(--bg);
-  transition: background-color .2s ease;
   /* Bleed back across the definition panel's reserved gutter so the bar spans
      the whole window. ! NO matching padding-right: the links are CENTRED (Tomi,
      5 September 2026), and padding here would centre them on the text column
@@ -518,13 +532,9 @@ h1.blk { padding-right: 7rem; }
 }
 .sitenav a:hover { color: #49aad4; }
 .sitenav a.active { color: var(--ink); }
-.sitenav.scrolled { background: rgba(40, 40, 40, .86); }
-.sitenav.scrolled a { color: rgba(255, 255, 255, .85); }
-.sitenav.scrolled a.active { color: #fff; }
-.sitenav.scrolled a:hover { color: #49aad4; }
 /* comment anchors and figure anchors land below the bar too */
-.blk { scroll-margin-top: calc(1rem + var(--sitenav-h)); }
-a[id^='fig-'] { display: block; height: 0; scroll-margin-top: calc(1rem + var(--sitenav-h)); }
+.blk { scroll-margin-top: 1rem; }
+a[id^='fig-'] { display: block; height: 0; scroll-margin-top: 1rem; }
 @media (max-width: 62rem) {
   .sitenav { margin-right: 0; padding-right: 0; }
 }

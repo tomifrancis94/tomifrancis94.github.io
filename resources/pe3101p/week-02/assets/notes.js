@@ -207,9 +207,18 @@
    * done directly rather than with IntersectionObserver, which cannot express
    * "the last one above me".
    *
+   * ! HIS RULE WAS REPLACED ON 7 SEPTEMBER 2026, after he had used the old one
+   * for a while: "I think it should go with whichever section has appeared by
+   * now at the BOTTOM of the page, UNLESS the scroll wheel is right at the top,
+   * in which case the highlight should be on the top section no matter what."
+   * So the active entry is the LAST one whose jump target has entered the
+   * viewport from below -- the deepest thing you can currently see, not the
+   * deepest thing you have scrolled past. Something is always lit now, whereas
+   * the old rule lit nothing above the first subsection.
+   *
    * The point jumped to is `.headtarget` (id `s1.1`), which is what the sidebar
-   * links at, and it carries `scroll-margin-top`, so the same offset is read off
-   * the element rather than duplicated as a constant here.
+   * links at. It is compared against the BOTTOM of the viewport, so its
+   * `scroll-margin-top` is no longer read off the element.
    */
   function spy() {
     var links = {};
@@ -223,23 +232,24 @@
 
     var current = null;
 
-    function margin(el) {
-      var m = parseFloat(getComputedStyle(el).scrollMarginTop);
-      return isNaN(m) ? 0 : m;
-    }
-
     function update() {
-      var active = null;
+      var bottom = window.innerHeight || document.documentElement.clientHeight;
+      // "whichever section has appeared by now at the BOTTOM of the page"
+      var active = targets[0];
       for (var i = 0; i < targets.length; i++) {
-        // "at the point, or lower than the point, you would jump to"
-        if (targets[i].getBoundingClientRect().top - margin(targets[i]) <= 1) {
+        if (targets[i].getBoundingClientRect().top <= bottom) {
           active = targets[i];
         } else {
-          break;      // targets are in document order; the rest are below us
+          break;      // targets are in document order; the rest are lower still
         }
       }
-      // Before the first subsection there is nothing to highlight. At the very
-      // bottom, the last subsection stays lit even if its target is off-screen.
+      // "UNLESS the scroll wheel is right at the top, in which case the
+      // highlight should be on the top section no matter what." A few pixels of
+      // slack, because a browser restoring a position can land at 1 or 2 rather
+      // than a clean 0.
+      if ((window.scrollY || window.pageYOffset || 0) <= 4) active = targets[0];
+      // At the very bottom the last subsection stays lit; the first is lit
+      // before anything else has come into view, so nothing is ever unlit.
       if (active === current) return;
       if (current && links[current.id]) links[current.id].classList.remove("active");
       if (active && links[active.id]) links[active.id].classList.add("active");

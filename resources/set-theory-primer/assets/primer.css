@@ -2,9 +2,12 @@
    Palette and type follow tomifrancis.com: Lato, teal #006580 links, near-black text. */
 
 :root {
-  /* the site banner's height, measured by assets/sitenav.js; the fallback is
-     its one-row height */
-  --sitenav-h: 3.75rem;
+  /* How much of the site banner is still on screen, published by
+     assets/sitenav.js on every scroll. The banner is NOT sticky (7 September
+     2026), so this counts down to 0 as the page scrolls, and the only thing
+     that reads it without scripting -- the sticky contents column -- is stuck
+     only once the banner has gone. Hence a fallback of 0, not a bar height. */
+  --sitenav-h: 0px;
   --ink: #1a1a1a;
   --ink-soft: #555;
   --ink-faint: #767676;
@@ -361,7 +364,7 @@ a:hover { color: var(--teal-dark); }
      overlay the page instead. */
   body { padding-right: 0; }
   .topbar { margin-right: 0; padding-right: 1.25rem; }
-  .sitenav { margin-right: 0; padding-right: 0; }
+  /* .sitenav's gutter override is NOT here -- see the end of the file. */
   .peek { width: 100%; }
   .shell { grid-template-columns: 1fr; gap: 0; padding-top: 1.2rem; }
   .tocbtn { display: inline-flex; }
@@ -452,14 +455,26 @@ a, button, .lbl, .figbody, [data-toggle] { touch-action: manipulation; }
 /* Tomi, 5 September 2026: the banner at the top of tomifrancis.com -- Home,
    Decision and Social Choice, Teaching, CV, About -- must stay visible on
    every web edition: "Students need to be able to get back as well." The
-   markup is build_site.SITENAV; the look is site/style.css's .nav, sticky and
-   turning dark once scrolled, exactly as on the site (assets/sitenav.js). It
-   sits above the primer's own topbar, and its measured height, --sitenav-h,
-   offsets the topbar, the contents column, the sidebar and Go-to landings. */
+   markup is build_site.SITENAV; the look is site/style.css's .nav less the
+   sticky positioning and the dark scrolled bar, which it lost on 7 September
+   2026 -- see the rule below. The primer's OWN topbar is still sticky; it is
+   the site banner that scrolls away.
+   ! --sitenav-h is how much of the site banner is STILL ON SCREEN
+   (assets/sitenav.js), so the topbar, the contents column and the sidebar sit
+   under it at the top of the page and rise to the top of the viewport as it
+   goes. The Go-to landing point (primer.js, focusTarget) counts the topbar
+   only, since by the time a jump has landed the banner is off screen. */
 .sitenav {
-  position: sticky; top: 0; z-index: 42;
+  /* ! NOT sticky, and not fixed. Tomi, 7 September 2026: on the web editions
+     the banner is "only ... visible at the top of the page: when you scroll
+     down, the banner shouldn't come up at the top any more". It heads the
+     document in normal flow and scrolls away with it. There is therefore no
+     .scrolled styling here -- the bar is never on screen once scrolled -- and
+     assets/sitenav.js publishes only how much of it is still visible.
+     !! The same bar on the rest of the site is still sticky and still turns
+     dark on scroll (site/style.css, site/assets/site.js). Do not harmonise. */
+  position: static;
   background: var(--bg);
-  transition: background-color .2s ease;
   /* Bleed back across the reserved gutter, as the topbar does -- but with
      NO matching padding-right, because these links are centred and padding
      would centre them on the text column rather than on the window. */
@@ -476,10 +491,18 @@ a, button, .lbl, .figbody, [data-toggle] { touch-action: manipulation; }
 }
 .sitenav a:hover { color: #49aad4; }
 .sitenav a.active { color: var(--ink); }
-.sitenav.scrolled { background: rgba(40, 40, 40, .86); }
-.sitenav.scrolled a { color: rgba(255, 255, 255, .85); }
-.sitenav.scrolled a.active { color: #fff; }
-.sitenav.scrolled a:hover { color: #49aad4; }
+@media (max-width: 62rem) {
+  /* !! THIS OVERRIDE HAS TO LIVE HERE, after the base rule. It used to sit in
+     the general responsive block much further up the file, where the later
+     `.sitenav { margin-right: calc(-1 * var(--peek-w)) }` beat it at equal
+     specificity -- so with the gutter already released the bar still bled
+     324px past the right edge, and at a 375px viewport the WHOLE PAGE scrolled
+     sideways (documentElement.scrollWidth 700 against clientWidth 375).
+     Present since the banner went in on 5 September 2026; measured and fixed
+     on 7 September. notes.css in the week editions never had it, because there
+     the override was written after the base rule from the start. */
+  .sitenav { margin-right: 0; padding-right: 0; }
+}
 @media (max-width: 720px) {
   .sitenav-inner { gap: 1.2rem; flex-wrap: wrap; padding: .9rem 1.1rem; }
 }
