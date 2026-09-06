@@ -1,4 +1,6 @@
 window.NOTES_DATA = {
+ "week": 4,
+ "title": "Expected utility theory",
  "figures": {
   "fig:road": {
    "n": 1,

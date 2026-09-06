@@ -1,4 +1,6 @@
 window.NOTES_DATA = {
+ "week": 2,
+ "title": "Probability",
  "figures": {
   "fig:union": {
    "n": 1,

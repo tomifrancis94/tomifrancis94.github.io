@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2. Probabilism — PE3101P Week 2</title>
-<link rel="stylesheet" href="assets/katex/katex.min.css">
-<link rel="stylesheet" href="assets/notes.css">
+<link rel="stylesheet" href="assets/katex/katex.min.css?v=3f94e1b7">
+<link rel="stylesheet" href="assets/notes.css?v=bcb73239">
 
 </head>
 <body>
@@ -20,7 +20,7 @@
 </div>
 </nav>
 <div class="layout">
-<nav class='toc'><div class='toctitle'><a href='index.html'>Week 2 &mdash; Probability</a></div><ol><li><a href='01-probability-basics.html'><span class='tocnum'>1</span>Probabilities: the basics</a></li><li class='here'><a href='02-probabilism.html'><span class='tocnum'>2</span>Probabilism</a><ul><li><a href='#s2.1'>Assigning Probabilities</a></li><li><a href='#s2.2'>Epistemic irrationality</a></li><li><a href='#s2.3'>The Probability Axioms (again)</a></li><li><a href='#s2.4'>So what went wrong?</a></li></ul></li><li><a href='03-conditional-probability.html'><span class='tocnum'>3</span>Conditional probabilities and Conditionalisation</a></li><li><a href='04-dutch-books.html'><span class='tocnum'>4</span>Dutch book arguments</a></li></ol></nav>
+<nav class='toc' aria-label='Contents'><ol class='weeks'><li class='wk wk-pdf'><a class='wklink' href='../../../docs/PE3101P%20-%20Week%201%20Lecture%20Notes.pdf'><span class='wknum'>Week 1</span>Introduction <span class='wkpdf'>(PDF)</span></a></li><li class='wk wk-here'><div class='toctitle'><a href='index.html'>Week 2 &mdash; Probability</a></div><ol class='secs'><li><a href='01-probability-basics.html'><span class='tocnum'>1</span>Probabilities: the basics</a></li><li class='here'><a href='02-probabilism.html'><span class='tocnum'>2</span>Probabilism</a><ul><li><a href='#s2.1'>Assigning Probabilities</a></li><li><a href='#s2.2'>Epistemic irrationality</a></li><li><a href='#s2.3'>The Probability Axioms (again)</a></li><li><a href='#s2.4'>So what went wrong?</a></li></ul></li><li><a href='03-conditional-probability.html'><span class='tocnum'>3</span>Conditional probabilities and Conditionalisation</a></li><li><a href='04-dutch-books.html'><span class='tocnum'>4</span>Dutch book arguments</a></li></ol></li></ol></nav>
 <main id="main">
 <article><h1 class='blk' id='h2'><span class='secnum'>2</span> Probabilism</h1><section class='sub' data-sub='2.1'><details class='subdet' open><summary class='subhead blk' id='h2.1'><span class='secnum'>2.1</span> Assigning Probabilities<a class='anchor' href='#s2.1' title='Link to this subsection'>#</a><span class='headtarget' id='s2.1'></span></summary><div class='subbody'><p class='blk' id='b2.1.1'>We now turn to assigning probabilities to <a class='xref term' data-def='event' href='01-probability-basics.html#b1.1.4'>events</a>, and to what the constraints on doing so are.
 In particular, we’re interested in the structure of credence: the constraints placed by epistemic rationality on how our credences should look.</p></div></details></section><section class='sub' data-sub='2.2'><details class='subdet' open><summary class='subhead blk' id='h2.2'><span class='secnum'>2.2</span> Epistemic irrationality<a class='anchor' href='#s2.2' title='Link to this subsection'>#</a><span class='headtarget' id='s2.2'></span></summary><div class='subbody'><p class='blk' id='b2.2.1'>Intuitively, some patterns of credence we can have are incorrect.</p><p class='blk' id='b2.2.2'>Have a think about each of these, and about what is wrong with having credences like this.</p><div class='blk box box-example' id='b2.2.3'><div class='boxhead'>Example</div><div class='boxbody'>Joe thinks that there is a 50% chance that it will rain today and a 20% chance that it will not rain today.</div></div><div class='blk box box-example' id='b2.2.4'><div class='boxhead'>Example</div><div class='boxbody'>Biqing thinks that there is a 60% chance she failed the exam she just took, and a 70% chance she failed it badly.</div></div><div class='blk box box-example' id='b2.2.5'><div class='boxhead'>Example</div><div class='boxbody'>Homer thinks that there’s a 30% chance he’ll drink one beer, a 50% chance he’ll drink more than one beer, and a 70% chance he’ll drink at least one beer.</div></div></div></details></section><section class='sub' data-sub='2.3'><details class='subdet' open><summary class='subhead blk' id='h2.3'><span class='secnum'>2.3</span> The Probability Axioms (again)<a class='anchor' href='#s2.3' title='Link to this subsection'>#</a><span class='headtarget' id='s2.3'></span></summary><div class='subbody'><p class='blk' id='b2.3.1'>Lecture 1 stated these informally:</p><ul class='blk customlist' id='b2.3.2'><li><span class='itemlabel'>(i)</span> <strong><a class='xref term' data-def='nonnegativity' href='02-probabilism.html#b2.3.4'>Non-negativity</a>.</strong> Probabilities can’t be negative.</li><li><span class='itemlabel'>(ii)</span> <strong><a class='xref term' data-def='normalisation' href='02-probabilism.html#b2.3.4'>Normalisation</a>.</strong> The probability of the <a class='xref term' data-def='universalevent' href='01-probability-basics.html#b1.1.5'>universal event</a>—of <em>something</em> happening—is <span class='math' data-tex="1"><span class='math-fallback'>1</span></span>.</li><li><span class='itemlabel'>(iii)</span> <strong>Additivity.</strong> The probability of <em>either</em> of two completely separate <a class='xref term' data-def='event' href='01-probability-basics.html#b1.1.4'>events</a> happening is the sum of their probabilities.
@@ -38,9 +38,9 @@ above as <span class='math' data-tex="X \cap Y = \varnothing"><span class='math-
   </div>
   <div class="peekbody"></div>
 </aside>
-<script src="assets/katex/katex.min.js"></script>
-<script src="assets/data.js"></script>
-<script src="assets/sitenav.js"></script>
-<script src="assets/notes.js"></script>
+<script src="assets/katex/katex.min.js?v=4881bfc9"></script>
+<script src="assets/data.js?v=f27986d8"></script>
+<script src="assets/sitenav.js?v=cb8502a9"></script>
+<script src="assets/notes.js?v=e5d6d446"></script>
 </body>
 </html>

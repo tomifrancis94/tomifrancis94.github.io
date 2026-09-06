@@ -89,8 +89,11 @@ main {
 }
 .toctitle a:hover { background: var(--teal-soft); }
 .toc ol { list-style: none; margin: 0; padding: 0; }
-.toc > ol > li { margin: .2rem 0; }
-.tocnum {
+/* ! Sections used to be the top level of this column and were spaced by
+   `.toc > ol > li`. The top level is the WEEKS now (see the block below), so
+   the section spacing is keyed on the lists that actually hold sections. */
+.toc ol.secs > li { margin: .2rem 0; }
+.tocnum, .wknum {
   color: var(--ink-soft); margin-right: .45rem; font-variant-numeric: tabular-nums;
 }
 .tocnum::after { content: "."; }
@@ -116,6 +119,61 @@ main {
 .toc ul a.active::before {
   content: ""; position: absolute; left: -1.1rem; top: 0; bottom: 0;
   width: 2px; background: var(--teal);
+}
+
+/* ------------------------------------------- the other weeks of the course */
+/* Tomi, 7 September 2026: "The whole thing on the left ... should be a
+   collapsible/expandable one of many. Above it should be weeks 1 and 2, and
+   below it (eventually, but not now) weeks 4+ ... By default, only the current
+   week should be expanded, the rest should be contracted."
+   WHICH weeks appear is decided at BUILD time, from what site/pe3101p.html
+   links -- build_site.course_weeks(). Nothing here can put a week in the
+   column that the course page does not already link.
+   ! The other weeks are deliberately QUIETER than this one: soft ink, normal
+   weight, a small disclosure triangle. This week keeps the teal title and the
+   full section list, so the column still reads as "these notes, in their
+   place" rather than as a course index. */
+.toc ol.weeks > li.wk { margin: 0 0 .5rem; }
+.toc ol.weeks > li.wk-here { margin: .3rem 0 .9rem; }
+
+.wkdet > summary.wksum {
+  cursor: pointer; list-style: none;
+  display: flex; align-items: baseline; gap: .1rem;
+}
+summary.wksum::-webkit-details-marker { display: none; }
+/* the disclosure marker, matching the one on a collapsible subsection */
+.wkmark {
+  flex: 0 0 auto; width: .9em; font-size: .8em; color: var(--teal);
+  transition: transform .12s;
+}
+.wkmark::before { content: "\25be"; }         /* filled down-triangle */
+.wkdet:not([open]) > summary.wksum .wkmark { transform: rotate(-90deg); }
+/* Keyboard: <summary> is focusable and Enter/Space opens it; the link inside
+   is focusable in its own right and goes to that week's contents page. Both
+   need a visible ring -- the column is otherwise all soft greys. */
+summary.wksum:focus-visible,
+.toc a:focus-visible {
+  outline: 2px solid var(--teal); outline-offset: 1px;
+}
+/* ! The link is NOT stretched to fill the row (`flex: 1 1 auto` would do
+   that). The space to the right of the title belongs to the <summary>, so a
+   click anywhere on the row except the title itself opens the week -- the
+   triangle alone is an 11px target and nothing else would be clickable.
+   Clicking the TITLE goes to that week's own contents page, which is what the
+   link is for. To make the whole row navigate instead, put `flex: 1 1 auto`
+   back on .toc a.wklink. */
+.toc a.wklink { color: var(--ink-soft); font-weight: 400; flex: 0 1 auto; }
+.toc a.wklink:hover { color: var(--teal); }
+/* a PDF-only week has no triangle, so it is indented to the same text edge */
+.toc li.wk-pdf a.wklink { padding-left: 1.15rem; }
+.wkpdf { color: var(--ink-soft); font-size: .8em; letter-spacing: .03em; }
+.wkbody { padding: .1rem 0 .2rem 1.5rem; }
+.toc ol.wksecs > li { margin: .05rem 0; }
+.toc ol.wksecs a {
+  font-size: 13.6px; color: var(--ink-soft); padding: .15rem .4rem;
+}
+.wknone {
+  color: var(--ink-soft); font-size: 13px; margin: .2rem 0 .4rem 1.5rem;
 }
 
 /* ---------------------------------------------------------------- headings */
@@ -255,6 +313,24 @@ ol.contents a:hover { text-decoration: underline; }
 .subsList { color: var(--ink-soft); font-size: .87rem; margin-top: .2rem; }
 
 /* ---------------------------------------------------------------- responsive */
+/* !!! THE RESERVED GUTTER MUST BE RELEASED ON A NARROW SCREEN, and until
+   7 September 2026 it was not -- week 4 fixed this on 3 September and the fix
+   was never back-ported here. `body { padding-right: 20.25rem }` is
+   unconditional -- correct on a desktop, where it is what stops the page moving
+   when the panel opens -- but at 375px it left the text column SIXTEEN PIXELS
+   wide. The page still reported no sideways scroll and every structural check
+   passed, because nothing was overflowing: there was simply nowhere to put the
+   text. Measure main.getBoundingClientRect().width; do not trust "no overflow".
+   Below 62rem the panel becomes an OVERLAY instead, which is what the set
+   theory primer does and for the same reason. */
+@media (max-width: 62rem) {
+  body { padding-right: 0; }
+}
+/* ! The panel's own width is overridden at the BOTTOM of this file, not here.
+   `.peek { width: var(--peek-w) }` is declared further down, and two rules of
+   equal specificity are decided by source order -- so an override written up
+   here quietly loses. */
+
 @media (max-width: 940px) {
   .layout { grid-template-columns: 1fr; gap: 0; padding: 0 1.1rem; }
   .toc {
@@ -488,6 +564,21 @@ a.xref.term:hover { color: var(--teal); background: var(--teal-soft); }
 /* the heading is a commentable block; keep the toolbar off the text */
 summary.subhead.blk { padding-right: 7rem; }
 .headtarget { display: block; height: 0; scroll-margin-top: 1.5rem; }
+
+/* ---------------------------------------------- the panel on a narrow screen */
+/* Last in the file on purpose: it overrides `.peek { width: var(--peek-w) }`
+   above, and equal specificity is settled by source order. With the gutter
+   released (see the 62rem block) the panel is an overlay, so it takes most of
+   the screen and casts a heavier shadow to sit clearly above the text.
+   Back-ported from week 4 on 7 September 2026 with the gutter rule; the two
+   go together -- releasing the gutter without this leaves the panel at its
+   desktop width on a phone. */
+@media (max-width: 62rem) {
+  .peek {
+    width: min(23rem, 92vw);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, .22);
+  }
+}
 h1.blk { padding-right: 7rem; }
 
 /* ------------------------------------------------------- the site banner */

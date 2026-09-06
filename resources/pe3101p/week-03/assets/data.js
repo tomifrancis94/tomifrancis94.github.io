@@ -1,4 +1,6 @@
 window.NOTES_DATA = {
+ "week": 3,
+ "title": "Newcomb\u2019s problem",
  "figures": {
   "fig:tp0": {
    "n": 1,
