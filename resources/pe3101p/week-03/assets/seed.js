@@ -109,7 +109,8 @@ window.NOTES_SEED = {
    "quote": "",
    "text": "The clause 'and the two come apart unless you are already all but certain that you will take both boxes' is mine, added on 5 September when this step was filled in; your slide asserted Cr(D | B) != Cr(D) without qualification. Keep, trim or cut.",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open"
+   "status": "denied",
+   "verdict": "no answer; axed on his instruction, 6 Sep 2026. The clause stays in the text as it stands."
   },
   {
    "id": "claude-2026-09-06-06",
@@ -183,10 +184,10 @@ window.NOTES_SEED = {
    "quote": "Why: the two patterns are two bare tables with nothing between them, so on the page they read as one six-line list. Paired with the 'Another:' line inserted after the first table.",
    "text": "",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "deferred",
+   "status": "denied",
    "before": "Lewis's example. Three options, and Bruce the cat might purr loudly, softly, or not at all.",
    "after": "Lewis's example. Three options, and Bruce the cat might purr loudly, softly, or not at all. One possible pattern:",
-   "verdict": "no verdict written"
+   "verdict": "no answer; axed on his instruction, 6 Sep 2026"
   },
   {
    "id": "claude-2026-09-06-10",
@@ -201,9 +202,9 @@ window.NOTES_SEED = {
    "quote": "Why: see the edit to the sentence above; this is the line between the two patterns.",
    "text": "Another:",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "deferred",
+   "status": "denied",
    "before": "\\begin{center}\n\\begin{tabular}{@{}l@{}}\n\tI brush Bruce $\\square\\!\\rightarrow$ he purrs loudly \\\\\n\tI stroke Bruce $\\square\\!\\rightarrow$ he purrs softly \\\\\n\tI leave Bruce alone $\\square\\!\\rightarrow$ he doesn't purr\n\\end{tabular}\n\\end{center}",
-   "verdict": "no verdict written"
+   "verdict": "no answer; axed on his instruction, 6 Sep 2026"
   },
   {
    "id": "claude-2026-09-06-11",
