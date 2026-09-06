@@ -606,6 +606,23 @@ a.xref.term {
 }
 a.xref.term:hover { color: var(--teal); background: var(--teal-soft); }
 
+/* A BACK-LINK TO AN EARLIER EDITION -- week 2, or the set theory primer.
+   Same family as a defined term, deliberately: same weight, same teal, same
+   "quiet until you hover". DASHED rather than dotted is the whole difference,
+   and it is the honest one, because these two links do different things -- a
+   term opens the panel beside the text and you stay where you are, a back-link
+   navigates away to another edition. The native tooltip (title="Week 2,
+   section 3.1: Defining conditional probabilities") says where before you go.
+   To make them indistinguishable again, change `dashed` to `dotted`. */
+a.xlink {
+  color: inherit; text-decoration: none; cursor: pointer;
+  border-bottom: 1px dashed rgba(0, 101, 128, .55);
+}
+a.xlink:hover {
+  color: var(--teal); background: var(--teal-soft);
+  border-bottom-color: var(--teal);
+}
+
 /* A result cited by name -- "Lemma 1 (more of the better thing is better)".
    * It is one link, name included, because the name is the point: Tomi, 18
    August 2026, "'Proposition 17' means nothing to anybody, not even me." The

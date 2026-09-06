@@ -795,7 +795,7 @@ window.NOTES_SEED = {
   {
    "id": "cmtq10lyf3op1",
    "created": "2026-09-07T00:28:46+08:00",
-   "status": "open",
+   "status": "applied",
    "page": "03-edt-and-cdt",
    "section": "3.1",
    "block": "b3.1.1",
