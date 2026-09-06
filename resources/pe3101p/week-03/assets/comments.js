@@ -135,10 +135,57 @@
     });
   }
 
+  /* ------------------------------------------------------------- seeding */
+  /* CLAUDE'S PROPOSALS SHIP, in assets/seed.js (written by build_site.py from
+   * comments/comments.json). Without this they would be invisible on the LIVE
+   * site: a static host has no API, so there is nothing to read comments.json
+   * with, and the only other route in is the panel's Import JSON file picker.
+   * Added 6 September 2026, Tomi: "let me see the comments on the web version".
+   *
+   * EACH ID IS SEEDED ONCE PER BROWSER. After that the local copy wins, so an
+   * edit he makes is not overwritten on the next page load and a card he
+   * deletes does not come back -- which it otherwise would, on every reload,
+   * for ever.
+   *
+   * DELETING RECORDS A TOMBSTONE, and that is how a DENIAL travels back to
+   * Claude. `build/import_markup.py` deliberately never deletes (an item absent
+   * from one browser's export may simply have been made in another), so absence
+   * cannot mean "denied". The explicit list can. */
+  var DISMISS_KEY = NS + "dismissed";
+
+  function dismissed() {
+    try { return JSON.parse(lsGet(DISMISS_KEY) || "[]"); }
+    catch (e) { return []; }
+  }
+
+  function dismiss(id) {
+    if (!id) return;
+    var d = dismissed();
+    if (d.indexOf(id) < 0) { d.push(id); lsSet(DISMISS_KEY, JSON.stringify(d)); }
+  }
+
+  function seed() {
+    var s = window.NOTES_SEED;
+    if (!s || !Array.isArray(s.items)) return 0;
+    var have = {}, gone = dismissed(), added = 0;
+    state.items.forEach(function (c) { if (c.id) have[c.id] = 1; });
+    s.items.forEach(function (c) {
+      if (!c || !c.id || have[c.id] || gone.indexOf(c.id) >= 0) return;
+      state.items.push(c);
+      added++;
+    });
+    if (added) saveLocal();
+    return added;
+  }
+
   function load() {
     return probe()
       .then(function (items) { state.online = true; state.items = items; })
-      .catch(function () { state.online = false; state.items = loadLocal(); });
+      .catch(function () {
+        state.online = false;
+        state.items = loadLocal();
+        seed();
+      });
   }
 
   function persist(c, action) {
@@ -243,6 +290,20 @@
       ? (isEdit ? existing.after : existing.text)
       : (isEdit ? src : "");
 
+    /* DRAFT AUTOSAVE. Every keystroke goes to localStorage, so a crash, a
+     * reload or a closed tab cannot take the text with it. Tomi, 6 September
+     * 2026: the local server "crashed in the middle of me writing long comments
+     * before and cost me ~10mins of work."
+     *
+     * Only a completed SAVE clears the draft. Cancel and Escape leave it, so
+     * reopening the composer brings the words back -- the failure this exists
+     * to stop is losing work, and an unwanted draft costs one select-all. */
+    var DRAFT = NS + "draft:" + block.id + ":" + kind +
+                (existing ? ":" + existing.id : "");
+    var saved = lsGet(DRAFT);
+    var restored = saved != null && saved !== "" && saved !== value;
+    if (restored) value = saved;
+
     var box = document.createElement("div");
     box.className = "cmt-composer kind-" + kind;
     box.innerHTML =
@@ -267,7 +328,10 @@
         "<button class='cmt-cancel'>Cancel</button>" +
         (isEdit ? "<button class='cmt-reset' title='Restore the original source'>" +
                   "Reset</button>" : "") +
-        "<span class='cmt-hint'>Ctrl+Enter to save</span>" +
+        "<span class='cmt-hint'>" +
+          (restored ? "Unsaved draft restored." : "Ctrl+Enter to save") +
+          " Drafts autosave as you type." +
+        "</span>" +
       "</div>";
 
     // a heading lives inside <summary>; putting the composer after it would
@@ -278,13 +342,18 @@
     var ta = box.querySelector("textarea");
     ta.value = value;
     autoGrow(ta);
-    ta.addEventListener("input", function () { autoGrow(ta); });
+    ta.addEventListener("input", function () {
+      autoGrow(ta);
+      lsSet(DRAFT, ta.value);
+    });
     ta.focus();
 
     function save() {
       var text = ta.value.replace(/\s+$/, "");
-      if (!text.trim()) { closeComposer(); return; }
-      if (isEdit && text === src) { closeComposer(); return; }   // no change
+      // Both early exits discard the draft on purpose: an emptied box and an
+      // edit identical to the source are deliberate, and neither is work.
+      if (!text.trim()) { lsDel(DRAFT); closeComposer(); return; }
+      if (isEdit && text === src) { lsDel(DRAFT); closeComposer(); return; }
 
       var c = existing ||
         assign({ id: uid(), created: nowISO(), status: "open" }, meta(block));
@@ -296,6 +365,7 @@
       else { state.items.push(c); }
 
       persist(c, "add");
+      lsDel(DRAFT);                       // saved: the draft has served its turn
       closeComposer();
       renderBlock(block.id);
       renderBadge();
@@ -304,7 +374,12 @@
     box.querySelector(".cmt-save").onclick = save;
     box.querySelector(".cmt-cancel").onclick = closeComposer;
     var reset = box.querySelector(".cmt-reset");
-    if (reset) reset.onclick = function () { ta.value = src; ta.focus(); };
+    if (reset) reset.onclick = function () {
+      ta.value = src;
+      lsDel(DRAFT);                       // an explicit "start again"
+      autoGrow(ta);
+      ta.focus();
+    };
     ta.addEventListener("keydown", function (e) {
       if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); save(); }
       if (e.key === "Escape") { closeComposer(); }
@@ -379,6 +454,9 @@
         var cid = b.closest(".cmt").dataset.id;
         var c = state.items.find(function (x) { return x.id === cid; });
         state.items = state.items.filter(function (x) { return x.id !== cid; });
+        // A tombstone, so a seeded card stays deleted across reloads AND so the
+        // export can say "denied" rather than merely omitting it.
+        dismiss(cid);
         persist(c, "delete");
         renderBlock(id);
         renderBadge();
@@ -538,7 +616,9 @@
               "<strong>Download JSON</strong> below and hand the text or the " +
               "file over; it is merged in with " +
               "<code>python build/import_markup.py</code>. Nothing leaves this " +
-              "browser until you do that — clearing site data loses it.") +
+              "browser until you do that — clearing site data loses it. " +
+              "<strong>Deleting a card is a denial</strong>, and it is recorded, " +
+              "so the export carries it. Drafts autosave as you type.") +
         "</div>" +
         (pending ? "<div class='cmt-status script'>" + pending +
                    " scriptable edit" + (pending === 1 ? "" : "s") +
@@ -597,7 +677,9 @@
   /* On a static host these ARE the save: nothing has reached disk until one of
    * them has been used, so each says out loud what it did. */
   function exportText() {
-    return JSON.stringify({ comments: state.items }, null, 1);
+    // `dismissed` carries the denials. Everything kept is in `comments`.
+    return JSON.stringify({ comments: state.items, dismissed: dismissed() },
+                          null, 1);
   }
 
   function note(msg) {
