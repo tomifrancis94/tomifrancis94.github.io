@@ -1,6 +1,23 @@
 window.NOTES_SEED = {
  "items": [
   {
+   "id": "cmtppoop415vu",
+   "created": "2026-09-06T19:11:34+08:00",
+   "status": "applied",
+   "page": "01-probability",
+   "section": "1.1",
+   "block": "b1.1.3.2",
+   "blocksrc": "Now take the definition of conditional probability, $\\Cr(A \\mid B_i) = \\Cr(A \\cap B_i) / \\Cr(B_i)$, and multiply through by $\\Cr(B_i)$. That gives an expression for each piece:\n\\[\n\\Cr(A \\cap B_i) = \\Cr(B_i)\\Cr(A \\mid B_i).\n\\]",
+   "subTitle": "The law of total probability",
+   "sectionTitle": "Three proofs from week 2",
+   "sourceSection": "1.1",
+   "kind": "comment",
+   "quote": "",
+   "text": "Isn't this an equation rather than an expression? So, change it to \"equation\".",
+   "outcome": "done: 'expression' is now 'equation'",
+   "orphaned": true
+  },
+  {
    "id": "claude-2026-09-06-01",
    "kind": "edit",
    "page": "01-probability",
@@ -13,9 +30,12 @@ window.NOTES_SEED = {
    "quote": "Why: 'Bayes factor' is used in the underbrace and in the proof's last line but is never defined in these notes (its definition went with the week 2 cut, and the panel cannot reach across editions). This restates week 2's one-line definition and frames the identity as the third result being proved, like the lead sentences of 1.1 and 1.2.",
    "text": "",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open",
+   "status": "applied",
    "before": "\\[\n\\underbrace{\\frac{\\Cr(H_1 \\mid E)}{\\Cr(H_2 \\mid E)}}_{\\text{posterior odds}}\n=\n\\underbrace{\\frac{\\Cr(E \\mid H_1)}{\\Cr(E \\mid H_2)}}_{\\text{Bayes factor}}\n\\times\n\\underbrace{\\frac{\\Cr(H_1)}{\\Cr(H_2)}}_{\\text{prior odds}}.\n\\]",
-   "after": "Week 2 defined the \\emph{Bayes factor} as $\\Cr(E \\mid H_1) / \\Cr(E \\mid H_2)$: how much better the evidence $E$ is explained by $H_1$ than by $H_2$. The odds form of Bayes' theorem was stated there without proof:\n\\[\n\\underbrace{\\frac{\\Cr(H_1 \\mid E)}{\\Cr(H_2 \\mid E)}}_{\\text{posterior odds}}\n=\n\\underbrace{\\frac{\\Cr(E \\mid H_1)}{\\Cr(E \\mid H_2)}}_{\\text{Bayes factor}}\n\\times\n\\underbrace{\\frac{\\Cr(H_1)}{\\Cr(H_2)}}_{\\text{prior odds}}.\n\\]"
+   "after": "Week 2 defined the \\emph{Bayes factor} as $\\Cr(E \\mid H_1) / \\Cr(E \\mid H_2)$: how much better the evidence $E$ is explained by $H_1$ than by $H_2$. The odds form of Bayes' theorem was stated there without proof:\n\\[\n\\underbrace{\\frac{\\Cr(H_1 \\mid E)}{\\Cr(H_2 \\mid E)}}_{\\text{posterior odds}}\n=\n\\underbrace{\\frac{\\Cr(E \\mid H_1)}{\\Cr(E \\mid H_2)}}_{\\text{Bayes factor}}\n\\times\n\\underbrace{\\frac{\\Cr(H_1)}{\\Cr(H_2)}}_{\\text{prior odds}}.\n\\]",
+   "edited": "2026-09-06T21:38:25+08:00",
+   "verdict": "TOMI: approved",
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-02",
@@ -28,9 +48,13 @@ window.NOTES_SEED = {
    "sectionTitle": "Three proofs from week 2",
    "sourceSection": "1.1",
    "quote": "",
-   "text": "No positivity proviso, but the proof divides by each Cr(B_i). The Bayes box says 'provided Cr(A), Cr(B) > 0', and week 4's law of total expectation says 'each with Cr(B_i) > 0'. Your call whether to add 'each with Cr(B_i) > 0' here (week 2 section 3.4 has the same statement). The odds form has the same gap: it needs Cr(E), Cr(H_1), Cr(H_2) and Cr(H_2 | E) positive. Flagged, not changed: it is your statement.",
+   "text": "No positivity proviso, but the proof divides by each Cr(B_i). The Bayes box says 'provided Cr(A), Cr(B) > 0', and week 4's law of total expectation says 'each with Cr(B_i) > 0'. Your call whether to add 'each with Cr(B_i) > 0' here (week 2 section 3.4 has the same statement). The odds form has the same gap: it needs Cr(E), Cr(H_1), Cr(H_2) and Cr(H_2 | E) positive. Flagged, not changed: it is your statement.\n\nTOMI: yes, add that proviso to the statement of the theorem because it's not correct without it: the conditional probabilities are undefined when the second argument is zero. (I guess this is why BDRC defined this into the partition, although that's actually not enough because they could be credence zero even if they're non-empty).",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open"
+   "status": "applied",
+   "edited": "2026-09-06T21:37:37+08:00",
+   "verdict": "TOMI: yes, add that proviso to the statement of the theorem because it's not correct without it: the conditional probabilities are undefined when the second argument is zero. (I guess this is why BDRC defined this into the partition, although that's actually not enough because they could be credence zero even if they're non-empty).",
+   "outcome": "done: proviso added to the statement",
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-03",
@@ -45,9 +69,12 @@ window.NOTES_SEED = {
    "quote": "Why: 'dominates' with no object. Week 1 always says what dominates what.",
    "text": "",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open",
+   "status": "applied",
    "before": "Taking both gets you $\\$1{,}000$ more \\emph{in either column}. So taking both \\textbf{strongly statewise dominates}.",
-   "after": "Taking both gets you $\\$1{,}000$ more \\emph{in either column}. So taking both boxes \\textbf{strongly statewise dominates} taking only the blue box."
+   "after": "Taking both gets you $\\$1{,}000$ more \\emph{in either column}. So taking both boxes \\textbf{strongly statewise dominates} taking only the blue box.",
+   "edited": "2026-09-06T21:39:19+08:00",
+   "verdict": "TOMI: approved",
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-04",
@@ -62,9 +89,12 @@ window.NOTES_SEED = {
    "quote": "Why: 'before' has no referent in a standing series of notes. Week 1 sections 4 and 4.2 carry the substance of (i) to (iv), though not as a numbered list, so 'from week 1' is the nearest anchor. Deny if you would rather not point at week 1.",
    "text": "",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open",
+   "status": "applied",
    "before": "Recall the conditions we had before on states of nature:",
-   "after": "Recall the conditions on states of nature from week 1:"
+   "after": "Recall the conditions on states of nature from week 1:",
+   "edited": "2026-09-06T21:39:47+08:00",
+   "verdict": "TOMI: approved",
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-05",
@@ -94,9 +124,11 @@ window.NOTES_SEED = {
    "quote": "Why: the subsection opens on the figure with nothing to set it up, and the sentence that explains it comes after. Teaching/preferences.md 6.1: a figure goes directly after the thing it illustrates. This swaps the order; no words change.",
    "text": "",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open",
+   "status": "denied",
    "before": "\\begin{figure}[H]\n\\centering\n\\begin{tikzpicture}[scale=1]\n  \\node[box] (brain) at (0,0) {your brain state\\\\last night};\n  \\node[box] (pred) at (4.2,1.3) {the demon's\\\\prediction};\n  \\node[box] (choice) at (4.2,-1.3) {your choice};\n  \\node[box] (contents) at (8.4,1.3) {contents of\\\\the blue box};\n  \\node[box] (payoff) at (8.4,-1.3) {what you\\\\take away};\n  \\draw[ar] (brain) -- (pred);\n  \\draw[ar] (brain) -- (choice);\n  \\draw[ar] (pred) -- (contents);\n  \\draw[ar] (contents) -- (payoff);\n  \\draw[ar] (choice) -- (payoff);\n\\end{tikzpicture}\n\\caption{A common cause, and no arrow from your choice to the prediction.}\n\\label{fig:newcombcausal}\n\\end{figure}\n\nA \\textbf{common cause}, and \\textbf{no arrow} from your choice to the prediction. Which is why the correlation isn't an influence.",
-   "after": "A \\textbf{common cause}, and \\textbf{no arrow} from your choice to the prediction. Which is why the correlation isn't an influence.\n\n\\begin{figure}[H]\n\\centering\n\\begin{tikzpicture}[scale=1]\n  \\node[box] (brain) at (0,0) {your brain state\\\\last night};\n  \\node[box] (pred) at (4.2,1.3) {the demon's\\\\prediction};\n  \\node[box] (choice) at (4.2,-1.3) {your choice};\n  \\node[box] (contents) at (8.4,1.3) {contents of\\\\the blue box};\n  \\node[box] (payoff) at (8.4,-1.3) {what you\\\\take away};\n  \\draw[ar] (brain) -- (pred);\n  \\draw[ar] (brain) -- (choice);\n  \\draw[ar] (pred) -- (contents);\n  \\draw[ar] (contents) -- (payoff);\n  \\draw[ar] (choice) -- (payoff);\n\\end{tikzpicture}\n\\caption{A common cause, and no arrow from your choice to the prediction.}\n\\label{fig:newcombcausal}\n\\end{figure}"
+   "after": "A \\textbf{common cause}, and \\textbf{no arrow} from your choice to the prediction. Which is why the correlation isn't an influence.\n\n\\begin{figure}[H]\n\\centering\n\\begin{tikzpicture}[scale=1]\n  \\node[box] (brain) at (0,0) {your brain state\\\\last night};\n  \\node[box] (pred) at (4.2,1.3) {the demon's\\\\prediction};\n  \\node[box] (choice) at (4.2,-1.3) {your choice};\n  \\node[box] (contents) at (8.4,1.3) {contents of\\\\the blue box};\n  \\node[box] (payoff) at (8.4,-1.3) {what you\\\\take away};\n  \\draw[ar] (brain) -- (pred);\n  \\draw[ar] (brain) -- (choice);\n  \\draw[ar] (pred) -- (contents);\n  \\draw[ar] (contents) -- (payoff);\n  \\draw[ar] (choice) -- (payoff);\n\\end{tikzpicture}\n\\caption{A common cause, and no arrow from your choice to the prediction.}\n\\label{fig:newcombcausal}\n\\end{figure}",
+   "edited": "2026-09-06T21:41:07+08:00",
+   "verdict": "denied (figure/prose swap, section 2.10)"
   },
   {
    "id": "claude-2026-09-06-07",
@@ -111,9 +143,12 @@ window.NOTES_SEED = {
    "quote": "Why: two things. 'independent' bare: the standing rule is always 'probabilistic independence', and week 4 uses 'Independence' for the preference axiom. And 'such partitions' reads as pointing back at the independent case in the previous sentence, which is the opposite of what is meant.",
    "text": "",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open",
+   "status": "applied",
    "before": "All we now require is that each state, with each act, settles everything you care about. And where the states \\emph{are} independent, $\\Cr(S_i \\mid A) = \\Cr(S_i)$ --- so the two agree. Notice that dominance reasoning does not apply for such partitions.",
-   "after": "All we now require is that each state, with each act, settles everything you care about. And where the states \\emph{are} probabilistically independent of the acts, $\\Cr(S_i \\mid A) = \\Cr(S_i)$ --- so the two agree. Notice that dominance reasoning does not apply for partitions that are not probabilistically independent of the acts."
+   "after": "All we now require is that each state, with each act, settles everything you care about. And where the states \\emph{are} probabilistically independent of the acts, $\\Cr(S_i \\mid A) = \\Cr(S_i)$ --- so the two agree. Notice that dominance reasoning does not apply for partitions that are not probabilistically independent of the acts.",
+   "edited": "2026-09-06T21:44:19+08:00",
+   "verdict": "TOMI: approved",
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-08",
@@ -128,9 +163,12 @@ window.NOTES_SEED = {
    "quote": "Why: the box-arrow appears in the next four tables and is never introduced; on the slides you said what it meant. One gloss ties the symbol to the sentence.",
    "text": "",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open",
+   "status": "applied",
    "before": "Take one counterfactual for \\textbf{each} option: \\emph{if I were to do $A$, the outcome would be $O$}. A dependency hypothesis is a whole \\textbf{pattern} of these --- one per option, all at once.",
-   "after": "Take one counterfactual for \\textbf{each} option: \\emph{if I were to do $A$, the outcome would be $O$}, written $A \\;\\square\\!\\rightarrow\\; O$. A dependency hypothesis is a whole \\textbf{pattern} of these --- one per option, all at once."
+   "after": "Take one counterfactual for \\textbf{each} option: \\emph{if I were to do $A$, the outcome would be $O$}, written $A \\;\\square\\!\\rightarrow\\; O$. A dependency hypothesis is a whole \\textbf{pattern} of these --- one per option, all at once.",
+   "edited": "2026-09-06T21:45:52+08:00",
+   "verdict": "TOMI: approved",
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-09",
@@ -145,9 +183,10 @@ window.NOTES_SEED = {
    "quote": "Why: the two patterns are two bare tables with nothing between them, so on the page they read as one six-line list. Paired with the 'Another:' line inserted after the first table.",
    "text": "",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open",
+   "status": "deferred",
    "before": "Lewis's example. Three options, and Bruce the cat might purr loudly, softly, or not at all.",
-   "after": "Lewis's example. Three options, and Bruce the cat might purr loudly, softly, or not at all. One possible pattern:"
+   "after": "Lewis's example. Three options, and Bruce the cat might purr loudly, softly, or not at all. One possible pattern:",
+   "verdict": "no verdict written"
   },
   {
    "id": "claude-2026-09-06-10",
@@ -162,8 +201,9 @@ window.NOTES_SEED = {
    "quote": "Why: see the edit to the sentence above; this is the line between the two patterns.",
    "text": "Another:",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open",
-   "before": "\\begin{center}\n\\begin{tabular}{@{}l@{}}\n\tI brush Bruce $\\square\\!\\rightarrow$ he purrs loudly \\\\\n\tI stroke Bruce $\\square\\!\\rightarrow$ he purrs softly \\\\\n\tI leave Bruce alone $\\square\\!\\rightarrow$ he doesn't purr\n\\end{tabular}\n\\end{center}"
+   "status": "deferred",
+   "before": "\\begin{center}\n\\begin{tabular}{@{}l@{}}\n\tI brush Bruce $\\square\\!\\rightarrow$ he purrs loudly \\\\\n\tI stroke Bruce $\\square\\!\\rightarrow$ he purrs softly \\\\\n\tI leave Bruce alone $\\square\\!\\rightarrow$ he doesn't purr\n\\end{tabular}\n\\end{center}",
+   "verdict": "no verdict written"
   },
   {
    "id": "claude-2026-09-06-11",
@@ -178,8 +218,10 @@ window.NOTES_SEED = {
    "quote": "Why: section 3.3 gives the evidential verdict with numbers, but the causal verdict, the point of 3.4 to 3.7, is never computed. This is arithmetic on the K's you defined, not new philosophy, but it was NOT in the lecture. Deny if you would rather leave it implicit.",
    "text": "Applied to Newcomb's problem, write $k$ for $\\Cr(K_1)$, so that $\\Cr(K_2) = 1 - k$:\n\\begin{align*}\n\t\\mathrm{EU}_c(\\text{one box}) &= 1{,}000{,}000\\,k + 0\\,(1-k) &&= 1{,}000{,}000\\,k\\\\[0.3em]\n\t\\mathrm{EU}_c(\\text{both})    &= 1{,}001{,}000\\,k + 1{,}000\\,(1-k) &&= 1{,}000{,}000\\,k + 1{,}000\n\\end{align*}\nWhatever $k$ is, taking both boxes comes out $\\$1{,}000$ ahead. So causal decision theory says take both boxes.",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open",
-   "before": "Note that the credences are unconditional. Your act might be evidence about which $K$ holds --- just as it was about the prediction. Conditioning the credence in $K$ on act $A$ would let that evidence back in."
+   "status": "applied",
+   "before": "Note that the credences are unconditional. Your act might be evidence about which $K$ holds --- just as it was about the prediction. Conditioning the credence in $K$ on act $A$ would let that evidence back in.",
+   "edited": "2026-09-06T21:48:12+08:00",
+   "verdict": "TOMI: approved"
   },
   {
    "id": "claude-2026-09-06-12",
@@ -192,39 +234,48 @@ window.NOTES_SEED = {
    "sectionTitle": "EDT and CDT",
    "sourceSection": "3.6",
    "quote": "",
-   "text": "Only K_1 and K_2 are listed, but two options with two possible outcomes each give four patterns. The other two would have the contents of the blue box depend on what you do, which the story rules out; a reader may wonder why they are absent. Yours to say, if you want a line on it.",
+   "text": "Only K_1 and K_2 are listed, but two options with two possible outcomes each give four patterns. The other two would have the contents of the blue box depend on what you do, which the story rules out; a reader may wonder why they are absent. Yours to say, if you want a line on it.\n\nTOMI: include a quick line saying that these are not the only possibly dependency hypotheses, but they are the only ones which an agent should entertain in the given scenario.",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open"
+   "status": "applied",
+   "edited": "2026-09-06T21:47:33+08:00",
+   "verdict": "TOMI: include a quick line saying that these are not the only possibly dependency hypotheses, but they are the only ones which an agent should entertain in the given scenario.",
+   "outcome": "done: line added after the two hypotheses"
   },
   {
    "id": "claude-2026-09-06-13",
    "kind": "comment",
    "page": "04-edt-vs-cdt",
    "section": "4.1",
-   "block": "b4.1.1",
+   "block": "b4.1.3",
    "blocksrc": "\\begin{center}\n\\begin{tabular}{@{}r|cc@{}}\n\\toprule\n         & \\textbf{Programme A}  & \\textbf{Programme B} \\\\\n         & (LAN predicted touch) & (LAN predicted no touch) \\\\ \\midrule\nno touch & worse shock           & nothing \\\\\ntouch    & regular shock         & nice melody \\\\ \\bottomrule\n\\end{tabular}\n\\end{center}",
    "subTitle": "Causey and the LAN outlet",
    "sectionTitle": "EDT vs CDT",
    "sourceSection": "4.1",
    "quote": "",
-   "text": "Table only. On the slides you talked over it; here a student has nothing else. Missing: who Causey is and what the LAN outlet does (the set-up), what the evidential and causal theories each say she should do, and what the case is meant to show. Your prose. The read-outs of Elga's play are in Weeks/Week 03 - 27 August 2026/Lecture 03 - 27 August 2026.md.",
+   "text": "Table only. On the slides you talked over it; here a student has nothing else. Missing: who Causey is and what the LAN outlet does (the set-up), what the evidential and causal theories each say she should do, and what the case is meant to show. Your prose. The read-outs of Elga's play are in Weeks/Week 03 - 27 August 2026/Lecture 03 - 27 August 2026.md.\n\nTOMI: yes, briefly introduce the case along with quotes (cited) from Elga.",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open"
+   "status": "applied",
+   "edited": "2026-09-06T21:48:42+08:00",
+   "verdict": "TOMI: yes, briefly introduce the case along with quotes (cited) from Elga.",
+   "outcome": "done: Causey introduced, with three cited quotes"
   },
   {
    "id": "claude-2026-09-06-14",
    "kind": "comment",
    "page": "04-edt-vs-cdt",
    "section": "4.2",
-   "block": "b4.2.2",
-   "blocksrc": "The crossed-out cells are the ones she is almost certain do not obtain.",
+   "block": "b4.2.4",
+   "blocksrc": "The crossed-out cells are the ones she is almost certain do not obtain. Shocking is therefore excellent evidence that Neutra was left alone last week, and refraining is excellent evidence that she was shocked twenty times, so the evidential theory says shock. Neutra's reply is the causal one: ``there's nothing to be done \\emph{now} about shocks I may or may not have received last week, so that information is not relevant to your current decision'' (p.~215).",
    "subTitle": "Evidentia and the prediction unit",
    "sectionTitle": "EDT vs CDT",
    "sourceSection": "4.2",
    "quote": "",
-   "text": "Same for Evidentia: one line about the crossed-out cells, and nothing on what the DPU is, why those two cells are ruled out, or what the two theories say. Yours.",
+   "text": "Same for Evidentia: one line about the crossed-out cells, and nothing on what the DPU is, why those two cells are ruled out, or what the two theories say. Yours.\n\nTOMI: Yes, the same: introduce along with cited quotes from Elga.",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open"
+   "status": "applied",
+   "edited": "2026-09-06T21:49:03+08:00",
+   "verdict": "TOMI: Yes, the same: introduce along with cited quotes from Elga.",
+   "outcome": "done: Evidentia introduced, with three cited quotes"
   },
   {
    "id": "claude-2026-09-06-15",
@@ -237,9 +288,13 @@ window.NOTES_SEED = {
    "sectionTitle": "EDT vs CDT",
    "sourceSection": "4.3",
    "quote": "",
-   "text": "Whose voice is 'However, it turns out that the situation is asymmetric...'? It reads as the EDT-ist's rejoinder to the CDT counterargument, but nothing marks the turn, so a student may take the whole paragraph as one side. Consider a paragraph break there and a word on who is speaking. Also 'this can happen to the CDT-ist': 'this' has no clear antecedent (being rewarded for irrationality? being penalised for rationality?).",
+   "text": "Whose voice is 'However, it turns out that the situation is asymmetric...'? It reads as the EDT-ist's rejoinder to the CDT counterargument, but nothing marks the turn, so a student may take the whole paragraph as one side. Consider a paragraph break there and a word on who is speaking. Also 'this can happen to the CDT-ist': 'this' has no clear antecedent (being rewarded for irrationality? being penalised for rationality?).\n\nTOMI: bring \"however\" into a new paragraph: the previous part is an argument that can be made, the second half is some facts that I am telling my students.",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open"
+   "status": "applied",
+   "edited": "2026-09-06T21:49:56+08:00",
+   "verdict": "TOMI: bring \"however\" into a new paragraph: the previous part is an argument that can be made, the second half is some facts that I am telling my students.",
+   "outcome": "done: 'However' now starts a new paragraph",
+   "orphaned": true
   },
   {
    "id": "claude-2026-09-06-16",
@@ -254,8 +309,10 @@ window.NOTES_SEED = {
    "quote": "Why: the evidential verdict is given; the causal one, which is the contrast the case exists for, is not. Two lines of dominance reasoning on your table. Not on the deck; deny if you would rather write it yourself.",
    "text": "By contrast, the causal theory says smoke: whether you have the gene, and so whether you get cancer, is causally independent of what you do, and smoking comes out $1$ better in either column, so it strongly statewise dominates not smoking.",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open",
-   "before": "So the evidential theory says give up smoking."
+   "status": "applied",
+   "before": "So the evidential theory says give up smoking.",
+   "edited": "2026-09-06T21:50:23+08:00",
+   "verdict": "TOMI: approved"
   },
   {
    "id": "claude-2026-09-06-17",
@@ -270,9 +327,11 @@ window.NOTES_SEED = {
    "quote": "Why: same as 2.10, the figure lands before the sentence that describes it. This puts the describing sentence above the picture and leaves the moral below it; no words change. Separately, a question about that moral: 'It makes no difference whether smoking causes cancer or merely indicates it. Either way, smoking is bad news' reads here as your own verdict, whereas on the slide it was the evidential theory's view. Adjust the text here if you want it attributed (e.g. 'On the evidential theory it makes no difference...').",
    "text": "",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open",
+   "status": "denied",
    "before": "\\begin{figure}[H]\n\\centering\n\\begin{tikzpicture}[scale=1]\n  \\node[box] (gene) at (0,0) {the gene};\n  \\node[box] (desire) at (4.2,1.3) {a desire\\\\to smoke};\n  \\node[box] (cancer) at (4.2,-1.3) {cancer};\n  \\node[box] (smoke) at (8.4,1.3) {smoking};\n  \\draw[ar] (gene) -- (desire);\n  \\draw[ar] (gene) -- (cancer);\n  \\draw[ar] (desire) -- (smoke);\n\\end{tikzpicture}\n\\caption{The same shape as Figure~\\ref{fig:newcombcausal}.}\n\\label{fig:lesioncausal}\n\\end{figure}\n\nThe gene causes both cancer and a desire to smoke; and the desire to smoke causes people to smoke; but smoking does not cause cancer. \\textbf{It makes no difference whether smoking causes cancer or merely indicates it.} Either way, smoking is bad news.",
-   "after": "The gene causes both cancer and a desire to smoke; and the desire to smoke causes people to smoke; but smoking does not cause cancer.\n\n\\begin{figure}[H]\n\\centering\n\\begin{tikzpicture}[scale=1]\n  \\node[box] (gene) at (0,0) {the gene};\n  \\node[box] (desire) at (4.2,1.3) {a desire\\\\to smoke};\n  \\node[box] (cancer) at (4.2,-1.3) {cancer};\n  \\node[box] (smoke) at (8.4,1.3) {smoking};\n  \\draw[ar] (gene) -- (desire);\n  \\draw[ar] (gene) -- (cancer);\n  \\draw[ar] (desire) -- (smoke);\n\\end{tikzpicture}\n\\caption{The same shape as Figure~\\ref{fig:newcombcausal}.}\n\\label{fig:lesioncausal}\n\\end{figure}\n\n\\textbf{It makes no difference whether smoking causes cancer or merely indicates it.} Either way, smoking is bad news."
+   "after": "The gene causes both cancer and a desire to smoke; and the desire to smoke causes people to smoke; but smoking does not cause cancer.\n\n\\begin{figure}[H]\n\\centering\n\\begin{tikzpicture}[scale=1]\n  \\node[box] (gene) at (0,0) {the gene};\n  \\node[box] (desire) at (4.2,1.3) {a desire\\\\to smoke};\n  \\node[box] (cancer) at (4.2,-1.3) {cancer};\n  \\node[box] (smoke) at (8.4,1.3) {smoking};\n  \\draw[ar] (gene) -- (desire);\n  \\draw[ar] (gene) -- (cancer);\n  \\draw[ar] (desire) -- (smoke);\n\\end{tikzpicture}\n\\caption{The same shape as Figure~\\ref{fig:newcombcausal}.}\n\\label{fig:lesioncausal}\n\\end{figure}\n\n\\textbf{It makes no difference whether smoking causes cancer or merely indicates it.} Either way, smoking is bad news.",
+   "edited": "2026-09-06T21:51:10+08:00",
+   "verdict": "denied (figure/prose swap, section 4.5)"
   },
   {
    "id": "claude-2026-09-06-18",
@@ -285,9 +344,13 @@ window.NOTES_SEED = {
    "sectionTitle": "EDT vs CDT",
    "sourceSection": "4.6",
    "quote": "",
-   "text": "'Defence' of what is never said: this is the evidential theorist's reply to the lesion, and 'the case doesn't arise' means the evidential theory no longer tells you to give up smoking. A student meeting the term for the first time has to infer both. Yours, if you want a line.",
+   "text": "'Defence' of what is never said: this is the evidential theorist's reply to the lesion, and 'the case doesn't arise' means the evidential theory no longer tells you to give up smoking. A student meeting the term for the first time has to infer both. Yours, if you want a line.\n\nTOMI: not interested in this comment",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open"
+   "status": "denied",
+   "edited": "2026-09-06T21:51:31+08:00",
+   "verdict": "not interested",
+   "before": null,
+   "after": null
   },
   {
    "id": "claude-2026-09-06-19",
@@ -302,9 +365,12 @@ window.NOTES_SEED = {
    "quote": "Why: the two utilities arrive with no derivation, the symbols A, D, S_A, S_D are never introduced, and the credences that produce the numbers are the unconditional ones, i.e. the causal theory at work, which nothing in the section says. This names the symbols and derives both numbers from your 0.99. U here is EU_c; rename if you want it to match 3.7 (then also in 4.8). Note the lecture did not reach this section.",
    "text": "",
    "created": "2026-09-06T17:58:52+08:00",
-   "status": "open",
+   "status": "applied",
    "before": "With $\\Cr(S_A \\mid A) = \\Cr(S_D \\mid D) = 0.99$, and $a = \\Cr(A)$:\n\\[\nU(A) = -1 - 98a ,\n\\qquad\nU(D) = -99 + 98a .\n\\]",
-   "after": "Write $A$ for going to Aleppo and $D$ for staying in Damascus, and $S_A$ and $S_D$ for the states in which Death seeks Aleppo and Damascus. Suppose $\\Cr(S_A \\mid A) = \\Cr(S_D \\mid D) = 0.99$: whichever city Tomi goes to, he is $99\\%$ confident Death will be there. Write $a = \\Cr(A)$. Where Death waits is causally independent of what Tomi does, so the causal theory uses the unconditional credences, which the law of total probability gives:\n\\[\n\\Cr(S_A) = \\Cr(A)\\Cr(S_A \\mid A) + \\Cr(D)\\Cr(S_A \\mid D) = 0.99a + 0.01(1-a) = 0.01 + 0.98a ,\n\\]\nand $\\Cr(S_D) = 1 - \\Cr(S_A) = 0.99 - 0.98a$. So\n\\[\nU(A) = -100 \\cdot \\Cr(S_A) = -1 - 98a ,\n\\qquad\nU(D) = -100 \\cdot \\Cr(S_D) = -99 + 98a .\n\\]"
+   "after": "Write $A$ for going to Aleppo and $D$ for staying in Damascus, and $S_A$ and $S_D$ for the states in which Death seeks Aleppo and Damascus. Suppose $\\Cr(S_A \\mid A) = \\Cr(S_D \\mid D) = 0.99$: whichever city Tomi goes to, he is $99\\%$ confident Death will be there. Write $a = \\Cr(A)$. Where Death waits is causally independent of what Tomi does, so the causal theory uses the unconditional credences, which the law of total probability gives:\n\\[\n\\Cr(S_A) = \\Cr(A)\\Cr(S_A \\mid A) + \\Cr(D)\\Cr(S_A \\mid D) = 0.99a + 0.01(1-a) = 0.01 + 0.98a ,\n\\]\nand $\\Cr(S_D) = 1 - \\Cr(S_A) = 0.99 - 0.98a$. So\n\\[\nU(A) = -100 \\cdot \\Cr(S_A) = -1 - 98a ,\n\\qquad\nU(D) = -100 \\cdot \\Cr(S_D) = -99 + 98a .\n\\]",
+   "edited": "2026-09-06T21:51:44+08:00",
+   "verdict": "TOMI: approved",
+   "orphaned": true
   }
  ]
 };

@@ -164,18 +164,40 @@
     if (d.indexOf(id) < 0) { d.push(id); lsSet(DISMISS_KEY, JSON.stringify(d)); }
   }
 
+  /* SETTLED ITEMS ARE RE-SYNCED; UNSETTLED ONES ARE NOT.
+   *
+   * "Once per id" alone was not enough. After a round of work Claude marks each
+   * card applied or denied, and a browser that had already seeded kept showing
+   * every one of them as open -- so the next visit could not tell what was
+   * still outstanding, which is the one thing the page is for.
+   *
+   * The rule: a seed item whose status is `applied` or `denied` is SETTLED, and
+   * the published record is then authoritative, so it replaces the local copy.
+   * Anything still `open` or `deferred` is live work and the local copy wins,
+   * because it may carry an edit he has made and not yet exported. */
+  function settled(c) {
+    return c && (c.status === "applied" || c.status === "denied");
+  }
+
   function seed() {
     var s = window.NOTES_SEED;
     if (!s || !Array.isArray(s.items)) return 0;
-    var have = {}, gone = dismissed(), added = 0;
-    state.items.forEach(function (c) { if (c.id) have[c.id] = 1; });
+    var at = {}, gone = dismissed(), added = 0, synced = 0;
+    state.items.forEach(function (c, i) { if (c.id) at[c.id] = i; });
     s.items.forEach(function (c) {
-      if (!c || !c.id || have[c.id] || gone.indexOf(c.id) >= 0) return;
-      state.items.push(c);
-      added++;
+      if (!c || !c.id) return;
+      var i = at[c.id];
+      if (i === undefined) {
+        if (gone.indexOf(c.id) >= 0) return;      // he deleted it; stay deleted
+        state.items.push(c);
+        added++;
+      } else if (settled(c) && !settled(state.items[i])) {
+        state.items[i] = c;                        // closed out since he saw it
+        synced++;
+      }
     });
-    if (added) saveLocal();
-    return added;
+    if (added || synced) saveLocal();
+    return added + synced;
   }
 
   function load() {

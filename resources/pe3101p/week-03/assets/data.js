@@ -153,12 +153,12 @@ window.NOTES_DATA = {
     {
      "id": "3.6",
      "title": "Newcomb's dependency hypotheses",
-     "blocks": 3
+     "blocks": 4
     },
     {
      "id": "3.7",
      "title": "Utility",
-     "blocks": 2
+     "blocks": 5
     }
    ]
   },
@@ -170,22 +170,22 @@ window.NOTES_DATA = {
     {
      "id": "4.1",
      "title": "Causey and the LAN outlet",
-     "blocks": 1
+     "blocks": 5
     },
     {
      "id": "4.2",
      "title": "Evidentia and the prediction unit",
-     "blocks": 2
+     "blocks": 4
     },
     {
      "id": "4.3",
      "title": "Why ain'cha rich?",
-     "blocks": 2
+     "blocks": 3
     },
     {
      "id": "4.4",
      "title": "The lesion",
-     "blocks": 4
+     "blocks": 5
     },
     {
      "id": "4.5",
@@ -370,7 +370,7 @@ window.NOTES_DATA = {
    "page": "01-probability.html",
    "block": "b1.1.1",
    "sub": "1.1",
-   "html": "<div class='blk box box-principle' id='b1.1.1'><div class='boxhead'>Principle <span class='boxname'>(The law of total probability)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='totalprob'></span>\nWhere <span class='math' data-tex=\"B_1, \\dots, B_n\"><span class='math-fallback'>B_1, \\dots, B_n</span></span> partition <span class='math' data-tex=\"\\Omega\"><span class='math-fallback'>\\Omega</span></span>,\n<div class='mathblock' data-tex=\"\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).\"><span class='math-fallback'>\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).</span></div></div></div></div>"
+   "html": "<div class='blk box box-principle' id='b1.1.1'><div class='boxhead'>Principle <span class='boxname'>(The law of total probability)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='totalprob'></span>\nWhere <span class='math' data-tex=\"B_1, \\dots, B_n\"><span class='math-fallback'>B_1, \\dots, B_n</span></span> partition <span class='math' data-tex=\"\\Omega\"><span class='math-fallback'>\\Omega</span></span>, and <span class='math' data-tex=\"\\Cr(B_i) &gt; 0\"><span class='math-fallback'>\\Cr(B_i) &gt; 0</span></span> for each <span class='math' data-tex=\"i\"><span class='math-fallback'>i</span></span>,\n<div class='mathblock' data-tex=\"\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).\"><span class='math-fallback'>\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).</span></div></div></div></div>"
   },
   "bayes": {
    "term": "Bayes\u2019 theorem",
