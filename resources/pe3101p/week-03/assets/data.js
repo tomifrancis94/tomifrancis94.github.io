@@ -165,8 +165,8 @@ window.NOTES_DATA = {
     },
     {
      "id": "3.5",
-     "title": "What one actually looks like",
-     "blocks": 6
+     "title": "Dependency Hypotheses",
+     "blocks": 7
     },
     {
      "id": "3.6",
@@ -176,7 +176,7 @@ window.NOTES_DATA = {
     {
      "id": "3.7",
      "title": "Utility",
-     "blocks": 5
+     "blocks": 6
     }
    ]
   },
@@ -208,15 +208,10 @@ window.NOTES_DATA = {
     {
      "id": "4.4",
      "title": "The lesion",
-     "blocks": 4
+     "blocks": 9
     },
     {
      "id": "4.5",
-     "title": "Another causal diagram",
-     "blocks": 3
-    },
-    {
-     "id": "4.6",
      "title": "The tickle defence",
      "blocks": 1
     }
@@ -316,7 +311,7 @@ window.NOTES_DATA = {
    "sourceSection": "3.4"
   },
   "3.5": {
-   "title": "What one actually looks like",
+   "title": "Dependency Hypotheses",
    "sectionTitle": "Evidential and causal decision theory",
    "sourceSection": "3.5"
   },
@@ -356,14 +351,9 @@ window.NOTES_DATA = {
    "sourceSection": "4.4"
   },
   "4.5": {
-   "title": "Another causal diagram",
-   "sectionTitle": "Evidential versus causal decision theory",
-   "sourceSection": "4.5"
-  },
-  "4.6": {
    "title": "The tickle defence",
    "sectionTitle": "Evidential versus causal decision theory",
-   "sourceSection": "4.6"
+   "sourceSection": "4.5"
   }
  },
  "defs": {
@@ -459,17 +449,17 @@ window.NOTES_DATA = {
    "term": "Causal expected utility",
    "kind": "Principle 5",
    "page": "03-edt-and-cdt.html",
-   "block": "b3.7.1",
+   "block": "b3.7.2",
    "sub": "3.7",
-   "html": "<div class='blk box box-principle' id='b3.7.1'><span class='boxanchor' id='prin-euc'></span><div class='boxhead'>Principle 5 <span class='boxname'>(Causal expected utility)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='euc'></span>\n\n<div class='mathblock' data-tex=\"\\mathrm{EU}_c(A) = \\sum_K \\Cr(K)\\,U(A, K)\"><span class='math-fallback'>\\mathrm{EU}_c(A) = \\sum_K \\Cr(K)\\,U(A, K)</span></div></div></div></div>"
+   "html": "<div class='blk box box-principle' id='b3.7.2'><span class='boxanchor' id='prin-euc'></span><div class='boxhead'>Principle 5 <span class='boxname'>(Causal expected utility)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='euc'></span>\n\n<div class='mathblock' data-tex=\"\\mathrm{EU}_c(A) = \\sum_i \\Cr(K_i)\\,U(A, K_i)\"><span class='math-fallback'>\\mathrm{EU}_c(A) = \\sum_i \\Cr(K_i)\\,U(A, K_i)</span></div></div></div></div>"
   },
   "euc": {
    "term": "causal expected utility",
    "kind": "Principle",
    "page": "03-edt-and-cdt.html",
-   "block": "b3.7.1",
+   "block": "b3.7.2",
    "sub": "3.7",
-   "html": "<div class='blk box box-principle' id='b3.7.1'><span class='boxanchor' id='prin-euc'></span><div class='boxhead'>Principle 5 <span class='boxname'>(Causal expected utility)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='euc'></span>\n\n<div class='mathblock' data-tex=\"\\mathrm{EU}_c(A) = \\sum_K \\Cr(K)\\,U(A, K)\"><span class='math-fallback'>\\mathrm{EU}_c(A) = \\sum_K \\Cr(K)\\,U(A, K)</span></div></div></div></div>"
+   "html": "<div class='blk box box-principle' id='b3.7.2'><span class='boxanchor' id='prin-euc'></span><div class='boxhead'>Principle 5 <span class='boxname'>(Causal expected utility)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='euc'></span>\n\n<div class='mathblock' data-tex=\"\\mathrm{EU}_c(A) = \\sum_i \\Cr(K_i)\\,U(A, K_i)\"><span class='math-fallback'>\\mathrm{EU}_c(A) = \\sum_i \\Cr(K_i)\\,U(A, K_i)</span></div></div></div></div>"
   }
  }
 };
