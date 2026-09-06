@@ -29,7 +29,28 @@ window.NOTES_DATA = {
    "name": "lesioncausal"
   }
  },
- "numbered": {},
+ "numbered": {
+  "prin:totalprob": {
+   "kind": "Principle",
+   "n": 1
+  },
+  "prin:bayes": {
+   "kind": "Principle",
+   "n": 2
+  },
+  "prin:eue": {
+   "kind": "Principle",
+   "n": 3
+  },
+  "prin:eue2": {
+   "kind": "Principle",
+   "n": 4
+  },
+  "prin:euc": {
+   "kind": "Principle",
+   "n": 5
+  }
+ },
  "sections": [
   {
    "n": "1",
@@ -66,12 +87,12 @@ window.NOTES_DATA = {
     {
      "id": "2.1",
      "title": "Two boxes",
-     "blocks": 1
+     "blocks": 3
     },
     {
      "id": "2.2",
      "title": "Newcomb's problem (with added demons)",
-     "blocks": 1
+     "blocks": 2
     },
     {
      "id": "2.3",
@@ -91,32 +112,27 @@ window.NOTES_DATA = {
     {
      "id": "2.6",
      "title": "Are these the right states of nature?",
-     "blocks": 2
+     "blocks": 4
     },
     {
      "id": "2.7",
      "title": "Should states of nature satisfy probabilistic independence?",
-     "blocks": 2
-    },
-    {
-     "id": "2.8",
-     "title": "What that shows, and what it doesn't",
-     "blocks": 2
-    },
-    {
-     "id": "2.9",
-     "title": "Probabilistic and causal independence",
      "blocks": 3
     },
     {
-     "id": "2.10",
-     "title": "Why they came apart",
-     "blocks": 2
+     "id": "2.8",
+     "title": "Probabilistic and causal independence",
+     "blocks": 5
     },
     {
-     "id": "2.11",
+     "id": "2.9",
+     "title": "Why they came apart",
+     "blocks": 5
+    },
+    {
+     "id": "2.10",
      "title": "Two state conditions, two theories",
-     "blocks": 1
+     "blocks": 2
     }
    ]
   },
@@ -133,7 +149,7 @@ window.NOTES_DATA = {
     {
      "id": "3.2",
      "title": "Evidential decision theory: formulation 2",
-     "blocks": 3
+     "blocks": 4
     },
     {
      "id": "3.3",
@@ -268,24 +284,19 @@ window.NOTES_DATA = {
    "sourceSection": "2.7"
   },
   "2.8": {
-   "title": "What that shows, and what it doesn't",
+   "title": "Probabilistic and causal independence",
    "sectionTitle": "Newcomb's problem",
    "sourceSection": "2.8"
   },
   "2.9": {
-   "title": "Probabilistic and causal independence",
+   "title": "Why they came apart",
    "sectionTitle": "Newcomb's problem",
    "sourceSection": "2.9"
   },
   "2.10": {
-   "title": "Why they came apart",
-   "sectionTitle": "Newcomb's problem",
-   "sourceSection": "2.10"
-  },
-  "2.11": {
    "title": "Two state conditions, two theories",
    "sectionTitle": "Newcomb's problem",
-   "sourceSection": "2.11"
+   "sourceSection": "2.10"
   },
   "3.1": {
    "title": "Evidential decision theory: formulation 1",
@@ -364,13 +375,29 @@ window.NOTES_DATA = {
   }
  },
  "defs": {
+  "prin:totalprob": {
+   "term": "The law of total probability",
+   "kind": "Principle 1",
+   "page": "01-probability.html",
+   "block": "b1.1.1",
+   "sub": "1.1",
+   "html": "<div class='blk box box-principle' id='b1.1.1'><span class='boxanchor' id='prin-totalprob'></span><div class='boxhead'>Principle 1 <span class='boxname'>(The law of total probability)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='totalprob'></span>\n\nWhere <span class='math' data-tex=\"B_1, \\dots, B_n\"><span class='math-fallback'>B_1, \\dots, B_n</span></span> partition <span class='math' data-tex=\"\\Omega\"><span class='math-fallback'>\\Omega</span></span>, and <span class='math' data-tex=\"\\Cr(B_i) &gt; 0\"><span class='math-fallback'>\\Cr(B_i) &gt; 0</span></span> for each <span class='math' data-tex=\"i\"><span class='math-fallback'>i</span></span>,\n<div class='mathblock' data-tex=\"\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).\"><span class='math-fallback'>\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).</span></div></div></div></div>"
+  },
   "totalprob": {
    "term": "the law of total probability",
    "kind": "Principle",
    "page": "01-probability.html",
    "block": "b1.1.1",
    "sub": "1.1",
-   "html": "<div class='blk box box-principle' id='b1.1.1'><div class='boxhead'>Principle <span class='boxname'>(The law of total probability)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='totalprob'></span>\nWhere <span class='math' data-tex=\"B_1, \\dots, B_n\"><span class='math-fallback'>B_1, \\dots, B_n</span></span> partition <span class='math' data-tex=\"\\Omega\"><span class='math-fallback'>\\Omega</span></span>, and <span class='math' data-tex=\"\\Cr(B_i) &gt; 0\"><span class='math-fallback'>\\Cr(B_i) &gt; 0</span></span> for each <span class='math' data-tex=\"i\"><span class='math-fallback'>i</span></span>,\n<div class='mathblock' data-tex=\"\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).\"><span class='math-fallback'>\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).</span></div></div></div></div>"
+   "html": "<div class='blk box box-principle' id='b1.1.1'><span class='boxanchor' id='prin-totalprob'></span><div class='boxhead'>Principle 1 <span class='boxname'>(The law of total probability)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='totalprob'></span>\n\nWhere <span class='math' data-tex=\"B_1, \\dots, B_n\"><span class='math-fallback'>B_1, \\dots, B_n</span></span> partition <span class='math' data-tex=\"\\Omega\"><span class='math-fallback'>\\Omega</span></span>, and <span class='math' data-tex=\"\\Cr(B_i) &gt; 0\"><span class='math-fallback'>\\Cr(B_i) &gt; 0</span></span> for each <span class='math' data-tex=\"i\"><span class='math-fallback'>i</span></span>,\n<div class='mathblock' data-tex=\"\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).\"><span class='math-fallback'>\\Cr(A) = \\Cr(B_1)\\Cr(A \\mid B_1) + \\dots + \\Cr(B_n)\\Cr(A \\mid B_n).</span></div></div></div></div>"
+  },
+  "prin:bayes": {
+   "term": "Bayes' theorem",
+   "kind": "Principle 2",
+   "page": "01-probability.html",
+   "block": "b1.2.1",
+   "sub": "1.2",
+   "html": "<div class='blk box box-principle' id='b1.2.1'><span class='boxanchor' id='prin-bayes'></span><div class='boxhead'>Principle 2 <span class='boxname'>(Bayes\u2019 theorem)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='bayes'></span>\n\n<div class='mathblock' data-tex=\"\\Cr(A \\mid B) = \\frac{\\Cr(B \\mid A)\\,\\Cr(A)}{\\Cr(B)}\n\\qquad \\text{provided } \\Cr(A), \\Cr(B) &gt; 0.\"><span class='math-fallback'>\\Cr(A \\mid B) = \\frac{\\Cr(B \\mid A)\\,\\Cr(A)}{\\Cr(B)}\n\\qquad \\text{provided } \\Cr(A), \\Cr(B) &gt; 0.</span></div></div></div></div>"
   },
   "bayes": {
    "term": "Bayes\u2019 theorem",
@@ -378,23 +405,31 @@ window.NOTES_DATA = {
    "page": "01-probability.html",
    "block": "b1.2.1",
    "sub": "1.2",
-   "html": "<div class='blk box box-principle' id='b1.2.1'><div class='boxhead'>Principle <span class='boxname'>(Bayes\u2019 theorem)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='bayes'></span>\n<div class='mathblock' data-tex=\"\\Cr(A \\mid B) = \\frac{\\Cr(B \\mid A)\\,\\Cr(A)}{\\Cr(B)}\n\\qquad \\text{provided } \\Cr(A), \\Cr(B) &gt; 0.\"><span class='math-fallback'>\\Cr(A \\mid B) = \\frac{\\Cr(B \\mid A)\\,\\Cr(A)}{\\Cr(B)}\n\\qquad \\text{provided } \\Cr(A), \\Cr(B) &gt; 0.</span></div></div></div></div>"
+   "html": "<div class='blk box box-principle' id='b1.2.1'><span class='boxanchor' id='prin-bayes'></span><div class='boxhead'>Principle 2 <span class='boxname'>(Bayes\u2019 theorem)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='bayes'></span>\n\n<div class='mathblock' data-tex=\"\\Cr(A \\mid B) = \\frac{\\Cr(B \\mid A)\\,\\Cr(A)}{\\Cr(B)}\n\\qquad \\text{provided } \\Cr(A), \\Cr(B) &gt; 0.\"><span class='math-fallback'>\\Cr(A \\mid B) = \\frac{\\Cr(B \\mid A)\\,\\Cr(A)}{\\Cr(B)}\n\\qquad \\text{provided } \\Cr(A), \\Cr(B) &gt; 0.</span></div></div></div></div>"
   },
   "probindep": {
    "term": "probabilistic independence",
    "kind": "Definition",
    "page": "02-newcomb.html",
-   "block": "b2.9.1",
-   "sub": "2.9",
-   "html": "<div class='blk box box-definition' id='b2.9.1'><div class='boxhead'>Definition <span class='boxname'>(Probabilistic independence)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='probindep'></span>\nThe set of states of nature is probabilistically independent of the acts if and only if, for every state <span class='math' data-tex=\"S_i\"><span class='math-fallback'>S_i</span></span> and every act <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span>,\n<div class='mathblock' data-tex=\"\\Cr(S_i \\mid A) = \\Cr(S_i).\"><span class='math-fallback'>\\Cr(S_i \\mid A) = \\Cr(S_i).</span></div></div></div></div>"
+   "block": "b2.8.3",
+   "sub": "2.8",
+   "html": "<div class='blk box box-definition' id='b2.8.3'><div class='boxhead'>Definition <span class='boxname'>(Probabilistic independence)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='probindep'></span>\nThe set of states of nature is probabilistically independent of the acts if and only if, for every state <span class='math' data-tex=\"S_i\"><span class='math-fallback'>S_i</span></span> and every act <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span>,\n<div class='mathblock' data-tex=\"\\Cr(S_i \\mid A) = \\Cr(S_i).\"><span class='math-fallback'>\\Cr(S_i \\mid A) = \\Cr(S_i).</span></div></div></div></div>"
   },
   "causalindep": {
    "term": "causal independence",
    "kind": "Definition",
    "page": "02-newcomb.html",
-   "block": "b2.9.2",
-   "sub": "2.9",
-   "html": "<div class='blk box box-definition' id='b2.9.2'><div class='boxhead'>Definition <span class='boxname'>(Causal independence)</span></div><div class='boxbody'><p><span class='defsite' data-def='causalindep'></span>\nThe set of states of nature is causally independent of the acts if and only if which action we take <em>makes</em> no difference to the probabilities of the states.</p></div></div>"
+   "block": "b2.8.4",
+   "sub": "2.8",
+   "html": "<div class='blk box box-definition' id='b2.8.4'><div class='boxhead'>Definition <span class='boxname'>(Causal independence)</span></div><div class='boxbody'><p><span class='defsite' data-def='causalindep'></span>\nThe set of states of nature is causally independent of the acts if and only if which action we take <em>makes</em> no difference to the probabilities of the states.</p></div></div>"
+  },
+  "prin:eue": {
+   "term": "(Evidential) expected utility",
+   "kind": "Principle 3",
+   "page": "03-edt-and-cdt.html",
+   "block": "b3.1.2",
+   "sub": "3.1",
+   "html": "<div class='blk box box-principle' id='b3.1.2'><span class='boxanchor' id='prin-eue'></span><div class='boxhead'>Principle 3 <span class='boxname'>((Evidential) expected utility)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='eue'></span>\n\n<div class='mathblock' data-tex=\"\\mathrm{EU}_e(A) = \\sum_{i=1}^{n} \\Cr(S_i)\\,U(A, S_i)\"><span class='math-fallback'>\\mathrm{EU}_e(A) = \\sum_{i=1}^{n} \\Cr(S_i)\\,U(A, S_i)</span></div></div></div></div>"
   },
   "eue": {
    "term": "evidential expected utility",
@@ -402,7 +437,15 @@ window.NOTES_DATA = {
    "page": "03-edt-and-cdt.html",
    "block": "b3.1.2",
    "sub": "3.1",
-   "html": "<div class='blk box box-principle' id='b3.1.2'><div class='boxhead'>Principle <span class='boxname'>((Evidential) expected utility)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='eue'></span>\n<div class='mathblock' data-tex=\"\\mathrm{EU}_e(A) = \\sum_{i=1}^{n} \\Cr(S_i)\\,U(A, S_i)\"><span class='math-fallback'>\\mathrm{EU}_e(A) = \\sum_{i=1}^{n} \\Cr(S_i)\\,U(A, S_i)</span></div></div></div></div>"
+   "html": "<div class='blk box box-principle' id='b3.1.2'><span class='boxanchor' id='prin-eue'></span><div class='boxhead'>Principle 3 <span class='boxname'>((Evidential) expected utility)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='eue'></span>\n\n<div class='mathblock' data-tex=\"\\mathrm{EU}_e(A) = \\sum_{i=1}^{n} \\Cr(S_i)\\,U(A, S_i)\"><span class='math-fallback'>\\mathrm{EU}_e(A) = \\sum_{i=1}^{n} \\Cr(S_i)\\,U(A, S_i)</span></div></div></div></div>"
+  },
+  "prin:eue2": {
+   "term": "Evidential expected utility, generalised",
+   "kind": "Principle 4",
+   "page": "03-edt-and-cdt.html",
+   "block": "b3.2.2",
+   "sub": "3.2",
+   "html": "<div class='blk box box-principle' id='b3.2.2'><span class='boxanchor' id='prin-eue2'></span><div class='boxhead'>Principle 4 <span class='boxname'>(Evidential expected utility, generalised)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='eue2'></span>\n\n<div class='mathblock' data-tex=\"\\mathrm{EU}_e(A) = \\sum_{i=1}^{n} \\Cr(S_i \\mid A)\\,U(A, S_i)\"><span class='math-fallback'>\\mathrm{EU}_e(A) = \\sum_{i=1}^{n} \\Cr(S_i \\mid A)\\,U(A, S_i)</span></div></div></div></div>"
   },
   "eue2": {
    "term": "evidential expected utility, generalised",
@@ -410,7 +453,7 @@ window.NOTES_DATA = {
    "page": "03-edt-and-cdt.html",
    "block": "b3.2.2",
    "sub": "3.2",
-   "html": "<div class='blk box box-principle' id='b3.2.2'><div class='boxhead'>Principle <span class='boxname'>(Evidential expected utility, generalised)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='eue2'></span>\n<div class='mathblock' data-tex=\"\\mathrm{EU}_e(A) = \\sum_{i=1}^{n} \\Cr(S_i \\mid A)\\,U(A, S_i)\"><span class='math-fallback'>\\mathrm{EU}_e(A) = \\sum_{i=1}^{n} \\Cr(S_i \\mid A)\\,U(A, S_i)</span></div></div></div></div>"
+   "html": "<div class='blk box box-principle' id='b3.2.2'><span class='boxanchor' id='prin-eue2'></span><div class='boxhead'>Principle 4 <span class='boxname'>(Evidential expected utility, generalised)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='eue2'></span>\n\n<div class='mathblock' data-tex=\"\\mathrm{EU}_e(A) = \\sum_{i=1}^{n} \\Cr(S_i \\mid A)\\,U(A, S_i)\"><span class='math-fallback'>\\mathrm{EU}_e(A) = \\sum_{i=1}^{n} \\Cr(S_i \\mid A)\\,U(A, S_i)</span></div></div></div></div>"
   },
   "dephyp": {
    "term": "dependency hypothesis",
@@ -420,13 +463,21 @@ window.NOTES_DATA = {
    "sub": "3.4",
    "html": "<div class='blk box box-definition' id='b3.4.2'><div class='boxhead'>Definition <span class='boxname'>(Dependency hypothesis (Lewis))</span></div><div class='boxbody'><p><span class='defsite' data-def='dephyp'></span>\nA maximally specific proposition about how the things you care about do and do not depend causally on your present actions.</p></div></div>"
   },
+  "prin:euc": {
+   "term": "Causal expected utility",
+   "kind": "Principle 5",
+   "page": "03-edt-and-cdt.html",
+   "block": "b3.7.1",
+   "sub": "3.7",
+   "html": "<div class='blk box box-principle' id='b3.7.1'><span class='boxanchor' id='prin-euc'></span><div class='boxhead'>Principle 5 <span class='boxname'>(Causal expected utility)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='euc'></span>\n\n<div class='mathblock' data-tex=\"\\mathrm{EU}_c(A) = \\sum_K \\Cr(K)\\,U(A, K)\"><span class='math-fallback'>\\mathrm{EU}_c(A) = \\sum_K \\Cr(K)\\,U(A, K)</span></div></div></div></div>"
+  },
   "euc": {
    "term": "causal expected utility",
    "kind": "Principle",
    "page": "03-edt-and-cdt.html",
    "block": "b3.7.1",
    "sub": "3.7",
-   "html": "<div class='blk box box-principle' id='b3.7.1'><div class='boxhead'>Principle <span class='boxname'>(Causal expected utility)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='euc'></span>\n<div class='mathblock' data-tex=\"\\mathrm{EU}_c(A) = \\sum_K \\Cr(K)\\,U(A, K)\"><span class='math-fallback'>\\mathrm{EU}_c(A) = \\sum_K \\Cr(K)\\,U(A, K)</span></div></div></div></div>"
+   "html": "<div class='blk box box-principle' id='b3.7.1'><span class='boxanchor' id='prin-euc'></span><div class='boxhead'>Principle 5 <span class='boxname'>(Causal expected utility)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='euc'></span>\n\n<div class='mathblock' data-tex=\"\\mathrm{EU}_c(A) = \\sum_K \\Cr(K)\\,U(A, K)\"><span class='math-fallback'>\\mathrm{EU}_c(A) = \\sum_K \\Cr(K)\\,U(A, K)</span></div></div></div></div>"
   }
  }
 };

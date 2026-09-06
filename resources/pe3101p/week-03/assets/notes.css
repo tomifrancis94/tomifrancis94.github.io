@@ -244,6 +244,13 @@ text.faint { fill: var(--fig-faint); }
 
 /* ---------------------------------------------------------------- tables */
 .tablewrap { overflow-x: auto; margin: 1.3rem 0; }
+/* A numbered table float (6 Sep 2026): caption above, as in print. */
+.blk.table { margin: 1.6rem 0; }
+.blk.table .tablewrap { margin: .4rem 0 0; }
+.tabcaption {
+  font-size: .88rem; color: var(--ink-soft); line-height: 1.5; text-align: left;
+}
+.tabnum { font-weight: 700; color: var(--teal); }
 table.tbl {
   border-collapse: collapse; margin: 0 auto; font-size: .95rem;
 }

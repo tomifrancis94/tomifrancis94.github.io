@@ -396,6 +396,12 @@
       c.quote = opts.quote || c.quote || "";
       if (isEdit) { c.before = src; c.after = text; c.text = ""; }
       else { c.text = text; }
+      // An INSERT is anchored to the block it goes after, and apply_edits.py
+      // finds that block by `before`. Until 6 September 2026 only edits set it,
+      // so every insert made in the browser arrived with no anchor and was
+      // skipped as ambiguous. (Claude's script-written inserts had it, which
+      // is why the gap went unnoticed for a round.)
+      if (isInsert) { c.before = src; }
       if (existing) { c.edited = nowISO(); }
       else { state.items.push(c); }
 
