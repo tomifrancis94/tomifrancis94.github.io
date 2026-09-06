@@ -138,7 +138,7 @@ window.NOTES_DATA = {
   },
   {
    "n": "3",
-   "title": "EDT and CDT",
+   "title": "Evidential and causal decision theory",
    "slug": "03-edt-and-cdt",
    "subs": [
     {
@@ -180,7 +180,7 @@ window.NOTES_DATA = {
   },
   {
    "n": "4",
-   "title": "EDT vs CDT",
+   "title": "Evidential versus causal decision theory",
    "slug": "04-edt-vs-cdt",
    "subs": [
     {
@@ -217,16 +217,6 @@ window.NOTES_DATA = {
      "id": "4.6",
      "title": "The tickle defence",
      "blocks": 1
-    },
-    {
-     "id": "4.7",
-     "title": "Death in Damascus",
-     "blocks": 3
-    },
-    {
-     "id": "4.8",
-     "title": "Unstable",
-     "blocks": 2
     }
    ]
   }
@@ -305,83 +295,73 @@ window.NOTES_DATA = {
   },
   "3.1": {
    "title": "Evidential decision theory: formulation 1",
-   "sectionTitle": "EDT and CDT",
+   "sectionTitle": "Evidential and causal decision theory",
    "sourceSection": "3.1"
   },
   "3.2": {
    "title": "Evidential decision theory: formulation 2",
-   "sectionTitle": "EDT and CDT",
+   "sectionTitle": "Evidential and causal decision theory",
    "sourceSection": "3.2"
   },
   "3.3": {
    "title": "Newcomb, on the evidential theory",
-   "sectionTitle": "EDT and CDT",
+   "sectionTitle": "Evidential and causal decision theory",
    "sourceSection": "3.3"
   },
   "3.4": {
    "title": "Causal decision theory",
-   "sectionTitle": "EDT and CDT",
+   "sectionTitle": "Evidential and causal decision theory",
    "sourceSection": "3.4"
   },
   "3.5": {
    "title": "What one actually looks like",
-   "sectionTitle": "EDT and CDT",
+   "sectionTitle": "Evidential and causal decision theory",
    "sourceSection": "3.5"
   },
   "3.6": {
    "title": "Newcomb's dependency hypotheses",
-   "sectionTitle": "EDT and CDT",
+   "sectionTitle": "Evidential and causal decision theory",
    "sourceSection": "3.6"
   },
   "3.7": {
    "title": "Utility",
-   "sectionTitle": "EDT and CDT",
+   "sectionTitle": "Evidential and causal decision theory",
    "sourceSection": "3.7"
   },
   "4.0": {
    "title": null,
-   "sectionTitle": "EDT vs CDT",
+   "sectionTitle": "Evidential versus causal decision theory",
    "sourceSection": "4"
   },
   "4.1": {
    "title": "Causey and the LAN outlet",
-   "sectionTitle": "EDT vs CDT",
+   "sectionTitle": "Evidential versus causal decision theory",
    "sourceSection": "4.1"
   },
   "4.2": {
    "title": "Evidentia and the prediction unit",
-   "sectionTitle": "EDT vs CDT",
+   "sectionTitle": "Evidential versus causal decision theory",
    "sourceSection": "4.2"
   },
   "4.3": {
    "title": "Why ain'cha rich?",
-   "sectionTitle": "EDT vs CDT",
+   "sectionTitle": "Evidential versus causal decision theory",
    "sourceSection": "4.3"
   },
   "4.4": {
    "title": "The lesion",
-   "sectionTitle": "EDT vs CDT",
+   "sectionTitle": "Evidential versus causal decision theory",
    "sourceSection": "4.4"
   },
   "4.5": {
    "title": "Another causal diagram",
-   "sectionTitle": "EDT vs CDT",
+   "sectionTitle": "Evidential versus causal decision theory",
    "sourceSection": "4.5"
   },
   "4.6": {
    "title": "The tickle defence",
-   "sectionTitle": "EDT vs CDT",
+   "sectionTitle": "Evidential versus causal decision theory",
    "sourceSection": "4.6"
-  },
-  "4.7": {
-   "title": "Death in Damascus",
-   "sectionTitle": "EDT vs CDT",
-   "sourceSection": "4.7"
-  },
-  "4.8": {
-   "title": "Unstable",
-   "sectionTitle": "EDT vs CDT",
-   "sourceSection": "4.8"
   }
  },
  "defs": {
@@ -418,20 +398,20 @@ window.NOTES_DATA = {
    "html": "<div class='blk box box-principle' id='b1.2.1'><span class='boxanchor' id='prin-bayes'></span><div class='boxhead'>Principle 2 <span class='boxname'>(Bayes\u2019 theorem)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='bayes'></span>\n\n<div class='mathblock' data-tex=\"\\Cr(A \\mid B) = \\frac{\\Cr(B \\mid A)\\,\\Cr(A)}{\\Cr(B)}\n\\qquad \\text{provided } \\Cr(A), \\Cr(B) &gt; 0.\"><span class='math-fallback'>\\Cr(A \\mid B) = \\frac{\\Cr(B \\mid A)\\,\\Cr(A)}{\\Cr(B)}\n\\qquad \\text{provided } \\Cr(A), \\Cr(B) &gt; 0.</span></div></div></div></div>"
   },
   "probindep": {
-   "term": "probabilistic independence",
+   "term": "probabilistic independence of states of nature",
    "kind": "Definition",
    "page": "02-newcomb.html",
    "block": "b2.8.3",
    "sub": "2.8",
-   "html": "<div class='blk box box-definition' id='b2.8.3'><div class='boxhead'>Definition <span class='boxname'>(Probabilistic independence)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='probindep'></span>\nThe set of states of nature is probabilistically independent of the acts if and only if, for every state <span class='math' data-tex=\"S_i\"><span class='math-fallback'>S_i</span></span> and every act <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span>,\n<div class='mathblock' data-tex=\"\\Cr(S_i \\mid A) = \\Cr(S_i).\"><span class='math-fallback'>\\Cr(S_i \\mid A) = \\Cr(S_i).</span></div></div></div></div>"
+   "html": "<div class='blk box box-definition' id='b2.8.3'><div class='boxhead'>Definition <span class='boxname'>(Probabilistic independence of states of nature)</span></div><div class='boxbody'><div class='para'><span class='defsite' data-def='probindep'></span>\nThe set of states of nature is probabilistically independent of the acts if and only if, for every state <span class='math' data-tex=\"S_i\"><span class='math-fallback'>S_i</span></span> and every act <span class='math' data-tex=\"A\"><span class='math-fallback'>A</span></span>,\n<div class='mathblock' data-tex=\"\\Cr(S_i \\mid A) = \\Cr(S_i).\"><span class='math-fallback'>\\Cr(S_i \\mid A) = \\Cr(S_i).</span></div></div></div></div>"
   },
   "causalindep": {
-   "term": "causal independence",
+   "term": "causal independence of states of nature",
    "kind": "Definition",
    "page": "02-newcomb.html",
    "block": "b2.8.4",
    "sub": "2.8",
-   "html": "<div class='blk box box-definition' id='b2.8.4'><div class='boxhead'>Definition <span class='boxname'>(Causal independence)</span></div><div class='boxbody'><p><span class='defsite' data-def='causalindep'></span>\nThe set of states of nature is causally independent of the acts if and only if which action we take <em>makes</em> no difference to the probabilities of the states.</p></div></div>"
+   "html": "<div class='blk box box-definition' id='b2.8.4'><div class='boxhead'>Definition <span class='boxname'>(Causal independence of states of nature)</span></div><div class='boxbody'><p><span class='defsite' data-def='causalindep'></span>\nThe set of states of nature is causally independent of the acts if and only if which action we take <em>makes</em> no difference to the probabilities of the states.</p></div></div>"
   },
   "prin:eue": {
    "term": "(Evidential) expected utility",
