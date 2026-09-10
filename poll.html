@@ -1,54 +1,21 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow, noarchive">
-  <title>Test poll — Tomi Francis</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .poll-main { max-width: 850px; margin: 0 auto; padding: 24px 20px; }
-    .poll-frame { display: block; width: 100%; height: 780px; border: 1px solid var(--rule); border-radius: 6px; }
-    [hidden] { display: none !important; }
-    .poll-note { color: var(--muted); }
-    @media (max-width: 600px) { .poll-main { padding: 16px 12px; } .poll-frame { height: 850px; } }
-  </style>
-</head>
-<body>
-  <main class="poll-main">
-    <h1 id="poll-title">Test poll</h1>
-    <p id="poll-description">This is a test of the polling page, not the student vote. No test date is being changed.</p>
-    <p id="poll-access" hidden>Sign in with your NUS account. Names are not recorded with responses.</p>
-    <p id="poll-fallback" hidden>If the poll does not appear or sign-in does not work here, <a id="poll-link">open the poll directly in Microsoft Forms</a>.</p>
-    <p id="poll-unavailable">The test poll is being prepared.</p>
-    <iframe id="poll-frame" class="poll-frame" title="Test poll in Microsoft Forms" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Xu-lWwkxd06Fvc_rDTR-gps_K3IEF-pGmdZMcRrrG69UN1pXWU5KUjhNTVdWRzdPNDhYQVhVVFpOMi4u&amp;embed=true"></iframe>
-    <noscript><p>JavaScript is needed to load the embedded poll.</p></noscript>
-  </main>
-  <script>
-    // Reuse this page by replacing the respondent URL and display text below.
-    // Never put an editing, collaboration, or results-sharing URL here.
-    const poll = {
-      title: 'Test poll',
-      description: 'This is a test of the polling page, not the student vote. No test date is being changed.',
-      responseUrl: 'https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Xu-lWwkxd06Fvc_rDTR-gps_K3IEF-pGmdZMcRrrG69UN1pXWU5KUjhNTVdWRzdPNDhYQVhVVFpOMi4u'
-    };
-    document.getElementById('poll-title').textContent = poll.title;
-    document.getElementById('poll-description').textContent = poll.description;
-    if (poll.responseUrl) {
-      const response = new URL(poll.responseUrl);
-      if (response.protocol === 'https:' && ['forms.office.com', 'forms.cloud.microsoft'].includes(response.hostname)
-          && response.pathname.toLowerCase() === '/pages/responsepage.aspx' && response.searchParams.has('id')) {
-        document.getElementById('poll-link').href = response.href;
-        response.searchParams.set('embed', 'true');
-        const frame = document.getElementById('poll-frame');
-        if (frame.src !== response.href) frame.src = response.href;
-        frame.title = poll.title + ' in Microsoft Forms';
-        frame.hidden = false;
-        document.getElementById('poll-access').hidden = false;
-        document.getElementById('poll-fallback').hidden = false;
-        document.getElementById('poll-unavailable').hidden = true;
-      }
-    }
-  </script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><title>Poll — Tomi Francis</title><link rel="stylesheet" href="style.css"><style>
+main{max-width:760px;margin:30px auto;padding:20px}fieldset{border:0;padding:0;margin:24px 0}legend{font-size:1.25rem;font-weight:bold;margin-bottom:16px}.option{display:block;padding:14px;border:1px solid #ddd;border-radius:5px;margin:10px 0;cursor:pointer}.option:has(input:checked){border-color:#006580;background:#eef7f9}input{margin-right:10px}textarea{display:block;width:100%;box-sizing:border-box;font:inherit;margin:8px 0 20px;padding:10px}button{font:inherit;padding:12px 20px;background:#006580;color:white;border:0;border-radius:4px;cursor:pointer}button:disabled{opacity:.6;cursor:default}[hidden]{display:none!important}#message{padding:12px 0;white-space:pre-wrap}.notice{border-left:4px solid #006580;padding-left:14px}#cancel{background:#666;margin-left:12px}@media(max-width:500px){main{margin:0 auto;padding:18px}h1{font-size:1.7rem}}
+</style></head><body><main><h1 id="title">Poll</h1><p id="test" class="notice" hidden>This is a test poll. These responses are separate from the student vote.</p><p>Your responses are anonymous to the instructor. This poll does not ask for your name, email address or login. Please avoid identifying yourself in the optional comment.</p><p id="closing"></p><form id="form" hidden><fieldset><legend id="question"></legend><div id="choices"></div></fieldset><label for="comment">Comment (optional, up to 1,000 characters)</label><textarea id="comment" maxlength="1000" rows="4"></textarea><p id="warning" class="notice" hidden>You have already submitted. Your new response will replace your previous vote and comment.</p><button id="submit">Submit response</button><button id="cancel" type="button" hidden>Cancel replacement</button></form><p id="message" role="status" aria-live="polite">Loading poll…</p><noscript>Enable JavaScript to submit a response.</noscript></main><script>
+const API='https://tomi-polls.tomifrancis.workers.dev';
+const id=new URLSearchParams(location.search).get('poll')||'pe3101p-test-1-date';
+const el=id=>document.getElementById(id),form=el('form'),msg=el('message'),submit=el('submit');
+let token,poll,replace=false;
+function warn(){replace=true;el('warning').hidden=false;el('cancel').hidden=false;submit.textContent='Replace previous response';}
+el('cancel').onclick=()=>{replace=false;el('warning').hidden=true;el('cancel').hidden=true;submit.textContent='Submit response';msg.textContent='Replacement cancelled. Your saved response has not changed.';};
+async function init(){try{
+const r=await fetch(API+'/api/poll?id='+encodeURIComponent(id));const p=await r.json();if(!r.ok)throw Error(p.error);poll=p;
+el('title').textContent=p.title;document.title=p.title+' — Tomi Francis';el('question').textContent=p.question;el('test').hidden=!p.test;
+el('closing').textContent='Closes '+new Intl.DateTimeFormat('en-SG',{dateStyle:'full',timeStyle:'short',timeZone:'Asia/Singapore',hour12:false}).format(new Date(p.closesAt))+' (Singapore time).';
+if(p.closed){msg.textContent='This poll has closed.';return;}
+try{token=localStorage.getItem('tomi-poll-token:'+id);if(!/^[a-f0-9]{64}$/.test(token||'')){token=Array.from(crypto.getRandomValues(new Uint8Array(32)),b=>b.toString(16).padStart(2,'0')).join('');localStorage.setItem('tomi-poll-token:'+id,token);}}catch{throw Error('Browser storage is unavailable. Please allow storage for this site so you can update your response later.');}
+for(const o of p.options){const label=document.createElement('label');label.className='option';const input=document.createElement('input');input.type='radio';input.name='choice';input.value=o.id;input.required=true;label.append(input,document.createTextNode(o.label));el('choices').append(label);}
+form.hidden=false;msg.textContent='';if(localStorage.getItem('tomi-poll-submitted:'+id)==='yes')warn();
+}catch(e){msg.textContent=e.message||'Unable to load poll. Please refresh to try again.';}}
+form.onsubmit=async e=>{e.preventDefault();submit.disabled=true;msg.textContent='Saving…';try{const choice=new FormData(form).get('choice');const r=await fetch(API+'/api/vote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pollId:id,choice,comment:el('comment').value,token,replace})});const d=await r.json();if(r.status===409){warn();msg.textContent='Review your new response, then select “Replace previous response” to confirm.';return;}if(r.status===410){form.hidden=true;throw Error(d.error);}if(!r.ok)throw Error(d.error||'Could not save response.');try{localStorage.setItem('tomi-poll-submitted:'+id,'yes');}catch{}msg.textContent='Your response has been saved. Thank you.';warn();}catch(e){msg.textContent=e.message||'Connection failed. Please try again; retrying will not count twice.';}finally{submit.disabled=false;}};
+init();
+</script></body></html>
