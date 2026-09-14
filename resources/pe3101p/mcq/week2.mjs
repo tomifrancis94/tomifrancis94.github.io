@@ -65,7 +65,7 @@ add(8,'Conditionalisation','Update the whole distribution','§§3.2–3.3',r=>{
 });
 add(9,'Bayes factors','Evidence and the posterior ranking','§3.6',r=>{
  const prior=pick(r,[[1,2],[1,3],[1,4],[2,1],[3,1],[4,1]]),likelihood=pick(r,[[1,2],[1,3],[2,1],[3,1]]),[a,b]=prior,[x,y]=likelihood;if(a*x===b*y)throw Error('No posterior tie');
- const evidence=x>y?'H₁':'H₂',posterior=a*x>b*y?'H₁':'H₂',word=(e,q)=>`The evidence favours ${e}; the posterior credence is higher for ${q}.`,answer=word(evidence,posterior);
+ const evidence=x>y?'H₁':'H₂',posterior=a*x>b*y?'H₁':'H₂',word=(e,q)=>`The evidence favours ${e}; after updating, ${q} is more probable than ${q==='H₁'?'H₂':'H₁'}.`,answer=word(evidence,posterior);
  const wrong=[];for(const e of ['H₁','H₂'])for(const q of ['H₁','H₂'])wrong.push([word(e,q),'Evidence favouring a hypothesis depends on the likelihood ratio; the posterior ranking also depends on the prior odds.']);
  return choice(r,`An agent considers exactly two mutually exclusive hypotheses, H₁ and H₂. Her prior odds for H₁ over H₂ are ${a}:${b}, and the Bayes factor for H₁ over H₂ supplied by evidence E is ${p(x,y)}. She conditionalises on E. Which statement is correct?`,answer,wrong,`The Bayes factor ${fraction(x,y)} ${x>y?'exceeds':'is less than'} 1, so E favours ${evidence}. Posterior odds are ${a*x}:${b*y}, so ${posterior} has the higher posterior credence.`,{check:{kind:'odds',prior,likelihood}});
 });
