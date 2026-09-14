@@ -6,7 +6,7 @@ const specifications=[
  ['upfront-pump','Paying to end offers',['initial','remove']],
  ['independence-pump','An Independence reversal',['initial','remove']]
 ];
-export const patternTemplates=specifications.flatMap(([slug,title,roles],family)=>roles.map((role,index)=>({id:`w5-pattern-${slug}-${index+1}`,groupId:`w5-pattern-${slug}`,groupIndex:index,week:5,revision:family===1||family===3||family===0&&index===0?4:3,topic:'Money pumps',title,patternFamily:family,role})));
+export const patternTemplates=specifications.flatMap(([slug,title,roles],family)=>roles.map((role,index)=>({id:`w5-pattern-${slug}-${index+1}`,groupId:`w5-pattern-${slug}`,groupIndex:index,week:5,revision:family===1?5:family===3||family===0&&index===0?4:3,topic:'Money pumps',title,patternFamily:family,role})));
 const math=x=>`\\(${x}\\)`;
 const show=x=>x==='A−'?math('A^-'):math(x);
 const relation=(a,b)=>`${show(a)} ≻ ${show(b)}`;
@@ -46,9 +46,12 @@ export function instantiatePatternGroup(template,seed){
   questions.push(question('Suppose B is removed from the later menu, leaving only C there. What final outcome does sophisticated choice now produce?',show(answer),[[show('A'),'The remaining continuation gives C, which is preferred to A.'],[show('B'),'B has been removed.'],['No choice is prescribed because preferences are cyclic.','Every comparison needed for backward induction is specified.']],`The later continuation is C, and ${relation('C','A')}.`,random,{provided:{removedOutcome:'B'}}));
  }else if(family===1){source='Approved bank T14.E — Successive trades; Week 5: The Standard Money Pump; Foresight in the Standard Pump.';
   stem+=` The agent starts with A. At every decision, UP ends the offers with the current holding; DOWN accepts a trade. ${show('A−')} is A with a small fee deducted.`;
-  table={headers:['At','Current holding','Trade gives'],rows:m.decisions.map(id=>[id,m.holdings[id],m.offers[id]])};
   questions.push(outcomeQuestion('What final holding does myopic choice produce?', 'A−',`The successive offered holdings are preferred to the current holdings: ${relation('C','A')}, ${relation('B','C')}, ${relation('A−','B')}.`,random));
-  questions.push(branchQuestion('What will an agent following sophisticated choice do at D₁, and why?',b.D1.first,`the predicted continuation gives C, and ${relation('C','A')}.`,b.D1.second,[`the last trade gives ${show('A−')}, and ${relation('A','A−')}.`,`${relation('A','C')}.`,`${relation('B','A')}.`],random));
+  questions.push(question('What will an agent following sophisticated choice do at D₁, and why?',`${b.D1.first}: ${relation('C','A')}.`,[
+   [`${b.D1.second}: ${relation('A','B')}.`,'A is preferred to B, but the sophisticated continuation gives C, not B.'],
+   [`${b.D1.second}: ${relation('A','A−')}.`,'The sophisticated agent anticipates stopping at C at D₂, rather than reaching the final trade.'],
+   [`${b.D1.first}: ${relation('B','A')}.`,'The stated preference is A over B; the relevant initial comparison is C against A.']
+  ],`At D₃ choose ${show('A−')} over B; at D₂ choose C over ${show('A−')}; at D₁ choose ${b.D1.first} because ${relation('C','A')}.`,random));
  }else if(family===2){source='Approved bank T14.F — Paying to end the offers; Week 5: The Gustafsson–Rabinowicz Pump.';
   stem+=` ${show('A−')} is A with one fee deducted. The agent initially holds A. Accepting an offer ends the sequence.`;
   questions.push(outcomeQuestion('What final holding does sophisticated choice produce?',solvePairwisePattern(m.tree,m.relations).outcome,`At D₃ choose C over A; at D₂ choose B over C; at D₁ choose ${show('A−')} over B.`,random));

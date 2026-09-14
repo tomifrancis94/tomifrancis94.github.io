@@ -24,4 +24,4 @@ export function makeQuestions(t,seed){
  else list=[instantiate(t,seed)];
  return list.map(q=>({...cleanQuestion(q),templateId:t.id===q.templateId?t.id:q.templateId||t.id,canVary:t.canVary}));
 }
-export const release={"date":"2026-09-14","forms":58};
+export const release={"date":"2026-09-15","forms":58};
