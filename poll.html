@@ -1,23 +1,139 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><title>Poll — Tomi Francis</title><link rel="stylesheet" href="style.css"><style>
-main{max-width:760px;margin:30px auto;padding:20px}fieldset{border:0;padding:0;margin:24px 0}legend{font-size:1.25rem;font-weight:bold;margin-bottom:16px}.option{display:block;padding:14px;border:1px solid #ddd;border-radius:5px;margin:10px 0;cursor:pointer}.option:has(input:checked){border-color:#006580;background:#eef7f9}input{margin-right:10px}textarea{display:block;width:100%;box-sizing:border-box;font:inherit;margin:8px 0 20px;padding:10px}button{font:inherit;padding:12px 20px;background:#006580;color:white;border:0;border-radius:4px;cursor:pointer}button:disabled{opacity:.6;cursor:default}[hidden]{display:none!important}#message{padding:12px 0;white-space:pre-wrap}.notice{border-left:4px solid #006580;padding-left:14px}#cancel{background:#666;margin-left:12px}@media(max-width:500px){main{margin:0 auto;padding:18px}h1{font-size:1.7rem}}
-</style></head><body><main><h1 id="title" tabindex="-1">Poll</h1><p id="test" class="notice" hidden>This is a test poll. These responses are separate from the student vote.</p><p id="privacy">Your responses are anonymous.</p><p id="closing"></p><form id="form" hidden><fieldset><legend id="question"></legend><div id="choices"></div></fieldset><label for="comment">Comment (optional, up to 1,000 characters)</label><textarea id="comment" maxlength="1000" rows="4"></textarea><p id="warning" class="notice" hidden>You have already submitted. Your new response will replace your previous vote and comment.</p><button id="submit">Submit response</button><button id="cancel" type="button" hidden>Cancel replacement</button></form><section id="thanks" hidden><p>Your response has been saved.</p><button id="change" type="button">Change my response</button></section><p id="message" role="status" aria-live="polite">Loading poll…</p><noscript>Enable JavaScript to submit a response.</noscript></main><script>
+main{max-width:760px;margin:30px auto;padding:20px}fieldset{border:0;padding:0;margin:24px 0;min-width:0}legend{font-size:1.25rem;font-weight:bold;margin-bottom:16px;padding:0}.option{display:block;padding:14px;border:1px solid #ddd;border-radius:5px;margin:10px 0;cursor:pointer}.option:has(input:checked){border-color:#006580;background:#eef7f9}input{margin-right:10px}textarea{display:block;width:100%;box-sizing:border-box;font:inherit;margin:8px 0 20px;padding:10px}button{font:inherit;padding:12px 20px;background:#006580;color:white;border:0;border-radius:4px;cursor:pointer}button:disabled{opacity:.6;cursor:default}[hidden]{display:none!important}#message{padding:12px 0;white-space:pre-wrap}.notice{border-left:4px solid #006580;padding-left:14px}#cancel{background:#666;margin-left:12px}@media(max-width:500px){main{margin:0 auto;padding:18px}h1{font-size:1.7rem}}
+/* Surveys (several questions on one page) */
+#survey h2{margin:44px 0 0;padding-bottom:6px;border-bottom:2px solid #006580;font-size:1.3rem}
+.q{margin:30px 0 0}.q legend{font-size:1.08rem;line-height:1.45;margin-bottom:10px}.q .num{color:#006580}
+.q .qnote{margin:0 0 10px;color:#555;font-size:.95rem}
+.q .option{padding:10px 14px;margin:6px 0}
+.q textarea{margin:12px 0 0;font-size:.95rem}
+.sr{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.grid-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:10px 0;border-top:1px solid #e6e6e6}.grid-row:last-of-type{border-bottom:1px solid #e6e6e6}
+.grid-label{flex:1 1 210px}.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{position:relative;border:1px solid #bbb;border-radius:999px;padding:6px 13px;cursor:pointer;font-size:.92rem;background:#fff;user-select:none}
+.pill input{position:absolute;opacity:0;width:0;height:0;margin:0}
+.pill:has(input:checked){border-color:#006580;background:#006580;color:#fff}
+.pill.neutral:has(input:checked){border-color:#767676;background:#767676}
+.pill:has(input:focus-visible),.rank-item:focus-visible{outline:2px solid #006580;outline-offset:2px}
+.rank-item{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:#fff;color:inherit;border:1px solid #ddd;border-radius:5px;padding:11px 14px;margin:7px 0}
+.rank-item .badge{flex:0 0 1.9em;height:1.9em;border-radius:50%;border:1px dashed #999;display:inline-flex;align-items:center;justify-content:center;font-weight:bold;font-size:.95rem}
+.rank-item.ranked{border-color:#006580;background:#eef7f9}.rank-item.ranked .badge{border:0;background:#006580;color:#fff}
+.rank-summary{margin:8px 0 0;color:#555;font-size:.95rem}
+button.secondary{background:#fff;color:#006580;border:1px solid #006580;padding:6px 12px;font-size:.92rem;margin-top:6px}
+.q.missing{border-left:4px solid #b00020;padding-left:14px}.q-error{color:#b00020;font-weight:bold;margin:10px 0 0}
+#actions{margin-top:36px}
+</style></head><body><main><h1 id="title" tabindex="-1">Poll</h1><p id="test" class="notice" hidden>This is a test poll. These responses are separate from the student vote.</p><p id="privacy">Your responses are anonymous.</p><p id="closing"></p><div id="intro"></div><form id="form" hidden><div id="single"><fieldset><legend id="question"></legend><div id="choices"></div></fieldset><label for="comment">Comment (optional, up to 1,000 characters)</label><textarea id="comment" maxlength="1000" rows="4"></textarea></div><div id="survey" hidden></div><div id="actions"><p id="warning" class="notice" hidden>You have already submitted. Your new response will replace your previous vote and comment.</p><button id="submit">Submit response</button><button id="cancel" type="button" hidden>Cancel replacement</button></div></form><section id="thanks" hidden><p>Your response has been saved.</p><button id="change" type="button">Change my response</button></section><p id="message" role="status" aria-live="polite">Loading poll…</p><noscript>Enable JavaScript to submit a response.</noscript></main><script>
 const API='https://tomi-polls.tomifrancis.workers.dev';
-const id=new URLSearchParams(location.search).get('poll')||'pe3101p-test-1-date';
+const id=new URLSearchParams(location.search).get('poll')||'pe3101p-mid-course-feedback';
 const el=id=>document.getElementById(id),form=el('form'),msg=el('message'),submit=el('submit');
-let token,poll,replace=false;
+const make=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
+let token,poll,replace=false,questions=[];
+const draftKey='tomi-poll-draft:'+id,state={answers:{},comments:{}};
+function saveDraft(){try{localStorage.setItem(draftKey,JSON.stringify(state));}catch{}}
+function loadDraft(){try{const d=JSON.parse(localStorage.getItem(draftKey)||'null');if(d&&typeof d==='object'){if(d.answers&&typeof d.answers==='object')state.answers=d.answers;if(d.comments&&typeof d.comments==='object')state.comments=d.comments;}}catch{}}
 function warn(){replace=true;el('warning').hidden=false;el('cancel').hidden=false;submit.textContent='Replace previous response';}
-function showThanks(focus=true){form.hidden=true;el('thanks').hidden=false;el('privacy').hidden=true;el('closing').hidden=true;el('title').textContent='Thank you for voting';msg.textContent='';el('change').hidden=Date.now()>=Date.parse(poll.closesAt);if(focus)el('title').focus();}
-el('change').onclick=()=>{if(Date.now()>=Date.parse(poll.closesAt)){el('change').hidden=true;msg.textContent='This poll has closed.';return;}el('thanks').hidden=true;el('privacy').hidden=false;el('closing').hidden=false;el('title').textContent=poll.title;form.hidden=false;warn();el('title').focus();};
+function showThanks(focus=true){form.hidden=true;el('thanks').hidden=false;el('privacy').hidden=true;el('closing').hidden=true;el('intro').hidden=true;el('title').textContent=poll.thanksTitle||'Thank you for voting';msg.textContent='';el('change').hidden=Date.now()>=Date.parse(poll.closesAt);if(focus){el('title').focus();window.scrollTo(0,0);}}
+el('change').onclick=()=>{if(Date.now()>=Date.parse(poll.closesAt)){el('change').hidden=true;msg.textContent='This poll has closed.';return;}el('thanks').hidden=true;el('privacy').hidden=false;el('closing').hidden=false;el('intro').hidden=false;el('title').textContent=poll.title;form.hidden=false;warn();el('title').focus();};
 el('cancel').onclick=()=>showThanks();
+
+// ---- Survey rendering -------------------------------------------------------
+function clearMissing(q){const box=el('q-'+q.id);if(!box)return;/* not in the page yet while a saved draft is being restored */box.classList.remove('missing');box.querySelector('.q-error').hidden=true;}
+function renderChoice(q,body){
+  const saved=state.answers[q.id];
+  for(const o of q.options){const label=make('label','option'),input=make('input');input.type='radio';input.name=q.id;input.value=o.id;
+    if(saved===o.id)input.checked=true;
+    input.onchange=()=>{state.answers[q.id]=o.id;saveDraft();clearMissing(q);};
+    label.append(input,document.createTextNode(o.label));body.append(label);}
+  if(!q.options.some(o=>o.id===saved))delete state.answers[q.id];
+}
+function renderGrid(q,body){
+  const saved=(state.answers[q.id]&&typeof state.answers[q.id]==='object'&&!Array.isArray(state.answers[q.id]))?state.answers[q.id]:{};
+  state.answers[q.id]=saved;
+  for(const r of q.rows){const row=make('div','grid-row');row.setAttribute('role','radiogroup');const lab=make('span','grid-label',r.label);lab.id='l-'+q.id+'-'+r.id;row.setAttribute('aria-labelledby',lab.id);
+    const pills=make('div','pills');
+    if(!q.columns.some(c=>c.id===saved[r.id])){delete saved[r.id];if(q.defaultColumn)saved[r.id]=q.defaultColumn;}
+    for(const c of q.columns){const pill=make('label',c.id===q.defaultColumn?'pill neutral':'pill'),input=make('input');input.type='radio';input.name=q.id+':'+r.id;input.value=c.id;
+      if(saved[r.id]===c.id)input.checked=true;
+      input.onchange=()=>{saved[r.id]=c.id;saveDraft();if(q.rows.every(x=>saved[x.id]))clearMissing(q);};
+      pill.append(input,document.createTextNode(c.label));pills.append(pill);}
+    row.append(lab,pills);body.append(row);}
+}
+function renderRank(q,body){
+  let order=Array.isArray(state.answers[q.id])?state.answers[q.id].filter((x,i,a)=>q.items.some(it=>it.id===x)&&a.indexOf(x)===i):[];
+  body.append(make('p','qnote','Tap the options in order of preference, starting with your first choice. Tap a ranked option again to remove it from your ranking.'));
+  const buttons=new Map(),summary=make('p','rank-summary');summary.setAttribute('aria-live','polite');
+  const clear=make('button','secondary','Clear ranking');clear.type='button';
+  function paint(){state.answers[q.id]=order;
+    for(const it of q.items){const b=buttons.get(it.id),place=order.indexOf(it.id);b.classList.toggle('ranked',place>=0);b.setAttribute('aria-pressed',place>=0?'true':'false');b.querySelector('.badge').textContent=place>=0?place+1:'';}
+    summary.textContent=order.length?'Your ranking: '+order.map((x,i)=>(i+1)+'. '+q.items.find(it=>it.id===x).label).join('; ')+(order.length<q.items.length?' ('+(q.items.length-order.length)+' still to rank)':''):'Nothing ranked yet.';
+    clear.hidden=!order.length;if(order.length===q.items.length)clearMissing(q);}
+  for(const it of q.items){const b=make('button','rank-item');b.type='button';b.append(make('span','badge'),make('span','',it.label));
+    b.onclick=()=>{order=order.includes(it.id)?order.filter(x=>x!==it.id):[...order,it.id];paint();saveDraft();};
+    buttons.set(it.id,b);body.append(b);}
+  clear.onclick=()=>{order=[];paint();saveDraft();};
+  body.append(summary,clear);paint();
+}
+function renderSurvey(p){
+  const root=el('survey');let n=0;
+  for(const s of p.sections){if(s.heading)root.append(make('h2','',s.heading));
+    for(const q of s.questions){n++;questions.push(q);
+      const box=make('fieldset','q');box.id='q-'+q.id;
+      const legend=make('legend');legend.append(make('span','num',n+'. '),document.createTextNode(q.text));box.append(legend);
+      if(q.note)box.append(make('p','qnote',q.note));
+      const body=make('div');box.append(body);
+      if(q.type==='choice')renderChoice(q,body);else if(q.type==='grid')renderGrid(q,body);else if(q.type==='rank')renderRank(q,body);
+      const error=make('p','q-error');error.hidden=true;box.append(error);
+      const cid='c-'+q.id,clabel=make('label','sr',q.type==='text'?'Your comments':'Optional comment on question '+n);clabel.htmlFor=cid;
+      const area=make('textarea');area.id=cid;area.maxLength=1000;area.rows=q.type==='text'?5:2;area.placeholder=q.type==='text'?'Your comments (optional)':'Comment (optional)';
+      if(typeof state.comments[q.id]==='string')area.value=state.comments[q.id].slice(0,1000);
+      area.oninput=()=>{state.comments[q.id]=area.value;saveDraft();};
+      box.append(clabel,area);root.append(box);}}
+}
+function collect(){
+  const answers={},comments={};
+  for(const q of questions){const a=state.answers[q.id];
+    if(q.type==='choice'&&typeof a==='string')answers[q.id]=a;
+    if(q.type==='grid'&&a&&Object.keys(a).length)answers[q.id]={...a};
+    if(q.type==='rank'&&Array.isArray(a)&&a.length)answers[q.id]=[...a];
+    const c=(el('c-'+q.id).value||'').trim();if(c)comments[q.id]=c;}
+  return {answers,comments};
+}
+function missingQuestions(payload){
+  return questions.filter(q=>{if(!q.required)return false;const a=payload.answers[q.id];
+    if(q.type==='choice')return !a;if(q.type==='grid')return !a||q.rows.some(r=>!a[r.id]);if(q.type==='rank')return !a||a.length!==q.items.length;return false;});
+}
+function flagMissing(list){
+  for(const q of list){const box=el('q-'+q.id),error=box.querySelector('.q-error');box.classList.add('missing');error.hidden=false;
+    error.textContent=q.type==='grid'?'Please choose an answer on every line.':q.type==='rank'?'Please rank all '+q.items.length+' options.':'Please choose an answer.';}
+  if(list.length){el('q-'+list[0].id).scrollIntoView({behavior:'smooth',block:'center'});
+    msg.textContent=list.length===1?'One question still needs an answer. It is marked in red above.':list.length+' questions still need an answer. They are marked in red above.';}
+}
+
 async function init(){try{
 const r=await fetch(API+'/api/poll?id='+encodeURIComponent(id));const p=await r.json();if(!r.ok)throw Error(p.error);poll=p;
-el('title').textContent=p.title;document.title=p.title+' — Tomi Francis';el('question').textContent=p.question;el('test').hidden=!p.test;
-el('closing').textContent='Closes '+new Intl.DateTimeFormat('en-SG',{dateStyle:'full',timeStyle:'short',timeZone:'Asia/Singapore',hour12:false}).format(new Date(p.closesAt))+' (Singapore time).';
+el('title').textContent=p.title;document.title=p.title+' — Tomi Francis';el('test').hidden=!p.test;
+el('closing').textContent='Closes '+new Intl.DateTimeFormat('en-SG',{dateStyle:'full',timeStyle:'short',timeZone:'Asia/Singapore',hour12:false}).format(new Date(p.closesAt))+'.';
 if(p.closed){msg.textContent='This poll has closed.';return;}
 try{token=localStorage.getItem('tomi-poll-token:'+id);if(!/^[a-f0-9]{64}$/.test(token||'')){token=Array.from(crypto.getRandomValues(new Uint8Array(32)),b=>b.toString(16).padStart(2,'0')).join('');localStorage.setItem('tomi-poll-token:'+id,token);}}catch{throw Error('Browser storage is unavailable. Please allow storage for this site so you can update your response later.');}
-for(const o of p.options){const label=document.createElement('label');label.className='option';const input=document.createElement('input');input.type='radio';input.name='choice';input.value=o.id;input.required=true;label.append(input,document.createTextNode(o.label));el('choices').append(label);}
+if(p.kind==='survey'){
+  for(const text of p.intro||[])el('intro').append(make('p','',text));
+  el('warning').textContent='You have already submitted. Your new response will replace your previous one.';
+  el('test').textContent='This is a test copy. Responses here are kept separate from the students’ responses.';
+  el('single').hidden=true;el('survey').hidden=false;form.noValidate=true;loadDraft();renderSurvey(p);
+}else{
+  el('question').textContent=p.question;
+  for(const o of p.options){const label=document.createElement('label');label.className='option';const input=document.createElement('input');input.type='radio';input.name='choice';input.value=o.id;input.required=true;label.append(input,document.createTextNode(o.label));el('choices').append(label);}
+}
 form.hidden=false;msg.textContent='';if(localStorage.getItem('tomi-poll-submitted:'+id)==='yes')showThanks(false);
 }catch(e){msg.textContent=e.message||'Unable to load poll. Please refresh to try again.';}}
-form.onsubmit=async e=>{e.preventDefault();submit.disabled=true;msg.textContent='Saving…';try{const choice=new FormData(form).get('choice');const r=await fetch(API+'/api/vote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pollId:id,choice,comment:el('comment').value,token,replace})});const d=await r.json();if(r.status===409){warn();msg.textContent='Review your new response, then select “Replace previous response” to confirm.';return;}if(r.status===410){form.hidden=true;throw Error(d.error);}if(!r.ok)throw Error(d.error||'Could not save response.');try{localStorage.setItem('tomi-poll-submitted:'+id,'yes');}catch{}showThanks();}catch(e){msg.textContent=e.message||'Connection failed. Please try again; retrying will not count twice.';}finally{submit.disabled=false;}};
+form.onsubmit=async e=>{e.preventDefault();
+let body;
+if(poll.kind==='survey'){const payload=collect(),missing=missingQuestions(payload);if(missing.length){flagMissing(missing);return;}
+  // Nothing is compulsory, but a completely untouched form is not a response. A grid left on its preselected answers does not count.
+  const touched=Object.keys(payload.comments).length>0||questions.some(q=>{const a=payload.answers[q.id];if(a===undefined)return false;return q.type!=='grid'||q.rows.some(r=>a[r.id]&&a[r.id]!==q.defaultColumn);});
+  if(!touched){msg.textContent='Nothing has been answered yet. Answer as many or as few questions as you like, then submit.';return;}
+  body={pollId:id,token,replace,...payload};}
+else body={pollId:id,choice:new FormData(form).get('choice'),comment:el('comment').value,token,replace};
+submit.disabled=true;msg.textContent='Saving…';
+try{const r=await fetch(API+'/api/vote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const d=await r.json();if(r.status===409){warn();msg.textContent='Review your new response, then select “Replace previous response” to confirm.';return;}if(r.status===410){form.hidden=true;throw Error(d.error);}if(!r.ok){const q=questions.find(x=>x.id===d.questionId);if(q&&d.error.startsWith('Please answer'))flagMissing([q]);throw Error(d.error||'Could not save response.');}try{localStorage.setItem('tomi-poll-submitted:'+id,'yes');}catch{}showThanks();}catch(e){msg.textContent=e.message||'Connection failed. Please try again; retrying will not count twice.';}finally{submit.disabled=false;}};
 init();
 </script></body></html>
