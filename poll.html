@@ -45,6 +45,13 @@ function renderChoice(q,body){
     label.append(input,document.createTextNode(o.label));body.append(label);}
   if(!q.options.some(o=>o.id===saved))delete state.answers[q.id];
 }
+function renderMulti(q,body){ // tick all that apply
+  const saved=Array.isArray(state.answers[q.id])?state.answers[q.id]:[];
+  state.answers[q.id]=q.options.map(o=>o.id).filter(x=>saved.includes(x));
+  for(const o of q.options){const label=make('label','option'),input=make('input');input.type='checkbox';input.name=q.id;input.value=o.id;input.checked=state.answers[q.id].includes(o.id);
+    input.onchange=()=>{state.answers[q.id]=[...body.querySelectorAll('input:checked')].map(i=>i.value);saveDraft();if(state.answers[q.id].length)clearMissing(q);};
+    label.append(input,document.createTextNode(o.label));body.append(label);}
+}
 function renderGrid(q,body){
   const saved=(state.answers[q.id]&&typeof state.answers[q.id]==='object'&&!Array.isArray(state.answers[q.id]))?state.answers[q.id]:{};
   state.answers[q.id]=saved;
@@ -80,7 +87,7 @@ function renderSurvey(p){
       const legend=make('legend');legend.append(make('span','num',n+'. '),document.createTextNode(q.text));box.append(legend);
       if(q.note)box.append(make('p','qnote',q.note));
       const body=make('div');box.append(body);
-      if(q.type==='choice')renderChoice(q,body);else if(q.type==='grid')renderGrid(q,body);else if(q.type==='rank')renderRank(q,body);
+      if(q.type==='choice')renderChoice(q,body);else if(q.type==='multi')renderMulti(q,body);else if(q.type==='grid')renderGrid(q,body);else if(q.type==='rank')renderRank(q,body);
       const error=make('p','q-error');error.hidden=true;box.append(error);
       if(q.comment!==false){
       const cid='c-'+q.id,clabel=make('label','sr',q.type==='text'?'Your comments':'Optional comment on question '+n);clabel.htmlFor=cid;
@@ -99,6 +106,7 @@ function collect(){
   const answers={},comments={};
   for(const q of questions){if(!visible(q))continue;const a=state.answers[q.id];
     if(q.type==='choice'&&typeof a==='string')answers[q.id]=a;
+    if(q.type==='multi'&&Array.isArray(a)&&a.length)answers[q.id]=[...a];
     if(q.type==='grid'&&a&&Object.keys(a).length)answers[q.id]={...a};
     if(q.type==='rank'&&Array.isArray(a)&&a.length)answers[q.id]=[...a];
     const ta=el('c-'+q.id),c=ta?(ta.value||'').trim():'';if(c)comments[q.id]=c;}
@@ -106,11 +114,11 @@ function collect(){
 }
 function missingQuestions(payload){
   return questions.filter(q=>{if(!q.required||!visible(q))return false;const a=payload.answers[q.id];
-    if(q.type==='choice')return !a;if(q.type==='grid')return !a||q.rows.some(r=>!a[r.id]);if(q.type==='rank')return !a||a.length!==q.items.length;return false;});
+    if(q.type==='choice')return !a;if(q.type==='multi')return !a||!a.length;if(q.type==='grid')return !a||q.rows.some(r=>!a[r.id]);if(q.type==='rank')return !a||a.length!==q.items.length;return false;});
 }
 function flagMissing(list){
   for(const q of list){const box=el('q-'+q.id),error=box.querySelector('.q-error');box.classList.add('missing');error.hidden=false;
-    error.textContent=q.type==='grid'?'Please choose an answer on every line.':q.type==='rank'?'Please rank all '+q.items.length+' options.':'Please choose an answer.';}
+    error.textContent=q.type==='grid'?'Please choose an answer on every line.':q.type==='rank'?'Please rank all '+q.items.length+' options.':q.type==='multi'?'Please tick at least one option.':'Please choose an answer.';}
   if(list.length){el('q-'+list[0].id).scrollIntoView({behavior:'smooth',block:'center'});
     msg.textContent=list.length===1?'One question still needs an answer. It is marked in red above.':list.length+' questions still need an answer. They are marked in red above.';}
 }
