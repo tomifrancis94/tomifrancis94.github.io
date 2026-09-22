@@ -41,7 +41,7 @@ function renderChoice(q,body){
   const saved=state.answers[q.id];
   for(const o of q.options){const label=make('label','option'),input=make('input');input.type='radio';input.name=q.id;input.value=o.id;
     if(saved===o.id)input.checked=true;
-    input.onchange=()=>{state.answers[q.id]=o.id;saveDraft();clearMissing(q);};
+    input.onchange=()=>{state.answers[q.id]=o.id;saveDraft();clearMissing(q);updateVisibility();};
     label.append(input,document.createTextNode(o.label));body.append(label);}
   if(!q.options.some(o=>o.id===saved))delete state.answers[q.id];
 }
@@ -82,23 +82,30 @@ function renderSurvey(p){
       const body=make('div');box.append(body);
       if(q.type==='choice')renderChoice(q,body);else if(q.type==='grid')renderGrid(q,body);else if(q.type==='rank')renderRank(q,body);
       const error=make('p','q-error');error.hidden=true;box.append(error);
+      if(q.comment!==false){
       const cid='c-'+q.id,clabel=make('label','sr',q.type==='text'?'Your comments':'Optional comment on question '+n);clabel.htmlFor=cid;
       const area=make('textarea');area.id=cid;area.maxLength=1000;area.rows=q.type==='text'?5:2;area.placeholder=q.type==='text'?'Your comments (optional)':'Comment (optional)';
       if(typeof state.comments[q.id]==='string')area.value=state.comments[q.id].slice(0,1000);
       area.oninput=()=>{state.comments[q.id]=area.value;saveDraft();};
-      box.append(clabel,area);root.append(box);}}
+      box.append(clabel,area);}
+      root.append(box);}}
+  updateVisibility();
 }
+// A question with showIf appears only while the named earlier question has the given answer. Its saved answer is kept
+// in the draft while hidden (so flipping back restores it) but is never submitted; the server drops it as well.
+const visible=q=>!q.showIf||state.answers[q.showIf.question]===q.showIf.equals;
+function updateVisibility(){for(const q of questions){if(!q.showIf)continue;const box=el('q-'+q.id);if(!box)continue;const show=visible(q);box.hidden=!show;if(!show)clearMissing(q);}}
 function collect(){
   const answers={},comments={};
-  for(const q of questions){const a=state.answers[q.id];
+  for(const q of questions){if(!visible(q))continue;const a=state.answers[q.id];
     if(q.type==='choice'&&typeof a==='string')answers[q.id]=a;
     if(q.type==='grid'&&a&&Object.keys(a).length)answers[q.id]={...a};
     if(q.type==='rank'&&Array.isArray(a)&&a.length)answers[q.id]=[...a];
-    const c=(el('c-'+q.id).value||'').trim();if(c)comments[q.id]=c;}
+    const ta=el('c-'+q.id),c=ta?(ta.value||'').trim():'';if(c)comments[q.id]=c;}
   return {answers,comments};
 }
 function missingQuestions(payload){
-  return questions.filter(q=>{if(!q.required)return false;const a=payload.answers[q.id];
+  return questions.filter(q=>{if(!q.required||!visible(q))return false;const a=payload.answers[q.id];
     if(q.type==='choice')return !a;if(q.type==='grid')return !a||q.rows.some(r=>!a[r.id]);if(q.type==='rank')return !a||a.length!==q.items.length;return false;});
 }
 function flagMissing(list){
