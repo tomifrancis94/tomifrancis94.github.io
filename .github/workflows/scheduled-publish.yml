@@ -1,0 +1,64 @@
+# Scheduled publishing: merges a prepared branch into main at a set time.
+#
+# Each entry below is a branch (pushed in advance, holding the changes) and the UTC time from which
+# it may go live. Every scheduled run publishes any entry whose time has passed and whose branch
+# still exists, then deletes the branch, so later runs do nothing. GitHub's cron often runs late,
+# which is why it fires every five minutes through the window rather than once.
+
+name: Scheduled publish
+
+on:
+  schedule:
+    - cron: "*/5 5-6 1 10 *"   # 1 October, 05:00-06:55 UTC = 13:00-14:55 SGT
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: scheduled-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Merge any branch whose time has come
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          now=$(date -u +%s)
+          published=0
+          # branch | earliest publication time (UTC) | commit message
+          while IFS='|' read -r branch when message; do
+            [ -z "$branch" ] && continue
+            if [ "$now" -lt "$(date -u -d "$when" +%s)" ]; then
+              echo "$branch: not yet (goes live from $when UTC)"; continue
+            fi
+            if ! git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+              echo "$branch: already published (branch gone)"; continue
+            fi
+            git fetch origin "$branch"
+            git merge --squash "origin/$branch"
+            git commit -m "$message"
+            git push origin main
+            git push origin --delete "$branch"
+            published=1
+            echo "$branch: PUBLISHED"
+          done <<'EOF'
+          publish/week7-slides|2026-10-01T05:00:00Z|Publish the PE3101P Week 7 slides, with and without transitions
+          EOF
+          if [ "$published" = 1 ]; then
+            # Ask Pages to rebuild explicitly, in case a push made with this token does not trigger it.
+            curl -fsS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/builds" || echo "Pages build request failed (the push may have triggered one anyway)"
+          fi
