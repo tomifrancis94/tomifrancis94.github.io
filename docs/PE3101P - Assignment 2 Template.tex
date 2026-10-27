@@ -1,0 +1,394 @@
+%==============================================================================
+%  PE3101P: Decision Theory and Social Choice
+%  Take-Home Assignment 2 --- SUBMISSION TEMPLATE
+%
+%  HOW TO USE THIS FILE
+%   1. Type each answer between \begin{answer}...\end{answer}, where it says
+%      "YOUR ANSWER". Where there are blanks to fill in, type your answer in
+%      the last pair of braces of each \slot{...}{...}{ } (for example
+%      \slot{q1a1}{6cm}{(1, 2, 3)}).
+%   2. Build with pdflatex (twice, so that cross-references settle), and
+%      submit the PDF it produces.
+%
+%  You do not have to use this template. It is here to save you setting up a
+%  document from scratch. You may delete anything you do not need.
+%
+%  If you have not used LaTeX before, you can open this file at overleaf.com
+%  in a browser with nothing to install.
+%==============================================================================
+\documentclass[11pt]{article}
+
+% --- Encoding & layout ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{parskip}
+
+% --- Maths & tables ------------------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{nicefrac}
+\usepackage{booktabs}
+\usepackage{array}
+\aboverulesep=0pt
+\belowrulesep=0pt
+\renewcommand{\arraystretch}{1.25}
+
+% --- Lists ---------------------------------------------------------------------
+\usepackage{enumitem}
+\setlist{align=left}
+\setlist[itemize]{label=\textendash,leftmargin=1.5em,labelindent=0pt,labelwidth=1em,labelsep=0.5em,itemsep=0.2em,topsep=0.2em}
+\setlist[enumerate,1]{label=(\alph*),itemsep=0.65em}
+\setlist[enumerate,2]{label=(\roman*),itemsep=0.45em}
+\setlist[description]{font=\normalfont\bfseries, style=sameline, itemsep=0.3em}
+
+% --- Environments --------------------------------------------------------------
+\usepackage{amsthm}
+\DeclareMathOperator{\Cr}{Cr}
+\newcommand{\principle}[2]{\begin{description}\item\textbf{#1}:\quad#2\end{description} \noindent}
+% --- Page breaking -------------------------------------------------------------
+\usepackage{needspace}
+\setlength{\emergencystretch}{6em}
+\clubpenalty=10000
+\widowpenalty=10000
+
+% --- Answer spaces ---------------------------------------------------------------
+% \begin{answer}{name}{height} ... \end{answer}: where an answer goes. Write
+% whatever suits the question: prose, displayed equations, a list of steps, a table.
+% \slot{name}{width}{your answer}: a blank to fill in.
+% (The name and the size are used only for the fillable PDF version.)
+\usepackage{environ}
+\usepackage{xcolor}
+\newif\iffillable
+\ifdefined\fillable\fillabletrue\fi
+\iffillable
+  \def\LayoutTextField#1#2{#2}
+  \NewEnviron{answer}[2]{\par\Needspace{\dimexpr #2+3\baselineskip\relax}\medskip\noindent\textbf{Answer.}\par\nobreak\smallskip\noindent
+    \TextField[name=#1, width=\linewidth, height=#2, multiline=true, bordercolor={0.55 0.55 0.6}, backgroundcolor={0.95 0.96 1}, charsize=10pt]{}\par\medskip}
+  \newcommand{\slot}[3]{\raisebox{-0.3em}[1.2em][0.35em]{\TextField[name=#1, width=#2, height=1.55em, bordercolor={0.55 0.55 0.6}, backgroundcolor={0.95 0.96 1}, charsize=10pt]{}}}
+  \newcommand{\longslot}[2]{\TextField[name=#1, width=\linewidth, height=2.6\baselineskip, multiline=true, bordercolor={0.55 0.55 0.6}, backgroundcolor={0.95 0.96 1}, charsize=10pt]{}}
+\else
+  \newcommand{\longslot}[2]{\ifx\relax#2\relax\underline{\makebox[\linewidth]{}}\par\underline{\makebox[\linewidth]{}}\else #2\fi}
+  \NewEnviron{answer}[2]{\par\medskip\noindent\textbf{Answer.}\par\nobreak\smallskip\ignorespaces\BODY\par\medskip}
+  \newcommand{\slot}[3]{\ifx\relax#3\relax\underline{\makebox[#2]{}}\else #3\fi}
+\fi
+
+% --- Links ---------------------------------------------------------------------
+\usepackage[hidelinks, colorlinks=true]{hyperref}
+\hypersetup{linkcolor=black, citecolor=black, urlcolor=black}
+
+\title{PE3101P: Decision Theory and Social Choice\\[0.3em]
+       \large Take-Home Assignment 2\\[0.2em]
+       \large Submission Template}
+\author{Due Sunday 8 November 2026, 23:59}
+\date{}
+
+\begin{document}
+\iffillable\begin{Form}\fi
+\maketitle
+
+\section*{Instructions}
+
+Answer \textbf{all} questions.
+
+You may use results proved in the lecture slides, in the lecture notes, or in
+the primer \emph{Sets and Mathematical Proofs}, unless a question says otherwise.
+Where a question asks you to prove something, set the proof out in steps and say
+what justifies each one.
+
+This assignment is worth \textbf{20\%} of your final grade for the module.
+
+\iffillable
+\textbf{Using this fillable PDF.} Type each answer in the box under its part. Write maths as plain text, for example \texttt{pi\^{}2 X}, \texttt{w\^{}(1/3)} or \texttt{1/2}. The boxes do not grow: if an answer will not fit, use the Word or LaTeX template instead. Save the filled-in PDF and submit it.
+\fi
+
+%==============================================================================
+\Needspace{8\baselineskip}
+\section*{Question 1}
+%==============================================================================
+
+Write $\pi X$ for the outcome obtained from outcome $X$ by a rearrangement $\pi$ of who gets which wellbeing level (a \emph{permutation}). Write $\pi^2 X$ for $\pi(\pi X)$, $\pi^3 X$ for $\pi(\pi^2 X)$, and so on. Recall that $X \succ Y$ means that $X \succsim Y$ and not $Y \succsim X$. Recall the principles of
+\principle{Permutation Invariance}{For any rearrangement $\pi$: $X \succsim Y$ iff $\pi X \succsim \pi Y$.}
+\principle{Transitivity}{If $X \succsim Y$ and $Y \succsim Z$, then $X \succsim Z$.}%
+Throughout this question, $\succsim$ is a ranking of outcomes that satisfies Permutation Invariance and Transitivity.
+
+There are three people. Let $\pi$ be the permutation $(1, 2, 3)$. This means it rearranges an outcome so that person 1 has what person 2 had, person 2 has what person 3 had, and person 3 has what person 1 had. Let $X = (0, 4, 8)$.
+
+\begin{enumerate}
+  \item Write out $\pi X$, $\pi^2 X$ and $\pi^3 X$.
+
+\Needspace{6\baselineskip}\medskip\noindent\textbf{Answer.}\par\smallskip
+\begin{tabular}{@{}r@{\ }l@{}}
+$\pi X ={}$ & \slot{q1a1}{6cm}{} \\[0.5em]
+$\pi^2 X ={}$ & \slot{q1a2}{6cm}{} \\[0.5em]
+$\pi^3 X ={}$ & \slot{q1a3}{6cm}{}
+\end{tabular}
+\medskip
+
+  \item Suppose that $\pi X \succ X$. What does Permutation Invariance, applied with $\pi$, then imply about how $\pi^2 X$ and $\pi X$ compare?
+\begin{answer}{q1b}{4cm}
+% YOUR ANSWER to 1(b).
+\end{answer}
+
+  \item Is it possible that $\pi X \succ X$?
+\begin{answer}{q1c}{6cm}
+% YOUR ANSWER to 1(c).
+\end{answer}
+
+  \item Now there are five people. Let $Y = (1, 2, 3, 4, 5)$, and let $\rho$ be the permutation $(1, 2)(3, 4, 5)$. This means it rearranges an outcome so that person 1 has what person 2 had and person 2 has what person 1 had; and person 3 has what person 4 had, person 4 has what person 5 had, and person 5 has what person 3 had. Is there a positive whole number $n$ for which applying $\rho$ $n$ times to $Y$ gives $Y$ back? If so, what is the smallest?
+\begin{answer}{q1d}{4.5cm}
+% YOUR ANSWER to 1(d).
+\end{answer}
+
+  \item This part uses the following fact.
+  \principle{Fact}{For any permutation $\sigma$ of finitely many people, there is a positive whole number $n$ such that $\sigma^n$ is the identity permutation: that is, $\sigma^n$ does not move anyone.}%
+  Given this Fact, is there any permutation $\sigma$ of any finite number of people, and any outcome $Z$, for which $\sigma Z \succ Z$ is possible?
+\begin{answer}{q1e}{6cm}
+% YOUR ANSWER to 1(e).
+\end{answer}
+
+  \item Suppose that $\succsim$ also satisfies Completeness: of any two outcomes, at least one is at least as good as the other. How do $X$ and $\pi X$ from (a) compare?
+\begin{answer}{q1f}{6cm}
+% YOUR ANSWER to 1(f).
+\end{answer}
+
+\end{enumerate}
+
+%==============================================================================
+\Needspace{8\baselineskip}
+\section*{Question 2}
+%==============================================================================
+
+In this question, $w$ is a person's wellbeing and $u$ is their utility. There are two
+people, and everyone's utility is $u(w) = w^{1/3}$, the cube root of $w$. What is better
+for each person is settled by their expected utility. A prioritarian
+ranks outcomes by $f(w_1) + f(w_2)$, where $f$ is the priority weighting $f(w) = w^{2/3}$,
+the square of the cube root of $w$. Two outcomes are given below; the numbers are the two people's wellbeing levels:
+\[
+X = (8, 8) \qquad Y = (0, 27).
+\]
+
+\begin{enumerate}
+  \item
+  \begin{enumerate}
+    \item If the conclusion of Harsanyi's aggregation theorem (``VNM utilitarianism'') is true, which of $X$ and $Y$ is better, and why?
+\begin{answer}{q2a1}{4.5cm}
+% YOUR ANSWER to 2(a)(i).
+\end{answer}
+
+    \item Which of $X$ and $Y$ does the prioritarian rank higher?
+\begin{answer}{q2a2}{3.5cm}
+% YOUR ANSWER to 2(a)(ii).
+\end{answer}
+
+  \end{enumerate}
+
+  \item The prioritarian gives priority to the worse off in \emph{wellbeing}. Suppose
+  instead that someone gives priority to the worse off in \emph{utility}, working with the
+  two people's utilities in $X$ and $Y$. This person gives every
+  utility level $u$ a number $h(u)$, and ranks outcomes by $h(u_1) + h(u_2)$: the outcome
+  with the larger sum ranks higher. $h$ is strictly increasing and strictly concave. You can think of this as
+  meaning that the numbers $h(u)$ must satisfy two conditions:
+  \begin{itemize}
+    \item $h(u)$ goes up as $u$ goes up;
+    \item each extra unit of utility adds less to $h$ than the one before. So the rise in
+    $h$ from utility 0 to 1 is greater than the rise from 1 to 2, which is greater than the
+    rise from 2 to 3. The same is true of steps smaller than one unit: for example, each
+    extra half unit adds less to $h$ than the half unit before, so the rise from 0 to 0.5 is
+    greater than the rise from 0.5 to 1.
+  \end{itemize}
+  Can such a person rank $Y$ above $X$? If so, give numbers $h(u)$ that do it. If
+  not, explain why not.
+\begin{answer}{q2b}{6.5cm}
+% YOUR ANSWER to 2(b).
+\end{answer}
+
+
+  \Needspace{14\baselineskip}
+  \item This part uses a different utility function and a different priority weighting
+  from the rest of the question. Everyone's utility is now $u(w) = w^{1/4}$, the fourth
+  root of $w$, and the prioritarian's priority weighting is now $f(w) = \sqrt{w}$, the square
+  root of $w$. The table gives their values at five wellbeing levels.
+  \begin{center}
+  \begin{tabular}{lccccc}
+  \toprule
+  Wellbeing $w$ & 0 & 1 & 16 & 81 & 256 \\
+  \midrule
+  Utility $u(w)$ & 0 & 1 & 2 & 3 & 4 \\
+  Prioritarian's $f(w)$ & 0 & 1 & 4 & 9 & 16 \\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+  Measured in utility, does this prioritarian give more weight to the worse off than to
+  the better off, the same weight, or less?
+\begin{answer}{q2c}{5cm}
+% YOUR ANSWER to 2(c).
+\end{answer}
+
+\end{enumerate}
+
+%==============================================================================
+\Needspace{8\baselineskip}
+\section*{Question 3}
+%==============================================================================
+
+Two people have the same wealth as each other, at least \$10,000 each. Wellbeing depends on wealth in the same way for both of them.
+
+Think of wealth in \$1,000 stretches, starting at whole thousands: \$48,000 to \$49,000, \$49,000 to \$50,000, and so on. Within one stretch, every dollar adds the same amount of wellbeing: the stretch's \textbf{wellbeing per dollar}. The table shows four stretches.
+\begin{center}
+\begin{tabular}{@{}lc@{}}
+  \toprule
+  Stretch of wealth & Wellbeing per dollar \\ \midrule
+  \$48,000 to \$49,000 & 1.25 \\
+  \$49,000 to \$50,000 & 1 \\
+  \$50,000 to \$51,000 & 0.8 \\
+  \$51,000 to \$52,000 & 0.64 \\ \bottomrule
+\end{tabular}
+\end{center}
+Every stretch's wellbeing per dollar is 0.8 times that of the stretch just below it.
+
+\begin{enumerate}
+  \item Both people have \$50,000. \$1,000 is taken from one of them, and \$1,200 is given to the other.
+  \begin{enumerate}
+    \item By how much does total wellbeing rise or fall?
+\begin{answer}{q3a1}{3.5cm}
+% YOUR ANSWER to 3(a)(i).
+\end{answer}
+
+    \item Answer the same question if instead both start with \$50,500.
+\begin{answer}{q3a2}{3.5cm}
+% YOUR ANSWER to 3(a)(ii).
+\end{answer}
+
+  \end{enumerate}
+  \item Does utilitarianism say it is worse to take \$1,000 from one of them and give \$1,200 to the other, whatever wealth they both start with?
+\begin{answer}{q3b}{4cm}
+% YOUR ANSWER to 3(b).
+\end{answer}
+
+  \item Now \$8{,}000 is taken from one of them, and \$$G$ is given to the other. Write $m$ for the wealth they both start with. Parts (i)--(v) build up, step by step, to the question in (vi).
+  \begin{enumerate}
+    \item Take any single dollar of wealth, and the dollar exactly $k \times \$1{,}000$ higher up, where $k$ is a whole number. Is there a $k$ for which the higher dollar always adds at most half as much wellbeing as the lower one? If so, what is the smallest such $k$?
+\begin{answer}{q3c1}{3.5cm}
+% YOUR ANSWER to 3(c)(i).
+\end{answer}
+
+    \Needspace{14\baselineskip}
+    \item If there is such a $k$, let $k$ be the smallest, as in (i). Cut the wealth above $m$ into blocks, each $k \times \$1{,}000$ long:
+    \begin{center}
+    \begin{tabular}{@{}lll@{}}
+      \toprule
+      & From & Up to \\ \midrule
+      Block 1 & $m$ & $m + k \times \$1{,}000$ \\
+      Block 2 & $m + k \times \$1{,}000$ & $m + 2k \times \$1{,}000$ \\
+      Block 3 & $m + 2k \times \$1{,}000$ & $m + 3k \times \$1{,}000$ \\
+      \multicolumn{3}{@{}l}{and so on.} \\ \bottomrule
+    \end{tabular}
+    \end{center}
+    Call the wellbeing that block~1 adds $V$. At most how much wellbeing can block~2 add, as a fraction of $V$?
+\begin{answer}{q3c2}{3.5cm}
+% YOUR ANSWER to 3(c)(ii).
+\end{answer}
+
+    \item At most how much wellbeing can block~3 add, as a fraction of $V$?
+\begin{answer}{q3c3}{3cm}
+% YOUR ANSWER to 3(c)(iii).
+\end{answer}
+
+    \item The gain of \$$G$ gives the receiver the wealth from $m$ up to $m + G$. Recall that \mbox{$1 + \tfrac12 + \tfrac14 + \tfrac18 + \cdots$} is less than 2, however many terms are added. However large $G$ is, does the wellbeing this gain adds stay below some fixed multiple of $V$? If so, give one such multiple.
+\begin{answer}{q3c4}{4cm}
+% YOUR ANSWER to 3(c)(iv).
+\end{answer}
+
+    \item The loss of \$8{,}000 takes away the wealth from $m - \$8{,}000$ up to $m$. At least how much wellbeing does this take away, as a multiple of $V$?
+\begin{answer}{q3c5}{3.5cm}
+% YOUR ANSWER to 3(c)(v).
+\end{answer}
+
+    \item Does utilitarianism say it is worse to take \$8{,}000 from one of them and give \$$G$ to the other, however large $G$ is and whatever wealth they both start with?
+\begin{answer}{q3c6}{4cm}
+% YOUR ANSWER to 3(c)(vi).
+\end{answer}
+
+  \end{enumerate}
+\end{enumerate}
+
+%==============================================================================
+\Needspace{8\baselineskip}
+\section*{Question 4}
+%==============================================================================
+
+In this question, $n$ is the number of people, $w_i$ is person $i$'s wellbeing, and $w_A$ is the average wellbeing (total wellbeing divided by $n$). Everyone's wellbeing is positive. Let $S$ be the sum of the gaps $|w_i - w_j|$ over all $i$ and $j$, including $i = j$ (each person's gap of $0$ with themselves), with each pair of different people counted both ways round. Recall that the Gini coefficient is
+\[
+  \frac{S}{2n^2 w_A},
+\]
+and that Gini egalitarianism ranks outcomes by total wellbeing $\times$ $(1 - \text{Gini coefficient})$. Call this number the outcome's \textbf{Gini value}.
+
+In this question we will prove that the Gini value is a weighted sum of the people's wellbeing levels. Line people up from worst off to best off (people with equal wellbeing in any order). With $n$ people, the weights are
+\[
+  \frac{2n-1}{n},\ \frac{2n-3}{n},\ \dots,\ \frac{3}{n},\ \frac{1}{n}.
+\]
+So with three people the weights are $\tfrac53$, $1$ and $\tfrac13$.
+
+Throughout, write each term of $S$ as the higher level minus the lower one, that is, as the level of the person further along the line minus the level of the person further back; and write a person's term with themselves as their level minus itself.
+
+For example, take two people, at levels 3 and 7. $S$ has four terms: each person's term with themselves, and the pair's term both ways round:
+\[
+  S = |3 - 3| + |3 - 7| + |7 - 3| + |7 - 7| = (3 - 3) + (7 - 3) + (7 - 3) + (7 - 7) = 0 + 4 + 4 + 0 = 8.
+\]
+So in $S$ the better-off person's level, 7, is added three times (once in each of the two terms with 3, and once in its own term) and subtracted once (in its own term). The worse-off person's level, 3, is added once (in its own term) and subtracted three times. In each person's own term, the level added and the level subtracted cancel.
+
+\begin{enumerate}
+  \item Show that, for any outcome,
+  \[
+    \text{Gini value} = \text{total wellbeing} - \frac{S}{2n}.
+  \]
+  (Hint: total wellbeing $= n w_A$.)
+\begin{answer}{q4a}{7cm}
+% YOUR ANSWER to 4(a).
+\end{answer}
+
+  \Needspace{14\baselineskip}
+  \item Let $X = (3, 6, 12)$.
+  \begin{enumerate}
+    \item Write out the nine terms of $S$ as in the example. Then complete the table: for each person, how many times is their level added, and how many times is it subtracted?
+
+    \noindent The nine terms of $S$:\par\smallskip
+    \longslot{q4b1terms}{}
+
+    \begin{center}
+    \renewcommand{\arraystretch}{1.9}
+    \begin{tabular}{@{}cc>{\centering\arraybackslash}p{3cm}>{\centering\arraybackslash}p{3cm}@{}}
+      \toprule
+      Person & Level & Times added & Times subtracted \\
+      \midrule
+      1 & 3  & \slot{q4b1add1}{2.6cm}{} & \slot{q4b1sub1}{2.6cm}{} \\
+      2 & 6  & \slot{q4b1add2}{2.6cm}{} & \slot{q4b1sub2}{2.6cm}{} \\
+      3 & 12 & \slot{q4b1add3}{2.6cm}{} & \slot{q4b1sub3}{2.6cm}{} \\
+      \bottomrule
+    \end{tabular}
+    \end{center}
+    \item Use your table to find $S$.
+\begin{answer}{q4b2}{2.5cm}
+% YOUR ANSWER to 4(b)(ii).
+\end{answer}
+
+  \end{enumerate}
+  \item Now take any number $n$ of people, and any one of them. Say $r$ people are further back in the line than this person, and $k$ people are further along.
+  \begin{enumerate}
+    \item How many times is this person's level added in $S$, and how many times is it subtracted?
+
+\Needspace{4\baselineskip}\medskip\noindent\textbf{Answer.}\par\smallskip
+Times added: \slot{q4c1add}{3.8cm}{} \qquad Times subtracted: \slot{q4c1sub}{3.8cm}{}
+\medskip
+
+    \item Use (a) to show that the Gini value puts weight $1 + \dfrac{k - r}{n}$ on this person's level.
+\begin{answer}{q4c2}{7cm}
+% YOUR ANSWER to 4(c)(ii).
+\end{answer}
+
+  \end{enumerate}
+\end{enumerate}
+So the worst off ($r = 0$, $k = n - 1$) has weight $\frac{2n-1}{n}$; each place further along the line has one more person behind and one fewer ahead, so its weight is $\frac2n$ less; and the best off ($r = n - 1$, $k = 0$) has weight $\frac1n$. These are the rank weights in the rank-weighted form of the Gini value.
+
+\iffillable\end{Form}\fi
+\end{document}
