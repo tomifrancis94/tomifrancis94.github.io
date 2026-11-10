@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PE3101P Test 2 multiple choice section practice — Tomi Francis</title>
+  <meta name="description" content="Practice for the multiple-choice section of PE3101P In-class Test 2: two practice sets of 10 questions, marked as in the test.">
+  <link rel="stylesheet" href="../mcq/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="quiz.css">
+  <script src="../mcq/vendor/katex/katex.min.js" defer></script>
+  <script type="module" src="quiz.mjs"></script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation"><a href="../../../index.html">Home</a><a href="../../../pe3101p.html">Decision and Social Choice</a><a href="../../../teaching.html">Teaching</a><a href="../../../cv.html">CV</a><a href="../../../about.html">About me</a></nav>
+  <main>
+    <header class="page-header"><div><p class="eyebrow">PE3101P · Decision and Social Choice</p><h1>Test 2 multiple choice section practice</h1></div><a class="course-link" href="../../../pe3101p.html">Course materials</a></header>
+    <div class="intro">
+      <p>Two practice sets of 10 multiple-choice questions each, like the multiple-choice section of In-class Test 2 (Thursday 12 November 2026). Each set has two questions from each of Lectures 7 to 11.</p>
+      <p><strong>Marking:</strong> +4 for a correct answer, −4/3 for an incorrect one, and 0 for no answer, out of 40. The answers are shown only when you submit a set. You can move between questions and change or clear your answers until then.</p>
+    </div>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <div id="app" hidden>
+      <div class="picker" role="group" aria-label="Choose a practice set">
+        <button id="pick-0" type="button" aria-pressed="true"><span class="pick-title">Practice set 1</span><span class="pick-status"></span></button>
+        <button id="pick-1" type="button" aria-pressed="false"><span class="pick-title">Practice set 2</span><span class="pick-status"></span></button>
+      </div>
+
+      <section id="quiz" class="panel" aria-label="Questions">
+        <div class="qmap-wrap" role="navigation" aria-label="Questions in this set"><ol id="qmap" class="qmap"></ol></div>
+        <article class="question">
+          <h2 id="q-heading" class="q-heading" tabindex="-1">Question 1 of 10</h2>
+          <div id="stem" class="stem"></div>
+          <fieldset id="options" class="options"><legend class="sr-only">Choose one answer</legend></fieldset>
+          <div class="question-actions">
+            <button id="clear" type="button" disabled>Clear answer</button>
+            <div class="navigation"><button id="prev" type="button">← Previous</button><button id="next" type="button">Next →</button></div>
+          </div>
+        </article>
+        <div class="submit-area">
+          <p id="answered-count" class="answered-count"></p>
+          <button id="submit" class="primary" type="button">Submit and see your score</button>
+          <div id="confirm" class="confirm" hidden role="alert">
+            <p id="confirm-text"></p>
+            <div class="confirm-actions"><button id="confirm-submit" class="primary" type="button">Submit now</button><button id="confirm-goto" type="button">Go to the question</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="panel results" hidden aria-labelledby="results-heading">
+        <h2 id="results-heading" tabindex="-1">Your score</h2>
+        <p id="score" class="score"></p>
+        <p id="breakdown" class="breakdown"></p>
+        <div class="results-actions"><button id="restart" class="primary" type="button">Start again</button><button id="other-section" type="button">Other set</button></div>
+        <p id="review-intro" class="review-intro"></p>
+        <div id="review" class="review"></div>
+      </section>
+    </div>
+    <noscript><p>This practice quiz needs JavaScript to show the questions and mark your answers.</p></noscript>
+  </main>
+</body>
+</html>
